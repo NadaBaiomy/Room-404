@@ -18,7 +18,6 @@ html,body{margin:0;height:100%;background:#0d0a08;color:#d8c9a3;font-family:'Ami
 button{font:inherit}
 ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:#3a2d1a}::-webkit-scrollbar-track{background:#0d0a08}
 
-/* ===== layers ===== */
 #app{position:fixed;inset:0;display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;z-index:5}
 #dust{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.55}
 #grain{position:fixed;inset:-40px;z-index:61;pointer-events:none;opacity:.08;filter:contrast(160%);
@@ -35,14 +34,12 @@ button{font:inherit}
 @keyframes shk{0%,100%{transform:translate(0)}15%{transform:translate(-7px,3px)}30%{transform:translate(6px,-4px)}45%{transform:translate(-5px,-2px)}60%{transform:translate(5px,4px)}80%{transform:translate(-3px,1px)}}
 #app.shake{animation:shk .55s}
 
-/* ===== HUD ===== */
 .hud{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #241c12;background:#100c08;position:sticky;top:0;z-index:20}
 .hud .loc{font-family:'Reem Kufi';font-size:12px;color:#8a7248;margin-inline-end:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hbtn{width:42px;height:42px;flex:none;display:grid;place-items:center;background:#171310;border:1px solid #3a2d1a;color:#a98c58;cursor:pointer;border-radius:4px;transition:.18s}
 .hbtn:hover{color:#e2c687;border-color:#6e5732}
 .ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 
-/* ===== views ===== */
 .view{width:100%;max-width:1020px;margin:0 auto;padding:14px 14px 48px;display:flex;flex-direction:column;gap:12px}
 .vhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .vhead h2{font-family:'Reem Kufi';font-weight:700;font-size:clamp(16px,3.2vw,22px);color:#c9a35c;margin:0}
@@ -57,7 +54,6 @@ button{font:inherit}
 .sayline.bump{animation:bmp .35s}
 @keyframes bmp{0%{opacity:.2;transform:translateY(3px)}100%{opacity:1}}
 
-/* ===== brass plates / buttons ===== */
 .plate{font-family:'Reem Kufi';font-weight:600;font-size:13px;color:#b08d4f;background:#171310;border:1px solid #4a3a24;border-top-color:#5d4a2c;padding:12px 22px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 5px 16px #000a;transition:.18s;user-select:none;border-radius:2px}
 .plate:hover{color:#ecd094;border-color:#6e5732;background:#1d1712}
 .plate:active{transform:translateY(1px)}
@@ -66,7 +62,6 @@ button{font:inherit}
 .ctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;padding:12px;background:#100d09;border:1px solid #241c12;border-radius:4px}
 .tag{font-family:'Almarai';font-size:11px;color:#77664a}
 
-/* ===== title ===== */
 #app.v-title{overflow:hidden;align-items:center;justify-content:center}
 .t-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;position:relative;width:100%;max-width:560px;padding:24px;text-align:center}
 .t-fog{position:absolute;inset:-30%;pointer-events:none;overflow:hidden}
@@ -82,7 +77,6 @@ button{font:inherit}
 .t-foot{font-family:'Almarai';font-size:10px;color:#55483a;margin-top:26px}
 .t-endings{font-family:'Almarai';font-size:11px;color:#7a6a4d;margin-top:8px}
 
-/* ===== overlays ===== */
 .ov{position:fixed;inset:0;z-index:90;display:none;background:rgba(6,4,3,.8);backdrop-filter:blur(3px)}
 .ov.open{display:flex;align-items:center;justify-content:center;padding:16px}
 .panel{width:100%;max-width:600px;max-height:88vh;overflow:auto;background:#151009;border:1px solid #4a3a24;box-shadow:0 30px 90px #000d;padding:18px;border-radius:4px}
@@ -90,14 +84,12 @@ button{font:inherit}
 .panel .ph-sub{text-align:center;font-family:'Almarai';font-size:10px;color:#6d5d44;margin-bottom:14px}
 .xbtn{position:sticky;top:0;float:left;margin:-6px 0 0 -6px}
 
-/* keypad */
 .vfd{font-family:'Almarai';color:#9fce8f;background:#0a1308;border:1px solid #24401c;padding:12px;min-height:52px;font-size:15px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:2px;transition:.2s}
 .vfd.bad{color:#d24b3a;background:#160807;border-color:#4a1c14;animation:shk .4s}
 .kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;direction:ltr}
 .kgrid .plate{padding:15px 0;font-size:16px}
 .khint{font-family:'Almarai';font-size:10.5px;color:#77664a;text-align:center;margin-top:10px;line-height:2}
 
-/* evidence board */
 .board{background:#26180f url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23c)' opacity='0.16'/%3E%3C/svg%3E");border:1px solid #3a2818;padding:16px;position:relative;border-radius:3px}
 #threads{position:absolute;inset:0;pointer-events:none}
 .ev-cards{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;position:relative}
@@ -110,7 +102,6 @@ button{font:inherit}
 .achrow.off{color:#5a4a35}
 .achrow .ic{width:15px;height:15px;flex:none}
 
-/* map */
 .mwrap{background:#12100a;border:1px solid #3a2d1a;padding:10px;border-radius:3px}
 .mfloor{display:flex;align-items:center;gap:10px;padding:7px 8px;border-bottom:1px dashed #2e2418}
 .mfloor:last-child{border:none}
@@ -122,7 +113,6 @@ button{font:inherit}
 .mdoor.cur{box-shadow:0 0 0 1px #b08d4f}
 .mdoor .ic{width:13px;height:13px}
 
-/* narration / endings */
 #ov-narr{background:rgba(3,2,2,.94)}
 .narr{width:100%;max-width:780px;margin:auto;text-align:center;padding:26px}
 .narr .nk{font-family:Cinzel;letter-spacing:.4em;font-size:11px;color:#6d5d44;margin-bottom:22px}
@@ -132,15 +122,10 @@ button{font:inherit}
 #nbtn.on{opacity:1;pointer-events:auto}
 .nchoice{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap}
 
-/* note viewer */
 .note{background:#d5c69f;color:#2b2117;padding:26px 22px;max-width:460px;margin:0 auto;font-family:'Almarai';line-height:1.9;font-size:12.5px;box-shadow:0 20px 50px #000c;border-radius:2px;transform:rotate(-.7deg)}
 .note.hand{font-family:'Aref Ruqaa';font-size:15px;line-height:2.1}
 .note h4{font-family:'Reem Kufi';font-size:13px;margin:0 0 12px;border-bottom:1px solid #8a7a58;padding-bottom:8px;text-align:center}
 
-/* photos */
-.photo{background:#171310;border:10px solid #2a2016;outline:1px solid #4a3a24;outline-offset:-6px;max-width:560px;margin:0 auto;box-shadow:0 24px 70px #000d;position:relative}
-.photo .cap{font-family:'Almarai';font-size:11px;color:#9a8a68;text-align:center;padding:12px;line-height:1.9}
-.photo [data-uv]{opacity:0;transition:opacity .8s;font-family:'Aref Ruqaa';fill:#8fe08a}
 #app.uv .scene-wrap{filter:saturate(.35) brightness(.62)}
 #app.uv [data-uv]{opacity:.92}
 .uvtint{opacity:0;transition:opacity .8s}
@@ -150,13 +135,11 @@ button{font:inherit}
 .uvcone{opacity:0;transition:opacity .8s}
 #app.uv .uvcone{opacity:1}
 
-/* room 202 */
 .clockbtns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
 .cbgroup{display:flex;flex-direction:column;gap:6px;align-items:center}
 .cbgroup .tag{text-align:center}
 .cb{display:flex;gap:6px}
 
-/* room 303 */
 .r-slider{width:min(560px,92%);accent-color:#b08d4f;height:30px;direction:ltr}
 .r-disp{font-family:'Almarai';text-align:center;color:#9fce8f;font-size:13px;min-height:70px;line-height:1.9;padding:8px;background:#0a1308;border:1px solid #1e361a;border-radius:2px}
 .r-disp .fr{color:#c9a35c;font-family:'Reem Kufi';font-size:20px;letter-spacing:.3em}
@@ -164,7 +147,6 @@ button{font:inherit}
 .mbars i{width:9px;background:#9fce8f;height:6px;border-radius:1px;transition:height .18s}
 .mbars i.hi{background:#c9a35c}
 
-/* room 501 */
 .pgfield{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;min-height:150px;padding:16px 8px}
 .pg{background:#d5c69f;color:#2b2117;width:195px;padding:16px 14px;font-family:'Aref Ruqaa';font-size:14px;line-height:2.1;border-radius:2px;box-shadow:0 8px 18px #000a;cursor:pointer;transform:rotate(var(--r));transition:.3s;position:relative}
 .pg:hover{filter:brightness(1.06)}
@@ -175,32 +157,27 @@ button{font:inherit}
 .bslot{font-family:'Aref Ruqaa';font-size:13px;color:#8a7a58;border-bottom:1px dashed #4a3a24;padding:4px 8px;min-height:36px;transition:.4s}
 .bslot.full{color:#d5c69f}
 
-/* room 602 */
 .brbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:8px;direction:ltr}
 .brbtn{width:54px;height:54px;border-radius:50%;background:#8a6d3f;border:3px solid #5a452a;box-shadow:inset 0 3px 4px #e0b87766,inset 0 -6px 10px #00000088,0 6px 14px #000a;color:#241a0e;font-family:'Reem Kufi';font-weight:700;font-size:18px;cursor:pointer;transition:.12s}
 .brbtn:active{transform:translateY(2px);box-shadow:inset 0 3px 8px #000}
 .brbtn .nt{display:block;font-size:8px;font-weight:400}
 .mel-rec{display:flex;gap:5px;align-items:center;justify-content:center;min-height:20px;font-family:'Almarai';font-size:12px;color:#9a8a68}
 
-/* room 707 */
 .dials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .dial{display:flex;flex-direction:column;gap:6px;align-items:center}
 .dwin{width:96px;text-align:center;font-family:'Reem Kufi';font-weight:700;font-size:19px;color:#c9a35c;background:#0a0805;border:1px solid #4a3a24;padding:12px 4px;border-radius:2px;box-shadow:inset 0 4px 12px #000}
 .dial .cb .plate{padding:8px 20px}
 
-/* room 808 */
 .stab{max-width:420px;margin:0 auto}
 .stab .bar{height:8px;background:#1a0f0c;border:1px solid #4a241c;margin-top:6px}
 .stab .bar i{display:block;height:100%;background:#7e1f1f;width:100%;transition:width 1s linear}
 
-/* toasts */
 #toasts{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:130;display:flex;flex-direction:column;gap:8px;pointer-events:none;width:min(430px,92vw)}
 .toast{display:flex;gap:12px;align-items:center;background:rgba(21,17,11,.94);border:1px solid #6e5732;padding:11px 16px;font-family:'Reem Kufi';font-size:12px;color:#e2c687;box-shadow:0 14px 40px #000c;animation:tin .45s,tout .6s 3.6s forwards;border-radius:2px}
 .toast .ic{width:17px;height:17px;flex:none;color:#b08d4f}
 @keyframes tin{from{opacity:0;transform:translateY(-14px)}}
 @keyframes tout{to{opacity:0;transform:translateY(-10px)}}
 
-/* elevator */
 .ed{transition:transform .85s cubic-bezier(.6,0,.3,1)}
 .elev-closing .ed-l{transform:translateX(238px)}
 .elev-closing .ed-r{transform:translateX(-238px)}
@@ -211,7 +188,6 @@ button{font:inherit}
 .sway{transform-box:fill-box;transform-origin:top center;animation:sway 5.2s ease-in-out infinite alternate}
 @keyframes sway{from{transform:rotate(-2.2deg)}to{transform:rotate(2.2deg)}}
 
-/* misc */
 .fadein{animation:fin .8s}
 @keyframes fin{from{opacity:0}}
 .mist{opacity:0;transition:opacity 1.6s}
@@ -259,7 +235,27 @@ button{font:inherit}
 </defs>
 </svg>
 
-<div id="app"></div>
+<div id="app">
+ <!-- شاشة الإقلاع: HTML خام بلا جافاسكريبت — تظهر فورًا عند فتح الملف،
+      وتُزال بمجرد نجاح تشغيل اللعبة. إن بقيت ظاهرة فالملف ناقص أو الجافاسكريبت معطّل. -->
+ <div id="boot" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;font-family:Georgia,'Times New Roman',serif;direction:rtl">
+  <div style="letter-spacing:8px;font-size:13px;color:#8a7248">THE HALLOWAY</div>
+  <div style="font-size:74px;font-weight:700;color:#c9a35c;margin:6px 0">404</div>
+  <div style="color:#9a8a68;font-size:17px">جارٍ إضاءة مصابيح الفندق…</div>
+  <div id="booterr" style="display:none;margin-top:18px;max-width:420px;background:#1a0505;border:1px solid #7e1f1f;color:#ff9c8a;padding:12px;font-family:sans-serif;font-size:13px;line-height:1.8;word-break:break-all"></div>
+  <div style="margin-top:26px;max-width:430px;color:#6d5d44;font-family:sans-serif;font-size:12px;line-height:2">
+   إن بقيت هذه الشاشة أكثر من ثوانٍ قليلة:<br>
+   ١) انسخي الكود <b>كاملًا</b> — من أول سطر &lt;!DOCTYPE html&gt; حتى آخر سطر &lt;/html&gt; — فأي سطر ناقص يجعل الصفحة سوداء.<br>
+   ٢) احفظيه بامتداد <b>.html</b> ثم افتحيه في <b>Chrome</b> أو <b>Safari</b> — وليس من داخل عارض الملفات أو تطبيق محادثة.
+  </div>
+ </div>
+</div>
+<noscript>
+ <div style="position:fixed;inset:0;background:#0d0a08;color:#d8c9a3;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;font-family:sans-serif;font-size:15px;line-height:2;z-index:999">
+  الجافاسكريبت معطّل في هذا المتصفح.<br>افتحي الملف في Chrome أو Safari مع تفعيل الجافاسكريبت.
+ </div>
+</noscript>
+
 <canvas id="dust"></canvas>
 <div id="grain"></div><div id="vig"></div><div id="lantern"></div>
 <div id="toasts"></div>
@@ -272,10 +268,27 @@ button{font:inherit}
 
 <script>
 /* ============================================================
-   ROOM 404 — THE HALLOWAY (النسخة العربية)
-   فندقٌ واحد، سرٌّ واحد، عشر غرف — كل شيء يعمل محليًا.
+   ROOM 404 — THE HALLOWAY (نسخة عربية محصّنة)
+   أي خطأ يُعرض على الشاشة بدل شاشة سوداء صامتة.
 ============================================================ */
 
+/* ---------- نظام الإبلاغ عن الأخطاء (أول شيء يُعرَّف) ---------- */
+function fatal(msg){
+ try{
+  msg=String(msg||'خطأ غير معروف');
+  const boot=document.getElementById('boot'),be=document.getElementById('booterr');
+  if(boot&&be){be.style.display='block';be.textContent='توقّف التشغيل — تفاصيل الخطأ (ابعتيها للمطوّرة): '+msg;return}
+  let p=document.getElementById('fatalbox');
+  if(!p){p=document.createElement('div');p.id='fatalbox';
+   p.style.cssText='position:fixed;top:0;left:0;right:0;z-index:999;background:#1a0505;color:#ff9c8a;border:2px solid #7e1f1f;padding:12px;font:13px/1.8 Almarai,sans-serif;direction:rtl;max-height:45vh;overflow:auto';
+   document.body.appendChild(p)}
+  p.innerHTML='حدث خطأ: <span dir="ltr">'+msg.slice(0,300).replace(/[<>&]/g,' ')+'</span><br><small>ابعتي هذه الرسالة للمطوّرة. تقدّمكِ محفوظ — أعيدي تحميل الصفحة للمتابعة.</small>';
+ }catch(e){}
+}
+window.addEventListener('error',e=>fatal(e&&e.message));
+window.addEventListener('unhandledrejection',e=>fatal(e&&e.reason&&(e.reason.message||e.reason)||'وعد مرفوض'));
+
+/* ---------- ثوابت اللعبة ---------- */
 const RF={'101':1,'202':2,'303':3,'404':4,'405':4,'501':5,'602':6,'707':7,'808':8,'909':9};
 const FLOORS={
  1:{wall:'#232a1f',wallD:'#181f15'}, 2:{wall:'#212830',wallD:'#151b22'},
@@ -287,7 +300,7 @@ const FLOORS={
 const NOTE={A3:220,B3:246.94,C4:261.63,D4:293.66,E4:329.63,F4:349.23,G4:392};
 const BTN_N=[NOTE.A3,NOTE.B3,NOTE.C4,NOTE.D4,NOTE.E4,NOTE.F4,NOTE.G4];
 const BTN_L=['A3','B3','C4','D4','E4','F4','G4'];
-const MELODY=[2,4,3,2,6,5,4];            /* C E D C G F E */
+const MELODY=[2,4,3,2,6,5,4];
 const STATIONS=[
  {f:90.1,kind:'voice',txt:'«…الغرفة…»',tts:'الغرفة'},
  {f:92.4,kind:'you'},
@@ -340,8 +353,18 @@ const DEF={
  sndOn:true,vol:.8
 };
 let S=loadS();
-function loadS(){try{const j=localStorage.getItem('room404_ar_v1');return j?Object.assign(JSON.parse(JSON.stringify(DEF)),JSON.parse(j)):JSON.parse(JSON.stringify(DEF))}catch(e){return JSON.parse(JSON.stringify(DEF))}}
-function save(){try{localStorage.setItem('room404_ar_v1',JSON.stringify(S))}catch(e){}}
+function loadS(){
+ const base=()=>JSON.parse(JSON.stringify(DEF));
+ try{
+  const j=localStorage.getItem('room404_ar_v2');
+  if(!j)return base();
+  const o=JSON.parse(j),out=base();
+  Object.assign(out,{started:!!o.started,floors:o.floors||[1],evd:o.evd||[],ach:o.ach||[],endings:o.endings||[],sndOn:o.sndOn!==false,vol:o.vol!=null?o.vol:.8});
+  if(o.f)for(const k in DEF.f){if(o.f[k])out.f[k]=Object.assign(out.f[k],o.f[k])}
+  return out;
+ }catch(e){return base()}
+}
+function save(){try{localStorage.setItem('room404_ar_v2',JSON.stringify(S))}catch(e){}}
 
 /* ---------- محرك الصوت ---------- */
 const AU={
@@ -354,13 +377,17 @@ const AU={
  setSnd(on){S.sndOn=on;if(this.master)this.master.gain.value=on?S.vol:0;save()},
  t(){return this.ctx?this.ctx.currentTime:0},
  env(g,now,a,peak,dur){g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(peak,now+a);g.gain.exponentialRampToValueAtTime(.0001,now+dur)},
- tone(f,{t=0,dur=.3,type='sine',g=.2}={}){if(!this.ctx)return;const now=this.t()+t,o=this.ctx.createOscillator(),gn=this.ctx.createGain();
-  o.type=type;o.frequency.value=f;o.connect(gn);gn.connect(this.master);this.env(gn,now,.01,g,dur);o.start(now);o.stop(now+dur+.05)},
- piano(f,t=0,dur=1.1,vel=.4){if(!this.ctx)return;const now=this.t()+t,g=this.ctx.createGain();g.connect(this.master);
+ tone(f,o){o=o||{};if(!this.ctx)return;const t=o.t||0,dur=o.dur||.3,type=o.type||'sine',g=o.g!=null?o.g:.2;
+  const now=this.t()+t,os=this.ctx.createOscillator(),gn=this.ctx.createGain();
+  os.type=type;os.frequency.value=f;os.connect(gn);gn.connect(this.master);this.env(gn,now,.01,g,dur);os.start(now);os.stop(now+dur+.05)},
+ piano(f,t,dur,vel){t=t||0;dur=dur||1.1;vel=vel||.4;if(!this.ctx)return;const now=this.t()+t,g=this.ctx.createGain();g.connect(this.master);
   g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(vel,now+.012);g.gain.exponentialRampToValueAtTime(.0001,now+dur);
-  [[1,1,'triangle'],[2,.38,'sine'],[3,.14,'sine'],[4.01,.05,'sine']].forEach(([m,a,ty])=>{const o=this.ctx.createOscillator(),og=this.ctx.createGain();
-   o.type=ty;o.frequency.value=f*m;og.gain.value=a;o.connect(og);og.connect(g);o.start(now);o.stop(now+dur)})},
- noise({t=0,dur=.3,f=800,q=1,g=.3,type='bandpass'}={}){if(!this.ctx)return;const now=this.t()+t,s=this.ctx.createBufferSource();
+  const parts=[[1,1,'triangle'],[2,.38,'sine'],[3,.14,'sine'],[4.01,.05,'sine']];
+  for(let i=0;i<parts.length;i++){const m=parts[i][0],a=parts[i][1],ty=parts[i][2];
+   const os=this.ctx.createOscillator(),og=this.ctx.createGain();
+   os.type=ty;os.frequency.value=f*m;og.gain.value=a;os.connect(og);og.connect(g);os.start(now);os.stop(now+dur)}},
+ noise(o){o=o||{};if(!this.ctx)return;const t=o.t||0,dur=o.dur||.3,f=o.f||800,q=o.q||1,g=o.g!=null?o.g:.3,type=o.type||'bandpass';
+  const now=this.t()+t,s=this.ctx.createBufferSource();
   s.buffer=this.nb;s.loop=true;const fl=this.ctx.createBiquadFilter();fl.type=type;fl.frequency.value=f;fl.Q.value=q;
   const gn=this.ctx.createGain();s.connect(fl);fl.connect(gn);gn.connect(this.master);
   gn.gain.setValueAtTime(g,now);gn.gain.exponentialRampToValueAtTime(.0001,now+dur);s.start(now);s.stop(now+dur+.05)},
@@ -368,24 +395,25 @@ const AU={
  page(){this.noise({dur:.2,f:1400,type:'highpass',g:.12})},
  step(){this.noise({dur:.1,f:260,type:'lowpass',g:.16})},
  ding(){this.tone(880,{dur:.5,g:.14});this.tone(1318.5,{t:.02,dur:.7,g:.1})},
- chime(){[660,880,990,1320].forEach((f,i)=>this.tone(f,{t:i*.13,dur:.9,g:.12}))},
+ chime(){const fs=[660,880,990,1320];for(let i=0;i<fs.length;i++)this.tone(fs[i],{t:i*.13,dur:.9,g:.12})},
  denied(){this.tone(92,{dur:.16,type:'square',g:.14});this.tone(92,{t:.22,dur:.2,type:'square',g:.14})},
  buzz(){this.tone(58,{dur:.5,type:'sawtooth',g:.05})},
  creak(){if(!this.ctx)return;const now=this.t(),o=this.ctx.createOscillator(),g=this.ctx.createGain(),fl=this.ctx.createBiquadFilter();
   o.type='sawtooth';o.frequency.setValueAtTime(190,now);o.frequency.linearRampToValueAtTime(62,now+.8);
   fl.type='lowpass';fl.frequency.value=420;o.connect(fl);fl.connect(g);g.connect(this.master);
   this.env(g,now,.06,.05,.85);o.start(now);o.stop(now+.95)},
- knock(n=2,gap=.3,g=.7){for(let i=0;i<n;i++){this.noise({t:i*gap,dur:.13,f:150,type:'lowpass',q:.6,g});this.tone(64,{t:i*gap,dur:.15,g:g*.5})}},
+ knock(n,gap,g){n=n||2;gap=gap||.3;g=g||.7;for(let i=0;i<n;i++){this.noise({t:i*gap,dur:.13,f:150,type:'lowpass',q:.6,g:g});this.tone(64,{t:i*gap,dur:.15,g:g*.5})}},
  knockFar(){this.knock(3,.34,.18)},
  heart(){this.tone(52,{dur:.16,g:.5});this.tone(52,{t:.32,dur:.14,g:.35})},
  whisper(txt){try{if(!window.speechSynthesis)return;const u=new SpeechSynthesisUtterance(txt);
   u.rate=.5;u.pitch=.15;u.volume=S.sndOn?.5:0;u.lang='ar-SA';speechSynthesis.speak(u)}catch(e){}},
- playMelody(t0=0,vel=.4){MELODY.forEach((i,k)=>this.piano(BTN_N[i],t0+k*.45,1.3,vel))},
+ playMelody(t0,vel){t0=t0||0;vel=vel||.4;for(let k=0;k<MELODY.length;k++)this.piano(BTN_N[MELODY[k]],t0+k*.45,1.3,vel)},
  startStatic(){if(!this.ctx||this.staticN)return;const s=this.ctx.createBufferSource();s.buffer=this.nb;s.loop=true;
   const fl=this.ctx.createBiquadFilter();fl.type='bandpass';fl.Q.value=.8;const g=this.ctx.createGain();
   s.connect(fl);fl.connect(g);g.connect(this.master);g.gain.value=.06;s.start();
-  this.staticN={s,fl,g}},setStatic(f){if(!this.staticN)return;this.staticN.fl.frequency.value=250+(f-88)*260;
-  this.staticN.g.gain.value=.065},stopStatic(){if(this.staticN){try{this.staticN.s.stop()}catch(e){}this.staticN=null}},
+  this.staticN={s,fl,g}},
+ setStatic(f){if(!this.staticN)return;this.staticN.fl.frequency.value=250+(f-88)*260;this.staticN.g.gain.value=.065},
+ stopStatic(){if(this.staticN){try{this.staticN.s.stop()}catch(e){}this.staticN=null}},
  startHum(){if(!this.ctx||this.humN)return;const o=this.ctx.createOscillator(),g=this.ctx.createGain(),fl=this.ctx.createBiquadFilter();
   o.type='sawtooth';o.frequency.value=49;fl.type='lowpass';fl.frequency.value=110;g.gain.value=.045;
   o.connect(fl);fl.connect(g);g.connect(this.master);o.start();this.humN={o,g}},
@@ -394,69 +422,76 @@ const AU={
   const os=[55,55.9,110.4].map((f,i)=>{const o=this.ctx.createOscillator();o.type='sine';o.frequency.value=f;
    const og=this.ctx.createGain();og.gain.value=i===2?.12:1;o.connect(og);og.connect(g);o.start();return o});
   const lfo=this.ctx.createOscillator(),lg=this.ctx.createGain();lfo.frequency.value=.06;lg.gain.value=.02;
-  lfo.connect(lg);lg.connect(g.gain);lfo.start();this.droneN={os,lfo,g}},
+  lfo.connect(lg);lg.connect(g.gain);lfo.start();this.droneN={os:os,lfo:lfo,g:g}},
  stopAll(){this.stopStatic();this.stopHum()}
 };
-document.addEventListener('pointerdown',()=>{AU.init();if(AU.ctx&&AU.ctx.state==='suspended')AU.ctx.resume()},{capture:true});
+document.addEventListener('pointerdown',function(){AU.init();if(AU.ctx&&AU.ctx.state==='suspended')AU.ctx.resume()},{capture:true});
 
 /* ---------- أدوات واجهة ---------- */
-const $=id=>document.getElementById(id);
+function $(id){return document.getElementById(id)}
 const app=$('app');
-function ic(n){return `<svg class="ic" aria-hidden="true"><use href="#i-${n}"/></svg>`}
-function toast(msg,icon='eye'){const t=document.createElement('div');t.className='toast';t.innerHTML=ic(icon)+`<span>${msg}</span>`;
- $('toasts').appendChild(t);setTimeout(()=>t.remove(),4400)}
+function ic(n){return '<svg class="ic" aria-hidden="true"><use href="#i-'+n+'"/></svg>'}
+function toast(msg,icon){const t=document.createElement('div');t.className='toast';
+ t.innerHTML=ic(icon||'eye')+'<span>'+msg+'</span>';
+ $('toasts').appendChild(t);setTimeout(function(){t.remove()},4400)}
 function say(t){const s=$('sayline');if(!s)return;s.textContent=t;s.classList.remove('bump');void s.offsetWidth;s.classList.add('bump');AU.tick()}
 function flick(){app.classList.remove('flick');void app.offsetWidth;app.classList.add('flick');AU.buzz()}
 function shake(){app.classList.remove('shake');void app.offsetWidth;app.classList.add('shake')}
-function unlockFloor(n){if(!S.floors.includes(n)){S.floors.push(n);save();toast(`الطابق ${n} متاح الآن`,'key');AU.ding()}}
+function unlockFloor(n){if(!S.floors.includes(n)){S.floors.push(n);save();toast('الطابق '+n+' متاح الآن','key');AU.ding()}}
 function addEvidence(id){if(S.evd.includes(id))return;S.evd.push(id);save();toast('دليل جديد — '+EVD[id][0],'note')}
 function ach(id){if(S.ach.includes(id))return;S.ach.push(id);save();toast('إنجاز — '+ACH[id][0],'flame')}
 let roomTimers=[];
 function later(fn,ms){const id=setTimeout(fn,ms);roomTimers.push(id);return id}
-function clearLater(){roomTimers.forEach(clearTimeout);roomTimers=[]}
+function clearLater(){for(let i=0;i<roomTimers.length;i++)clearTimeout(roomTimers[i]);roomTimers=[]}
 let stabIv=null;
 function clearStab(){if(stabIv){clearInterval(stabIv);stabIv=null}}
 
 /* ---------- سرد سينمائي ---------- */
-function narrate(lines,{final='متابعة',choice=null}={}){
- return new Promise(res=>{
+function narrate(lines,opt){
+ opt=opt||{};const finalTxt=opt.final||'متابعة',choice=opt.choice||null;
+ return new Promise(function(res){
   const ov=$('ov-narr');
-  ov.innerHTML=`<div class="narr"><div class="nk">THE HALLOWAY</div><div class="narr-in"></div>
-   ${choice?`<div class="nchoice"></div>`:`<button class="plate" id="nbtn">${final}</button>`}</div>`;
+  ov.innerHTML='<div class="narr"><div class="nk">THE HALLOWAY</div><div class="narr-in"></div>'+
+   (choice?'<div class="nchoice"></div>':'<button class="plate" id="nbtn">'+finalTxt+'</button>')+'</div>';
   ov.classList.add('open');
-  const box=ov.querySelector('.narr-in');let i=0,iv=null,typing=false,done=false;
-  function finishLine(){if(iv){clearInterval(iv);iv=null}const ps=box.querySelectorAll('p');ps[ps.length-1].textContent=lines[i].t;typing=false;done=true}
-  function next(){if(i<lines.length-1){i++;type()}else{if(choice)showChoice();else ov.querySelector('#nbtn').classList.add('on')}}
+  const box=ov.querySelector('.narr-in');let i=0,iv=null,typing=false;
   function type(){const L=lines[i];const p=document.createElement('p');if(L.big)p.className='big';box.appendChild(p);
-   typing=true;done=false;let k=0;const txt=L.t;
-   iv=setInterval(()=>{p.textContent=txt.slice(0,++k);if(k%3===0)AU.tick();
-    if(k>=txt.length){clearInterval(iv);iv=null;typing=false;done=true;next()}},26)}
+   typing=true;let k=0;const txt=L.t;
+   iv=setInterval(function(){k++;p.textContent=txt.slice(0,k);if(k%3===0)AU.tick();
+    if(k>=txt.length){clearInterval(iv);iv=null;typing=false;
+     if(i<lines.length-1){i++;type()}else{if(choice)showChoice();else ov.querySelector('#nbtn').classList.add('on')}}},26)}
   function showChoice(){const c=ov.querySelector('.nchoice');
-   choice.forEach(([lab,fn])=>{const b=document.createElement('button');b.className='plate';b.textContent=lab;
-    b.onclick=()=>{ov.classList.remove('open');ov.innerHTML='';res(fn)};c.appendChild(b)})}
-  ov.onclick=e=>{if(e.target.closest('.nchoice'))return;
-   if(typing){finishLine();next();return}
+   for(let j=0;j<choice.length;j++){const lab=choice[j][0],fn=choice[j][1];
+    const b=document.createElement('button');b.className='plate';b.textContent=lab;
+    b.onclick=function(){ov.classList.remove('open');ov.innerHTML='';res(fn)};c.appendChild(b)}}
+  ov.onclick=function(e){
+   if(e.target.closest&&e.target.closest('.nchoice'))return;
+   if(typing){if(iv){clearInterval(iv);iv=null}
+    const ps=box.querySelectorAll('p');ps[ps.length-1].textContent=lines[i].t;typing=false;
+    if(i<lines.length-1){i++;type()}else{if(choice)showChoice();else ov.querySelector('#nbtn').classList.add('on')}
+    return}
    if(e.target.id==='nbtn'){ov.classList.remove('open');ov.innerHTML='';res(null)}};
   type();
  });
 }
-function showNote(title,body,{hand=false,btn='إغلاق'}={}){
+function showNote(title,body,opt){
+ opt=opt||{};const btn=opt.btn||'إغلاق';
  const ov=$('ov-note');
- ov.innerHTML=`<div class="panel"><button class="plate small xbtn" onclick="closeOv('ov-note')">×</button>
-  <div class="note ${hand?'hand':''}"><h4>${title}</h4><div>${body}</div></div>
-  <div style="text-align:center;margin-top:16px"><button class="plate" onclick="closeOv('ov-note')">${btn}</button></div></div>`;
+ ov.innerHTML='<div class="panel"><button class="plate small xbtn" onclick="closeOv(\'ov-note\')">×</button>'+
+  '<div class="note '+(opt.hand?'hand':'')+'"><h4>'+title+'</h4><div>'+body+'</div></div>'+
+  '<div style="text-align:center;margin-top:16px"><button class="plate" onclick="closeOv(\'ov-note\')">'+btn+'</button></div></div>';
  ov.classList.add('open');AU.page();
 }
-function closeOv(id){$(id).classList.remove('open');$(id).innerHTML='';AU.tick()}
+function closeOv(id){const o=$(id);if(o){o.classList.remove('open');o.innerHTML=''}AU.tick()}
 
 /* ---------- HUD ---------- */
 function hud(loc){
- return `<div class="hud"><span class="loc">${loc}</span>
-  <button class="hbtn" data-tip="خريطة الفندق" onclick="toggleMap()" aria-label="الخريطة">${ic('map')}</button>
-  <button class="hbtn" data-tip="لوحة الأدلة" onclick="toggleEvd()" aria-label="الأدلة">${ic('board')}</button>
-  <button class="hbtn" data-tip="الإعدادات" onclick="toggleSet()" aria-label="الإعدادات">${ic(S.sndOn?'snd':'mute')}</button></div>`;
+ return '<div class="hud"><span class="loc">'+loc+'</span>'+
+  '<button class="hbtn" data-tip="خريطة الفندق" onclick="toggleMap()" aria-label="الخريطة">'+ic('map')+'</button>'+
+  '<button class="hbtn" data-tip="لوحة الأدلة" onclick="toggleEvd()" aria-label="الأدلة">'+ic('board')+'</button>'+
+  '<button class="hbtn" data-tip="الإعدادات" onclick="toggleSet()" aria-label="الإعدادات">'+ic(S.sndOn?'snd':'mute')+'</button></div>';
 }
-document.addEventListener('mouseover',e=>{const t=e.target.closest('[data-tip]');if(t)say(t.dataset.tip)});
+document.addEventListener('mouseover',function(e){const t=e.target.closest?e.target.closest('[data-tip]'):null;if(t)say(t.dataset.tip)});
 
 /* ---------- التنقل ---------- */
 let VIEW='title',ARG=null;
@@ -464,7 +499,7 @@ function go(view,arg){
  clearLater();clearStab();AU.stopAll();VIEW=view;ARG=arg;
  S.f.r808.mode='hub';
  app.style.opacity=0;
- setTimeout(()=>{render();app.style.transition='opacity .7s';app.style.opacity=1;AU.step();
+ setTimeout(function(){render();app.style.transition='opacity .7s';app.style.opacity=1;AU.step();
   window.scrollTo(0,0)},260);
 }
 function render(){
@@ -474,13 +509,13 @@ function render(){
  else if(VIEW==='elevator')viewElevator();
  else if(VIEW==='hall')viewHall(ARG);
  else if(VIEW==='room')viewRoom(ARG);
- if(VIEW!=='title'&&!$('app-hud')){app.insertAdjacentHTML('afterbegin',hud(locName()))}
+ if(VIEW!=='title'&&app.dataset.hud!=='1'){app.insertAdjacentHTML('afterbegin',hud(locName()));app.dataset.hud='1'}
 }
 function locName(){
  if(VIEW==='lobby')return 'هالوواي — اللوبي';
  if(VIEW==='elevator')return 'المصعد';
- if(VIEW==='hall')return `الطابق ${ARG} — الممر`;
- if(VIEW==='room')return `الغرفة ${ARG} — ${ROOMS[ARG].t}`;
+ if(VIEW==='hall')return 'الطابق '+ARG+' — الممر';
+ if(VIEW==='room')return 'الغرفة '+ARG+' — '+ROOMS[ARG].t;
  return 'هالوواي';
 }
 function refreshHud(){const h=app.querySelector('.hud');if(h)h.remove();app.insertAdjacentHTML('afterbegin',hud(locName()))}
@@ -489,32 +524,29 @@ function refreshHud(){const h=app.querySelector('.hud');if(h)h.remove();app.inse
    شاشة العنوان
 ============================================================ */
 function viewTitle(){
- app.innerHTML=`<div class="t-wrap fadein">
-  <div class="t-fog"><i style="width:70%;height:46%;left:-12%;top:6%;animation-duration:17s"></i><i style="width:55%;height:40%;right:-10%;top:30%;animation-duration:23s;animation-direction:reverse"></i><i style="width:80%;height:50%;left:8%;bottom:-6%;animation-duration:29s"></i></div>
-  <svg class="t-door" viewBox="0 0 300 340" aria-hidden="true">
-   <rect x="60" y="30" width="180" height="300" fill="#1a120c" stroke="#3a2a18" stroke-width="4"/>
-   <rect x="80" y="52" width="60" height="130" fill="url(#g-glass)" stroke="#241a10"/>
-   <rect x="160" y="52" width="60" height="130" fill="url(#g-glass)" stroke="#241a10"/>
-   <rect x="80" y="200" width="60" height="106" fill="#160f09" stroke="#241a10"/>
-   <rect x="160" y="200" width="60" height="106" fill="#160f09" stroke="#241a10"/>
-   <circle cx="147" cy="182" r="5" fill="#8a6d3f"/><circle cx="153" cy="182" r="5" fill="#8a6d3f"/>
-   <path d="M40 30h10M40 60h8M40 90h10M40 120h8" stroke="#5a452a" stroke-width="2"/>
-   <path d="M260 30h-10M260 60h-8M260 90h-10M260 120h-8" stroke="#5a452a" stroke-width="2"/>
-   <ellipse cx="45" cy="20" rx="26" ry="34" fill="url(#g-glow)"/><ellipse cx="255" cy="20" rx="26" ry="34" fill="url(#g-glow)"/>
-   <rect x="70" y="6" width="160" height="14" fill="#241a10" stroke="#4a3a24"/>
-  </svg>
-  <div class="t-hotel">THE HALLOWAY</div>
-  <div class="t-room">ROOM</div>
-  <div class="t-404">404</div>
-  <div class="t-sub">«بعض الغرف لا ينبغي أن تُفتح أبدًا.»</div>
-  <div class="t-btns">
-   ${S.started?`<button class="plate" onclick="continueGame()">متابعة</button>
-   <button class="plate" onclick="startNew()">لعبة جديدة</button>`:
-   `<button class="plate" onclick="startGame()">ادخُلي الفندق</button>`}
-  </div>
-  ${S.endings.length?`<div class="t-endings">3 أبواب · فتحتِ ${S.endings.length} منها</div>`:''}
-  <div class="t-foot">تأسّس 1927 · أُغلق 1986 · لا غرف شاغرة</div>
- </div>`;
+ app.innerHTML='<div class="t-wrap fadein">'+
+  '<div class="t-fog"><i style="width:70%;height:46%;left:-12%;top:6%;animation-duration:17s"></i><i style="width:55%;height:40%;right:-10%;top:30%;animation-duration:23s;animation-direction:reverse"></i><i style="width:80%;height:50%;left:8%;bottom:-6%;animation-duration:29s"></i></div>'+
+  '<svg class="t-door" viewBox="0 0 300 340" aria-hidden="true">'+
+  '<rect x="60" y="30" width="180" height="300" fill="#1a120c" stroke="#3a2a18" stroke-width="4"/>'+
+  '<rect x="80" y="52" width="60" height="130" fill="url(#g-glass)" stroke="#241a10"/>'+
+  '<rect x="160" y="52" width="60" height="130" fill="url(#g-glass)" stroke="#241a10"/>'+
+  '<rect x="80" y="200" width="60" height="106" fill="#160f09" stroke="#241a10"/>'+
+  '<rect x="160" y="200" width="60" height="106" fill="#160f09" stroke="#241a10"/>'+
+  '<circle cx="147" cy="182" r="5" fill="#8a6d3f"/><circle cx="153" cy="182" r="5" fill="#8a6d3f"/>'+
+  '<path d="M40 30h10M40 60h8M40 90h10M40 120h8" stroke="#5a452a" stroke-width="2"/>'+
+  '<path d="M260 30h-10M260 60h-8M260 90h-10M260 120h-8" stroke="#5a452a" stroke-width="2"/>'+
+  '<ellipse cx="45" cy="20" rx="26" ry="34" fill="url(#g-glow)"/><ellipse cx="255" cy="20" rx="26" ry="34" fill="url(#g-glow)"/>'+
+  '<rect x="70" y="6" width="160" height="14" fill="#241a10" stroke="#4a3a24"/></svg>'+
+  '<div class="t-hotel">THE HALLOWAY</div>'+
+  '<div class="t-room">ROOM</div>'+
+  '<div class="t-404">404</div>'+
+  '<div class="t-sub">«بعض الغرف لا ينبغي أن تُفتح أبدًا.»</div>'+
+  '<div class="t-btns">'+
+  (S.started?'<button class="plate" onclick="continueGame()">متابعة</button><button class="plate" onclick="startNew()">لعبة جديدة</button>'
+            :'<button class="plate" onclick="startGame()">ادخُلي الفندق</button>')+
+  '</div>'+
+  (S.endings.length?'<div class="t-endings">3 أبواب · فتحتِ '+S.endings.length+' منها</div>':'')+
+  '<div class="t-foot">تأسّس 1927 · أُغلق 1986 · لا غرف شاغرة</div></div>';
 }
 async function startGame(){
  AU.init();S.started=true;save();ach('a_night');
@@ -532,82 +564,95 @@ function continueGame(){AU.init();go('lobby')}
 /* ============================================================
    اللوبي
 ============================================================ */
-function lobbySVG(o={}){
- return `<svg class="scene" viewBox="0 0 1200 640" style="--wall:#2b241c">
-  <rect width="1200" height="430" fill="#241d16"/><rect width="1200" height="430" fill="url(#p-dam)"/>
-  <rect y="424" width="1200" height="12" fill="#160f09"/>
-  <rect y="436" width="1200" height="204" fill="url(#p-plank)"/>
-  <polygon points="520,436 860,436 800,640 560,640" fill="#4a1f1c" stroke="#2a100e" stroke-width="3"/>
-  <ellipse cx="600" cy="200" rx="420" ry="200" fill="url(#g-lamp)" opacity=".5"/>
-  <text x="600" y="70" text-anchor="middle" font-family="Cinzel" font-size="26" letter-spacing="12" fill="#8a7248">THE HALLOWAY</text>
-  <text x="600" y="98" text-anchor="middle" font-family="Reem Kufi" font-size="13" fill="#5f4f38">تأسّس 1927</text>
-  <g ${o.still?'':`class="hot" data-tip="مكتب الاستقبال" onclick="lookLobby('desk')"`}>
-   <rect x="120" y="300" width="380" height="24" fill="url(#g-brass)"/>
-   <rect x="132" y="324" width="356" height="146" fill="#1c130d" stroke="#0f0a06" stroke-width="3"/>
-   <rect x="150" y="344" width="140" height="50" fill="#241610" stroke="#120b07"/>
-   <rect x="330" y="344" width="140" height="50" fill="#241610" stroke="#120b07"/>
-   <rect x="150" y="412" width="140" height="44" fill="#241610" stroke="#120b07"/>
-   <rect x="330" y="412" width="140" height="44" fill="#241610" stroke="#120b07"/>
-   <text x="310" y="288" text-anchor="middle" font-family="Almarai" font-size="11" fill="#6d5d44">اضغطي الجرس لأي خدمة</text>
-  </g>
-  <g ${o.still?'':`class="hot" data-tip="جرسٌ نحاسي" onclick="ringBell()"`}>
-   <ellipse cx="245" cy="292" rx="26" ry="5" fill="#5f4a2a"/>
-   <path d="M225 292a20 20 0 0 1 40 0z" fill="url(#g-brass)" stroke="#4a3520"/>
-   <circle cx="245" cy="270" r="4" fill="#4a3520"/>
-  </g>
-  <g ${o.still?'':`class="hot" data-tip="رفّ المفاتيح" onclick="lookLobby('rack')"`}>
-   <rect x="600" y="150" width="330" height="180" fill="#1c130d" stroke="#0f0a06" stroke-width="3"/>
-   ${[0,1,2,3].map(r=>[0,1,2,3].map(c=>{const n=String(101+r*100+c*2+((r*4+c)%2));const x=618+c*76,y=168+r*40;
-     const empty=n==='404';return `<line x1="${x}" y1="${y}" x2="${x+30}" y2="${y}" stroke="#5f4a2a" stroke-width="2"/>
-     ${empty?`<rect x="${x+8}" y="${y+2}" width="20" height="26" fill="#0a0705" stroke="#3a2818"/>`:
-     `<g stroke="#8a6d3f" stroke-width="2" fill="none"><circle cx="${x+10}" cy="${y+8}" r="4"/><path d="M${x+14} ${y+8}h16M${x+24} ${y+8}v6M${x+30} ${y+8}v5"/></g>`}
-     <text x="${x+15}" y="${y+40}" font-family="Reem Kufi" font-size="9" fill="${empty?'#a83232':'#55483a'}">${n}</text>`}).join('')).join('')}
-  </g>
-  <g ${o.still?'':`class="hot" data-tip="ساعة اللوبي" onclick="lookLobby('clock')"`}>
-   <circle cx="1040" cy="170" r="58" fill="#d5c69f" stroke="#3a2a18" stroke-width="8"/>
-   ${[0,1,2,3,4,5,6,7,8,9,10,11].map(h=>{const a=h*30*Math.PI/180;return `<line x1="${1040+Math.sin(a)*46}" y1="${170-Math.cos(a)*46}" x2="${1040+Math.sin(a)*50}" y2="${170-Math.cos(a)*50}" stroke="#2b2117" stroke-width="2"/>`}).join('')}
-   <line x1="1040" y1="170" x2="${1040+Math.sin((3%12)*30*Math.PI/180+17*0.5*Math.PI/180)*28}" y2="${170-Math.cos((3%12)*30*Math.PI/180+17*0.5*Math.PI/180)*28}" stroke="#2b2117" stroke-width="5" stroke-linecap="round"/>
-   <line x1="1040" y1="170" x2="${1040+Math.sin(17*6*Math.PI/180)*44}" y2="${170-Math.cos(17*6*Math.PI/180)*44}" stroke="#7e1f1f" stroke-width="3" stroke-linecap="round"/>
-   <circle cx="1040" cy="170" r="4" fill="#2b2117"/>
-  </g>
-  ${o.noExit?`<g><rect x="640" y="150" width="200" height="286" fill="#0c0806" stroke="#241a10" stroke-width="4"/>
-    <rect x="664" y="180" width="152" height="200" fill="#050403"/><text x="740" y="360" text-anchor="middle" font-family="Amiri" font-size="15" fill="#55483a">لا مخرج من هذا الجانب</text></g>`:
-  `<g class="hot" data-tip="الباب الأمامي" onclick="lookLobby('exit')">
-   <rect x="640" y="150" width="200" height="286" fill="#1a120c" stroke="#3a2a18" stroke-width="5"/>
-   <rect x="660" y="170" width="74" height="160" fill="url(#g-glass)" stroke="#241a10"/>
-   <rect x="746" y="170" width="74" height="160" fill="url(#g-glass)" stroke="#241a10"/>
-   <rect x="660" y="348" width="160" height="72" fill="#160f09" stroke="#241a10"/>
-   <circle cx="733" cy="292" r="6" fill="#8a6d3f"/><circle cx="747" cy="292" r="6" fill="#8a6d3f"/>
-   <rect x="716" y="424" width="48" height="12" fill="#5f4a2a"/>
-  </g>`}
-  <g ${o.still?'':`class="hot" data-tip="المصعد" onclick="go('elevator')"`}>
-   <rect x="940" y="180" width="170" height="256" fill="#0f0a07" stroke="#3a2a18" stroke-width="5"/>
-   <rect x="952" y="192" width="146" height="232" fill="#241610" stroke="#120b07"/>
-   <line x1="1025" y1="192" x2="1025" y2="424" stroke="#0f0a07" stroke-width="5"/>
-   <rect x="990" y="152" width="70" height="18" fill="#1c130d" stroke="#4a3a24"/>
-   <circle cx="1025" cy="161" r="4" fill="#c9a35c"/>
-  </g>
-  ${o.photo?`<g class="hot" data-tip="صورةٌ على الحائط" onclick="photo404()">
-   <rect x="300" y="120" width="160" height="110" fill="#2a2016" stroke="#4a3a24" stroke-width="4"/>
-   <rect x="312" y="132" width="136" height="86" fill="#151210"/>
-   <rect x="345" y="160" width="14" height="40" fill="#3a3230"/>
-   <circle cx="352" cy="152" r="7" fill="#3a3230"/>
-   <rect x="380" y="170" width="50" height="30" fill="#241f1c"/>
-   <circle cx="360" cy="205" r="5" fill="#55483a"/>
-  </g>`:''}
- </svg>`;
+function lobbySVG(o){
+ o=o||{};
+ let html='<svg class="scene" viewBox="0 0 1200 640">'+
+  '<rect width="1200" height="430" fill="#241d16"/><rect width="1200" height="430" fill="url(#p-dam)"/>'+
+  '<rect y="424" width="1200" height="12" fill="#160f09"/>'+
+  '<rect y="436" width="1200" height="204" fill="url(#p-plank)"/>'+
+  '<polygon points="520,436 860,436 800,640 560,640" fill="#4a1f1c" stroke="#2a100e" stroke-width="3"/>'+
+  '<ellipse cx="600" cy="200" rx="420" ry="200" fill="url(#g-lamp)" opacity=".5"/>'+
+  '<text x="600" y="70" text-anchor="middle" font-family="Cinzel" font-size="26" letter-spacing="12" fill="#8a7248">THE HALLOWAY</text>'+
+  '<text x="600" y="98" text-anchor="middle" font-family="Almarai" font-size="13" fill="#5f4f38">تأسّس 1927</text>';
+ /* مكتب الاستقبال */
+ html+='<g '+(o.still?'':'class="hot" data-tip="مكتب الاستقبال" onclick="lookLobby(\'desk\')"')+'>'+
+  '<rect x="120" y="300" width="380" height="24" fill="url(#g-brass)"/>'+
+  '<rect x="132" y="324" width="356" height="146" fill="#1c130d" stroke="#0f0a06" stroke-width="3"/>'+
+  '<rect x="150" y="344" width="140" height="50" fill="#241610" stroke="#120b07"/>'+
+  '<rect x="330" y="344" width="140" height="50" fill="#241610" stroke="#120b07"/>'+
+  '<rect x="150" y="412" width="140" height="44" fill="#241610" stroke="#120b07"/>'+
+  '<rect x="330" y="412" width="140" height="44" fill="#241610" stroke="#120b07"/>'+
+  '<text x="310" y="288" text-anchor="middle" font-family="Almarai" font-size="11" fill="#6d5d44">اضغطي الجرس لأي خدمة</text></g>';
+ /* الجرس */
+ html+='<g '+(o.still?'':'class="hot" data-tip="جرسٌ نحاسي" onclick="ringBell()"')+'>'+
+  '<ellipse cx="245" cy="292" rx="26" ry="5" fill="#5f4a2a"/>'+
+  '<path d="M225 292a20 20 0 0 1 40 0z" fill="url(#g-brass)" stroke="#4a3520"/>'+
+  '<circle cx="245" cy="270" r="4" fill="#4a3520"/></g>';
+ /* رفّ المفاتيح */
+ let rack='';
+ for(let r=0;r<4;r++)for(let c=0;c<4;c++){
+  const n=String(101+r*100+c*2+((r*4+c)%2));const x=618+c*76,y=168+r*40;
+  const empty=(n==='404');
+  rack+='<line x1="'+x+'" y1="'+y+'" x2="'+(x+30)+'" y2="'+y+'" stroke="#5f4a2a" stroke-width="2"/>';
+  if(empty){rack+='<rect x="'+(x+8)+'" y="'+(y+2)+'" width="20" height="26" fill="#0a0705" stroke="#3a2818"/>'}
+  else{rack+='<g stroke="#8a6d3f" stroke-width="2" fill="none"><circle cx="'+(x+10)+'" cy="'+(y+8)+'" r="4"/><path d="M'+(x+14)+' '+(y+8)+'h16M'+(x+24)+' '+(y+8)+'v6M'+(x+30)+' '+(y+8)+'v5"/></g>'}
+  rack+='<text x="'+(x+15)+'" y="'+(y+40)+'" font-family="Almarai" font-size="9" fill="'+(empty?'#a83232':'#55483a')+'">'+n+'</text>';
+ }
+ html+='<g '+(o.still?'':'class="hot" data-tip="رفّ المفاتيح" onclick="lookLobby(\'rack\')"')+'>'+
+  '<rect x="600" y="150" width="330" height="180" fill="#1c130d" stroke="#0f0a06" stroke-width="3"/>'+rack+'</g>';
+ /* ساعة الحائط */
+ let ticks='';
+ for(let h=0;h<12;h++){const a=h*30*Math.PI/180;
+  ticks+='<line x1="'+(1040+Math.sin(a)*46)+'" y1="'+(170-Math.cos(a)*46)+'" x2="'+(1040+Math.sin(a)*50)+'" y2="'+(170-Math.cos(a)*50)+'" stroke="#2b2117" stroke-width="2"/>'}
+ const hA=(3%12)*30+17*.5;
+ html+='<g '+(o.still?'':'class="hot" data-tip="ساعة اللوبي" onclick="lookLobby(\'clock\')"')+'>'+
+  '<circle cx="1040" cy="170" r="58" fill="#d5c69f" stroke="#3a2a18" stroke-width="8"/>'+ticks+
+  '<line x1="1040" y1="170" x2="'+(1040+Math.sin(hA*Math.PI/180)*28)+'" y2="'+(170-Math.cos(hA*Math.PI/180)*28)+'" stroke="#2b2117" stroke-width="5" stroke-linecap="round"/>'+
+  '<line x1="1040" y1="170" x2="'+(1040+Math.sin(17*6*Math.PI/180)*44)+'" y2="'+(170-Math.cos(17*6*Math.PI/180)*44)+'" stroke="#7e1f1f" stroke-width="3" stroke-linecap="round"/>'+
+  '<circle cx="1040" cy="170" r="4" fill="#2b2117"/></g>';
+ /* الباب الأمامي */
+ if(o.noExit){
+  html+='<g><rect x="640" y="150" width="200" height="286" fill="#0c0806" stroke="#241a10" stroke-width="4"/>'+
+   '<rect x="664" y="180" width="152" height="200" fill="#050403"/>'+
+   '<text x="740" y="360" text-anchor="middle" font-family="Amiri" font-size="15" fill="#55483a">لا مخرج من هذا الجانب</text></g>';
+ }else{
+  html+='<g class="hot" data-tip="الباب الأمامي" onclick="lookLobby(\'exit\')">'+
+   '<rect x="640" y="150" width="200" height="286" fill="#1a120c" stroke="#3a2a18" stroke-width="5"/>'+
+   '<rect x="660" y="170" width="74" height="160" fill="url(#g-glass)" stroke="#241a10"/>'+
+   '<rect x="746" y="170" width="74" height="160" fill="url(#g-glass)" stroke="#241a10"/>'+
+   '<rect x="660" y="348" width="160" height="72" fill="#160f09" stroke="#241a10"/>'+
+   '<circle cx="733" cy="292" r="6" fill="#8a6d3f"/><circle cx="747" cy="292" r="6" fill="#8a6d3f"/>'+
+   '<rect x="716" y="424" width="48" height="12" fill="#5f4a2a"/></g>';
+ }
+ /* المصعد */
+ html+='<g '+(o.still?'':'class="hot" data-tip="المصعد" onclick="go(\'elevator\')"')+'>'+
+  '<rect x="940" y="180" width="170" height="256" fill="#0f0a07" stroke="#3a2a18" stroke-width="5"/>'+
+  '<rect x="952" y="192" width="146" height="232" fill="#241610" stroke="#120b07"/>'+
+  '<line x1="1025" y1="192" x2="1025" y2="424" stroke="#0f0a07" stroke-width="5"/>'+
+  '<rect x="990" y="152" width="70" height="18" fill="#1c130d" stroke="#4a3a24"/>'+
+  '<circle cx="1025" cy="161" r="4" fill="#c9a35c"/></g>';
+ /* صورة الغرفة 404 */
+ if(o.photo){
+  html+='<g class="hot" data-tip="صورةٌ على الحائط" onclick="photo404()">'+
+   '<rect x="300" y="120" width="160" height="110" fill="#2a2016" stroke="#4a3a24" stroke-width="4"/>'+
+   '<rect x="312" y="132" width="136" height="86" fill="#151210"/>'+
+   '<rect x="345" y="160" width="14" height="40" fill="#3a3230"/>'+
+   '<circle cx="352" cy="152" r="7" fill="#3a3230"/>'+
+   '<rect x="380" y="170" width="50" height="30" fill="#241f1c"/>'+
+   '<circle cx="360" cy="205" r="5" fill="#55483a"/></g>';
+ }
+ return html+'</svg>';
 }
 function viewLobby(){
- app.innerHTML=hud('هالوواي — اللوبي')+`<div class="view fadein">
-  <div class="scene-wrap">${lobbySVG()}</div>
-  <div class="sayline" id="sayline">اللوبي دافئ. لا أحد خلف المكتب. الساعة تشير إلى 3:17 — وقد كانت كذلك منذ زمنٍ بعيد.</div>
- </div>`;
+ app.innerHTML=hud('هالوواي — اللوبي')+'<div class="view fadein">'+
+  '<div class="scene-wrap">'+lobbySVG()+'</div>'+
+  '<div class="sayline" id="sayline">اللوبي دافئ. لا أحد خلف المكتب. الساعة تشير إلى 3:17 — وقد كانت كذلك منذ زمنٍ بعيد.</div></div>';
  AU.startDrone();
 }
 let bellN=0;
 function ringBell(){
  AU.tone(1568,{dur:.7,g:.18});AU.tone(1976,{t:.05,dur:.5,g:.08});bellN++;
- if(bellN>=3){later(()=>{AU.knock(2,.3,.5);say('تتوقفين عن الرنين. في مكانٍ ما فوقك، يُغلق بابٌ ما.')},900);bellN=0}
+ if(bellN>=3){later(function(){AU.knock(2,.3,.5);say('تتوقفين عن الرنين. في مكانٍ ما فوقك، يُغلق بابٌ ما.')},900);bellN=0}
  else say('يرنّ الجرس في صمتٍ كبيرٍ جدًا.');
 }
 function lookLobby(w){
@@ -621,105 +666,107 @@ function lookLobby(w){
    المصعد
 ============================================================ */
 function viewElevator(){
- app.innerHTML=hud('المصعد')+`<div class="view fadein">
-  <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" id="elsvg">
-   <rect width="1200" height="640" fill="#150e09"/>
-   <rect x="0" width="330" height="640" fill="#241610"/><rect x="330" width="290" height="640" fill="#1c120b"/>
-   <rect x="870" width="330" height="640" fill="#241610"/>
-   <rect x="360" y="80" width="480" height="480" fill="#0f0a07" stroke="#3a2a18" stroke-width="6"/>
-   <rect x="450" y="110" width="300" height="180" fill="url(#g-glass)" stroke="url(#g-brass)" stroke-width="8"/>
-   <g opacity=".5"><circle cx="600" cy="180" r="22" fill="#3a352e"/><path d="M560 290a40 46 0 0 1 80 0z" fill="#3a352e"/></g>
-   <text x="600" y="318" text-anchor="middle" font-family="Reem Kufi" font-size="11" fill="#5f4f38">راقبي نفسكِ بلطف</text>
-   <rect x="520" y="30" width="160" height="44" fill="#050403" stroke="#4a3a24"/>
-   <text x="600" y="62" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="28" fill="#c9a35c" id="flnum">1</text>
-   <clipPath id="edclip"><rect x="378" y="98" width="444" height="444"/></clipPath>
-   <g clip-path="url(#edclip)">
-    <rect x="378" y="98" width="444" height="444" fill="#0a0605"/>
-    <rect x="378" y="98" width="444" height="444" fill="url(#g-lamp)" opacity=".35"/>
-    <rect class="ed ed-l" x="378" y="98" width="222" height="444" fill="#241610" stroke="#120b07" stroke-width="4"/>
-    <rect class="ed ed-r" x="600" y="98" width="222" height="444" fill="#241610" stroke="#120b07" stroke-width="4"/>
-    <rect class="ed ed-l" x="410" y="140" width="158" height="360" fill="none" stroke="#3a2a18" stroke-width="3"/>
-    <rect class="ed ed-r" x="632" y="140" width="158" height="360" fill="none" stroke="#3a2a18" stroke-width="3"/>
-   </g>
-   <line x1="600" y1="98" x2="600" y2="542" stroke="#0f0a07" stroke-width="6"/>
-   <rect x="940" y="150" width="150" height="420" fill="#1c130d" stroke="#4a3a24" rx="6"/>
-   ${[['L',0],['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7],['8',8],['9',9]].map(([l,n],i)=>{
-     const x=1015+(i%2?36:-36),y=190+Math.floor(i/2)*58;
-     const locked=n>0&&!S.floors.includes(n);
-     return `<g class="ebtn ${locked?'lock':'hot'}" ${locked?'':`data-tip="${n===0?'الطابق الأرضي':'الطابق '+n}" onclick="pressFloor(${n})"`}>
-      <circle cx="${x}" cy="${y}" r="22" fill="#0d0906" stroke="#6e5732" stroke-width="2"/>
-      <circle cx="${x}" cy="${y}" r="17" fill="${locked?'#141009':(n===1?'#c9a35c':'url(#g-brass)')}"/>
-      <text x="${x}" y="${y+5}" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="13" fill="#241a0e">${l}</text></g>`}).join('')}
-   <rect x="960" y="590" width="110" height="8" fill="#3a2a18"/>
-  </svg></div>
-  <div class="sayline" id="sayline">كان المصعد في انتظارك. هو دائمًا كذلك. ${S.floors.length>1?'الأزرار المضيئة تدلّ على الأماكن التي سُمح لكِ بها.':''}</div>
-  <div class="ctl"><button class="plate small" onclick="go('lobby')">${ic('back')} عودة إلى اللوبي</button></div>
- </div>`;
+ let btns='';
+ const labels=[['L',0],['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7],['8',8],['9',9]];
+ for(let i=0;i<labels.length;i++){
+  const l=labels[i][0],n=labels[i][1];
+  const x=1015+(i%2?36:-36),y=190+Math.floor(i/2)*58;
+  const locked=n>0&&!S.floors.includes(n);
+  const tip=n===0?'الطابق الأرضي':'الطابق '+n;
+  btns+='<g class="ebtn '+(locked?'lock':'hot')+'" '+(locked?'':'data-tip="'+tip+'" onclick="pressFloor('+n+')"')+'>'+
+   '<circle cx="'+x+'" cy="'+y+'" r="22" fill="#0d0906" stroke="#6e5732" stroke-width="2"/>'+
+   '<circle cx="'+x+'" cy="'+y+'" r="17" fill="'+(locked?'#141009':(n===1?'#c9a35c':'url(#g-brass)'))+'"/>'+
+   '<text x="'+x+'" y="'+(y+5)+'" text-anchor="middle" font-family="Almarai" font-weight="700" font-size="13" fill="#241a0e">'+l+'</text></g>';
+ }
+ app.innerHTML=hud('المصعد')+'<div class="view fadein">'+
+  '<div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" id="elsvg">'+
+  '<rect width="1200" height="640" fill="#150e09"/>'+
+  '<rect x="0" width="330" height="640" fill="#241610"/><rect x="330" width="290" height="640" fill="#1c120b"/>'+
+  '<rect x="870" width="330" height="640" fill="#241610"/>'+
+  '<rect x="360" y="80" width="480" height="480" fill="#0f0a07" stroke="#3a2a18" stroke-width="6"/>'+
+  '<rect x="450" y="110" width="300" height="180" fill="url(#g-glass)" stroke="url(#g-brass)" stroke-width="8"/>'+
+  '<g opacity=".5"><circle cx="600" cy="180" r="22" fill="#3a352e"/><path d="M560 290a40 46 0 0 1 80 0z" fill="#3a352e"/></g>'+
+  '<text x="600" y="318" text-anchor="middle" font-family="Almarai" font-size="11" fill="#5f4f38">راقبي نفسكِ بلطف</text>'+
+  '<rect x="520" y="30" width="160" height="44" fill="#050403" stroke="#4a3a24"/>'+
+  '<text x="600" y="62" text-anchor="middle" font-family="Almarai" font-weight="700" font-size="28" fill="#c9a35c" id="flnum">1</text>'+
+  '<clipPath id="edclip"><rect x="378" y="98" width="444" height="444"/></clipPath>'+
+  '<g clip-path="url(#edclip)">'+
+  '<rect x="378" y="98" width="444" height="444" fill="#0a0605"/>'+
+  '<rect x="378" y="98" width="444" height="444" fill="url(#g-lamp)" opacity=".35"/>'+
+  '<rect class="ed ed-l" x="378" y="98" width="222" height="444" fill="#241610" stroke="#120b07" stroke-width="4"/>'+
+  '<rect class="ed ed-r" x="600" y="98" width="222" height="444" fill="#241610" stroke="#120b07" stroke-width="4"/>'+
+  '<rect class="ed ed-l" x="410" y="140" width="158" height="360" fill="none" stroke="#3a2a18" stroke-width="3"/>'+
+  '<rect class="ed ed-r" x="632" y="140" width="158" height="360" fill="none" stroke="#3a2a18" stroke-width="3"/></g>'+
+  '<line x1="600" y1="98" x2="600" y2="542" stroke="#0f0a07" stroke-width="6"/>'+
+  '<rect x="940" y="150" width="150" height="420" fill="#1c130d" stroke="#4a3a24" rx="6"/>'+btns+
+  '<rect x="960" y="590" width="110" height="8" fill="#3a2a18"/></svg></div>'+
+  '<div class="sayline" id="sayline">كان المصعد في انتظارك. هو دائمًا كذلك. '+(S.floors.length>1?'الأزرار المضيئة تدلّ على الأماكن التي سُمح لكِ بها.':'')+'</div>'+
+  '<div class="ctl"><button class="plate small" onclick="go(\'lobby\')">'+ic('back')+' عودة إلى اللوبي</button></div></div>';
 }
 function pressFloor(n){
  if(n>0&&!S.floors.includes(n)){AU.denied();say('الزر يرفض. بعض الطوابق ليست لكِ بعد.');return}
  AU.ding();
  const svg=$('elsvg');if(svg)svg.classList.add('elev-closing');
  AU.startHum();
- setTimeout(()=>{const d=$('flnum');if(d)d.textContent=n===0?'L':n;AU.tick()},700);
- setTimeout(()=>{AU.stopHum();AU.ding();
+ setTimeout(function(){const d=$('flnum');if(d)d.textContent=n===0?'L':n;AU.tick()},700);
+ setTimeout(function(){AU.stopHum();AU.ding();
   if(n===0)go('lobby');else go('hall',n)},1900);
 }
 
 /* ============================================================
    ممرات الطوابق
 ============================================================ */
-function doorSVG(x,y,w,h,num,attrs='',label=''){
- const locked405=num==='405'&&!S.f.r404.open;
- return `<g class="hot" data-tip="الغرفة ${num}" onclick="enterRoom('${num}')" ${attrs}>
-  <rect x="${x-12}" y="${y-30}" width="${w+24}" height="24" rx="2" fill="url(#g-brass)" stroke="#241a10"/>
-  <text x="${x+w/2}" y="${y-12}" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="14" fill="#2b1f10">${num}</text>
-  <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#2a1a11" stroke="#0f0a06" stroke-width="4"/>
-  <rect x="${x+18}" y="${y+22}" width="${w-36}" height="${h/2-38}" fill="#241610" stroke="#1b110a" stroke-width="3"/>
-  <rect x="${x+18}" y="${y+h/2+8}" width="${w-36}" height="${h/2-38}" fill="#241610" stroke="#1b110a" stroke-width="3"/>
-  <circle cx="${x+w-26}" cy="${y+h/2}" r="6" fill="url(#g-brass)" stroke="#4a3520"/>
-  ${locked405?`<line x1="${x+6}" y1="${y+40}" x2="${x+w-6}" y2="${y+h-40}" stroke="#7a6a4d" stroke-width="7"/>
-   <rect x="${x+w/2-75}" y="${y-70}" width="150" height="32" fill="#9a8a68" opacity=".85" transform="rotate(-4 ${x+w/2} ${y-54})"/>
-   <text x="${x+w/2}" y="${y-49}" text-anchor="middle" font-family="Almarai" font-weight="700" font-size="13" fill="#2b2117" transform="rotate(-4 ${x+w/2} ${y-54})">خارج الخدمة</text>`:''}
-  ${label}
- </g>`;
+function doorSVG(x,y,w,h,num,label){
+ const locked405=(num==='405'&&!S.f.r404.open);
+ let html='<g class="hot" data-tip="الغرفة '+num+'" onclick="enterRoom(\''+num+'\')">'+
+  '<rect x="'+(x-12)+'" y="'+(y-30)+'" width="'+(w+24)+'" height="24" rx="2" fill="url(#g-brass)" stroke="#241a10"/>'+
+  '<text x="'+(x+w/2)+'" y="'+(y-12)+'" text-anchor="middle" font-family="Almarai" font-weight="700" font-size="14" fill="#2b1f10">'+num+'</text>'+
+  '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="#2a1a11" stroke="#0f0a06" stroke-width="4"/>'+
+  '<rect x="'+(x+18)+'" y="'+(y+22)+'" width="'+(w-36)+'" height="'+(h/2-38)+'" fill="#241610" stroke="#1b110a" stroke-width="3"/>'+
+  '<rect x="'+(x+18)+'" y="'+(y+h/2+8)+'" width="'+(w-36)+'" height="'+(h/2-38)+'" fill="#241610" stroke="#1b110a" stroke-width="3"/>'+
+  '<circle cx="'+(x+w-26)+'" cy="'+(y+h/2)+'" r="6" fill="url(#g-brass)" stroke="#4a3520"/>';
+ if(locked405){
+  html+='<line x1="'+(x+6)+'" y1="'+(y+40)+'" x2="'+(x+w-6)+'" y2="'+(y+h-40)+'" stroke="#7a6a4d" stroke-width="7"/>'+
+   '<rect x="'+(x+w/2-75)+'" y="'+(y-70)+'" width="150" height="32" fill="#9a8a68" opacity=".85" transform="rotate(-4 '+(x+w/2)+' '+(y-54)+')"/>'+
+   '<text x="'+(x+w/2)+'" y="'+(y-49)+'" text-anchor="middle" font-family="Almarai" font-weight="700" font-size="13" fill="#2b2117" transform="rotate(-4 '+(x+w/2)+' '+(y-54)+')">خارج الخدمة</text>';
+ }
+ return html+(label||'')+'</g>';
 }
 function viewHall(fl){
- const F=FLOORS[fl];const rooms=fl===4?['404','405']:[Object.keys(RF).find(r=>RF[r]===fl)];
- app.innerHTML=hud(`الطابق ${fl} — الممر`)+`<div class="view fadein">
-  <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:${F.wall};--wallD:${F.wallD}">
-   <rect width="1200" height="640" fill="#0b0806"/>
-   <polygon points="0,0 1200,0 940,120 260,120" fill="#161009"/>
-   <polygon points="0,0 260,120 260,520 0,640" fill="${F.wallD}"/>
-   <polygon points="1200,0 940,120 940,520 1200,640" fill="${F.wallD}"/>
-   <rect x="260" y="120" width="680" height="400" fill="${F.wall}"/>
-   <rect x="260" y="120" width="680" height="400" fill="url(#p-dam)"/>
-   <rect x="260" y="505" width="680" height="15" fill="#120c07"/>
-   <polygon points="0,640 1200,640 940,520 260,520" fill="url(#p-plank)"/>
-   <polygon points="540,540 660,540 720,640 480,640" fill="#4a1f1c" opacity=".8"/>
-   <text x="120" y="420" font-family="Cinzel" font-weight="900" font-size="120" fill="#00000055" opacity=".35" transform="rotate(-6 120 420)">${fl}</text>
-   <text x="1085" y="200" font-family="Reem Kufi" font-size="14" fill="#8a7248" transform="rotate(-6 1085 200)">المصعد</text>
-   <path d="M1122 208l10 14h-7v12h-6v-12h-7z" fill="#8a7248" transform="rotate(-6 1122 208)"/>
-   <g class="sway"><line x1="600" y1="120" x2="600" y2="180" stroke="#0f0a06" stroke-width="3"/>
-    <path d="M560 180h80l14 22h-108z" fill="#241a10" stroke="#0f0a06"/>
-    <ellipse cx="600" cy="240" rx="130" ry="90" fill="url(#g-glow)"/></g>
-   <ellipse cx="${fl===4?500:600}" cy="170" rx="60" ry="50" fill="url(#g-glow)"/>
-   ${fl===4?
-     doorSVG(360,210,190,300,'404',`id="d404"`,
-      `<rect x="380" y="420" width="150" height="38" fill="#1c130d" stroke="#4a3a24"/>
-       <text x="455" y="436" text-anchor="middle" font-family="Almarai" font-size="9" fill="#a98c58">ثلاثة أدلة مطلوبة</text>
-       <text x="455" y="450" text-anchor="middle" font-family="Almarai" font-size="9" fill="#a98c58">المرآة · التوقيت · التردد</text>
-       <rect x="560" y="330" width="30" height="46" rx="3" fill="#1c130d" stroke="#4a3a24"/>
-       <circle cx="575" cy="342" r="4" fill="#9fce8f"/>`)+
-     doorSVG(660,210,190,300,'405'):
-     doorSVG(505,210,190,300,rooms[0])}
-  </svg></div>
-  <div class="sayline" id="sayline">الطابق ${fl}. السجّادة تتذكّر خطواتٍ لم تكن لكِ قط.</div>
-  <div class="ctl">
-   <button class="plate small" onclick="go('elevator')">${ic('back')} المصعد</button>
-   ${S.floors.length>1?`<button class="plate small" onclick="toggleMap()">${ic('map')} خريطة الفندق</button>`:''}
-  </div>
- </div>`;
+ const F=FLOORS[fl];const rooms=fl===4?['404','405']:[Object.keys(RF).find(function(r){return RF[r]===fl})];
+ let doors;
+ if(fl===4){
+  doors=doorSVG(360,210,190,300,'404',
+   '<rect x="380" y="420" width="150" height="38" fill="#1c130d" stroke="#4a3a24"/>'+
+   '<text x="455" y="436" text-anchor="middle" font-family="Almarai" font-size="9" fill="#a98c58">ثلاثة أدلة مطلوبة</text>'+
+   '<text x="455" y="450" text-anchor="middle" font-family="Almarai" font-size="9" fill="#a98c58">المرآة · التوقيت · التردد</text>')+
+   doorSVG(660,210,190,300,'405');
+ }else{
+  doors=doorSVG(505,210,190,300,rooms[0]);
+ }
+ app.innerHTML=hud('الطابق '+fl+' — الممر')+'<div class="view fadein">'+
+  '<div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640">'+
+  '<rect width="1200" height="640" fill="#0b0806"/>'+
+  '<polygon points="0,0 1200,0 940,120 260,120" fill="#161009"/>'+
+  '<polygon points="0,0 260,120 260,520 0,640" fill="'+F.wallD+'"/>'+
+  '<polygon points="1200,0 940,120 940,520 1200,640" fill="'+F.wallD+'"/>'+
+  '<rect x="260" y="120" width="680" height="400" fill="'+F.wall+'"/>'+
+  '<rect x="260" y="120" width="680" height="400" fill="url(#p-dam)"/>'+
+  '<rect x="260" y="505" width="680" height="15" fill="#120c07"/>'+
+  '<polygon points="0,640 1200,640 940,520 260,520" fill="url(#p-plank)"/>'+
+  '<polygon points="540,540 660,540 720,640 480,640" fill="#4a1f1c" opacity=".8"/>'+
+  '<text x="120" y="420" font-family="Cinzel" font-weight="900" font-size="120" fill="#00000055" opacity=".35" transform="rotate(-6 120 420)">'+fl+'</text>'+
+  '<text x="1085" y="200" font-family="Almarai" font-size="14" fill="#8a7248" transform="rotate(-6 1085 200)">المصعد</text>'+
+  '<path d="M1122 208l10 14h-7v12h-6v-12h-7z" fill="#8a7248" transform="rotate(-6 1122 208)"/>'+
+  '<g class="sway"><line x1="600" y1="120" x2="600" y2="180" stroke="#0f0a06" stroke-width="3"/>'+
+  '<path d="M560 180h80l14 22h-108z" fill="#241a10" stroke="#0f0a06"/>'+
+  '<ellipse cx="600" cy="240" rx="130" ry="90" fill="url(#g-glow)"/></g>'+
+  '<ellipse cx="'+(fl===4?500:600)+'" cy="170" rx="60" ry="50" fill="url(#g-glow)"/>'+
+  doors+'</svg></div>'+
+  '<div class="sayline" id="sayline">الطابق '+fl+'. السجّادة تتذكّر خطواتٍ لم تكن لكِ قط.</div>'+
+  '<div class="ctl"><button class="plate small" onclick="go(\'elevator\')">'+ic('back')+' المصعد</button>'+
+  (S.floors.length>1?'<button class="plate small" onclick="toggleMap()">'+ic('map')+' خريطة الفندق</button>':'')+
+  '</div></div>';
 }
 function enterRoom(n){
  if(n==='405'&&!S.f.r404.open){AU.denied();say('مقفولة بسلاسل. «خارج الخدمة». مهما كان ما ينتظر في الداخل، فسيضطر للانتظار قليلًا أكثر.');return}
@@ -739,38 +786,34 @@ function keypadOpen(){
  if(!S.evd.includes('ev_clock'))missing.push('توقيت الزمن (الطابق 2)');
  if(!S.evd.includes('ev_radio'))missing.push('تردد الراديو (الطابق 3)');
  const hint=missing.length?
-  `ما زلتِ تحتاجين إلى:<br>${missing.join(' · ')}`:
-  `اللوحة النحاسية على الباب تقول: المرآة · التوقيت · التردد.<br>رقمٌ، ثم التوقيت كاملًا، ثم التردد — بلا فواصل.`;
- ov.innerHTML=`<div class="panel" style="max-width:400px">
-  <button class="plate small xbtn" onclick="closeOv('ov-key')">×</button>
-  <h3>الغرفة 404</h3><div class="ph-sub">قفلٌ إلكتروني قديم… ينتظر</div>
-  <div class="vfd" id="kpvfd">— أدخلي الشفرة —</div>
-  <div class="kgrid">
-   ${[1,2,3,4,5,6,7,8,9].map(n=>`<button class="plate" onclick="kp('${n}')">${n}</button>`).join('')}
-   <button class="plate" onclick="kp('.')">.</button>
-   <button class="plate" onclick="kp('0')">0</button>
-   <button class="plate" onclick="kp('⌫')">⌫</button>
-  </div>
-  <div style="display:flex;gap:10px;justify-content:center;margin-top:12px">
-   <button class="plate" onclick="kpTry()">افتحي</button>
-   <button class="plate small" onclick="kpClr()">مسح</button>
-  </div>
-  <div class="khint">${hint}</div>
- </div>`;
+  'ما زلتِ تحتاجين إلى:<br>'+missing.join(' · '):
+  'اللوحة النحاسية على الباب تقول: المرآة · التوقيت · التردد.<br>رقمٌ، ثم التوقيت كاملًا، ثم التردد — بلا فواصل.';
+ let keys='';
+ for(let n=1;n<=9;n++)keys+='<button class="plate" onclick="kp('+n+')">'+n+'</button>';
+ keys+='<button class="plate" onclick="kp(\'.\')">.</button><button class="plate" onclick="kp(0)">0</button><button class="plate" onclick="kp(-1)">⌫</button>';
+ ov.innerHTML='<div class="panel" style="max-width:400px">'+
+  '<button class="plate small xbtn" onclick="closeOv(\'ov-key\')">×</button>'+
+  '<h3>الغرفة 404</h3><div class="ph-sub">قفلٌ إلكتروني قديم… ينتظر</div>'+
+  '<div class="vfd" id="kpvfd">— أدخلي الشفرة —</div>'+
+  '<div class="kgrid">'+keys+'</div>'+
+  '<div style="display:flex;gap:10px;justify-content:center;margin-top:12px">'+
+  '<button class="plate" onclick="kpTry()">افتحي</button>'+
+  '<button class="plate small" onclick="kpClr()">مسح</button></div>'+
+  '<div class="khint">'+hint+'</div></div>';
  ov.classList.add('open');AU.buzz();
 }
-function kp(c){if(c==='⌫')kpBuf=kpBuf.slice(0,-1);else if(kpBuf.length<12)kpBuf+=c;
+function kp(c){if(c===-1)kpBuf=kpBuf.slice(0,-1);else if(kpBuf.length<12)kpBuf+=c;
  const v=$('kpvfd');if(v){v.textContent=kpBuf||'— أدخلي الشفرة —';v.classList.remove('bad')}AU.tick()}
 function kpClr(){kpBuf='';const v=$('kpvfd');if(v){v.textContent='— أدخلي الشفرة —';v.classList.remove('bad')}}
 function kpTry(){
  const v=$('kpvfd');
  if(kpBuf==='7031792.4'){
   if(v)v.textContent='ACCESS GRANTED';AU.chime();
-  setTimeout(()=>{closeOv('ov-key');S.f.r404.open=true;save();
+  setTimeout(function(){closeOv('ov-key');S.f.r404.open=true;save();
    toast('الغرفة 404 — مفتوحة','key');enterRoom('404')},1000);return}
  if(v){v.textContent='ACCESS DENIED';v.classList.add('bad')}
  flick();AU.denied();
- setTimeout(()=>{const w=$('kpvfd');if(w){w.textContent=kpBuf||'— أدخلي الشفرة —';w.classList.remove('bad')}},1400);
+ setTimeout(function(){const w=$('kpvfd');if(w){w.textContent=kpBuf||'— أدخلي الشفرة —';w.classList.remove('bad')}},1400);
 }
 
 /* ============================================================
@@ -788,72 +831,65 @@ const ROOMS={
  '808':{t:'غرفة الزمن',k:'زمن'},
  '909':{t:'الطابق الأخير',k:'نهاية'}
 };
-function roomShell(n,inner,extra=''){
+function roomShell(n,inner,extra){
  const done=doneRoom(n);
- return hud(`الغرفة ${n} — ${ROOMS[n].t}`)+`<div class="view fadein">
-  <div class="vhead"><h2>الغرفة ${n}</h2><span class="fl">${ROOMS[n].t} · ${ROOMS[n].k}</span><span class="spacer"></span>
-  <button class="plate small" onclick="go('hall',${RF[n]})">${ic('back')} الممر</button></div>
-  ${inner}
-  <div class="sayline" id="sayline">${done?'الغرفة هادئة الآن. إنها تتذكرك.':'الغرفة تنتظر.'}</div>
-  ${extra}
- </div>`;
+ return hud('الغرفة '+n+' — '+ROOMS[n].t)+'<div class="view fadein">'+
+  '<div class="vhead"><h2>الغرفة '+n+'</h2><span class="fl">'+ROOMS[n].t+' · '+ROOMS[n].k+'</span><span class="spacer"></span>'+
+  '<button class="plate small" onclick="go(\'hall\','+RF[n]+')">'+ic('back')+' الممر</button></div>'+
+  inner+
+  '<div class="sayline" id="sayline">'+(done?'الغرفة هادئة الآن. إنها تتذكرك.':'الغرفة تنتظر.')+'</div>'+
+  (extra||'')+'</div>';
 }
-function doneRoom(n){const f=S.f;return ({'101':f.m101.done,'202':f.c202.done,'303':f.r303.done,'404':f.r404.open,'405':f.r405.done,'501':f.r501.done,'602':f.r602.done,'707':f.r707.done,'808':f.r808.done,'909':true})[n]}
+function doneRoom(n){const f=S.f;return {'101':f.m101.done,'202':f.c202.done,'303':f.r303.done,'404':f.r404.open,'405':f.r405.done,'501':f.r501.done,'602':f.r602.done,'707':f.r707.done,'808':f.r808.done,'909':true}[n]}
 function viewRoom(n){
- app.innerHTML=({r101,r202,r303,r404,r405,r501,r602,r707,r808,r909})['r'+n]();
- if(VIEW==='room')refreshHud();
+ app.innerHTML=({r101:r101,r202:r202,r303:r303,r404:r404,r405:r405,r501:r501,r602:r602,r707:r707,r808:r808,r909:r909})['r'+n]();
+ refreshHud();
 }
 
 /* ---------- الغرفة 101 · المرآة ---------- */
 function r101(){
  const f=S.f.m101;
- app.innerHTML=roomShell('101',`
- <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:#232a1f">
-  <rect width="1200" height="470" fill="#232a1f"/><rect width="1200" height="470" fill="url(#p-dam)"/>
-  <rect y="460" width="1200" height="12" fill="#120c07"/>
-  <rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
-  <ellipse cx="600" cy="180" rx="380" ry="170" fill="url(#g-lamp)" opacity=".45"/>
-  <g class="hot" data-tip="الباب" onclick="act101('door')">
-   <rect x="120" y="170" width="150" height="300" fill="#2a1a11" stroke="#0f0a06" stroke-width="4"/>
-   <rect x="138" y="190" width="114" height="120" fill="#241610" stroke="#1b110a" stroke-width="3"/>
-   <rect x="138" y="330" width="114" height="120" fill="#241610" stroke="#1b110a" stroke-width="3"/>
-   <circle cx="252" cy="320" r="6" fill="url(#g-brass)"/>
-   ${f.door?`<rect x="126" y="176" width="138" height="288" fill="#050302"/>`:''}
-  </g>
-  <g class="hot" data-tip="المرآة" onclick="clickMirror101()">
-   <rect x="420" y="90" width="360" height="380" fill="#1a120c" stroke="#0f0a06" stroke-width="10" rx="4"/>
-   <rect x="440" y="110" width="320" height="340" fill="url(#g-glass)" stroke="#3a2a18" stroke-width="4"/>
-   <g clip-path="none">
-    <rect x="440" y="110" width="320" height="340" fill="#181a17" opacity=".9"/>
-    <rect x="452" y="440" width="296" height="10" fill="#0d0a07"/>
-    <rect x="470" y="386" width="90" height="54" fill="#241610" stroke="#16100a"/><circle cx="552" cy="410" r="5" fill="#8a6d3f"/>
-    <rect x="470" y="330" width="90" height="56" fill="url(#g-glass)" opacity=".6"/>
-    <ellipse cx="515" cy="330" rx="70" ry="60" fill="url(#g-glow)"/>
-    <rect x="560" y="330" width="70" height="110" rx="6" fill="#3a2317" stroke="#1b110a" stroke-width="3"/>
-    <rect x="580" y="296" width="30" height="36" fill="#2a1a11" stroke="#120b07"/>
-    <g id="mfig" style="opacity:0;transition:opacity 1.4s"><circle cx="500" cy="330" r="16" fill="#0a0806"/><path d="M474 440a26 30 0 0 1 52 0z" fill="#0a0806"/></g>
-    <g class="mist" id="mmist"><rect x="440" y="110" width="320" height="340" fill="#b8b0a0" opacity=".18"/></g>
-    <g class="mword" id="mword1"><text x="600" y="200" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="27" fill="#dfe6df">لقد كُنتِ</text></g>
-    <g class="mword" id="mword2"><text x="600" y="240" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="27" fill="#dfe6df">هنا</text></g>
-    <g class="mword" id="mword3"><text x="600" y="280" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="27" fill="#dfe6df">من قبل</text></g>
-    <g class="seven ${f.seven?'on':''}" id="mseven"><text x="726" y="424" text-anchor="end" font-family="Cinzel" font-weight="900" font-size="30" fill="#cfe0d2">7</text></g>
-   </g>
-   <rect x="440" y="110" width="320" height="340" fill="url(#g-glass)" opacity=".22"/>
-  </g>
-  <g class="hot" data-tip="كرسي" onclick="act101('chair')" style="transition:transform .8s;transform:${f.chair?'translate(120px,-30px)':'none'}">
-   <rect x="830" y="300" width="90" height="16" fill="#3a2317"/><rect x="830" y="200" width="90" height="100" fill="#2a1a11" stroke="#1b110a" stroke-width="3"/>
-   <rect x="836" y="316" width="10" height="90" fill="#241610"/><rect x="904" y="316" width="10" height="90" fill="#241610"/>
-   <rect x="830" y="330" width="90" height="10" fill="#3a2317"/>
-  </g>
-  <g class="hot" data-tip="مصباح طاولة" onclick="act101('lamp')">
-   <rect x="960" y="330" width="120" height="16" fill="#3a2317"/><rect x="1000" y="346" width="12" height="94" fill="#241610"/>
-   <rect x="980" y="240" width="24" height="90" fill="#2a1a11"/>
-   <path d="M958 240h68l-10-46h-48z" fill="#c9a35c" opacity="${f.lamp?'.25':'.9'}"/>
-   ${f.lamp?'':'<ellipse cx="992" cy="260" rx="120" ry="100" fill="url(#g-glow)"/>'}
-  </g>
- </svg></div>`);
+ app.innerHTML=roomShell('101',
+ '<div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640">'+
+  '<rect width="1200" height="470" fill="#232a1f"/><rect width="1200" height="470" fill="url(#p-dam)"/>'+
+  '<rect y="460" width="1200" height="12" fill="#120c07"/>'+
+  '<rect y="472" width="1200" height="168" fill="url(#p-plank)"/>'+
+  '<ellipse cx="600" cy="180" rx="380" ry="170" fill="url(#g-lamp)" opacity=".45"/>'+
+  '<g class="hot" data-tip="الباب" onclick="act101(\'door\')">'+
+  '<rect x="120" y="170" width="150" height="300" fill="#2a1a11" stroke="#0f0a06" stroke-width="4"/>'+
+  '<rect x="138" y="190" width="114" height="120" fill="#241610" stroke="#1b110a" stroke-width="3"/>'+
+  '<rect x="138" y="330" width="114" height="120" fill="#241610" stroke="#1b110a" stroke-width="3"/>'+
+  '<circle cx="252" cy="320" r="6" fill="url(#g-brass)"/>'+
+  (f.door?'<rect x="126" y="176" width="138" height="288" fill="#050302"/>':'')+'</g>'+
+  '<g class="hot" data-tip="المرآة" onclick="clickMirror101()">'+
+  '<rect x="420" y="90" width="360" height="380" fill="#1a120c" stroke="#0f0a06" stroke-width="10" rx="4"/>'+
+  '<rect x="440" y="110" width="320" height="340" fill="url(#g-glass)" stroke="#3a2a18" stroke-width="4"/>'+
+  '<rect x="440" y="110" width="320" height="340" fill="#181a17" opacity=".9"/>'+
+  '<rect x="452" y="440" width="296" height="10" fill="#0d0a07"/>'+
+  '<rect x="470" y="386" width="90" height="54" fill="#241610" stroke="#16100a"/><circle cx="552" cy="410" r="5" fill="#8a6d3f"/>'+
+  '<rect x="470" y="330" width="90" height="56" fill="url(#g-glass)" opacity=".6"/>'+
+  '<ellipse cx="515" cy="330" rx="70" ry="60" fill="url(#g-glow)"/>'+
+  '<rect x="560" y="330" width="70" height="110" rx="6" fill="#3a2317" stroke="#1b110a" stroke-width="3"/>'+
+  '<rect x="580" y="296" width="30" height="36" fill="#2a1a11" stroke="#120b07"/>'+
+  '<g id="mfig" style="opacity:0;transition:opacity 1.4s"><circle cx="500" cy="330" r="16" fill="#0a0806"/><path d="M474 440a26 30 0 0 1 52 0z" fill="#0a0806"/></g>'+
+  '<g class="mist" id="mmist"><rect x="440" y="110" width="320" height="340" fill="#b8b0a0" opacity=".18"/></g>'+
+  '<g class="mword" id="mword1"><text x="600" y="200" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="27" fill="#dfe6df">لقد كُنتِ</text></g>'+
+  '<g class="mword" id="mword2"><text x="600" y="240" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="27" fill="#dfe6df">هنا</text></g>'+
+  '<g class="mword" id="mword3"><text x="600" y="280" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="27" fill="#dfe6df">من قبل</text></g>'+
+  '<g class="seven '+(f.seven?'on':'')+'" id="mseven"><text x="726" y="424" text-anchor="end" font-family="Cinzel" font-weight="900" font-size="30" fill="#cfe0d2">7</text></g>'+
+  '<rect x="440" y="110" width="320" height="340" fill="url(#g-glass)" opacity=".22"/></g>'+
+  '<g class="hot" data-tip="كرسي" onclick="act101(\'chair\')" style="transition:transform .8s;transform:'+(f.chair?'translate(120px,-30px)':'none')+'">'+
+  '<rect x="830" y="300" width="90" height="16" fill="#3a2317"/><rect x="830" y="200" width="90" height="100" fill="#2a1a11" stroke="#1b110a" stroke-width="3"/>'+
+  '<rect x="836" y="316" width="10" height="90" fill="#241610"/><rect x="904" y="316" width="10" height="90" fill="#241610"/>'+
+  '<rect x="830" y="330" width="90" height="10" fill="#3a2317"/></g>'+
+  '<g class="hot" data-tip="مصباح طاولة" onclick="act101(\'lamp\')">'+
+  '<rect x="960" y="330" width="120" height="16" fill="#3a2317"/><rect x="1000" y="346" width="12" height="94" fill="#241610"/>'+
+  '<rect x="980" y="240" width="24" height="90" fill="#2a1a11"/>'+
+  '<path d="M958 240h68l-10-46h-48z" fill="#c9a35c" opacity="'+(f.lamp?'.25':'.9')+'"/>'+
+  (f.lamp?'':'<ellipse cx="992" cy="260" rx="120" ry="100" fill="url(#g-glow)"/>')+'</g>'+
+ '</svg></div>');
  say('غرفة فارغة تقريبًا. ومرآةٌ تنتبه إليكِ بانتباهٍ شديد.');
- if(f.d===2&&!f.sil){f.sil=1;later(()=>{const g=$('mfig');if(g){g.style.opacity=.8;AU.tone(38,{dur:1.6,g:.4});AU.heart();say('لنبضة قلبٍ واحدة — وقف أحدهم خلفك. في الزجاج فقط.')}later(()=>{if($('mfig'))$('mfig').style.opacity=0},2200)},1600)}
+ if(f.d===2&&!f.sil){f.sil=1;later(function(){const g=$('mfig');if(g){g.style.opacity=.8;AU.tone(38,{dur:1.6,g:.4});AU.heart();say('لنبضة قلبٍ واحدة — وقف أحدهم خلفك. في الزجاج فقط.')}later(function(){if($('mfig'))$('mfig').style.opacity=0},2200)},1600)}
  if(f.d>=3&&!f.done)later(mirrorMessage,900);
 }
 function act101(w){
@@ -869,10 +905,11 @@ function mirrorMessage(){
  const f=S.f.m101;if(f.done)return;
  say('تتغشّى المرآة بالضباب — من الداخل.');
  const m=$('mmist');if(m)m.classList.add('on');
- later(()=>{AU.whisper('لقد كنت هنا من قبل');AU.heart();
-  ['mword1','mword2','mword3'].forEach((id,i)=>later(()=>{const e=$(id);if(e)e.classList.add('on')},i*1300));
+ later(function(){AU.whisper('لقد كنت هنا من قبل');AU.heart();
+  const ids=['mword1','mword2','mword3'];
+  for(let i=0;i<ids.length;i++)later(function(id){return function(){const e=$(id);if(e)e.classList.add('on')}}(ids[i]),i*1300);
  },1200);
- later(()=>{say('شيءٌ محفور في زاوية الزجاج. المسيه.');const s=$('mseven');if(s)s.classList.add('on')},5600);
+ later(function(){say('شيءٌ محفور في زاوية الزجاج. المسيه.');const s=$('mseven');if(s)s.classList.add('on')},5600);
 }
 function clickMirror101(){
  const f=S.f.m101;
@@ -888,52 +925,62 @@ function clickMirror101(){
 /* ---------- الغرفة 202 · الزمن المتوقف ---------- */
 function r202(){
  const f=S.f.c202;
- const hand=(c)=>`transform="rotate(${(c.h%12)*30+c.m*.5} 0 0)"`;
- const tt=k=>`${String(f[k].h).padStart(2,'0')}:${String(f[k].m).padStart(2,'0')}`;
- app.innerHTML=roomShell('202',`
- <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:#212830">
-  <rect width="1200" height="470" fill="#212830"/><rect width="1200" height="470" fill="url(#p-dam)"/>
-  <rect y="460" width="1200" height="12" fill="#120c07"/>
-  <rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
-  <ellipse cx="600" cy="160" rx="420" ry="160" fill="url(#g-lamp)" opacity=".4"/>
-  <g class="hot" data-tip="ساعة الحائط" onclick="say('تشير إلى ${tt('a')}. عقرب الثواني لا يتحرك.')">
-   <circle cx="600" cy="170" r="86" fill="#d5c69f" stroke="#3a2a18" stroke-width="10"/>
-   ${[0,1,2,3,4,5,6,7,8,9,10,11].map(h=>{const a=h*30*Math.PI/180;return `<line x1="${600+Math.sin(a)*68}" y1="${170-Math.cos(a)*68}" x2="${600+Math.sin(a)*76}" y2="${170-Math.cos(a)*76}" stroke="#2b2117" stroke-width="3"/>`}).join('')}
-   <g ${hand(f.a)}><line x1="600" y1="170" x2="600" y2="118" stroke="#2b2117" stroke-width="7" stroke-linecap="round"/></g>
-   <g transform="rotate(${f.a.m*6} 600 170)"><line x1="600" y1="170" x2="600" y2="102" stroke="#7e1f1f" stroke-width="4" stroke-linecap="round"/></g>
-   <circle cx="600" cy="170" r="6" fill="#2b2117"/>
-  </g>
-  <rect x="320" y="330" width="560" height="20" fill="#3a2317"/><rect x="340" y="350" width="520" height="120" fill="#241610" stroke="#120b07" stroke-width="3"/>
-  <rect x="380" y="380" width="200" height="60" fill="#1c130d" stroke="#120b07"/>
-  <rect x="620" y="380" width="200" height="60" fill="#1c130d" stroke="#120b07"/>
-  <g class="hot" data-tip="ساعة السفر" onclick="say('ساعة سفرٍ صغيرة. ${tt('b')}. إنها تجادل ساعة الحائط.')">
-   <rect x="840" y="278" width="96" height="52" rx="8" fill="#b9a26b" stroke="#4a3520" stroke-width="3"/>
-   <circle cx="888" cy="304" r="20" fill="#efe6c8" stroke="#4a3520"/>
-   <g ${hand(f.b)}><line x1="888" y1="304" x2="888" y2="290" stroke="#2b2117" stroke-width="3" stroke-linecap="round"/></g>
-   <g transform="rotate(${f.b.m*6} 888 304)"><line x1="888" y1="304" x2="888" y2="287" stroke="#7e1f1f" stroke-width="2" stroke-linecap="round"/></g>
-   <rect x="852" y="322" width="14" height="8" rx="2" fill="#4a3520"/><rect x="910" y="322" width="14" height="8" rx="2" fill="#4a3520"/>
-  </g>
-  <g class="hot" data-tip="مسجّل شريط" onclick="say('العدّاد يومض: ${tt('c')}. حتى المسجّل توقّف في منتصف جملة.')">
-   <rect x="180" y="272" width="120" height="58" rx="4" fill="#2a2a28" stroke="#101010" stroke-width="3"/>
-   <rect x="192" y="284" width="60" height="22" fill="#0a1308" stroke="#1e361a"/>
-   <text id="recc" x="222" y="300" text-anchor="middle" font-family="Almarai" font-size="13" fill="#9fce8f">${tt('c')}</text>
-   <circle cx="278" cy="292" r="9" fill="none" stroke="#55483a" stroke-width="2"/><circle cx="278" cy="312" r="9" fill="none" stroke="#55483a" stroke-width="2"/>
-  </g>
-  <g class="hot" data-tip="بطاقة سجلّ الخادمة" onclick="readCard202()">
-   <rect x="420" y="316" width="130" height="8" fill="#d5c69f" transform="rotate(-2 485 320)"/>
-   <rect x="452" y="306" width="66" height="22" fill="#cfc09b" transform="rotate(-2 485 318)"/>
-   <text x="485" y="321" text-anchor="middle" font-family="Almarai" font-size="8" fill="#2b2117" transform="rotate(-2 485 318)">سجلّ الخادمة</text>
-  </g>
-  <text x="600" y="452" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">ثلاث ساعات، ثلاث أكاذيب، وحقيقة واحدة</text>
- </svg></div>`,
- `<div class="ctl clockbtns">${[['a','ساعة الحائط'],['b','ساعة المكتب'],['c','الشريط']].map(([k,nm])=>`
-  <div class="cbgroup"><span class="tag">${nm}</span><div class="cb">
-  <button class="plate small" onclick="setClock('${k}','h',1)">ساعة +1</button>
-  <button class="plate small" onclick="setClock('${k}','m',1)">دقيقة +1</button></div></div>`).join('')}</div>`);
+ const hand=function(c){return 'transform="rotate('+((c.h%12)*30+c.m*.5)+' 0 0)"'};
+ const tt=function(k){return String(f[k].h).padStart(2,'0')+':'+String(f[k].m).padStart(2,'0')};
+ let ticks='';
+ for(let h=0;h<12;h++){const a=h*30*Math.PI/180;
+  ticks+='<line x1="'+(600+Math.sin(a)*68)+'" y1="'+(170-Math.cos(a)*68)+'" x2="'+(600+Math.sin(a)*76)+'" y2="'+(170-Math.cos(a)*76)+'" stroke="#2b2117" stroke-width="3"/>'}
+ const groups=[['a','ساعة الحائط','تشير إلى '],['b','ساعة السفر','ساعة سفرٍ صغيرة. '],['c','مسجّل شريط','العدّاد يومض: ']];
+ let clocks='';
+ for(let gi=0;gi<groups.length;gi++){
+  const k=groups[gi][0],tip=groups[gi][1];
+  const msg=groups[gi][2]+tt(k)+(k==='a'?'. عقرب الثواني لا يتحرك.':(k==='b'?'. إنها تجادل ساعة الحائط.':'. حتى المسجّل توقّف في منتصف جملة.'));
+  clocks+='<g class="hot" data-tip="'+tip+'" onclick="say(\''+msg+'\')">';
+  if(k==='a'){
+   clocks+='<circle cx="600" cy="170" r="86" fill="#d5c69f" stroke="#3a2a18" stroke-width="10"/>'+ticks+
+    '<g '+hand(f.a)+'><line x1="600" y1="170" x2="600" y2="118" stroke="#2b2117" stroke-width="7" stroke-linecap="round"/></g>'+
+    '<g transform="rotate('+(f.a.m*6)+' 600 170)"><line x1="600" y1="170" x2="600" y2="102" stroke="#7e1f1f" stroke-width="4" stroke-linecap="round"/></g>'+
+    '<circle cx="600" cy="170" r="6" fill="#2b2117"/>';
+  }else if(k==='b'){
+   clocks+='<rect x="840" y="278" width="96" height="52" rx="8" fill="#b9a26b" stroke="#4a3520" stroke-width="3"/>'+
+    '<circle cx="888" cy="304" r="20" fill="#efe6c8" stroke="#4a3520"/>'+
+    '<g '+hand(f.b)+'><line x1="888" y1="304" x2="888" y2="290" stroke="#2b2117" stroke-width="3" stroke-linecap="round"/></g>'+
+    '<g transform="rotate('+(f.b.m*6)+' 888 304)"><line x1="888" y1="304" x2="888" y2="287" stroke="#7e1f1f" stroke-width="2" stroke-linecap="round"/></g>'+
+    '<rect x="852" y="322" width="14" height="8" rx="2" fill="#4a3520"/><rect x="910" y="322" width="14" height="8" rx="2" fill="#4a3520"/>';
+  }else{
+   clocks+='<rect x="180" y="272" width="120" height="58" rx="4" fill="#2a2a28" stroke="#101010" stroke-width="3"/>'+
+    '<rect x="192" y="284" width="60" height="22" fill="#0a1308" stroke="#1e361a"/>'+
+    '<text id="recc" x="222" y="300" text-anchor="middle" font-family="Almarai" font-size="13" fill="#9fce8f">'+tt('c')+'</text>'+
+    '<circle cx="278" cy="292" r="9" fill="none" stroke="#55483a" stroke-width="2"/><circle cx="278" cy="312" r="9" fill="none" stroke="#55483a" stroke-width="2"/>';
+  }
+  clocks+='</g>';
+ }
+ app.innerHTML=roomShell('202',
+ '<div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640">'+
+  '<rect width="1200" height="470" fill="#212830"/><rect width="1200" height="470" fill="url(#p-dam)"/>'+
+  '<rect y="460" width="1200" height="12" fill="#120c07"/>'+
+  '<rect y="472" width="1200" height="168" fill="url(#p-plank)"/>'+
+  '<ellipse cx="600" cy="160" rx="420" ry="160" fill="url(#g-lamp)" opacity=".4"/>'+
+  clocks+
+  '<rect x="320" y="330" width="560" height="20" fill="#3a2317"/><rect x="340" y="350" width="520" height="120" fill="#241610" stroke="#120b07" stroke-width="3"/>'+
+  '<rect x="380" y="380" width="200" height="60" fill="#1c130d" stroke="#120b07"/>'+
+  '<rect x="620" y="380" width="200" height="60" fill="#1c130d" stroke="#120b07"/>'+
+  '<g class="hot" data-tip="بطاقة سجلّ الخادمة" onclick="readCard202()">'+
+  '<rect x="420" y="316" width="130" height="8" fill="#d5c69f" transform="rotate(-2 485 320)"/>'+
+  '<rect x="452" y="306" width="66" height="22" fill="#cfc09b" transform="rotate(-2 485 318)"/>'+
+  '<text x="485" y="321" text-anchor="middle" font-family="Almarai" font-size="8" fill="#2b2117" transform="rotate(-2 485 318)">سجلّ الخادمة</text></g>'+
+  '<text x="600" y="452" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">ثلاث ساعات، ثلاث أكاذيب، وحقيقة واحدة</text>'+
+ '</svg></div>',
+ '<div class="ctl clockbtns">'+
+ [['a','ساعة الحائط'],['b','ساعة المكتب'],['c','الشريط']].map(function(g){
+  return '<div class="cbgroup"><span class="tag">'+g[1]+'</span><div class="cb">'+
+  '<button class="plate small" onclick="setClock(\''+g[0]+'\',\'h\',1)">ساعة +1</button>'+
+  '<button class="plate small" onclick="setClock(\''+g[0]+'\',\'m\',1)">دقيقة +1</button></div></div>'}).join('')+
+ '</div>');
  say(f.done?'3:17. الثلاثة كلها. إلى الأبد الآن.':'كل ساعةٍ في هذه الغرفة توقفت — لكن ليس عند الكذبة نفسها. اقرئي البطاقة على المكتب.');
 }
 function readCard202(){showNote('سجلّ الخدمة — 4 يونيو 1986',
- `نزيلة الغرفة 202 اتصلت بالمكتب عند 3:17 صباحًا.<br>قالت إنّ أحدهم يطرق الباب.<br>لا أحد هناك. ثم طرق الباب مجددًا عند 3:17.<br>لا أحد هناك. ما زالت الساعة 3:17.<br><br>— قسم الخدمة`)}
+ 'نزيلة الغرفة 202 اتصلت بالمكتب عند 3:17 صباحًا.<br>قالت إنّ أحدهم يطرق الباب.<br>لا أحد هناك. ثم طرق الباب مجددًا عند 3:17.<br>لا أحد هناك. ما زالت الساعة 3:17.<br><br>— قسم الخدمة')}
 function setClock(k,u,d){
  const f=S.f.c202;if(f.done)return;
  const c=f[k];if(u==='h')c.h=(c.h%12)+1;else c.m=(c.m+1)%60;
@@ -944,53 +991,54 @@ function setClock(k,u,d){
 function solve202(){
  const f=S.f.c202;f.done=true;save();ach('a_time');
  say('3:17. الثلاثة كلها. لأول مرة منذ أربعين عامًا — عقرب الثواني يتحرك.');
- let n=0;const iv=setInterval(()=>{AU.tick();if(++n>7)clearInterval(iv)},500);
- later(()=>{const r=$('recc');if(r)r.textContent='03:18';
+ let n=0;const iv=setInterval(function(){AU.tick();if(++n>7)clearInterval(iv)},500);
+ later(function(){const r=$('recc');if(r)r.textContent='03:18';
   say('03:18. الزمن يخطو خطوةً واحدة حذرة.');AU.tone(660,{dur:.4,g:.08})},2600);
- later(()=>{AU.knock(2,.34,.85);shake();flick();
+ later(function(){AU.knock(2,.34,.85);shake();flick();
   say('طرقٌ… طرقٌ… لكن لا أحد عند الباب. لم يكن هناك أحدٌ عند الباب قطّ.')},4200);
- later(()=>{addEvidence('ev_clock');unlockFloor(3)},6400);
+ later(function(){addEvidence('ev_clock');unlockFloor(3)},6400);
 }
 
 /* ---------- الغرفة 303 · الراديو ---------- */
 let r303Deb=null,r303Playing=false;
 function r303(){
  const f=S.f.r303;
- app.innerHTML=roomShell('303',`
- <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" id="rsvg" style="--wall:#33291a">
-  <rect width="1200" height="470" fill="#33291a"/><rect width="1200" height="470" fill="url(#p-dam)"/>
-  <rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
-  <rect x="280" y="360" width="640" height="22" fill="#3a2317"/><rect x="320" y="382" width="560" height="90" fill="#241610" stroke="#120b07" stroke-width="3"/>
-  <g class="hot ${f.on?'on':''}" id="radiog" data-tip="راديو صماماتٍ قديم" onclick="radioOnOff()">
-   <rect x="360" y="200" width="480" height="170" rx="10" fill="#241610" stroke="#0f0a06" stroke-width="5"/>
-   <rect x="384" y="222" width="200" height="126" rx="6" fill="#5a452a" stroke="#3a2818" stroke-width="3"/>
-   ${[0,1,2,3,4].map(r=>[0,1,2,3,4,5].map(c=>`<circle cx="${404+c*32}" cy="${242+r*24}" r="5" fill="#3a2818"/>`).join('')).join('')}
-   <rect x="612" y="222" width="200" height="70" rx="4" fill="#0d0f0a" stroke="#241a10" stroke-width="3"/>
-   <text x="712" y="252" text-anchor="middle" font-family="Cinzel" font-size="10" fill="#55483a">88</text>
-   <text x="762" y="252" text-anchor="middle" font-family="Cinzel" font-size="10" fill="#55483a">98</text>
-   <text x="806" y="252" text-anchor="middle" font-family="Cinzel" font-size="10" fill="#55483a">108</text>
-   ${[0,1,2,3,4,5,6,7,8,9].map(i=>`<line x1="${624+i*18}" y1="258" x2="${624+i*18}" y2="${i%5===0?272:266}" stroke="#55483a" stroke-width="${i%5===0?2:1}"/>`).join('')}
-   <g id="needle" style="transition:transform .2s"><line x1="712" y1="256" x2="712" y2="278" stroke="#c9432f" stroke-width="3"/></g>
-   <rect x="612" y="300" width="60" height="48" rx="3" fill="#d5c69f" stroke="#3a2818" stroke-width="2"/>
-   <path d="M620 340l22-28 10 12 8-9" fill="none" stroke="#2b2117" stroke-width="1.5"/>
-   <g class="vu" style="transform-origin:642px 342px"><line x1="642" y1="342" x2="642" y2="312" stroke="#7e1f1f" stroke-width="2"/></g>
-   <circle cx="716" cy="324" r="24" fill="url(#g-brass)" stroke="#4a3520" stroke-width="3"/>
-   <line x1="716" y1="304" x2="716" y2="312" stroke="#241a0e" stroke-width="3"/>
-   <rect x="756" y="304" width="56" height="44" rx="4" fill="#1c130d" stroke="#4a3a24"/>
-   <text x="784" y="332" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="12" fill="${f.on?'#c9a35c':'#55483a'}" id="ronlbl">${f.on?'يعمل':'مطفأ'}</text>
-   <ellipse cx="600" cy="380" rx="260" ry="60" fill="url(#g-glow)" opacity="${f.on?'.7':'.1'}"/>
-  </g>
-  <text x="600" y="458" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">كل ترددٍ بابٌ تركه أحدهم مواربًا</text>
- </svg></div>`,
- `<div class="ctl" style="flex-direction:column;gap:8px">
-  <input class="r-slider" type="range" min="88" max="108" step="0.1" value="${f.f}" id="freq" oninput="tuneRadio(this.value)">
-  <div class="r-disp"><span class="fr" id="fdisp">${f.f.toFixed(1)}</span> MHz<br><span id="fmsg">${f.on?'تشويش. في مكانٍ ما في النطاق — أصوات.':'الراديو مطفأ.'}</span>
-   <div class="mbars" id="mbars">${'<i></i>'.repeat(7)}</div></div>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-   <button class="plate small" onclick="radioOnOff()">${f.on?'إطفاء الراديو':'تشغيل الراديو'}</button>
-   <button class="plate small ${f.heard?'':'dim'}" onclick="replay924()">إعادة تشغيل 92.4</button>
-  </div>
- </div>`);
+ let holes='';
+ for(let r=0;r<5;r++)for(let c=0;c<6;c++)holes+='<circle cx="'+(404+c*32)+'" cy="'+(242+r*24)+'" r="5" fill="#3a2818"/>';
+ let scale='';
+ for(let i=0;i<10;i++)scale+='<line x1="'+(624+i*18)+'" y1="258" x2="'+(624+i*18)+'" y2="'+(i%5===0?272:266)+'" stroke="#55483a" stroke-width="'+(i%5===0?2:1)+'"/>';
+ app.innerHTML=roomShell('303',
+ '<div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640">'+
+  '<rect width="1200" height="470" fill="#33291a"/><rect width="1200" height="470" fill="url(#p-dam)"/>'+
+  '<rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>'+
+  '<rect x="280" y="360" width="640" height="22" fill="#3a2317"/><rect x="320" y="382" width="560" height="90" fill="#241610" stroke="#120b07" stroke-width="3"/>'+
+  '<g class="hot '+(f.on?'on':'')+'" id="radiog" data-tip="راديو صماماتٍ قديم" onclick="radioOnOff()">'+
+  '<rect x="360" y="200" width="480" height="170" rx="10" fill="#241610" stroke="#0f0a06" stroke-width="5"/>'+
+  '<rect x="384" y="222" width="200" height="126" rx="6" fill="#5a452a" stroke="#3a2818" stroke-width="3"/>'+holes+
+  '<rect x="612" y="222" width="200" height="70" rx="4" fill="#0d0f0a" stroke="#241a10" stroke-width="3"/>'+
+  '<text x="712" y="252" text-anchor="middle" font-family="Cinzel" font-size="10" fill="#55483a">88</text>'+
+  '<text x="762" y="252" text-anchor="middle" font-family="Cinzel" font-size="10" fill="#55483a">98</text>'+
+  '<text x="806" y="252" text-anchor="middle" font-family="Cinzel" font-size="10" fill="#55483a">108</text>'+scale+
+  '<g id="needle" style="transition:transform .2s"><line x1="712" y1="256" x2="712" y2="278" stroke="#c9432f" stroke-width="3"/></g>'+
+  '<rect x="612" y="300" width="60" height="48" rx="3" fill="#d5c69f" stroke="#3a2818" stroke-width="2"/>'+
+  '<path d="M620 340l22-28 10 12 8-9" fill="none" stroke="#2b2117" stroke-width="1.5"/>'+
+  '<g class="vu" style="transform-origin:642px 342px"><line x1="642" y1="342" x2="642" y2="312" stroke="#7e1f1f" stroke-width="2"/></g>'+
+  '<circle cx="716" cy="324" r="24" fill="url(#g-brass)" stroke="#4a3520" stroke-width="3"/>'+
+  '<line x1="716" y1="304" x2="716" y2="312" stroke="#241a0e" stroke-width="3"/>'+
+  '<rect x="756" y="304" width="56" height="44" rx="4" fill="#1c130d" stroke="#4a3a24"/>'+
+  '<text x="784" y="332" text-anchor="middle" font-family="Almarai" font-weight="700" font-size="12" fill="'+(f.on?'#c9a35c':'#55483a')+'" id="ronlbl">'+(f.on?'يعمل':'مطفأ')+'</text>'+
+  '<ellipse cx="600" cy="380" rx="260" ry="60" fill="url(#g-glow)" opacity="'+(f.on?'.7':'.1')+'"/></g>'+
+  '<text x="600" y="458" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">كل ترددٍ بابٌ تركه أحدهم مواربًا</text>'+
+ '</svg></div>',
+ '<div class="ctl" style="flex-direction:column;gap:8px">'+
+  '<input class="r-slider" type="range" min="88" max="108" step="0.1" value="'+f.f+'" id="freq" oninput="tuneRadio(this.value)">'+
+  '<div class="r-disp"><span class="fr" id="fdisp">'+f.f.toFixed(1)+'</span> MHz<br><span id="fmsg">'+
+  (f.on?'تشويش. في مكانٍ ما في النطاق — أصوات.':'الراديو مطفأ.')+'</span>'+
+  '<div class="mbars" id="mbars">'+'<i></i>'.repeat(7)+'</div></div>'+
+  '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">'+
+  '<button class="plate small" onclick="radioOnOff()">'+(f.on?'إطفاء الراديو':'تشغيل الراديو')+'</button>'+
+  '<button class="plate small '+(f.heard?'':'dim')+'" onclick="replay924()">إعادة تشغيل 92.4</button></div>'+
+ '</div>');
  say(f.done?'يزمجر القرص بأدبٍ الآن. لقد قال ما كان لديه.':'غرفةٌ مظلمة وراديو. ملاحظات الخدمة تقول إنّ المؤشر كان يُوجد دائمًا عند 92.4.');
  if(f.on){AU.startStatic()}
 }
@@ -1002,15 +1050,16 @@ function radioOnOff(){
 }
 function tuneRadio(v){
  const f=S.f.r303;f.f=+v;
- const nd=$('needle');if(nd)nd.style.transform=`translateX(${(f.f-98)*7.5}px)`;
+ const nd=$('needle');if(nd)nd.style.transform='translateX('+((f.f-98)*7.5)+'px)';
  const fd=$('fdisp');if(fd)fd.textContent=f.f.toFixed(1);
  if(f.on)AU.setStatic(f.f);
  save();clearTimeout(r303Deb);
- r303Deb=setTimeout(()=>stationCheck(f.f),420);
+ r303Deb=setTimeout(function(){stationCheck(f.f)},420);
 }
 function stationCheck(fr){
  const f=S.f.r303;if(!f.on||r303Playing)return;
- const st=STATIONS.find(s=>Math.abs(s.f-fr)<.35);
+ let st=null;
+ for(let i=0;i<STATIONS.length;i++){if(Math.abs(STATIONS[i].f-fr)<.35){st=STATIONS[i];break}}
  const m=$('fmsg');
  if(!st){if(m)m.textContent='تشويش. النطاق كله طقسٌ وأشباح في معظمه.';return}
  if(st.kind==='music'){if(m)m.textContent='104.1 — أوركسترا راقصة، رحلت قبل أربعين عامًا، وما زالت في منتصف المقطوعة.';AU.playMelody(0,.12);return}
@@ -1018,10 +1067,11 @@ function stationCheck(fr){
  if(st.kind==='you'&&!f.heard)broadcast924();
  else if(st.kind==='you'&&f.heard){if(m)m.textContent='92.4 — ترددك أنتِ. ينتظر زرّ الإعادة.'}
 }
-function barsAt(arr){const b=$('mbars');if(!b)return;[...b.children].forEach((el,i)=>{el.style.height=(arr[i]?10+arr[i]*30:6)+'px';el.classList.toggle('hi',arr[i]>=4)})}
+function barsAt(arr){const b=$('mbars');if(!b)return;
+ const ch=b.children;for(let i=0;i<ch.length;i++){ch[i].style.height=(arr[i]?10+arr[i]*30:6)+'px';ch[i].classList.toggle('hi',arr[i]>=4)}}
 function broadcast924(){
  const f=S.f.r303;r303Playing=true;
- const m=$('fmsg');const L=(t)=>{if(m)m.innerHTML=t};
+ const m=$('fmsg');const L=function(t){if(m)m.innerHTML=t};
  AU.stopStatic();
  L('<span style="color:#c9a35c">92.4 — تسجيل</span>');
  const lines=[
@@ -1031,12 +1081,12 @@ function broadcast924(){
   ['[ ثم — سبع نغمات، تُعزف على مهل،',6000],
   ['كأنّ أحدًا يتذكّر أغنية ]',7500]
  ];
- lines.forEach(([t,d])=>later(()=>{L(t);
-  AU.whisper(t.replace(/[\[\]—…«»]/g,' ').trim().slice(0,60))},d));
- later(()=>{AU.playMelody(0,.45);
-  MELODY.forEach((v,i)=>later(()=>barsAt([v]),i*450));
-  later(()=>barsAt([]),4500)},6000);
- later(()=>{r303Playing=false;
+ for(let i=0;i<lines.length;i++)(function(t,d){later(function(){L(t);
+  AU.whisper(t.replace(/[\[\]—…«»]/g,' ').trim().slice(0,60))},d)})(lines[i][0],lines[i][1]);
+ later(function(){AU.playMelody(0,.45);
+  for(let i=0;i<MELODY.length;i++)(function(v){later(function(){barsAt([v])},i*450)})(MELODY[i]);
+  later(function(){barsAt([])},4500)},6000);
+ later(function(){r303Playing=false;
   if(!f.heard){f.heard=true;f.done=true;save();ach('a_listen');
    addEvidence('ev_radio');
    say('كان هذا الصوت صوتكِ أنتِ. عرف اسمك لأنه كان اسمك. واللحن — سبع نغمات — الغرفة فوق غرفة الموسيقى ستريدها.');
@@ -1048,17 +1098,17 @@ function replay924(){if(!S.f.r303.heard)return;r303Playing=false;const f=S.f.r30
 
 /* ---------- الغرفة 404 · غير موجودة ---------- */
 function r404(){
- app.innerHTML=roomShell('404',`<div class="scene-wrap">${lobbySVG({noExit:true,photo:true,still:true})}</div>`,
- `<div class="ctl"><button class="plate small" onclick="photo404()">افحصي الصورة</button></div>`);
+ app.innerHTML=roomShell('404','<div class="scene-wrap">'+lobbySVG({noExit:true,photo:true,still:true})+'</div>',
+ '<div class="ctl"><button class="plate small" onclick="photo404()">افحصي الصورة</button></div>');
  if(!S.f.r404.seen){S.f.r404.seen=true;save();
   say('هذا هو اللوبي. لوبيكِ — السجادة نفسها، والمكتب نفسه، والساعة نفسها. إلا أن هناك صورةً على الحائط… ولا بابٍ أمامي.')}
  else say('اللوبي-الذي-ليس-لوبي. الصورة تنتظر على الحائط.');
 }
 function photo404(){
  showNote('الصورة — الغرفة 404',
-  `إنه اللوبي، من الموضع نفسه الذي تقفين فيه.<br>أحدهم في الصورة — واقفٌ حيث تقفين تمامًا.<br>الإطار دافئ، كأنّ يدًا أمسكته للتو.<br><br><span style="font-family:'Aref Ruqaa';font-size:15px">«أُبقي المصابيح مضاءة. — V»</span>`,{hand:true,btn:'تراجعي'});
+  'إنه اللوبي، من الموضع نفسه الذي تقفين فيه.<br>أحدهم في الصورة — واقفٌ حيث تقفين تمامًا.<br>الإطار دافئ، كأنّ يدًا أمسكته للتو.<br><br><span style="font-family:\'Aref Ruqaa\';font-size:15px">«أُبقي المصابيح مضاءة. — V»</span>',{hand:true,btn:'تراجعي'});
  if(!S.f.r404.photo){S.f.r404.photo=true;save();addEvidence('ev_404');
-  later(()=>{unlockFloor(5);say('في طريقك إلى الخارج تلاحين: الأبواب هنا تفتح على ممراتٍ لم تسيري فيها قط. الطابق الخامس لكِ الآن — وكذلك الغرفة 405.')},800)}
+  later(function(){unlockFloor(5);say('في طريقك إلى الخارج تلاحين: الأبواب هنا تفتح على ممراتٍ لم تسيري فيها قط. الطابق الخامس لكِ الآن — وكذلك الغرفة 405.')},800)}
 }
 
 /* ---------- الغرفة 405 · الصور ---------- */
@@ -1073,39 +1123,39 @@ function r405(){
   {t:'الزيارة 5 — اللوبي · 4 يونيو 1986',d:'أحدهم يقف في موضعك بالضبط. الخطّ على ظهر الصورة: «أُبقي المصابيح مضاءة. — V»',uv:'ما زالت هنا'}
  ];
  const p=pics[idx];
- app.innerHTML=roomShell('405',`
- <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:#2f2a20">
-  <rect width="1200" height="470" fill="#2f2a20"/><rect width="1200" height="470" fill="url(#p-dam)"/>
-  <rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
-  <ellipse cx="600" cy="170" rx="380" ry="150" fill="url(#g-lamp)" opacity=".4"/>
-  ${[120,900,170,850].map((x,i)=>{const y=i<2?100:190;return `<rect x="${x}" y="${y}" width="${i<2?90:70}" height="${i<2?70:54}" fill="#2a2016" stroke="#4a3a24" stroke-width="3"/>
-   <rect x="${x+7}" y="${y+7}" width="${(i<2?90:70)-14}" height="${(i<2?70:54)-14}" fill="#171310"/>`}).join('')}
-  <rect x="330" y="360" width="540" height="20" fill="#3a2317"/><rect x="360" y="380" width="480" height="92" fill="#241610" stroke="#120b07" stroke-width="3"/>
-  <rect x="380" y="330" width="16" height="34" fill="#2a1a11"/><rect x="660" y="330" width="16" height="34" fill="#2a1a11"/>
-  <g class="hot" data-tip="الصورة قيد التظهّر" onclick="say('${p.d}')">
-   <rect x="420" y="230" width="360" height="130" fill="#171310" stroke="#4a3a24" stroke-width="6"/>
-   <rect x="436" y="246" width="328" height="98" fill="#211d18" id="photoInner"/>
-   <rect x="470" y="270" width="120" height="74" fill="#2a251f" opacity=".8"/>
-   ${idx>=3?`<rect x="620" y="272" width="60" height="54" fill="#332e26" opacity=".9"/><circle cx="650" cy="282" r="9" fill="#332e26"/>`:''}
-   ${idx===4?`<g><circle cx="650" cy="282" r="9" fill="#3a352e"/><path d="M626 344a24 28 0 0 1 48 0z" fill="#3a352e"/></g>
-    <text x="560" y="330" text-anchor="end" font-family="Aref Ruqaa" font-size="14" fill="#9a8a68">4 يونيو 1986</text>`:''}
-   <text x="600" y="378" text-anchor="middle" font-family="Almarai" font-size="10" fill="#77664a">${p.t}</text>
-   <text x="600" y="${idx===4?264:300}" text-anchor="middle" font-family="Aref Ruqaa" font-size="17" fill="#8fe08a" data-uv="1" opacity="0">${p.uv}</text>
-  </g>
-  <g class="hot" data-tip="مصباح ضوءٍ أسود" onclick="uvToggle()">
-   <rect class="uvlamp" x="940" y="300" width="90" height="20" rx="4" stroke="#101010" stroke-width="3"/>
-   <rect x="950" y="320" width="14" height="46" fill="#241610"/><rect x="966" y="320" width="14" height="46" fill="#241610"/>
-   <ellipse class="uvcone" cx="985" cy="310" rx="160" ry="130" fill="#4a3a8a" opacity=".14"/>
-  </g>
-  <rect class="uvtint" width="1200" height="640" fill="#241440" opacity="0" style="pointer-events:none"/>
- </svg></div>`,
- `<div class="ctl"><button class="plate small uvbtn" onclick="uvToggle()">${f.uv?'المصباح البنفسجي — يعمل':'المصباح البنفسجي — متوقف'}</button>
- <span class="tag">الصورة ${Math.min(f.v,5)} من 5</span></div>`);
+ let frames='';
+ const fr=[[120,100,90,70],[900,100,90,70],[170,190,70,54],[850,190,70,54]];
+ for(let i=0;i<fr.length;i++){frames+='<rect x="'+fr[i][0]+'" y="'+fr[i][1]+'" width="'+fr[i][2]+'" height="'+fr[i][3]+'" fill="#2a2016" stroke="#4a3a24" stroke-width="3"/>'+
+  '<rect x="'+(fr[i][0]+7)+'" y="'+(fr[i][1]+7)+'" width="'+(fr[i][2]-14)+'" height="'+(fr[i][3]-14)+'" fill="#171310"/>'}
+ app.innerHTML=roomShell('405',
+ '<div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640">'+
+  '<rect width="1200" height="470" fill="#2f2a20"/><rect width="1200" height="470" fill="url(#p-dam)"/>'+
+  '<rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>'+
+  '<ellipse cx="600" cy="170" rx="380" ry="150" fill="url(#g-lamp)" opacity=".4"/>'+frames+
+  '<rect x="330" y="360" width="540" height="20" fill="#3a2317"/><rect x="360" y="380" width="480" height="92" fill="#241610" stroke="#120b07" stroke-width="3"/>'+
+  '<rect x="380" y="330" width="16" height="34" fill="#2a1a11"/><rect x="660" y="330" width="16" height="34" fill="#2a1a11"/>'+
+  '<g class="hot" data-tip="الصورة قيد التظهّر" onclick="say(\''+p.d+'\')">'+
+  '<rect x="420" y="230" width="360" height="130" fill="#171310" stroke="#4a3a24" stroke-width="6"/>'+
+  '<rect x="436" y="246" width="328" height="98" fill="#211d18"/>'+
+  '<rect x="470" y="270" width="120" height="74" fill="#2a251f" opacity=".8"/>'+
+  (idx>=3?'<rect x="620" y="272" width="60" height="54" fill="#332e26" opacity=".9"/><circle cx="650" cy="282" r="9" fill="#332e26"/>':'')+
+  (idx===4?'<g><circle cx="650" cy="282" r="9" fill="#3a352e"/><path d="M626 344a24 28 0 0 1 48 0z" fill="#3a352e"/></g>'+
+   '<text x="560" y="330" text-anchor="end" font-family="Aref Ruqaa" font-size="14" fill="#9a8a68">4 يونيو 1986</text>':'')+
+  '<text x="600" y="378" text-anchor="middle" font-family="Almarai" font-size="10" fill="#77664a">'+p.t+'</text>'+
+  '<text x="600" y="'+(idx===4?264:300)+'" text-anchor="middle" font-family="Aref Ruqaa" font-size="17" fill="#8fe08a" data-uv="1" opacity="0">'+p.uv+'</text></g>'+
+  '<g class="hot" data-tip="مصباح ضوءٍ أسود" onclick="uvToggle()">'+
+  '<rect class="uvlamp" x="940" y="300" width="90" height="20" rx="4" stroke="#101010" stroke-width="3"/>'+
+  '<rect x="950" y="320" width="14" height="46" fill="#241610"/><rect x="966" y="320" width="14" height="46" fill="#241610"/>'+
+  '<ellipse class="uvcone" cx="985" cy="310" rx="160" ry="130" fill="#4a3a8a" opacity=".14"/></g>'+
+  '<rect class="uvtint" width="1200" height="640" fill="#241440" opacity="0" style="pointer-events:none"/>'+
+ '</svg></div>',
+ '<div class="ctl"><button class="plate small uvbtn" onclick="uvToggle()">'+(f.uv?'المصباح البنفسجي — يعمل':'المصباح البنفسجي — متوقف')+'</button>'+
+ '<span class="tag">الصورة '+Math.min(f.v,5)+' من 5</span></div>');
  app.classList.toggle('uv',f.uv);
  say(f.v>=5?'انتهت آخر صورة من التظهّر. كانت تتظهّر منذ أربعين عامًا.':
   'تُظهّر الغرفة صورها ببطء شديد. اخرجي ثم عودي — كل زيارة تريكِ التي تليها.');
  if(f.v>=5&&!f.done){f.done=true;save();ach('a_frame');addEvidence('ev_photo');
-  later(()=>say('4 يونيو 1986. أنتِ في الصورة. هذا التاريخ يسبقكِ بعقود — والحذاء في الصورة حذاؤك.')},1500)}
+  later(function(){say('4 يونيو 1986. أنتِ في الصورة. هذا التاريخ يسبقكِ بعقود — والحذاء في الصورة حذاؤك.')},1500)}
 }
 function uvToggle(){
  const f=S.f.r405;f.uv=!f.uv;save();
@@ -1125,23 +1175,29 @@ const PAGES=[
 ];
 function r501(){
  const f=S.f.r501;
- app.innerHTML=roomShell('501',`
- <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:#2f2a20">
-  <rect width="1200" height="470" fill="#2f2a20"/><rect width="1200" height="470" fill="url(#p-dam)"/>
-  <rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
-  <ellipse cx="760" cy="220" rx="300" ry="140" fill="url(#g-lamp)" opacity=".5"/>
-  <rect x="380" y="330" width="440" height="20" fill="#3a2317"/><rect x="410" y="350" width="380" height="120" fill="#241610" stroke="#120b07" stroke-width="3"/>
-  <rect x="470" y="290" width="260" height="44" fill="#5c2a22" stroke="#2a100e" stroke-width="3"/>
-  <rect x="470" y="290" width="130" height="44" fill="#cfc09b" stroke="#8a7a58" transform="rotate(-3 535 312)"/>
-  <rect x="470" y="272" width="16" height="22" fill="#2a1a11"/><ellipse cx="760" cy="272" rx="60" ry="50" fill="url(#g-glow)"/>
-  <rect x="744" y="240" width="30" height="40" fill="#2a1a11" stroke="#120b07"/>
-  <text x="600" y="454" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">الصفحات صبورة — انتظرت كل هذا الوقت</text>
- </svg></div>`,
- `<div class="pgfield">${PAGES.map((t,i)=>`
-   <div class="pg ${f.n>i?'used':''}" style="--r:${[-3,2,-1.5,3,-2][i]}deg" data-tip="صفحةٌ ممزقة" onclick="pickPage(${i})">${t}</div>`).join('')}
- </div>
- <div class="ctl"><div class="book">${PAGES.map((t,i)=>`
-   <div class="bslot ${f.n>i?'full':''}" id="bs${i}">${f.n>i?t:'— الصفحة '+(i+1)+' —'}</div>`).join('')}</div></div>`);
+ let pgs='';
+ const rot=[-3,2,-1.5,3,-2];
+ for(let i=0;i<PAGES.length;i++){
+  pgs+='<div class="pg '+(f.n>i?'used':'')+'" style="--r:'+rot[i]+'deg" data-tip="صفحةٌ ممزقة" onclick="pickPage('+i+')">'+PAGES[i]+'</div>';
+ }
+ let slots='';
+ for(let i=0;i<PAGES.length;i++){
+  slots+='<div class="bslot '+(f.n>i?'full':'')+'" id="bs'+i+'">'+(f.n>i?PAGES[i]:'— الصفحة '+(i+1)+' —')+'</div>';
+ }
+ app.innerHTML=roomShell('501',
+ '<div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640">'+
+  '<rect width="1200" height="470" fill="#2f2a20"/><rect width="1200" height="470" fill="url(#p-dam)"/>'+
+  '<rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>'+
+  '<ellipse cx="760" cy="220" rx="300" ry="140" fill="url(#g-lamp)" opacity=".5"/>'+
+  '<rect x="380" y="330" width="440" height="20" fill="#3a2317"/><rect x="410" y="350" width="380" height="120" fill="#241610" stroke="#120b07" stroke-width="3"/>'+
+  '<rect x="470" y="290" width="260" height="44" fill="#5c2a22" stroke="#2a100e" stroke-width="3"/>'+
+  '<rect x="470" y="290" width="130" height="44" fill="#cfc09b" stroke="#8a7a58" transform="rotate(-3 535 312)"/>'+
+  '<rect x="470" y="272" width="16" height="22" fill="#2a1a11"/><ellipse cx="760" cy="272" rx="60" ry="50" fill="url(#g-glow)"/>'+
+  '<rect x="744" y="240" width="30" height="40" fill="#2a1a11" stroke="#120b07"/>'+
+  '<text x="600" y="454" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">الصفحات صبورة — انتظرت كل هذا الوقت</text>'+
+ '</svg></div>',
+ '<div class="pgfield">'+pgs+'</div>'+
+ '<div class="ctl"><div class="book">'+slots+'</div></div>');
  say(f.done?'عادت اليوميات كاملةً. لقد كانت كذلك دائمًا — أنتِ فقط لم تقرئيها بهذا الترتيب من قبل.':
   'صفحاتٌ ممزقة، متناثرة كأنها سقطت — أو وُضعت. رتّبي القصة بالترتيب الذي حدثت به.');
 }
@@ -1152,7 +1208,8 @@ function pickPage(i){
    say('«لذلك أنشأتُ الغرفة 404» — بخطٍّ تعرفينه من توقيعكِ على اسمك. الراديو ما زال يعزف اللحن، والغرفة 602 تتذكّره.');
    checkFloor6()}
   viewRoom('501')}
- else{const el=app.querySelectorAll('.pg')[i];if(el){el.classList.add('no');setTimeout(()=>el.classList.remove('no'),450)}
+ else{const els=app.querySelectorAll('.pg');const el=els[i];
+  if(el){el.classList.add('no');setTimeout(function(){el.classList.remove('no')},450)}
   AU.denied();say('تقاوم الصفحة. هذا ليس الموضع الذي تنحني إليه القصة.')}
 }
 function checkFloor6(){if(S.f.r405.done&&S.f.r501.done)unlockFloor(6)}
@@ -1160,36 +1217,39 @@ function checkFloor6(){if(S.f.r405.done&&S.f.r501.done)unlockFloor(6)}
 /* ---------- الغرفة 602 · الموسيقى ---------- */
 function r602(){
  const f=S.f.r602;
- app.innerHTML=roomShell('602',`
- <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:#301d22">
-  <rect width="1200" height="470" fill="#301d22"/><rect width="1200" height="470" fill="url(#p-dam)"/>
-  <rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
-  <ellipse cx="600" cy="200" rx="360" ry="150" fill="url(#g-lamp)" opacity=".35"/>
-  <g>
-   <rect x="360" y="180" width="480" height="220" rx="6" fill="#14100c" stroke="#000" stroke-width="6"/>
-   <rect x="386" y="206" width="428" height="110" fill="#0d0a08" stroke="#241a10" stroke-width="3"/>
-   ${[0,1,2,3,4,5,6,7,8,9,10,11,12].map(i=>`<rect x="${402+i*30}" y="236" width="24" height="72" fill="#d8cfb8" stroke="#241a10"/>`).join('')}
-   ${[1,2,4,5,6,8,9,11,12].map(i=>`<rect x="${420+i*30}" y="236" width="14" height="44" fill="#14100c"/>`).join('')}
-   <rect x="360" y="400" width="480" height="14" fill="#3a2317"/>
-   <rect x="380" y="414" width="26" height="14" fill="#241610"/><rect x="744" y="414" width="26" height="14" fill="#241610"/>
-   <text x="600" y="332" text-anchor="middle" font-family="Cinzel" font-size="10" letter-spacing="6" fill="#55483a">HALLOWAY HOUSE \u00b7 1931</text>
-  </g>
-  <rect x="330" y="120" width="540" height="46" rx="6" fill="#241610" stroke="#120b07" stroke-width="4"/>
-  ${[0,1,2,3,4,5,6].map(i=>`<circle cx="${366+i*72}" cy="143" r="15" fill="url(#g-brass)" stroke="#4a3520" stroke-width="2"/>
-   <text x="${366+i*72}" y="148" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="10" fill="#241a0e">${i+1}</text>`).join('')}
-  <text x="600" y="462" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">الحائط يتذكّر الأغنية — لتستطيع الغرفة نسيانها</text>
- </svg></div>`,
- `<div class="ctl" style="flex-direction:column">
-  <span class="tag">لوحة الحائط — سبعة أزرارٍ نحاسية</span>
-  <div class="brbtns">${[0,1,2,3,4,5,6].map(i=>`
-   <button class="brbtn" onclick="pressBtn602(${i})">${i+1}<span class="nt">${BTN_L[i]}</span></button>`).join('')}</div>
-  <div class="mel-rec" id="melrec">${f.seq.length?f.seq.map(n=>n+1).join(' · '):'— اعزفي سبع نغمات —'}</div>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-   <button class="plate small" onclick="reset602()">من جديد</button>
-   <button class="plate small ${S.f.r303.heard?'':'dim'}" onclick="playTape602()">تشغيل شريط 92.4</button>
-  </div>
- </div>`);
- say(f.done?'الأزرار هادئة الآن. سُلِّمت الأغنية إلى حيث ت belonged.':
+ let keysSvg='';
+ for(let i=0;i<7;i++)keysSvg+='<circle cx="'+(366+i*72)+'" cy="143" r="15" fill="url(#g-brass)" stroke="#4a3520" stroke-width="2"/>'+
+  '<text x="'+(366+i*72)+'" y="148" text-anchor="middle" font-family="Almarai" font-weight="700" font-size="10" fill="#241a0e">'+(i+1)+'</text>';
+ let whites='';
+ for(let i=0;i<13;i++)whites+='<rect x="'+(402+i*30)+'" y="236" width="24" height="72" fill="#d8cfb8" stroke="#241a10"/>';
+ let blacks='';
+ const bl=[1,2,4,5,6,8,9,11,12];
+ for(let i=0;i<bl.length;i++)blacks+='<rect x="'+(420+bl[i]*30)+'" y="236" width="14" height="44" fill="#14100c"/>';
+ let btns='';
+ for(let i=0;i<7;i++)btns+='<button class="brbtn" onclick="pressBtn602('+i+')">'+(i+1)+'<span class="nt">'+BTN_L[i]+'</span></button>';
+ app.innerHTML=roomShell('602',
+ '<div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640">'+
+  '<rect width="1200" height="470" fill="#301d22"/><rect width="1200" height="470" fill="url(#p-dam)"/>'+
+  '<rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>'+
+  '<ellipse cx="600" cy="200" rx="360" ry="150" fill="url(#g-lamp)" opacity=".35"/>'+
+  '<rect x="360" y="180" width="480" height="220" rx="6" fill="#14100c" stroke="#000" stroke-width="6"/>'+
+  '<rect x="386" y="206" width="428" height="110" fill="#0d0a08" stroke="#241a10" stroke-width="3"/>'+
+  whites+blacks+
+  '<rect x="360" y="400" width="480" height="14" fill="#3a2317"/>'+
+  '<rect x="380" y="414" width="26" height="14" fill="#241610"/><rect x="744" y="414" width="26" height="14" fill="#241610"/>'+
+  '<text x="600" y="332" text-anchor="middle" font-family="Cinzel" font-size="10" letter-spacing="6" fill="#55483a">HALLOWAY · 1931</text>'+
+  '<rect x="330" y="120" width="540" height="46" rx="6" fill="#241610" stroke="#120b07" stroke-width="4"/>'+keysSvg+
+  '<text x="600" y="462" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">الحائط يتذكّر الأغنية — لتستطيع الغرفة نسيانها</text>'+
+ '</svg></div>',
+ '<div class="ctl" style="flex-direction:column">'+
+  '<span class="tag">لوحة الحائط — سبعة أزرارٍ نحاسية</span>'+
+  '<div class="brbtns">'+btns+'</div>'+
+  '<div class="mel-rec" id="melrec">'+(f.seq.length?f.seq.map(function(n){return n+1}).join(' · '):'— اعزفي سبع نغمات —')+'</div>'+
+  '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">'+
+  '<button class="plate small" onclick="reset602()">من جديد</button>'+
+  '<button class="plate small '+(S.f.r303.heard?'':'dim')+'" onclick="playTape602()">تشغيل شريط 92.4</button></div>'+
+ '</div>');
+ say(f.done?'الأزرار هادئة الآن. سُلِّمت الأغنية إلى مكانها.':
   S.f.r303.heard?'سبعة أزرار، سبع نغمات. في مكانٍ ما في الطابق الثالث، علّمك ترددٌ هذه الأغنية.':
   'سبعة أزرارٍ نحاسية. إنها تنتظر لحنًا لم تسمعيه بعد — الراديو في الطابق الثالث يحفظه عند 92.4.');
 }
@@ -1198,25 +1258,26 @@ function pressBtn602(i){
  AU.piano(BTN_N[i],0,1,.45);
  barsAt([i]);
  f.seq.push(i);save();
- const r=$('melrec');if(r)r.textContent=f.seq.map(n=>n+1).join(' · ');
+ const r=$('melrec');if(r)r.textContent=f.seq.map(function(n){return n+1}).join(' · ');
  if(f.seq.length===7){
   if(f.seq.join()===MELODY.join()){
    f.done=true;f.tries++;save();
    if(f.tries===1)ach('a_pitch');
-   later(()=>{AU.playMelody(.3,.5);shake();
+   later(function(){AU.playMelody(.3,.5);shake();
     say('يجيبك البيانو — يعزف اللحن كاملًا بدفء، كصديقٍ قديمٍ يكمل جملتك.')},300);
-   later(()=>{addEvidence('ev_piano');unlockFloor(7);
+   later(function(){addEvidence('ev_piano');unlockFloor(7);
     say('ينزلق درجٌ تحت اللوحة: صفحةٌ مطوية من نوتةٍ موسيقية. عنوانها كلمة واحدة: «تذكّري». الطابق السابع لكِ الآن.')},4200);
   }else{
    f.tries++;f.seq=[];save();
-   later(()=>{AU.tone(46,{dur:.5,type:'sawtooth',g:.2});AU.denied();
+   later(function(){AU.tone(46,{dur:.5,type:'sawtooth',g:.2});AU.denied();
     say('نغمة نشاز. يُغلق البيانو غطاءه بنفسه. ابدئي النغمات السبع من جديد.')},200);
   }
  }
 }
 function reset602(){S.f.r602.seq=[];save();viewRoom('602')}
 function playTape602(){if(!S.f.r303.heard)return;AU.playMelody(.4,.5);
- MELODY.forEach((v,i)=>later(()=>barsAt([v]),400+i*450));later(()=>barsAt([]),4600);
+ for(let i=0;i<MELODY.length;i++)(function(v){later(function(){barsAt([v])},400+i*450)})(MELODY[i]);
+ later(function(){barsAt([])},4600);
  say('يزمجر الشريط، ثم تصل النغمات السبع — على مهل، بصبر، تعلّمك.')}
 
 /* ---------- الغرفة 707 · الألغاز ---------- */
@@ -1226,41 +1287,45 @@ function r707(){
  const perms=[[0,1,2],[1,2,0],[2,0,1]];
  const P=perms[f.perm%3];
  const lampX=[760,420,760][P[0]],paintR=[3,-2,0][P[1]],chairX=[900,640,180][P[2]];
- app.innerHTML=roomShell('707',`
- <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:#26282a">
-  <rect width="1200" height="470" fill="#26282a"/>
-  ${[0,1,2,3,4,5].map(i=>`<rect x="${i*200}" y="${i%2?0:30}" width="6" height="470" fill="#1c1e20"/>`).join('')}
-  ${[0,1,2].map(i=>`<rect y="${i*160}" width="1200" height="6" fill="#1c1e20"/>`).join('')}
-  <rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
-  <g class="hot" data-tip="نقشٌ في الحجر" onclick="showNote('منقوشٌ في الحجر','ترتيب الأدلة:<br>ما رأته المرآة · حين تجمّد الزمن ·<br>حيث يسكن الصوت · حين بدأ كل شيء<br><br>وأسفلها بخطٍّ صغير: «بالترتيب الذي وجدتِها فيه.»')">
-   <rect x="200" y="90" width="800" height="96" fill="none" stroke="#4a3a24" stroke-width="2"/>
-   <text x="600" y="128" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="17" fill="#8a7248">ترتيب الأدلة</text>
-   <text x="600" y="158" text-anchor="middle" font-family="Almarai" font-size="11" fill="#6d5d44">المرآة · الساعة المتجمدة · الصوت · البداية</text>
-  </g>
-  <rect x="420" y="380" width="360" height="20" fill="#3a2317"/><rect x="450" y="400" width="300" height="72" fill="#241610" stroke="#120b07"/>
-  <g class="hot" data-tip="صندوقٌ فولاذي بأربعة أقراص" onclick="say('أربعة أقراص. أربعة أدلة. الحائط يتذكّر الترتيب.')">
-   <rect x="440" y="290" width="320" height="100" rx="8" fill="#2a2a28" stroke="#101010" stroke-width="5"/>
-   ${[0,1,2,3].map(i=>`<rect x="${462+i*74}" y="316" width="60" height="48" rx="3" fill="#0d0906" stroke="#4a3a24" stroke-width="2"/>
-    <text x="${492+i*74}" y="350" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="17" fill="#c9a35c">${DVALS[f.d[i]]}</text>`).join('')}
-   <circle cx="465" cy="306" r="4" fill="#7e1f1f"/><circle cx="735" cy="306" r="4" fill="#7e1f1f"/>
-  </g>
-  <ellipse cx="${lampX}" cy="240" rx="200" ry="120" fill="url(#g-glow)" opacity=".5"/>
-  <rect x="${lampX-16}" y="160" width="32" height="42" fill="#2a1a11" stroke="#120b07"/>
-  <g transform="rotate(${paintR} 300 240)"><rect x="240" y="200" width="120" height="84" fill="#2a2016" stroke="#4a3a24" stroke-width="4"/><rect x="252" y="212" width="96" height="60" fill="#171310"/></g>
-  <g style="transform:translate(${chairX-830}px,0)">
-   <rect x="830" y="300" width="90" height="16" fill="#3a2317"/><rect x="830" y="200" width="90" height="100" fill="#2a1a11" stroke="#1b110a" stroke-width="3"/>
-   <rect x="836" y="316" width="10" height="90" fill="#241610"/><rect x="904" y="316" width="10" height="90" fill="#241610"/></g>
- </svg></div>`,
- `<div class="ctl" style="flex-direction:column">
-  <span class="tag">الأقراص — اختاري الدليل لكل موضع</span>
-  <div class="dials">${[0,1,2,3].map(i=>`
-   <div class="dial"><span class="tag">${['الأول','الثاني','الثالث','الرابع'][i]}</span>
-    <div class="dwin" id="dw${i}">${DVALS[f.d[i]]}</div>
-    <div class="cb"><button class="plate small" onclick="dial707(${i},1)">▲</button>
-    <button class="plate small" onclick="dial707(${i},-1)">▼</button></div></div>`).join('')}</div>
-  <button class="plate" onclick="try707()">شغّلي الآلية</button>
- </div>`);
- say(f.done?'الصندوق مفتوح. اكتمل عمله.':f.wrong?`أعادت الغرفة ترتيب نفسها ${f.wrong} ${f.wrong===1?'مرة':'مرات'} بالفعل. إنها لا توافق على التخمين — اقرئي الحجر.`:'اقرئي الحجر. ثقي بترتيب تحقيقك أنتِ.');
+ let cols='',rowsSvg='';
+ for(let i=0;i<6;i++)cols+='<rect x="'+(i*200)+'" y="'+(i%2?0:30)+'" width="6" height="470" fill="#1c1e20"/>';
+ for(let i=0;i<3;i++)rowsSvg+='<rect y="'+(i*160)+'" width="1200" height="6" fill="#1c1e20"/>';
+ let dialsSvg='';
+ for(let i=0;i<4;i++)dialsSvg+='<rect x="'+(462+i*74)+'" y="316" width="60" height="48" rx="3" fill="#0d0906" stroke="#4a3a24" stroke-width="2"/>'+
+  '<text x="'+(492+i*74)+'" y="350" text-anchor="middle" font-family="Almarai" font-weight="700" font-size="17" fill="#c9a35c">'+DVALS[f.d[i]]+'</text>';
+ let dials='';
+ const names=['الأول','الثاني','الثالث','الرابع'];
+ for(let i=0;i<4;i++){
+  dials+='<div class="dial"><span class="tag">'+names[i]+'</span>'+
+  '<div class="dwin" id="dw'+i+'">'+DVALS[f.d[i]]+'</div>'+
+  '<div class="cb"><button class="plate small" onclick="dial707('+i+',1)">▲</button>'+
+  '<button class="plate small" onclick="dial707('+i+',-1)">▼</button></div></div>';
+ }
+ app.innerHTML=roomShell('707',
+ '<div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640">'+
+  '<rect width="1200" height="470" fill="#26282a"/>'+cols+rowsSvg+
+  '<rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>'+
+  '<g class="hot" data-tip="نقشٌ في الحجر" onclick="showNote(\'منقوشٌ في الحجر\',\'ترتيب الأدلة:\<br>ما رأته المرآة · حين تجمّد الزمن ·\<br>حيث يسكن الصوت · حين بدأ كل شيء\<br>\<br>وأسفلها بخطٍّ صغير: «بالترتيب الذي وجدتِها فيه.»\')">'+
+  '<rect x="200" y="90" width="800" height="96" fill="none" stroke="#4a3a24" stroke-width="2"/>'+
+  '<text x="600" y="128" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="17" fill="#8a7248">ترتيب الأدلة</text>'+
+  '<text x="600" y="158" text-anchor="middle" font-family="Almarai" font-size="11" fill="#6d5d44">المرآة · الساعة المتجمدة · الصوت · البداية</text></g>'+
+  '<rect x="420" y="380" width="360" height="20" fill="#3a2317"/><rect x="450" y="400" width="300" height="72" fill="#241610" stroke="#120b07"/>'+
+  '<g class="hot" data-tip="صندوقٌ فولاذي بأربعة أقراص" onclick="say(\'أربعة أقراص. أربعة أدلة. الحائط يتذكّر الترتيب.\')">'+
+  '<rect x="440" y="290" width="320" height="100" rx="8" fill="#2a2a28" stroke="#101010" stroke-width="5"/>'+dialsSvg+
+  '<circle cx="465" cy="306" r="4" fill="#7e1f1f"/><circle cx="735" cy="306" r="4" fill="#7e1f1f"/></g>'+
+  '<ellipse cx="'+lampX+'" cy="240" rx="200" ry="120" fill="url(#g-glow)" opacity=".5"/>'+
+  '<rect x="'+(lampX-16)+'" y="160" width="32" height="42" fill="#2a1a11" stroke="#120b07"/>'+
+  '<g transform="rotate('+paintR+' 300 240)"><rect x="240" y="200" width="120" height="84" fill="#2a2016" stroke="#4a3a24" stroke-width="4"/><rect x="252" y="212" width="96" height="60" fill="#171310"/></g>'+
+  '<g style="transform:translate('+(chairX-830)+'px,0)">'+
+  '<rect x="830" y="300" width="90" height="16" fill="#3a2317"/><rect x="830" y="200" width="90" height="100" fill="#2a1a11" stroke="#1b110a" stroke-width="3"/>'+
+  '<rect x="836" y="316" width="10" height="90" fill="#241610"/><rect x="904" y="316" width="10" height="90" fill="#241610"/></g>'+
+ '</svg></div>',
+ '<div class="ctl" style="flex-direction:column">'+
+  '<span class="tag">الأقراص — اختاري الدليل لكل موضع</span>'+
+  '<div class="dials">'+dials+'</div>'+
+  '<button class="plate" onclick="try707()">شغّلي الآلية</button>'+
+ '</div>');
+ say(f.done?'الصندوق مفتوح. اكتمل عمله.':(f.wrong?('أعادت الغرفة ترتيب نفسها '+f.wrong+(f.wrong===1?' مرة':' مرات')+' بالفعل. إنها لا توافق على التخمين — اقرئي الحجر.'):'اقرئي الحجر. ثقي بترتيب تحقيقك أنتِ.'));
 }
 function dial707(i,d){
  const f=S.f.r707;if(f.done)return;
@@ -1272,16 +1337,16 @@ function try707(){
  if(f.d.join()==='0,1,2,3'){
   f.done=true;save();AU.chime();
   say('تغور الأقراص الأربعة معًا. يزفر الصندوق منفتحًا — وتصبح كل جدران الغرفة خطًّا واحدًا من الضوء.');
-  later(()=>narrate([
+  later(function(){narrate([
    {t:'7 · 0317 · 92.4 · 1986',big:true},
    {t:'الأدلة — بالترتيب الذي وجدتْكِ به.'},
    {t:'بقيت غرفةٌ واحدة.',big:true}
-  ]).then(()=>{addEvidence('ev_seq');unlockFloor(8);say('يتنفّس الطابق الثامن منفتحًا. الغرفة لا تهنّئك — إنها ببساطة تتوقف عن إخفاء السلالم.')}),700);
+  ]).then(function(){addEvidence('ev_seq');unlockFloor(8);say('يتنفّس الطابق الثامن منفتحًا. الغرفة لا تهنّئك — إنها ببساطة تتوقف عن إخفاء السلالم.')})},700);
  }else{
   f.wrong++;f.perm=(f.perm+1)%3;save();
   flick();shake();AU.tone(40,{dur:.7,type:'sawtooth',g:.25});
   say('خطأ. تترنح الأضواء — وحين تتعافى، يكون الأثاث قد تحرّك. الغرفة تغيّرت. إنها تتحدّاكِ أن تلاحظي.');
-  later(()=>viewRoom('707'),900);
+  later(function(){viewRoom('707')},900);
  }
 }
 
@@ -1291,27 +1356,31 @@ function r808(){
  if(f.mode&&f.mode!=='hub')return r808Time(f.mode);
  f.mode='hub';save();
  const all=f.vis.length>=3&&f.key;
- app.innerHTML=roomShell('808',`
- <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:#2c2418">
-  <rect width="1200" height="470" fill="#2c2418"/><rect width="1200" height="470" fill="url(#p-dam)"/>
-  <rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
-  <ellipse cx="600" cy="180" rx="420" ry="150" fill="url(#g-lamp)" opacity=".35"/>
-  ${[['الماضي',190,'#8a6d3f','#3a2a14'],['الحاضر',600,'#7a746a','#232022'],['المستقبل',1010,'#5f4a3a','#1f1410']].map(([lab,x,c,dark],i)=>`
-  <g class="hot" data-tip="باب ${lab}" onclick="t808('${['past','present','future'][i]}')">
-   <rect x="${x-85}" y="180" width="170" height="290" fill="${dark}" stroke="#0f0a06" stroke-width="5"/>
-   <rect x="${x-65}" y="202" width="130" height="110" fill="${i===2?'#101010':'url(#g-glass)'}" opacity="${i===0?'.9':'.75'}" stroke="#241a10"/>
-   <rect x="${x-65}" y="330" width="130" height="120" fill="#160f09" stroke="#241a10"/>
-   <circle cx="${x+42}" cy="290" r="6" fill="url(#g-brass)"/>
-   <rect x="${x-70}" y="152" width="140" height="26" fill="#1c130d" stroke="#4a3a24"/>
-   <text x="${x}" y="171" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="13" fill="${c}">${lab}</text>
-   ${f.vis.includes(['past','present','future'][i])?`<path d="M${x-8} 452l6 6 10-12" stroke="#8fae8a" stroke-width="3" fill="none"/>`:''}
-  </g>`).join('')}
-  <text x="600" y="454" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">الغرفة نفسها، تتذكّر نفسها بثلاث طرق</text>
- </svg></div>`,
- `<div class="ctl">
-  ${f.key?`<span class="tag" style="color:#c9a35c">${ic('key')} المفتاح النحاسي في جيبك</span>`:''}
-  ${all&&!f.done?`<span class="tag" style="color:#8fae8a">تستقرّ الغرفة · الطابق التاسع لكِ</span>`:''}
- </div>`);
+ const doorsData=[['الماضي',190,'#8a6d3f','#3a2a14','past'],['الحاضر',600,'#7a746a','#232022','present'],['المستقبل',1010,'#5f4a3a','#1f1410','future']];
+ let doors='';
+ for(let i=0;i<doorsData.length;i++){
+  const lab=doorsData[i][0],x=doorsData[i][1],c=doorsData[i][2],dark=doorsData[i][3],key=doorsData[i][4];
+  doors+='<g class="hot" data-tip="باب '+lab+'" onclick="t808(\''+key+'\')">'+
+   '<rect x="'+(x-85)+'" y="180" width="170" height="290" fill="'+dark+'" stroke="#0f0a06" stroke-width="5"/>'+
+   '<rect x="'+(x-65)+'" y="202" width="130" height="110" fill="'+(i===2?'#101010':'url(#g-glass)')+'" opacity="'+(i===0?'.9':'.75')+'" stroke="#241a10"/>'+
+   '<rect x="'+(x-65)+'" y="330" width="130" height="120" fill="#160f09" stroke="#241a10"/>'+
+   '<circle cx="'+(x+42)+'" cy="290" r="6" fill="url(#g-brass)"/>'+
+   '<rect x="'+(x-70)+'" y="152" width="140" height="26" fill="#1c130d" stroke="#4a3a24"/>'+
+   '<text x="'+x+'" y="171" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="13" fill="'+c+'">'+lab+'</text>'+
+   (f.vis.includes(key)?'<path d="M'+(x-8)+' 452l6 6 10-12" stroke="#8fae8a" stroke-width="3" fill="none"/>':'')+
+   '</g>';
+ }
+ app.innerHTML=roomShell('808',
+ '<div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640">'+
+  '<rect width="1200" height="470" fill="#2c2418"/><rect width="1200" height="470" fill="url(#p-dam)"/>'+
+  '<rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>'+
+  '<ellipse cx="600" cy="180" rx="420" ry="150" fill="url(#g-lamp)" opacity=".35"/>'+doors+
+  '<text x="600" y="454" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">الغرفة نفسها، تتذكّر نفسها بثلاث طرق</text>'+
+ '</svg></div>',
+ '<div class="ctl">'+
+  (f.key?'<span class="tag" style="color:#c9a35c">'+ic('key')+' المفتاح النحاسي في جيبك</span>':'')+
+  (all&&!f.done?'<span class="tag" style="color:#8fae8a">تستقرّ الغرفة · الطابق التاسع لكِ</span>':'')+
+ '</div>');
  say(all?'سرتِ في الأزمنة الثلاثة. الطابق التاسع لكِ الآن.':
   'ثلاثة أبواب. الغرفة نفسها خلف كلٍّ منها — لكن ليس العام نفسه. الأحداث تتسرّب بينها كالماء تحت الأبواب.');
  if(all&&!f.done){f.done=true;save();unlockFloor(9)}
@@ -1321,39 +1390,41 @@ function back808(){clearStab();const f=S.f.r808;f.mode='hub';save();viewRoom('80
 function r808Time(m){
  clearStab();
  const f=S.f.r808;f.mode=m;
- const skin={
+ const skins={
   past:{wall:'#3a2a14',floor:'#4a3010',warm:'#c9a35c',txt:'هالوواي، جديد. ورق حائطٍ طازج، زهورٌ مقطوفة، وصحيفةٌ مطوية على المكتب. يونيو 1986. الراديو في الأسفل يعزف لحنًا من سبع نغمات.'},
   present:{wall:'#232022',floor:'#241610',warm:'#7a746a',txt:'الغرفة التي تعرفينها. غبارٌ، وصبرٌ، ودرجُ مكتبٍ صدئٌ مغلق.'},
   future:{wall:'#1f1410',floor:'#181008',warm:'#5f4a3a',txt:'الحائط مفتوح على سماءٍ رمادية خضراء. أنقاضٌ في كل مكان. المبنى يتذكّر كيف يكون ركامًا.'}
- }[m];
- app.innerHTML=roomShell('808',`
- <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:${skin.wall}">
-  <rect width="1200" height="470" fill="${skin.wall}"/>
-  ${m==='past'?'<rect width="1200" height="470" fill="url(#p-dam)"/>':''}
-  ${m==='future'?'<polygon points="820,0 1200,0 1200,300" fill="#232a26" opacity=".8"/><path d="M820 0l60 90-40 70 70 60-30 80" stroke="#181008" stroke-width="26" fill="none"/><path d="M700 470l80-60 120 40 100-70" stroke="#14100a" stroke-width="18" fill="none" opacity=".8"/>':''}
-  <rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="${skin.floor}"/>
-  <ellipse cx="600" cy="200" rx="420" ry="160" fill="url(#g-lamp)" opacity="${m==='past'?'.6':'.3'}"/>
-  ${m!=='future'?'<rect x="560" y="120" width="80" height="120" fill="url(#g-glass)" stroke="#241a10" stroke-width="4"/>':'<rect x="560" y="120" width="80" height="120" fill="none" stroke="#0f0a06" stroke-width="4" stroke-dasharray="8 6"/>'}
-  <rect x="380" y="330" width="440" height="20" fill="#3a2317"/><rect x="410" y="350" width="380" height="110" fill="#241610" stroke="#120b07" stroke-width="3"/>
-  <rect x="440" y="370" width="150" height="34" fill="#1c130d" stroke="#120b07" stroke-width="2"/>
-  <circle cx="515" cy="387" r="4" fill="${skin.warm}"/>
-  ${m==='past'?'<rect x="470" y="290" width="30" height="40" fill="#2a1a11" stroke="#120b07"/><ellipse cx="485" cy="280" rx="70" ry="60" fill="url(#g-glow)"/><g class="hot" data-tip="زهورٌ مقطوفة" onclick="say(\'زهورٌ طازجة. أحدهم كان يتوقّع إقامةً طويلة.\')"><path d="M700 320v-30M700 300c-10-4-14-14-8-22 8 2 12 10 8 22zM700 304c10-4 14-14 8-22-8 2-12 10-8 22z" stroke="#5f7a4a" stroke-width="2" fill="none"/></g>':''}
-  ${m==='future'&&!f.key?`<g class="hot" data-tip="شيءٌ تحت الأنقاض" onclick="takeKey808()"><path d="M640 400l30-16 26 20 34-24" stroke="#14100a" stroke-width="20" fill="none"/><circle cx="668" cy="392" r="7" fill="#c9a35c"/></g>`:''}
-  ${m==='past'&&f.key?`<circle cx="700" cy="316" r="7" fill="none" stroke="#c9a35c" stroke-width="2" stroke-dasharray="3 3"/>`:''}
-  <text x="600" y="446" text-anchor="middle" font-family="Amiri" font-size="16" fill="${skin.warm}" opacity=".7">${{past:'1986 — كل شيء ما زال ممكنًا',present:'الآن — كل شيء ما زال هنا',future:'؟؟؟؟ — كل شيء رحل بالفعل'}[m]}</text>
- </svg></div>`,
- `<div class="ctl" style="flex-direction:column">
-  <button class="plate small" onclick="back808()">${ic('back')} عودة إلى الأبواب الثلاثة</button>
-  ${m==='past'?`<button class="plate small" onclick="readNews()">اقرئي الصحيفة</button>`:''}
-  ${m==='past'&&f.key&&!f.placed?`<button class="plate small" onclick="placeKey808()">${ic('key')} اتركي المفتاح في الدرج</button>`:''}
-  ${m==='present'&&f.placed?`<button class="plate small" onclick="openDrawer808()">افتحي الدرج</button>`:''}
-  ${m==='future'&&!f.key?`<button class="plate small" onclick="takeKey808()">فتّشي الأنقاض</button>`:''}
- </div>`);
+ };
+ const skin=skins[m];
+ const era={past:'1986 — كل شيء ما زال ممكنًا',present:'الآن — كل شيء ما زال هنا',future:'؟؟؟؟ — كل شيء رحل بالفعل'}[m];
+ app.innerHTML=roomShell('808',
+ '<div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640">'+
+  '<rect width="1200" height="470" fill="'+skin.wall+'"/>'+
+  (m==='past'?'<rect width="1200" height="470" fill="url(#p-dam)"/>':'')+
+  (m==='future'?'<polygon points="820,0 1200,0 1200,300" fill="#232a26" opacity=".8"/><path d="M820 0l60 90-40 70 70 60-30 80" stroke="#181008" stroke-width="26" fill="none"/><path d="M700 470l80-60 120 40 100-70" stroke="#14100a" stroke-width="18" fill="none" opacity=".8"/>':'')+
+  '<rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="'+skin.floor+'"/>'+
+  '<ellipse cx="600" cy="200" rx="420" ry="160" fill="url(#g-lamp)" opacity="'+(m==='past'?'.6':'.3')+'"/>'+
+  (m!=='future'?'<rect x="560" y="120" width="80" height="120" fill="url(#g-glass)" stroke="#241a10" stroke-width="4"/>':'<rect x="560" y="120" width="80" height="120" fill="none" stroke="#0f0a06" stroke-width="4" stroke-dasharray="8 6"/>')+
+  '<rect x="380" y="330" width="440" height="20" fill="#3a2317"/><rect x="410" y="350" width="380" height="110" fill="#241610" stroke="#120b07" stroke-width="3"/>'+
+  '<rect x="440" y="370" width="150" height="34" fill="#1c130d" stroke="#120b07" stroke-width="2"/>'+
+  '<circle cx="515" cy="387" r="4" fill="'+skin.warm+'"/>'+
+  (m==='past'?'<rect x="470" y="290" width="30" height="40" fill="#2a1a11" stroke="#120b07"/><ellipse cx="485" cy="280" rx="70" ry="60" fill="url(#g-glow)"/><g class="hot" data-tip="زهورٌ مقطوفة" onclick="say(\'زهورٌ طازجة. أحدهم كان يتوقّع إقامةً طويلة.\')"><path d="M700 320v-30M700 300c-10-4-14-14-8-22 8 2 12 10 8 22zM700 304c10-4 14-14 8-22-8 2-12 10-8 22z" stroke="#5f7a4a" stroke-width="2" fill="none"/></g>':'')+
+  (m==='future'&&!f.key?'<g class="hot" data-tip="شيءٌ تحت الأنقاض" onclick="takeKey808()"><path d="M640 400l30-16 26 20 34-24" stroke="#14100a" stroke-width="20" fill="none"/><circle cx="668" cy="392" r="7" fill="#c9a35c"/></g>':'')+
+  (m==='past'&&f.key?'<circle cx="700" cy="316" r="7" fill="none" stroke="#c9a35c" stroke-width="2" stroke-dasharray="3 3"/>':'')+
+  '<text x="600" y="446" text-anchor="middle" font-family="Amiri" font-size="16" fill="'+skin.warm+'" opacity=".7">'+era+'</text>'+
+ '</svg></div>',
+ '<div class="ctl" style="flex-direction:column">'+
+  '<button class="plate small" onclick="back808()">'+ic('back')+' عودة إلى الأبواب الثلاثة</button>'+
+  (m==='past'?'<button class="plate small" onclick="readNews()">اقرئي الصحيفة</button>':'')+
+  (m==='past'&&f.key&&!f.placed?'<button class="plate small" onclick="placeKey808()">'+ic('key')+' اتركي المفتاح في الدرج</button>':'')+
+  (m==='present'&&f.placed?'<button class="plate small" onclick="openDrawer808()">افتحي الدرج</button>':'')+
+  (m==='future'&&!f.key?'<button class="plate small" onclick="takeKey808()">فتّشي الأنقاض</button>':'')+
+ '</div>');
  if(m==='present'&&!f.placed)say('الدرج صدئٌ مغلق. كذلك منذ عقود. لا شيء تفعليه الآن سيغيّر ما بداخله… أليس كذلك؟');
  else say(skin.txt);
  if(m==='future'&&!f.key){
   let t=45;
-  stabIv=setInterval(()=>{t--;
+  stabIv=setInterval(function(){t--;
    const bar=app.querySelector('.stab .bar i');if(bar)bar.style.width=(t/45*100)+'%';
    if(t<=12)flick();
    if(t<=0){clearStab();AU.tone(38,{dur:1.2,g:.4});say('يرفضكِ المستقبل. تُسحبين عائدةً إلى الحاضر.');back808()}},1000);
@@ -1377,55 +1448,58 @@ function placeKey808(){
 }
 function openDrawer808(){
  showNote('وُجد في الدرج — 1986',
-  'مفتاحٌ نحاسيّ تُرك في هذا الدرج قبل أربعين عامًا،<br>ملفوفًا بهذه الورقة:<br><br><span style="font-family:\'Aref Ruqaa\';font-size:15px">«لكِ. لقد تركتِه لنفسك.<br>أنتِ فعلتِ هذا بالفعل.<br>— V»</span><br><br>الخطّ… خطّك.',{hand:true});
+  'مفتاحٌ نحاسيّ تُرك في هذا الدرج قبل أربعين عامًا,<br>ملفوفًا بهذه الورقة:<br><br><span style="font-family:\'Aref Ruqaa\';font-size:15px">«لكِ. لقد تركتِه لنفسك.<br>أنتِ فعلتِ هذا بالفعل.<br>— V»</span><br><br>الخطّ… خطّك.',{hand:true});
 }
 
 /* ---------- الغرفة 909 · الطابق الأخير ---------- */
 function r909(){
- app.innerHTML=roomShell('909',`
- <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:#1f1a16">
-  <rect width="1200" height="470" fill="#1f1a16"/>
-  ${[0,1,2,3].map(i=>`<polygon points="${i*300},0 ${i*300+150},0 ${i*300+90},90 ${i*300+30},90" fill="#151110"/>`).join('')}
-  <rect y="460" width="1200" height="12" fill="#0c0806"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
-  <ellipse cx="600" cy="330" rx="180" ry="160" fill="url(#g-glow)" opacity=".5"/>
-  <g class="sway" style="animation-duration:7s">
-   <rect x="588" y="380" width="24" height="56" fill="#cfc09b"/><ellipse cx="600" cy="376" rx="14" ry="5" fill="#cfc09b"/>
-   <path d="M600 350c5 8 8 12 0 22-8-10-5-14 0-22z" fill="#e8b25a"/>
-   <ellipse cx="600" cy="362" rx="60" ry="80" fill="url(#g-glow)"/>
-  </g>
-  ${[['خروج',300,'#8fae8a','door909(\'exit\')'],['404',600,'#c9a35c','door909(\'404\')'],['؟؟؟',900,'#7a746a','door909(\'unknown\')']].map(([lab,x,c,fn],i)=>{
-   const metal=i===2;
-   return `<g class="hot" data-tip="${i===2?'بابٌ بلا رقم، وثقبُ مفتاح':(i===0?'باب الخروج':'باب 404')}" onclick="${fn}">
-    <rect x="${x-80}" y="180" width="160" height="280" fill="${metal?'#26282a':'#2a1a11'}" stroke="#0f0a06" stroke-width="5"/>
-    <rect x="${x-62}" y="200" width="124" height="100" fill="${metal?'#1c1e20':'#241610'}" stroke="#1b110a" stroke-width="3"/>
-    <rect x="${x-62}" y="320" width="124" height="120" fill="${metal?'#1c1e20':'#241610'}" stroke="#1b110a" stroke-width="3"/>
-    ${i===0?`<rect x="${x-56}" y="186" width="112" height="36" fill="#12331a" stroke="#2a5a38" stroke-width="2"/><text x="${x}" y="212" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="17" fill="#8fae8a">خروج</text>`:''}
-    ${i===1?`<text x="${x}" y="182" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="15" fill="${c}">404</text>`:''}
-    ${i===2?`<text x="${x}" y="182" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="15" fill="${c}">؟ ؟ ؟</text>
-      <circle cx="${x}" cy="312" r="9" fill="#0d0906" stroke="#55483a" stroke-width="2"/><rect x="${x-3}" y="312" width="6" height="12" fill="#55483a"/>`:''}
-    <circle cx="${x+44}" cy="290" r="6" fill="url(#g-brass)"/>
-   </g>`}).join('')}
-  <text x="600" y="454" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">آخر بابٍ ستحتاجين إلى اختياره</text>
- </svg></div>`,
- `<div class="ctl"><span class="tag">${S.f.r808.key?'المفتاح النحاسي ثقيلٌ في جيبك':'الباب الحديدي فيه ثقبُ مفتاح · وليس على أي خريطة'}</span></div>`);
+ const beams=[0,1,2,3].map(function(i){return '<polygon points="'+(i*300)+',0 '+(i*300+150)+',0 '+(i*300+90)+',90 '+(i*300+30)+',90" fill="#151110"/>'}).join('');
+ const doorsData=[['خروج',300,'#8fae8a','door909(\'exit\')'],['404',600,'#c9a35c','door909(\'404\')'],['؟؟؟',900,'#7a746a','door909(\'unknown\')']];
+ let doors='';
+ for(let i=0;i<doorsData.length;i++){
+  const lab=doorsData[i][0],x=doorsData[i][1],c=doorsData[i][2],fn=doorsData[i][3];
+  const metal=(i===2);
+  const tip=(i===2?'بابٌ بلا رقم، وثقبُ مفتاح':(i===0?'باب الخروج':'باب 404'));
+  doors+='<g class="hot" data-tip="'+tip+'" onclick="'+fn+'">'+
+   '<rect x="'+(x-80)+'" y="180" width="160" height="280" fill="'+(metal?'#26282a':'#2a1a11')+'" stroke="#0f0a06" stroke-width="5"/>'+
+   '<rect x="'+(x-62)+'" y="200" width="124" height="100" fill="'+(metal?'#1c1e20':'#241610')+'" stroke="#1b110a" stroke-width="3"/>'+
+   '<rect x="'+(x-62)+'" y="320" width="124" height="120" fill="'+(metal?'#1c1e20':'#241610')+'" stroke="#1b110a" stroke-width="3"/>'+
+   (i===0?'<rect x="'+(x-56)+'" y="186" width="112" height="36" fill="#12331a" stroke="#2a5a38" stroke-width="2"/><text x="'+x+'" y="212" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="17" fill="#8fae8a">خروج</text>':'')+
+   (i===1?'<text x="'+x+'" y="182" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="15" fill="'+c+'">404</text>':'')+
+   (i===2?'<text x="'+x+'" y="182" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="15" fill="'+c+'">؟ ؟ ؟</text><circle cx="'+x+'" cy="312" r="9" fill="#0d0906" stroke="#55483a" stroke-width="2"/><rect x="'+(x-3)+'" y="312" width="6" height="12" fill="#55483a"/>':'')+
+   '<circle cx="'+(x+44)+'" cy="290" r="6" fill="url(#g-brass)"/></g>';
+ }
+ app.innerHTML=roomShell('909',
+ '<div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640">'+
+  '<rect width="1200" height="470" fill="#1f1a16"/>'+beams+
+  '<rect y="460" width="1200" height="12" fill="#0c0806"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>'+
+  '<ellipse cx="600" cy="330" rx="180" ry="160" fill="url(#g-glow)" opacity=".5"/>'+
+  '<g class="sway" style="animation-duration:7s">'+
+  '<rect x="588" y="380" width="24" height="56" fill="#cfc09b"/><ellipse cx="600" cy="376" rx="14" ry="5" fill="#cfc09b"/>'+
+  '<path d="M600 350c5 8 8 12 0 22-8-10-5-14 0-22z" fill="#e8b25a"/>'+
+  '<ellipse cx="600" cy="362" rx="60" ry="80" fill="url(#g-glow)"/></g>'+
+  doors+
+  '<text x="600" y="454" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">آخر بابٍ ستحتاجين إلى اختياره</text>'+
+ '</svg></div>',
+ '<div class="ctl"><span class="tag">'+(S.f.r808.key?'المفتاح النحاسي ثقيلٌ في جيبك':'الباب الحديدي فيه ثقبُ مفتاح · وليس على أي خريطة')+'</span></div>');
  say('الطابق التاسع. عوارض سقف، وشمعةٌ واحدة، وثلاثة أبواب. أحدها يحمل «خروج». وأحدها يحمل 404. وأحدها لا يحمل شيئًا على الإطلاق.');
 }
 function door909(w){
  if(w==='exit')return narrate([
   {t:'تدفعين باب الخروج. يفتح على الضباب ورائحة طريق.'},
   {t:'تخرجين. لا تنظرين خلفك. أنتِ لا تفعلين ذلك أبدًا.'}
- ]).then(()=>ending('exit'));
+ ]).then(function(){ending('exit')});
  if(w==='404')return narrate([
   {t:'أربعة طوابق نزولًا. باب الغرفة 404 مفتوح.'},
   {t:'السرير مرتّب. المصباح دافئ. أحدهم تركه دافئًا لأجلك.'}
- ]).then(()=>ending('404'));
+ ]).then(function(){ending('404')});
  if(w==='unknown'){
   if(!S.f.r808.key){AU.denied();say('الباب الحديدي بلا مقبض — فقط ثقبُ مفتاح ينتظر مفتاحًا نحاسيًا لم تجديه بعد. المستقبل يحتفظ به لكِ.');return}
   return narrate([
    {t:'ينقلب المفتاح النحاسي كأنما قُطع لهذا القفل — لأنه كذلك فعلًا.'},
    {t:'لا توجد غرفةٌ خلف الباب.',big:true},
    {t:'ولم تكن موجودةً قط.'}
-  ]).then(()=>ending('unknown'));
+  ]).then(function(){ending('unknown')});
  }
 }
 async function ending(w){
@@ -1447,7 +1521,7 @@ async function ending(w){
    {t:'نهاية — «الحلقة»'},
    {t:'(الفندق، برفقٍ شديد، يعيد ترتيب سجادته لأجلك.)'}
   ],{final:'ابدئي من جديد'});
-  go('lobby');later(()=>say('اللوبي دافئ. لا أحد خلف المكتب. الساعة تشير إلى 3:17… وقد كانت كذلك منذ زمنٍ بعيد.'),1200);
+  go('lobby');later(function(){say('اللوبي دافئ. لا أحد خلف المكتب. الساعة تشير إلى 3:17… وقد كانت كذلك منذ زمنٍ بعيد.')},1200);
  }
  if(w==='unknown'){
   const c=await narrate([
@@ -1491,18 +1565,21 @@ function toggleMap(){
  const cur=VIEW==='hall'?ARG:(VIEW==='room'?RF[ARG]:null);
  let rows='';
  for(let fl=9;fl>=1;fl--){
-  const rooms=fl===4?['404','405']:Object.keys(RF).filter(r=>RF[r]===fl);
+  const rooms=fl===4?['404','405']:Object.keys(RF).filter(function(r){return RF[r]===fl});
   const open=S.floors.includes(fl);
-  rows+=`<div class="mfloor"><span class="fn">ط${fl}</span><div class="md">${rooms.map(n=>{
-   const rdone=doneRoom(n);
-   return `<span class="mdoor ${open?'':'lock'} ${cur===fl?'cur':''}" ${open?`onclick="closeOv('ov-map');go('elevator',${fl})"`:''}>
-    ${ic(open?(rdone?'check':'key'):'lock')}${n}</span>`}).join('')}
-   ${!open?`<span class="tag" style="align-self:center">مُقفل</span>`:''}</div></div>`;
+  let cells='';
+  for(let i=0;i<rooms.length;i++){
+   const n=rooms[i],rdone=doneRoom(n);
+   cells+='<span class="mdoor '+(open?'':'lock')+' '+(cur===fl?'cur':'')+'" '+(open?('onclick="closeOv(\'ov-map\');go(\'elevator\','+fl+')"'):'')+'>'+
+    ic(open?(rdone?'check':'key'):'lock')+n+'</span>';
+  }
+  rows+='<div class="mfloor"><span class="fn">ط'+fl+'</span><div class="md">'+cells+
+   (open?'':'<span class="tag" style="align-self:center">مُقفل</span>')+'</div></div>';
  }
- ov.innerHTML=`<div class="panel"><button class="plate small xbtn" onclick="closeOv('ov-map')">×</button>
-  <h3>هالوواي</h3><div class="ph-sub">تسعة طوابق · عشر غرف · واحدة ليست على أي خريطة</div>
-  <div class="mwrap">${rows}</div>
-  <div class="ph-sub" style="margin-top:12px">اضغطي طابقًا مفتوحًا لاستدعاء المصعد</div></div>`;
+ ov.innerHTML='<div class="panel"><button class="plate small xbtn" onclick="closeOv(\'ov-map\')">×</button>'+
+  '<h3>هالوواي</h3><div class="ph-sub">تسعة طوابق · عشر غرف · واحدة ليست على أي خريطة</div>'+
+  '<div class="mwrap">'+rows+'</div>'+
+  '<div class="ph-sub" style="margin-top:12px">اضغطي طابقًا مفتوحًا لاستدعاء المصعد</div></div>';
  ov.classList.add('open');
 }
 
@@ -1512,25 +1589,33 @@ function toggleMap(){
 function toggleEvd(){
  const ov=$('ov-evd');
  if(ov.classList.contains('open'))return closeOv('ov-evd');
- const cards=S.evd.map((id,i)=>`<div class="ev" style="--r:${(i%3-1)*2.2}deg"><b>${EVD[id][0]}</b><span>${EVD[id][1]}</span></div>`).join('');
+ let cards='';
+ for(let i=0;i<S.evd.length;i++){const id=S.evd[i];
+  cards+='<div class="ev" style="--r:'+((i%3-1)*2.2)+'deg"><b>'+EVD[id][0]+'</b><span>'+EVD[id][1]+'</span></div>'}
  const empty=Math.max(0,3-S.evd.length);
- const achList=Object.entries(ACH).map(([id,[t,d]])=>
-  `<div class="achrow ${S.ach.includes(id)?'':'off'}">${ic(S.ach.includes(id)?'flame':'lock')}<span><b>${t}</b> — ${S.ach.includes(id)?d:'——————'}</span></div>`).join('');
- ov.innerHTML=`<div class="panel"><button class="plate small xbtn" onclick="closeOv('ov-evd')">×</button>
-  <h3>لوحة الأدلة</h3><div class="ph-sub">ما نعرفه · حتى الآن</div>
-  <div class="board"><svg id="threads"></svg><div class="ev-cards" id="evcards">${cards}${'<div class="ev empty"><span>مساحةٌ<br>لمزيدٍ من الحقيقة</span></div>'.repeat(Math.max(empty,1))}</div></div>
-  <h3 style="margin-top:16px">إنجازات سرية · ${S.ach.length}/${Object.keys(ACH).length}</h3>
-  ${achList}</div>`;
+ let empties='';
+ for(let i=0;i<Math.max(empty,1);i++)empties+='<div class="ev empty"><span>مساحةٌ<br>لمزيدٍ من الحقيقة</span></div>';
+ let achList='';
+ const keys=Object.keys(ACH);
+ for(let i=0;i<keys.length;i++){const id=keys[i],got=S.ach.includes(id);
+  achList+='<div class="achrow '+(got?'':'off')+'">'+ic(got?'flame':'lock')+'<span><b>'+ACH[id][0]+'</b> — '+(got?ACH[id][1]:'——————')+'</span></div>'}
+ ov.innerHTML='<div class="panel"><button class="plate small xbtn" onclick="closeOv(\'ov-evd\')">×</button>'+
+  '<h3>لوحة الأدلة</h3><div class="ph-sub">ما نعرفه · حتى الآن</div>'+
+  '<div class="board"><svg id="threads"></svg><div class="ev-cards" id="evcards">'+cards+empties+'</div></div>'+
+  '<h3 style="margin-top:16px">إنجازات سرية · '+S.ach.length+'/'+keys.length+'</h3>'+achList+'</div>';
  ov.classList.add('open');
- requestAnimationFrame(()=>{
-  const cs=[...ov.querySelectorAll('.ev:not(.empty)')];
-  const svg=ov.querySelector('#threads');if(!svg||cs.length<2)return;
-  const b=ov.querySelector('.board').getBoundingClientRect();
-  svg.setAttribute('width',b.width);svg.setAttribute('height',ov.querySelector('.ev-cards').getBoundingClientRect().bottom-b.top+16);
-  let pts=cs.map(c=>{const r=c.getBoundingClientRect();return [r.left-b.left+r.width/2+((Math.random()*24)-12),r.top-b.top+8]});
-  let path='';for(let i=0;i<pts.length-1;i++){const [x1,y1]=pts[i],[x2,y2]=pts[i+1];const mx=(x1+x2)/2;
-   path+=`<path d="M${x1} ${y1}C${mx} ${y1+30},${mx} ${y2-30},${x2} ${y2}" stroke="#7e1f1f" stroke-width="1.6" fill="none" opacity=".75"/>`}
-  svg.innerHTML=path+pts.map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3.4" fill="#7e1f1f"/>`).join('');
+ requestAnimationFrame(function(){
+  try{
+   const cs=[...ov.querySelectorAll('.ev:not(.empty)')];
+   const svg=ov.querySelector('#threads');if(!svg||cs.length<2)return;
+   const b=ov.querySelector('.board').getBoundingClientRect();
+   svg.setAttribute('width',b.width);svg.setAttribute('height',ov.querySelector('.ev-cards').getBoundingClientRect().bottom-b.top+16);
+   const pts=cs.map(function(c){const r=c.getBoundingClientRect();return [r.left-b.left+r.width/2+((Math.random()*24)-12),r.top-b.top+8]});
+   let path='';
+   for(let i=0;i<pts.length-1;i++){const x1=pts[i][0],y1=pts[i][1],x2=pts[i+1][0],y2=pts[i+1][1];const mx=(x1+x2)/2;
+    path+='<path d="M'+x1+' '+y1+'C'+mx+' '+(y1+30)+','+mx+' '+(y2-30)+','+x2+' '+y2+'" stroke="#7e1f1f" stroke-width="1.6" fill="none" opacity=".75"/>'}
+   svg.innerHTML=path+pts.map(function(p){return '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="3.4" fill="#7e1f1f"/>'}).join('');
+  }catch(e){}
  });
 }
 
@@ -1540,58 +1625,65 @@ function toggleEvd(){
 function toggleSet(){
  const ov=$('ov-set');
  if(ov.classList.contains('open'))return closeOv('ov-set');
- ov.innerHTML=`<div class="panel" style="max-width:420px"><button class="plate small xbtn" onclick="closeOv('ov-set')">×</button>
-  <h3>مكتب الاستقبال</h3><div class="ph-sub">الإعدادات</div>
-  <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px">
-   <div style="display:flex;align-items:center;gap:12px"><span class="tag" style="width:90px">الصوت</span>
-    <button class="plate small" onclick="toggleSndBtn()" id="sndbtn">${S.sndOn?'تشغيل':'إيقاف'}</button></div>
-   <div style="display:flex;align-items:center;gap:12px"><span class="tag" style="width:90px">مستوى الصوت</span>
-    <input type="range" min="0" max="1" step=".05" value="${S.vol}" style="flex:1;accent-color:#b08d4f" oninput="AU.vol(+this.value)"></div>
-   <div style="border-top:1px dashed #4a3a24;padding-top:12px">
-    <span class="tag">أتحرقين السجلّ؟</span>
-    <div style="display:flex;gap:10px;margin-top:10px">
-     <button class="plate small" onclick="doReset()">احرقيه (امسحي كل شيء)</button>
-     <button class="plate small" onclick="closeOv('ov-set')">أكملي اللعب</button></div></div>
-   <div class="ph-sub" style="margin-top:6px">ROOM 404 · هالوواي<br>تقدمكِ يُحفظ تلقائيًا — بهدوء، كالفندق نفسه.</div>
-  </div></div>`;
+ ov.innerHTML='<div class="panel" style="max-width:420px"><button class="plate small xbtn" onclick="closeOv(\'ov-set\')">×</button>'+
+  '<h3>مكتب الاستقبال</h3><div class="ph-sub">الإعدادات</div>'+
+  '<div style="display:flex;flex-direction:column;gap:14px;margin-top:8px">'+
+  '<div style="display:flex;align-items:center;gap:12px"><span class="tag" style="width:90px">الصوت</span>'+
+  '<button class="plate small" onclick="toggleSndBtn()" id="sndbtn">'+(S.sndOn?'تشغيل':'إيقاف')+'</button></div>'+
+  '<div style="display:flex;align-items:center;gap:12px"><span class="tag" style="width:90px">مستوى الصوت</span>'+
+  '<input type="range" min="0" max="1" step=".05" value="'+S.vol+'" style="flex:1;accent-color:#b08d4f" oninput="AU.vol(+this.value)"></div>'+
+  '<div style="border-top:1px dashed #4a3a24;padding-top:12px">'+
+  '<span class="tag">أتحرقين السجلّ؟</span>'+
+  '<div style="display:flex;gap:10px;margin-top:10px">'+
+  '<button class="plate small" onclick="doReset()">احرقيه (امسحي كل شيء)</button>'+
+  '<button class="plate small" onclick="closeOv(\'ov-set\')">أكملي اللعب</button></div></div>'+
+  '<div class="ph-sub" style="margin-top:6px">ROOM 404 · هالوواي<br>تقدّمكِ يُحفظ تلقائيًا — بهدوء، كالفندق نفسه.</div>'+
+  '</div></div>';
  ov.classList.add('open');
 }
 function toggleSndBtn(){AU.setSnd(!S.sndOn);const b=$('sndbtn');if(b)b.textContent=S.sndOn?'تشغيل':'إيقاف'}
-function doReset(){localStorage.removeItem('room404_ar_v1');S=JSON.parse(JSON.stringify(DEF));closeOv('ov-set');go('title')}
+function doReset(){try{localStorage.removeItem('room404_ar_v2')}catch(e){}S=JSON.parse(JSON.stringify(DEF));closeOv('ov-set');go('title')}
 
 /* ============================================================
    أحداث عشوائية + الغبار + المصباح
 ============================================================ */
 let lastAct=Date.now();
-['pointerdown','keydown','pointermove'].forEach(e=>document.addEventListener(e,()=>lastAct=Date.now(),{passive:true}));
-setInterval(()=>{
- if(!S.started||VIEW==='title'||Date.now()-lastAct<15000)return;
- const r=Math.random();
- if(r<.35)flick();
- else if(r<.5)AU.knockFar();
- else if(r<.56)AU.whisper(Math.random()<.5?'خلفك':'أنتِ تعرفين بالفعل');
+['pointerdown','keydown','pointermove'].forEach(function(ev){document.addEventListener(ev,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){
+ try{
+  if(!S.started||VIEW==='title'||Date.now()-lastAct<15000)return;
+  const r=Math.random();
+  if(r<.35)flick();
+  else if(r<.5)AU.knockFar();
+  else if(r<.56)AU.whisper(Math.random()<.5?'خلفك':'أنتِ تعرفين بالفعل');
+ }catch(e){}
 },52000);
 
+try{
 (function dust(){
  const cv=$('dust'),cx=cv.getContext('2d');
  let W,H;function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}
  rs();addEventListener('resize',rs);
- const P=Array.from({length:42},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.8+.5,vx:(Math.random()-.5)*.14,vy:-(Math.random()*.22+.05),a:Math.random()*.4+.1}));
+ const P=Array.from({length:42},function(){return {x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.8+.5,vx:(Math.random()-.5)*.14,vy:-(Math.random()*.22+.05),a:Math.random()*.4+.1}});
  (function loop(){cx.clearRect(0,0,W,H);
-  P.forEach(p=>{p.x+=p.vx;p.y+=p.y;if(p.y<-4){p.y=H+4;p.x=Math.random()*W}
-   cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fillStyle=`rgba(232,214,178,${p.a})`;cx.fill()});
+  for(let i=0;i<P.length;i++){const p=P[i];p.x+=p.vx;p.y+=p.y;if(p.y<-4){p.y=H+4;p.x=Math.random()*W}
+   cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fillStyle='rgba(232,214,178,'+p.a+')';cx.fill()}
   requestAnimationFrame(loop)})();
 })();
+}catch(e){fatal('dust: '+e.message)}
+try{
 (function lantern(){
  const L=$('lantern');
- addEventListener('pointermove',e=>{L.style.setProperty('--mx',e.clientX+'px');L.style.setProperty('--my',e.clientY+'px')},{passive:true});
+ addEventListener('pointermove',function(e){L.style.setProperty('--mx',e.clientX+'px');L.style.setProperty('--my',e.clientY+'px')},{passive:true});
 })();
+}catch(e){}
 
 /* ============================================================
-   أيقونة التطبيق + manifest (الاسم واللوجو بالإنجليزي كما طلبتِ)
+   أيقونة التطبيق + manifest (الاسم واللوجو بالإنجليزي)
 ============================================================ */
+try{
 (function pwa(){
- const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180"><rect width="180" height="180" fill="#0d0a08"/><rect x="34" y="16" width="112" height="148" fill="none" stroke="#b08d4f" stroke-width="7"/><rect x="50" y="32" width="80" height="116" fill="#171210" stroke="#6e5732" stroke-width="3"/><text x="90" y="100" font-family="Georgia,serif" font-size="40" font-weight="700" fill="#c9a35c" text-anchor="middle">404</text><circle cx="90" cy="122" r="6" fill="#b08d4f"/></svg>`;
+ const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180"><rect width="180" height="180" fill="#0d0a08"/><rect x="34" y="16" width="112" height="148" fill="none" stroke="#b08d4f" stroke-width="7"/><rect x="50" y="32" width="80" height="116" fill="#171210" stroke="#6e5732" stroke-width="3"/><text x="90" y="100" font-family="Georgia,serif" font-size="40" font-weight="700" fill="#c9a35c" text-anchor="middle">404</text><circle cx="90" cy="122" r="6" fill="#b08d4f"/></svg>';
  const icon='data:image/svg+xml,'+encodeURIComponent(svg);
  const l1=document.createElement('link');l1.rel='icon';l1.href=icon;document.head.appendChild(l1);
  const l2=document.createElement('link');l2.rel='apple-touch-icon';l2.href=icon;document.head.appendChild(l2);
@@ -1602,11 +1694,18 @@ setInterval(()=>{
   const l3=document.createElement('link');l3.rel='manifest';
   l3.href=URL.createObjectURL(new Blob([JSON.stringify(man)],{type:'application/json'}));
   document.head.appendChild(l3);
- }catch(e){}
+ }catch(e2){}
 })();
+}catch(e){}
 
-/* ---------- boot ---------- */
-render();
+/* ---------- الإقلاع المحصّن ---------- */
+try{
+ render();
+ const boot=document.getElementById('boot');
+ if(boot&&boot.parentNode)boot.parentNode.removeChild(boot);
+}catch(err){
+ fatal(err&&err.message||String(err));
+}
 </script>
 </body>
 </html>
