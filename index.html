@@ -37,6 +37,13 @@ button{font:inherit}
 .hbtn:hover{color:#e2c687;border-color:#6e5732}
 .ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 
+/* مصباح الحل الجانبي */
+.bulb{position:fixed;bottom:20px;left:20px;z-index:70;width:54px;height:54px;border-radius:50%;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 35%,#2a2013,#141009 70%);border:1px solid #6e5732;color:#c9a35c;cursor:pointer;box-shadow:0 8px 24px #000c,0 0 22px rgba(201,163,92,.14)}
+.bulb .ic{width:24px;height:24px}
+.bulb.on{display:flex}
+.bulb.on:not(.used){animation:pulseb 2.8s infinite}
+.bulb.on.used{opacity:.28;filter:saturate(.3)}
+
 .view{width:100%;max-width:1020px;margin:0 auto;padding:14px 14px 48px;display:flex;flex-direction:column;gap:12px}
 .vhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .vhead h2{font-family:'Reem Kufi';font-weight:700;font-size:clamp(16px,3.2vw,22px);color:#c9a35c;margin:0}
@@ -201,6 +208,7 @@ button{font:inherit}
  .ev{width:140px}
  .view{padding:10px 10px 40px}
  .pg{width:170px}
+ .bulb{width:48px;height:48px;bottom:14px;left:14px}
 }
 </style>
 </head>
@@ -216,7 +224,7 @@ button{font:inherit}
  <pattern id="p-plank" width="120" height="26" patternUnits="userSpaceOnUse"><rect width="120" height="26" fill="#221407"/><rect y="24" width="120" height="2" fill="#0d0803"/><rect x="58" width="2" height="26" fill="#0d0803"/></pattern>
  <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></symbol>
  <symbol id="i-board" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.5 5.5l2 2M16.5 16.5l2 2M18.5 5.5l-2 2M7.5 16.5l-2 2"/></symbol>
- <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M9.4 9.2a2.7 2.7 0 1 1 3.9 2.4c-.9.5-1.3 1-1.3 1.9"/><path d="M12 17.2v.1"/></symbol>
+ <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M12 2.5a6.5 6.5 0 0 0-4 11.6c.8.7 1 1.5 1 2.4h6c0-.9.2-1.7 1-2.4a6.5 6.5 0 0 0-4-11.6z"/><path d="M9.5 19h5M10.5 21.5h3"/></symbol>
  <symbol id="i-snd" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9a4 4 0 0 1 0 6"/></symbol>
  <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9l5 6M21 9l-5 6"/></symbol>
  <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
@@ -239,6 +247,7 @@ button{font:inherit}
 <canvas id="dust"></canvas>
 <div id="grain"></div><div id="vig"></div>
 <div id="toasts"></div>
+<button id="bulb" class="bulb" onclick="bulbHint()" aria-label="حل المصباح"><svg class="ic" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#i-bulb" href="#i-bulb"/></svg></button>
 <div class="ov" id="ov-map"></div>
 <div class="ov" id="ov-evd"></div>
 <div class="ov" id="ov-set"></div>
@@ -248,8 +257,9 @@ button{font:inherit}
 
 <script>
 /* ============================================================
-   ROOM 404 — THE HALLOWAY · v5
-   v4 + أزرار فعل صريحة لكل غرفة + زر تلميح «؟» + سرد لا يعلق أبدًا
+   ROOM 404 — THE HALLOWAY · v7
+   اللعبة بلا حلول مكتوبة + مصباح جانبي يمنح الحل الكامل
+   للمكان الحالي — مرة واحدة لكل مكان ثم يحترق.
 ============================================================ */
 
 /* ---------- الإبلاغ عن الأخطاء ---------- */
@@ -274,7 +284,7 @@ window.addEventListener('error',function(e){fatal(e&&e.message)});
 window.addEventListener('unhandledrejection',function(e){fatal(e&&e.reason&&(e.reason.message||e.reason))});
 
 /* ---------- ثوابت ---------- */
-var VER='v5';
+var VER='v7';
 var RF={'101':1,'202':2,'303':3,'404':4,'405':4,'501':5,'602':6,'707':7,'808':8,'909':9};
 var FLOORS={
  1:{wall:'#232a1f',wallD:'#181f15'},2:{wall:'#212830',wallD:'#151b22'},
@@ -297,12 +307,12 @@ var STATIONS=[
 var EVD={
  ev_mirror:['المرآة — الرقم','رقمٌ محفورٌ في زاوية الزجاج: 7. الانعكاس كذب في كل شيءٍ آخر.'],
  ev_clock:['الزمن — 03:17','كل ساعةٍ في الغرفة 202 توقفت عند الدقيقة نفسها. سجلّ الخادمة يؤكد ذلك.'],
- ev_radio:['الراديو — 92.4','صوتٌ على هذا التردد يعرف اسمك. ثم — سبع نغمات، كأنّ أحدًا يتذكّر أغنية.'],
+ ev_radio:['الراديو — التردد','صوتٌ على ترددٍ ما يعرف اسمك. ثم — سبع نغمات، كأنّ أحدًا يتذكّر أغنية.'],
  ev_404:['الغرفة 404','إنها اللوبي. لوبيك أنتِ — نفس السجادة والمكتب والساعة. لكن مع صورتك على الحائط… وبلا بابٍ أمامي.'],
  ev_photo:['الصورة — 4 يونيو 1986','آخر صورة تُظهر اللوبي — بتاريخٍ يعود عقودًا — وأحدهم يقف في موضعك بالضبط.'],
  ev_diary:['اليوميات — خطّك','خمس صفحات بخطٍّ هو، بشكلٍ مستحيل، خطّك. «لذلك أنشأتُ الغرفة 404.»'],
- ev_piano:['البيانو — اللحن','الأزرار النحاسية السبعة تعيد بثّ 92.4. الأغنية مفتاح.'],
- ev_seq:['التسلسل','7 · 0317 · 92.4 · 1986 — بالترتيب الذي وُجدت به الأدلة. الصندوق قبِلها.'],
+ ev_piano:['البيانو — اللحن','الأزرار النحاسية السبعة تعيد بثّ التسجيل. الأغنية مفتاح.'],
+ ev_seq:['التسلسل','الأدلة الأربعة — بالترتيب الذي وُجدت به. الصندوق قبِلها.'],
  ev_key:['مفتاحٌ نحاسي','انتُشل من تحت أنقاض مستقبلٍ لم يقع بعد.'],
  ev_loop:['السببية','تركتِ المفتاح في درجٍ عام 1986. وفي الحاضر ترك أحدهم لكِ ورقة. أنتِ هي من فعل.']
 };
@@ -319,27 +329,34 @@ var ACH={
  a_end2:['الحلقة','اخترتِ أن تنسي'],
  a_end3:['تسجيل المغادرة','تركتِ المصباح يرحل']
 };
-/* تلميحات زر «؟» — لكل مكان في اللعبة */
-var HINTS={
- title:'اضغطي «ادخُلي الفندق». كل تقدّمكِ يُحفظ تلقائيًا — ولو أغلقتِ اللعبة ستجدين زر «متابعة».',
- lobby:'افحصي كل شيء من الأزرار تحت الصورة: المكتب، الجرس، رفّ المفاتيح، الساعة، الباب. ثم خذي المصعد.',
- elevator:'الأزرار المضيئة فقط تعمل. بدأتِ بالطابق 1 — وكل غرفة تُحَلّ في الفندق تفتح لكِ طابقًا أعلى.',
- hall:'اضغطي زر الغرفة بالأسفل لدخولها.',
- '101':'غرفة ملاحظة: اضغطي «الكرسي» ثم «الباب» ثم «المصباح» (الأزرار بالأسفل) وراقبي المرآة تكذب. بعد الثلاثة ستكتب المرآة كلماتها — عندها اضغطي «افحصي المرآة» لالتقاط الرقم 7.',
- '202':'اجعلي الساعات الثلاث كلها تشير إلى 3:17 — أي الساعة 3 والدقيقة 17 لكل واحدة. اقرئي «بطاقة الخادمة» أولًا لتعرفي لماذا.',
- '303':'اضغطي «تشغيل الراديو»، ثم اسحبي شريط التردد ببطء حتى 92.4 واسمعي التسجيل حتى نهايته (نحو 12 ثانية) — لا تخرجي قبل أن ينتهي.',
- '404':'هذا هو اللوبي نفسه… بلا بابٍ أمامي. اضغطي «افحصي الصورة» على الحائط.',
- '405':'كل زيارة لهذه الغرفة تُظهّر صورة جديدة (خمس زيارات). اضغطي المصباح البنفسجي لتقرئي ما بين السطور، ثم اخرجي للممر وارجعي.',
- '501':'رتّبي الصفحات بالترتيب الذي حدثت به القصة: من «توقّف النزلاء…» وصولًا إلى «انظري إلى الخطّ».',
- '602':'اللحن مأخوذ من شريط 92.4 في الطابق الثالث: الأزرار 3 · 5 · 4 · 3 · 7 · 6 · 5 بالترتيب، ثم انتظري ردّ البيانو.',
- '707':'الأقراص بالترتيب الذي وجدتِ به الأدلة: 7 (المرآة) ثم 0317 (الزمن) ثم 92.4 (الصوت) ثم 1986 (البداية).',
- '808':'ادخلي الأبواب الثلاثة. في المستقبل: اضغطي «فتّشي الأنقاض» قبل نفاد عدّاد الاستقرار. خذي المفتاح، اذهبي للماضي واتركيه في الدرج، ثم افتحي الدرج في الحاضر.',
- '909':'ثلاثة أبواب = ثلاث نهايات مختلفة. الباب «؟؟؟» يحتاج مفتاحًا نحاسيًا من المستقبل في الطابق 8.'
+/* حلول المصباح — الحل الكامل لكل مكان، يُمنح مرة واحدة */
+var SOLS={
+ lobby:'خذي المصعد: زر «المصعد ⬆» بالأسفل. الطابق الأول مفتوح من البداية، وكل غرفة تحلّينها تفتح الطابق التالي.',
+ elevator:'اضغطي زر «1» في اللوحة النحاسية يمين الصورة — الغرفة 101 هي البداية.',
+ hall1:'اضغطي زر «ادخلي الغرفة 101» بالأسفل.',
+ hall2:'اضغطي زر «ادخلي الغرفة 202» بالأسفل.',
+ hall3:'اضغطي زر «ادخلي الغرفة 303» بالأسفل.',
+ hall4:'شفرتها: 7031792.4 — أي: 7 (رقم المرآة) ثم 0317 (توقيت الساعات) ثم 92.4 (تردد الراديو)، متتابعة بلا فواصل. اضغطي باب 404 وأدخليها في اللوحة ثم «افتحي». (الغرفة 405 تُفتح تلقائيًا بعد دخول 404.)',
+ hall5:'اضغطي زر «ادخلي الغرفة 501» بالأسفل.',
+ hall6:'اضغطي زر «ادخلي الغرفة 602» بالأسفل.',
+ hall7:'اضغطي زر «ادخلي الغرفة 707» بالأسفل.',
+ hall8:'اضغطي زر «ادخلي الغرفة 808» بالأسفل.',
+ hall9:'اضغطي زر «ادخلي الغرفة 909» بالأسفل — واختاري بابًا.',
+ r101:'اضغطي «الكرسي» ثم «الباب» ثم «المصباح» (الأزرار تحت الصورة). بعد الثلاثة تتكلم المرآة ويظهر الرقم 7 في زاوية الزجاج — عندها اضغطي «افحصي المرآة».',
+ r202:'اجعلي الساعات الثلاث كلها تشير إلى 3:17. لكل ساعة: «ساعة +1» حتى تصل إلى 3، ثم «دقيقة +1» حتى تصل إلى 17.',
+ r303:'اضغطي «تشغيل الراديو»، ثم اسحبي شريط التردد ببطء حتى 92.4 بالضبط، واتركي التسجيل يكتمل حتى نهايته (نحو 12 ثانية) دون الخروج من الغرفة.',
+ r404:'اضغطي زر «افحصي الصورة على الحائط» بالأسفل — الصورة هي التي تفتح الطابق 5.',
+ r405:'اخرجي إلى الممر ثم عودي إلى الغرفة — كل عودة تُظهّر صورة جديدة حتى تكتمل الخمس. واضغطي «المصباح البنفسجي» لقراءة الكلمات الخفية في الصورة.',
+ r501:'اضغطي الصفحات بهذا الترتيب: «توقّف النزلاء…» ← «حاولتُ الرحيل…» ← «الفندق لم يسمح لي…» ← «لذلك أنشأتُ…» ← «انظري إلى الخطّ».',
+ r602:'اللحن هو الأزرار: 3 · 5 · 4 · 3 · 7 · 6 · 5 بهذا الترتيب. (زر «اسمعي التسجيل» يعزفه لكِ أوّلًا.)',
+ r707:'الأقراص بالترتيب: الأول = 7 · الثاني = 0317 · الثالث = 92.4 · الرابع = 1986. ثم «شغّلي الآلية».',
+ r808:'ادخلي «المستقبل» واضغطي «فتّشي الأنقاض» قبل نفاد عدّاد الاستقرار لالتقاط المفتاح النحاسي. ثم «الماضي» واضغطي «اتركي المفتاح في الدرج». ثم «الحاضر» واضغطي «افتحي الدرج». بعدها عودي إلى الأبواب الثلاثة ليتفتح الطابق 9.',
+ r909:'الباب المجهول «؟؟؟» يُفتح بالمفتاح النحاسي من غرفة الزمن (الطابق 8). أما «خروج» و«404» فكلٌّ منهما نهاية مختلفة — ولكل بابٍ نهاية.'
 };
 
-/* ---------- الحالة + الحفظ (نفس مفتاح v4 — تقدّمكِ محفوظ) ---------- */
+/* ---------- الحالة + الحفظ ---------- */
 var DEF={
- started:false,floors:[1],evd:[],ach:[],endings:[],
+ started:false,floors:[1],evd:[],ach:[],endings:[],hints:{},
  f:{
   m101:{d:0,seven:false,done:false},
   c202:{a:{h:12,m:0},b:{h:7,m:45},c:{h:9,m:3},done:false},
@@ -364,6 +381,7 @@ function loadS(){
   out.started=!!o.started;
   out.floors=(o.floors&&o.floors.length)?o.floors:[1];
   out.evd=o.evd||[];out.ach=o.ach||[];out.endings=o.endings||[];
+  out.hints=(o.hints&&typeof o.hints==='object')?o.hints:{};
   out.sndOn=(o.sndOn===false)?false:true;
   out.vol=(typeof o.vol==='number')?o.vol:.8;
   if(o.f){for(var k in out.f){if(!o.f[k])continue;
@@ -509,7 +527,35 @@ function clearLater(){for(var i=0;i<roomTimers.length;i++)clearTimeout(roomTimer
 var stabIv=null;
 function clearStab(){if(stabIv){clearInterval(stabIv);stabIv=null}}
 
-/* ---------- السرد السينمائي (لا يعلق أبدًا: الزر ظاهر دائمًا + مسافة/Enter + لمس أي مكان) ---------- */
+/* ---------- مصباح الحل: حلٌّ كامل واحد لكل مكان ثم يحترق ---------- */
+function bulbKey(){
+ if(VIEW==='room')return 'r'+ARG;
+ if(VIEW==='hall')return 'hall'+ARG;
+ return VIEW;
+}
+function bulbHint(){
+ AU.init();
+ var key=bulbKey();
+ var h=SOLS[key];
+ if(!h){say('المصباح لا يضيء في هذا المكان.');return}
+ if(S.hints[key]){
+  say('اللمبة احترقت هنا — لن تضيء في هذا المكان مرة أخرى.');
+  AU.buzz();return}
+ S.hints[key]=1;save();
+ AU.tone(880,{dur:.4,g:.08});
+ showNote('حلٌّ واحد — من مكتب الاستقبال',
+  h+'<br><br><span style="color:#8a7a58;font-size:12px">هذه لمبة هذا المكان — احترقت الآن، ولن تضيء هنا مرة أخرى.</span>',
+  {hand:true,btn:'أطفئي المصباح'});
+ updateBulb();
+}
+function updateBulb(){
+ var b=$('bulb');if(!b)return;
+ var key=bulbKey();
+ var on=S.started&&VIEW!=='title'&&!!SOLS[key];
+ b.className=on?('bulb on'+(S.hints[key]?' used':'')):'bulb';
+}
+
+/* ---------- السرد السينمائي ---------- */
 function narrate(lines,opt){
  opt=opt||{};var finalTxt=opt.final||'متابعة',choice=opt.choice||null;
  return new Promise(function(res){
@@ -608,20 +654,11 @@ function showNote(title,body,opt){
 }
 function closeOv(id){var o=$(id);if(o){o.classList.remove('open');o.innerHTML=''}AU.tick()}
 
-/* ---------- تلميح «؟» ---------- */
-function showHint(){
- var key=(VIEW==='room')?String(ARG):VIEW;
- var h=HINTS[key];
- if(!h)h='كل شيء في الفندق يُفحص بالأزرار تحت الصورة. الغرف تُحلّ بالترتيب من الطابق الأول صعودًا.';
- showNote('محتارة؟ — تلميح الغرفة الحالية',h,{btn:'فهمت'});
-}
-
 /* ---------- HUD ---------- */
 function hud(loc){
  return '<div class="hud"><span class="loc">'+loc+'</span>'+
   '<button class="hbtn" data-tip="خريطة الفندق" onclick="toggleMap()">'+ic('map')+'</button>'+
   '<button class="hbtn" data-tip="لوحة الأدلة" onclick="toggleEvd()">'+ic('board')+'</button>'+
-  '<button class="hbtn" data-tip="تلميح: ماذا أفعل هنا؟" onclick="showHint()">'+ic('help')+'</button>'+
   '<button class="hbtn" data-tip="الإعدادات" onclick="toggleSet()">'+ic(S.sndOn?'snd':'mute')+'</button></div>';
 }
 document.addEventListener('mouseover',function(e){
@@ -661,6 +698,7 @@ function render(){
   if(VIEW!=='title'&&!app.getAttribute('data-hud')){
    app.insertAdjacentHTML('afterbegin',hud(locName()));
    app.setAttribute('data-hud','1')}
+  updateBulb();
  }catch(err){fatal(err&&err.message||String(err))}
 }
 function locName(){
@@ -713,7 +751,8 @@ function startGame(){
   {t:'فندق هالوواي — تأسّس 1927 — أُغلق 1986',big:true},
   {t:'أنتِ لا تتذكّرين وصولك.'},
   {t:'لا تتذكّرين الطريق، ولا المطر، ولا السبب.'},
-  {t:'فقط صوت الأبواب — كلّها — تُقفل دفعةً واحدة خلفك.'}
+  {t:'فقط صوت الأبواب — كلّها — تُقفل دفعةً واحدة خلفك.'},
+  {t:'وإن تعثّرتِ في مكانٍ ما… في الفندق مصباحٌ صغير، يضيء مرةً واحدة لكل مكان. استعمليه بحكمة.'}
  ]).then(function(){go('lobby')});
 }
 function startNew(){
@@ -944,7 +983,7 @@ function enterRoom(n){
 }
 
 /* ============================================================
-   لوحة شفرة الغرفة 404
+   لوحة شفرة الغرفة 404 (وفيها زر مصباح الحل)
 ============================================================ */
 var kpBuf='';
 function keypadOpen(){
@@ -956,7 +995,7 @@ function keypadOpen(){
  if(!has(S.evd,'ev_radio'))missing.push('تردد الراديو (الطابق 3)');
  var hint=missing.length?
   'ما زلتِ تحتاجين إلى:<br>'+missing.join(' · '):
-  'اللوحة النحاسية على الباب تقول: المرآة · التوقيت · التردد.<br>رقمٌ، ثم التوقيت كاملًا، ثم التردد — بلا فواصل.<br>أي: <b>7</b> ثم <b>0317</b> ثم <b>92.4</b>';
+  'اللوحة النحاسية على الباب تقول: المرآة · التوقيت · التردد.<br>اكتبيها متتابعة بلا فواصل: رقمُ المرآة، ثم التوقيت كاملًا (ساعتان ودقائق)، ثم التردد.';
  var keys='';
  for(var n=1;n<=9;n++)keys+='<button class="plate" onclick="kp('+n+')">'+n+'</button>';
  keys+='<button class="plate" onclick="kpStr(\'.\')">.</button><button class="plate" onclick="kp(0)">0</button><button class="plate" onclick="kp(-1)">⌫</button>';
@@ -965,10 +1004,11 @@ function keypadOpen(){
   '<h3>الغرفة 404</h3><div class="ph-sub">قفلٌ إلكتروني قديم… ينتظر</div>'+
   '<div class="vfd" id="kpvfd">— أدخلي الشفرة —</div>'+
   '<div class="kgrid">'+keys+'</div>'+
-  '<div style="display:flex;gap:10px;justify-content:center;margin-top:12px">'+
+  '<div style="display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap">'+
   '<button class="plate" onclick="kpTry()">افتحي</button>'+
   '<button class="plate small" onclick="kpClr()">مسح</button></div>'+
-  '<div class="khint">'+hint+'</div></div>';
+  '<div class="khint">'+hint+'</div>'+
+  '<div style="text-align:center;margin-top:10px"><button class="plate small" onclick="bulbHint()">💡 عالقة هنا؟ الحل — مرة واحدة</button></div></div>';
  ov.classList.add('open');AU.buzz();
 }
 function kp(c){
@@ -1082,20 +1122,18 @@ function r101(){
   '<path d="M958 240h68l-10-46h-48z" fill="#c9a35c" opacity="'+(f.lamp?'.25':'.9')+'"/>'+
   (f.lamp?'':'<ellipse cx="992" cy="260" rx="120" ry="100" fill="url(#g-glow)"/>')+'</g>'+
  '</svg></div>',
- /* شريط الأزرار الصريح — المشكلة اللي كنتِ معلقة فيها اتحلّت هنا */
  '<div class="ctl">'+
-  '<span class="tag">افعلي:</span>'+
   '<button class="plate small" onclick="act101(\'chair\')">الكرسي</button>'+
   '<button class="plate small" onclick="act101(\'door\')">الباب</button>'+
   '<button class="plate small" onclick="act101(\'lamp\')">المصباح</button>'+
   '<button class="plate small '+(f.seven&&!f.done?'pulse':'')+'" onclick="clickMirror101()">افحصي المرآة</button>'+
  '</div>');
  setTimeout(function(){
-  if(f.done){say('الغرفة قالت كل ما كان لديها. الرقم 7 معكِ الآن — عودي للمصعد، الطابق 2 فُتح.');return}
-  say(f.d===0?'غرفة فارغة تقريبًا. جرّبي الأزرار بالأسفل: «الكرسي»، «الباب»، «المصباح» — وراقبي المرآة مع كل فعل.':
-   f.d<3?'ما زالت المرآة تنتظر. جرّبي أثاثًا آخر بالأسفل ('+f.d+' من 3).':
-   f.seven?'ظهر الرقم 7 في زاوية الزجاج — اضغطي «افحصي المرآة» بالأسفل.':
-   'راقبي المرآة… إنها على وشك أن تتكلّم.');
+  if(f.done){say('الغرفة قالت كل ما كان لديها. عودي للمصعد — الطابق 2 فُتح.')}
+  else if(f.d===0){say('غرفة فارغة تقريبًا. ومرآةٌ تنتبه إليكِ بانتباهٍ شديد.')}
+  else if(f.d<3){say('الغرفة لم تُقل كلمتها بعد.')}
+  else if(f.seven){say('ظهر الرقم 7 في زاوية الزجاج — اضغطي «افحصي المرآة» بالأسفل.')}
+  else{say('راقبي المرآة… إنها على وشك أن تتكلّم.')}
   if(f.d===2&&!f.sil){f.sil=1;
    later(function(){var g=$('mfig');
     if(g){g.style.opacity=.8;AU.tone(38,{dur:1.6,g:.4});AU.heart();
@@ -1133,7 +1171,6 @@ function mirrorMessage(){
   f.seven=true;save();
   say('ظهر شيءٌ محفورٌ في زاوية الزجاج — اضغطي زر «افحصي المرآة» بالأسفل.');
   var s=$('mseven');if(s)s.classList.add('on');
-  /* لمّع زر الفحص في شريط الأزرار */
   var btns=app.querySelectorAll('.ctl .plate');
   for(var i=0;i<btns.length;i++){
    if(btns[i].textContent.indexOf('افحصي المرآة')>-1){btns[i].className='plate small pulse'}
@@ -1145,10 +1182,10 @@ function clickMirror101(){
  if(f.seven&&!f.done){
   f.done=true;save();
   addEvidence('ev_mirror');ach('a_eyes');
-  say('الرقم 7، محفورٌ بعمق، بيدٍ ثابتة. بيدٍ بشكل يدك. المرآة أخيرًا تشبه الحقيقة. — عودي للممر ثم المصعد: الطابق 2 فُتح لكِ.');
+  say('الرقم 7، محفورٌ بعمق، بيدٍ ثابتة. بيدٍ بشكل يدك. المرآة أخيرًا تشبه الحقيقة. عودي للمصعد.');
   unlockFloor(2);return}
- if(f.done){say('انعكاسك لم يعد ينتظر أحدًا. إنه ببساطة ليس موجودًا. عودي للمصعد.');return}
- if(f.d<3){say('كل شيء يبدو طبيعيًا. وهذا بالضبط ما هو خطأ فيه. جرّبي أزرار الأثاث الثلاثة بالأسفل أولًا.');return}
+ if(f.done){say('انعكاسك لم يعد ينتظر أحدًا. إنه ببساطة ليس موجودًا.');return}
+ if(f.d<3){say('كل شيء يبدو طبيعيًا. وهذا بالضبط ما هو خطأ فيه. حرّكي الأثاث من الأزرار بالأسفل، وراقبي الزجاج بعد كل حركة.');return}
  if(!f.seven){mirrorMessage();return}
  mirrorMessage();
 }
@@ -1208,8 +1245,8 @@ function r202(){
   '<button class="plate small" onclick="setClock(\'c\',\'m\')">دقيقة +1</button></div></div>'+
  '</div>');
  setTimeout(function(){
-  say(f.done?'3:17. الثلاثة كلها. إلى الأبد الآن. الغرفة انتهت — الطابق 3 مفتوح.':
-   'كل ساعةٍ في هذه الغرفة توقفت — لكن ليس عند الكذبة نفسها. الهدف: اجعلي الثلاثة كلها 3:17. ابدئي ببطاقة الخادمة.');
+  say(f.done?'3:17. الثلاثة كلها. إلى الأبد الآن. الغرفة انتهت — عودي للمصعد.':
+   'كل ساعةٍ في هذه الغرفة توقفت — لكن ليس عند الكذبة نفسها. على المكتب بطاقة.');
  },50);
  return html;
 }
@@ -1223,7 +1260,7 @@ function setClock(k,u){
  AU.tick();save();
  viewRoom('202');
  if(f.a.h===3&&f.a.m===17&&f.b.h===3&&f.b.m===17&&f.c.h===3&&f.c.m===17)solve202();
- else if(f.a.m===17||f.b.m===17||f.c.m===17)say('أقرب. الساعات تجادل أقلّ. اجعلي الدقائق 17 والأخرى 3.');
+ else if(f.a.m===17&&f.b.m===17&&f.c.m===17)say('الدقائق اتفقت أخيرًا. بقيت الساعات.');
 }
 function solve202(){
  var f=S.f.c202;f.done=true;save();ach('a_time');
@@ -1235,7 +1272,7 @@ function solve202(){
  later(function(){AU.knock(2,.34,.85);shake();flick();
   say('طرقٌ… طرقٌ… لكن لا أحد عند الباب. لم يكن هناك أحدٌ عند الباب قطّ.')},4200);
  later(function(){addEvidence('ev_clock');unlockFloor(3);
-  say('انتهت الغرفة. عودي للممر ثم المصعد — الطابق 3 فُتح.')},6400);
+  say('انتهت الغرفة. عودي للممر ثم المصعد.')},6400);
 }
 
 /* ---------- الغرفة 303 · الراديو ---------- */
@@ -1276,8 +1313,7 @@ function r303(){
  '<div class="ctl" style="flex-direction:column;gap:8px">'+
   '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">'+
   '<button class="plate small '+(f.on?'':'pulse')+'" onclick="radioOnOff()">'+(f.on?'إطفاء الراديو':'تشغيل الراديو')+'</button>'+
-  '<button class="plate small '+(f.heard?'':'dim')+'" onclick="replay924()">إعادة تشغيل 92.4</button>'+
-  '<button class="plate small" onclick="jump924()">اذهبي إلى 92.4 مباشرة</button>'+
+  '<button class="plate small '+(f.heard?'':'dim')+'" onclick="replay924()">إعادة تشغيل التسجيل</button>'+
   '</div>'+
   '<input class="r-slider" type="range" min="88" max="108" step="0.1" value="'+f.f+'" id="freq" oninput="tuneRadio(this.value)">'+
   '<div class="r-disp"><span class="fr" id="fdisp">'+f.f.toFixed(1)+'</span> MHz<br><span id="fmsg">'+
@@ -1286,20 +1322,14 @@ function r303(){
  '</div>');
  setTimeout(function(){
   say(f.done?'يزمجر القرص بأدبٍ الآن. لقد قال ما كان لديه. عودي للمصعد — الطابق 4 مفتوح.':
-   'غرفةٌ مظلمة وراديو. شغّليه، ثم وجّهي التردد نحو 92.4 — واسمعي التسجيل حتى نهايته.');
+   'غرفةٌ مظلمة وراديو صماماتٍ قديم. شغّنيه، ودوّري القرص على مهل… واسمعي.');
   if(f.on)AU.startStatic();
  },50);
  return html;
 }
-function jump924(){
- var f=S.f.r303;
- if(!f.on){f.on=true;save();AU.startStatic();AU.tone(120,{dur:.3,type:'triangle',g:.1})}
- var sl=$('freq');if(sl)sl.value='92.4';
- tuneRadio('92.4');
-}
 function radioOnOff(){
  var f=S.f.r303;f.on=!f.on;save();
- if(f.on){AU.startStatic();AU.tone(120,{dur:.3,type:'triangle',g:.1});say('تسخن الصمامات. يتدفق التشويش كالطقس. الآن وجّهي التردد نحو 92.4.')}
+ if(f.on){AU.startStatic();AU.tone(120,{dur:.3,type:'triangle',g:.1});say('تسخن الصمامات. يتدفق التشويش كالطقس.')}
  else{AU.stopStatic();say('يتنهد الراديو ويبرد.')}
  viewRoom('303');
 }
@@ -1322,7 +1352,7 @@ function stationCheck(fr){
  if(st.kind==='music'){if(m)m.textContent='104.1 — أوركسترا راقصة، رحلت قبل أربعين عامًا، وما زالت في منتصف المقطوعة.';AU.playMelody(0,.12);return}
  if(st.kind==='voice'){if(m)m.innerHTML=st.txt+' (الإشارة ثابتة)';AU.whisper(st.tts);return}
  if(st.kind==='you'&&!f.heard)broadcast924();
- else if(st.kind==='you'&&f.heard){if(m)m.textContent='92.4 — ترددك أنتِ. ينتظر زرّ الإعادة.'}
+ else if(st.kind==='you'&&f.heard){if(m)m.textContent='هذا ترددك أنتِ. ينتظر زرّ الإعادة.'}
 }
 function barsAt(arr){
  var b=$('mbars');if(!b)return;
@@ -1336,7 +1366,7 @@ function broadcast924(){
  var m=$('fmsg');
  function L(t){if(m)m.innerHTML=t}
  AU.stopStatic();
- L('<span style="color:#c9a35c">92.4 — تسجيل… اسمعي حتى النهاية</span>');
+ L('<span style="color:#c9a35c">تسجيل… اسمعي حتى النهاية</span>');
  var lines=[
   ['«…إن كنتِ تسمعين هذا، فقد وجدتُ الطريق عائدًا.»',0],
   ['«اسمعيني — لا تفتحي ال—»',2000],
@@ -1362,7 +1392,7 @@ function broadcast924(){
   if(!f.heard){
    f.heard=true;f.done=true;save();ach('a_listen');
    addEvidence('ev_radio');
-   say('كان هذا الصوت صوتكِ أنتِ. عرف اسمك لأنه كان اسمك. واللحن — سبع نغمات — الغرفة 602 ستريدها. عودي للمصعد: الطابق 4 مفتوح.');
+   say('كان هذا الصوت صوتكِ أنتِ. عرف اسمك لأنه كان اسمك. عودي للمصعد — الطابق 4 مفتوح.');
    unlockFloor(4)
   }else{if(m)m.textContent='ينتهي التسجيل كما تنتهي كل التسجيلات: بكِ، وأنتِ تسمعين.'}
  },11500);
@@ -1380,7 +1410,7 @@ function r404(){
   '<div class="ctl"><button class="plate small pulse" onclick="photo404()">افحصي الصورة على الحائط</button></div>');
  setTimeout(function(){
   if(!S.f.r404.seen){S.f.r404.seen=true;save();
-   say('هذا هو اللوبي. لوبيكِ — السجادة نفسها، والمكتب نفسه، والساعة نفسها. إلا أن هناك صورةً على الحائط… ولا بابٍ أمامي. اضغطي زر «افحصي الصورة».')}
+   say('هذا هو اللوبي. لوبيكِ — السجادة نفسها، والمكتب نفسه، والساعة نفسها. إلا أن هناك صورةً على الحائط… ولا بابٍ أمامي.')}
   else say('اللوبي-الذي-ليس-لوبي. الصورة تنتظر على الحائط.');
  },50);
  return html;
@@ -1390,7 +1420,7 @@ function photo404(){
   'إنه اللوبي، من الموضع نفسه الذي تقفين فيه.<br>أحدهم في الصورة — واقفٌ حيث تقفين تمامًا.<br>الإطار دافئ، كأنّ يدًا أمسكته للتو.<br><br><span style="font-family:\'Aref Ruqaa\';font-size:15px">«أُبقي المصابيح مضاءة. — V»</span>',{hand:true,btn:'تراجعي'});
  if(!S.f.r404.photo){
   S.f.r404.photo=true;save();addEvidence('ev_404');
-  later(function(){unlockFloor(5);say('الطابق الخامس فُتح — وكذلك الغرفة 405. عودي للمصعد.')},800);
+  later(function(){unlockFloor(5);say('في طريقك إلى الخارج تلاحين: أبوابًا تفتح على ممراتٍ لم تسيري فيها قط. عودي للمصعد.')},800);
  }
 }
 
@@ -1402,7 +1432,7 @@ function r405(){
  var pics=[
   {t:'الزيارة 1 — اللوبي',d:'فارغ. الساعة تشير إلى 3:17. لا شيء خطأ بعد.',uv:'إنها تتذكّر'},
   {t:'الزيارة 2 — الغرفة 101',d:S.f.m101.done?'الكرسي مُزاح عن المرآة. أنتِ حرّكتِه. الصورة عرفت مسبقًا.':'الكرسي في المنتصف. المرآة تنتظر.',uv:'لا تنظري طويلًا'},
-  {t:'الزيارة 3 — الغرفة 202',d:S.f.c202.done?'كل الساعات متفقة: 3:17. وقف المصوّر ساكنًا تمامًا.':'الساعات تتجادل. الغرفة لم تكن قد حُلّت بعد.',uv:'إنها دارت في حلقة'},
+  {t:'الزيارة 3 — الغرفة 202',d:S.f.c202.done?'كل الساعات متفقة. وقف المصوّر ساكنًا تمامًا.':'الساعات تتجادل. الغرفة لم تكن قد حُلّت بعد.',uv:'إنها دارت في حلقة'},
   {t:'الزيارة 4 — الغرفة 404',d:'الباب مفتوح. أحدهم في الداخل، مواجهٌ للحائط. الغرفة التي كنتِ فيها — مصوّرة من الداخل.',uv:'ليست غرفة'},
   {t:'الزيارة 5 — اللوبي · 4 يونيو 1986',d:'أحدهم يقف في موضعك بالضبط. الخطّ على ظهر الصورة: «أُبقي المصابيح مضاءة. — V»',uv:'ما زالت هنا'}
  ];
@@ -1438,14 +1468,14 @@ function r405(){
   '<button class="plate small" onclick="photoTap405()">افحصي الصورة</button>'+
   '<button class="plate small '+(f.uv?'pulse':'')+'" onclick="uvToggle()">'+(f.uv?'المصباح البنفسجي — يعمل':'المصباح البنفسجي — متوقف')+'</button>'+
   '<span class="tag">الصورة '+Math.min(f.v,5)+' من 5</span>'+
-  (f.v>=5?'':'<span class="tag">اخرجي للممر ثم عودي لتظهّر التالية</span>')+
  '</div>');
  setTimeout(function(){
   if(f.uv)app.classList.add('uv');else app.classList.remove('uv');
-  say(f.v>=5?'انتهت آخر صورة. أنتِ في الصورة، بتاريخ 4 يونيو 1986 — والحذاء حذاؤك. عودي للمصعد: الطابق 5 انتهى.':
-   'تُظهّر الغرفة صورها ببطء: صورة جديدة مع كل زيارة (هذه الزيارة '+Math.min(f.v,5)+' من 5). جرّبي المصباح البنفسجي أيضًا.');
+  say(f.v>=5?'انتهى تظهّر الصور. أنتِ داخل آخرها، بتاريخ 4 يونيو 1986.':
+   'تُظهّر الغرفة صورها ببطء — صورةٌ جديدة مع كل زيارة.');
   if(f.v>=5&&!f.done){
-   f.done=true;save();ach('a_frame');addEvidence('ev_photo')}
+   f.done=true;save();ach('a_frame');addEvidence('ev_photo');
+   later(function(){say('4 يونيو 1986. والحذاء في الصورة حذاؤك.')},1500)}
  },50);
  return html;
 }
@@ -1490,8 +1520,8 @@ function r501(){
  '<div class="pgfield">'+pgs+'</div>'+
  '<div class="ctl"><div class="book">'+slots+'</div></div>');
  setTimeout(function(){
-  say(f.done?'عادت اليوميات كاملةً. عودي للمصعد — الطابق 6 فُتح.':
-   'صفحاتٌ ممزقة. اضغطيها بالترتيب الذي حدثت به القصة: ابدئي بـ«توقّف النزلاء…».');
+  say(f.done?'عادت اليوميات كاملةً. إنها تتذكرك الآن.':
+   'صفحاتٌ ممزقة، متناثرة كأنها سقطت — أو وُضعت.');
  },50);
  return html;
 }
@@ -1503,12 +1533,12 @@ function pickPage(i){
   if(f.n>=5){
    f.done=true;save();addEvidence('ev_diary');
    checkFloor6();
-   say('«لذلك أنشأتُ الغرفة 404» — بخطٍّ تعرفينه من توقيعكِ على اسمك. عودي للمصعد: الطابق 6 فُتح.')}
+   say('«لذلك أنشأتُ الغرفة 404» — بخطٍّ تعرفينه من توقيعكِ على اسمك.')}
   viewRoom('501')
  }else{
   var els=app.querySelectorAll('.pg');var el=els[i];
   if(el){el.classList.add('no');setTimeout(function(){el.classList.remove('no')},450)}
-  AU.denied();say('تقاوم الصفحة. ابدئي من الأولى غير المثبّتة.')}
+  AU.denied();say('تقاوم الصفحة. هذا ليس موضعها.')}
 }
 function checkFloor6(){if(S.f.r405.done&&S.f.r501.done)unlockFloor(6)}
 
@@ -1548,12 +1578,12 @@ function r602(){
   '<div class="mel-rec" id="melrec">'+seqTxt+'</div>'+
   '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">'+
   '<button class="plate small" onclick="reset602()">من جديد</button>'+
-  '<button class="plate small '+(S.f.r303.heard?'pulse':'dim')+'" onclick="playTape602()">تشغيل شريط 92.4 (اسمعي اللحن)</button></div>'+
+  '<button class="plate small '+(S.f.r303.heard?'pulse':'dim')+'" onclick="playTape602()">اسمعي التسجيل</button></div>'+
  '</div>');
  setTimeout(function(){
   say(f.done?'الأزرار هادئة الآن. عودي للمصعد — الطابق 7 فُتح.':
-   S.f.r303.heard?'اللحن من شريط 92.4: اضغطي «تشغيل شريط 92.4» لتسمعيه، ثم قلّديه على الأزرار السبعة.':
-   'سبعة أزرارٍ نحاسية تنتظر لحنًا. اسمعي اللحن أولًا من الراديو في الطابق 3 عند 92.4.');
+   S.f.r303.heard?'الأزرار السبعة تنتظر أغنيةً سمعتِها مرةً واحدة. اضغطي «اسمعي التسجيل» ثم قلّديها.':
+   'سبعة أزرارٍ نحاسية تنتظر لحنًا. الفندق يخبّئه في مكانٍ ما.');
  },50);
  return html;
 }
@@ -1576,7 +1606,7 @@ function pressBtn602(i){
   }else{
    f.tries++;f.seq=[];save();
    later(function(){AU.tone(46,{dur:.5,type:'sawtooth',g:.2});AU.denied();
-    say('نغمة نشاز. صفّر التسلسل. جرّبي سماع الشريط ثم التقليد: 3 · 5 · 4 · 3 · 7 · 6 · 5.')},200);
+    say('نغمة نشاز. صفّر التسلسل، واسمعي التسجيل من جديد.')},200);
   }
  }
 }
@@ -1588,7 +1618,7 @@ function playTape602(){
   (function(v,d){later(function(){barsAt([v])},d)})(MELODY[i],400+i*450);
  }
  later(function(){barsAt([])},4600);
- say('اللحن: 3 · 5 · 4 · 3 · 7 · 6 · 5 — قلّديه على الأزرار السبعة.')
+ say('يزمجر الشريط، ثم تصل النغمات السبع على مهل. أعملي أذنكِ.')
 }
 
 /* ---------- الغرفة 707 · الألغاز ---------- */
@@ -1633,20 +1663,20 @@ function r707(){
  '</svg></div>',
  '<div class="ctl" style="flex-direction:column">'+
   '<button class="plate small" onclick="readStone707()">اقرئي الحجر</button>'+
-  '<span class="tag">الأقراص — اختاري الدليل لكل موضع (بالترتيب الذي وجدتِها به)</span>'+
+  '<span class="tag">الأقراص — اختاري الدليل لكل موضع</span>'+
   '<div class="dials">'+dials+'</div>'+
   '<button class="plate pulse" onclick="try707()">شغّلي الآلية</button>'+
  '</div>');
  setTimeout(function(){
   say(f.done?'الصندوق مفتوح. عودي للمصعد — الطابق 8 فُتح.':
-   f.wrong?('أعادت الغرفة ترتيب نفسها '+f.wrong+(f.wrong===1?' مرة':' مرات')+' بالفعل. لا تخمّني — اقرئي الحجر.'):
-   'اقرئي الحجر أولًا. الأدلة الأربعة بالترتيب الذي وجدتِها فيه.');
+   f.wrong?('أعادت الغرفة ترتيب نفسها '+f.wrong+(f.wrong===1?' مرة':' مرات')+' بالفعل. الحجر لا يكذب — اقرئيه.'):
+   'غرفةٌ من حجرٍ صامت، وصندوقٌ بأربعة أقراص. على الجدار نقشٌ — والحجر لا ينسى.');
  },50);
  return html;
 }
 function readStone707(){
  showNote('منقوشٌ في الحجر',
-  'ترتيب الأدلة:<br>ما رأته المرآة · حين تجمّد الزمن ·<br>حيث يسكن الصوت · حين بدأ كل شيء<br><br>أي بالترتيب الذي وجدتِها فيه:<br><b>7</b> (المرآة) ثم <b>0317</b> (الزمن) ثم <b>92.4</b> (الراديو) ثم <b>1986</b> (الصورة).')
+  'ترتيب الأدلة:<br>ما رأته المرآة · حين تجمّد الزمن ·<br>حيث يسكن الصوت · حين بدأ كل شيء<br><br>وأسفلها بخطٍّ صغير: «بالترتيب الذي وجدتِها فيه.»')
 }
 function dial707(i,d){
  var f=S.f.r707;if(f.done)return;
@@ -1660,8 +1690,7 @@ function try707(){
   say('تغور الأقراص الأربعة معًا. يزفر الصندوق منفتحًا — وتصبح كل جدران الغرفة خطًّا واحدًا من الضوء.');
   later(function(){
    narrate([
-    {t:'7 · 0317 · 92.4 · 1986',big:true},
-    {t:'الأدلة — بالترتيب الذي وجدتْكِ به.'},
+    {t:'الأدلة الأربعة — بالترتيب الذي وجدتْكِ به.',big:true},
     {t:'بقيت غرفةٌ واحدة.',big:true}
    ]).then(function(){
     addEvidence('ev_seq');unlockFloor(8);
@@ -1709,8 +1738,8 @@ function r808(){
   (f.key?'<span class="tag" style="color:#c9a35c">'+ic('key')+' المفتاح النحاسي في جيبك</span>':'')+
  '</div>');
  setTimeout(function(){
-  say(all?'سرتِ في الأزمنة الثلاثة وأخذتِ المفتاح. الطابق التاسع لكِ الآن — عودي للمصعد.':
-   'ثلاثة أبواب، والغرفة نفسها خلف كلٍّ منها — لكن ليس العام نفسه. ابدئي بالمستقبل: افتّشي الأنقاض قبل نفاد العدّاد.');
+  say(all?'سرتِ في الأزمنة الثلاثة وأخذتِ المفتاح. الطابق التاسع لكِ — عودي للمصعد.':
+   'ثلاثة أبواب. الغرفة نفسها خلف كلٍّ منها — لكن ليس العام نفسه. الأحداث تتسرّب بينها كالماء تحت الأبواب.');
   if(all&&!f.done){f.done=true;save();unlockFloor(9)}
  },50);
  return html;
@@ -1730,7 +1759,7 @@ function r808Time(m){
  clearStab();clearLater();
  var f=S.f.r808;f.mode=m;
  var skins={
-  past:{wall:'#3a2a14',floor:'#4a3010',warm:'#c9a35c',txt:'هالوواي، جديد. ورق حائطٍ طازج، زهورٌ مقطوفة، وصحيفةٌ مطوية على المكتب. يونيو 1986. الراديو في الأسفل يعزف لحنًا من سبع نغمات.'},
+  past:{wall:'#3a2a14',floor:'#4a3010',warm:'#c9a35c',txt:'هالوواي، جديد. ورق حائطٍ طازج، زهورٌ مقطوفة، وصحيفةٌ مطوية على المكتب. يونيو 1986.'},
   present:{wall:'#232022',floor:'#241610',warm:'#7a746a',txt:'الغرفة التي تعرفينها. غبارٌ، وصبرٌ، ودرجُ مكتبٍ صدئٌ مغلق.'},
   future:{wall:'#1f1410',floor:'#181008',warm:'#5f4a3a',txt:'الحائط مفتوح على سماءٍ رمادية خضراء. أنقاضٌ في كل مكان. المبنى يتذكّر كيف يكون ركامًا.'}
  };
@@ -1775,7 +1804,7 @@ function r808Time(m){
      say('يرفضكِ المستقبل. تُسحبين عائدةً إلى الحاضر — عودي وحاولي مجددًا أسرع.');back808()}
    },1000);
    var stab=document.createElement('div');stab.className='stab';
-   stab.innerHTML='<span class="tag" style="color:#a83232">الاستقرار الإنشائي — ابحثي عن المفتاح قبل النفاد!</span><div class="bar"><i></i></div>';
+   stab.innerHTML='<span class="tag" style="color:#a83232">الاستقرار الإنشائي</span><div class="bar"><i></i></div>';
    var ctl=app.querySelector('.ctl');
    if(ctl)ctl.appendChild(stab);
   }
@@ -1789,13 +1818,13 @@ function readNews(){
 function takeKey808(){
  var f=S.f.r808;if(f.key)return;
  f.key=true;save();AU.chime();addEvidence('ev_key');
- say('تحت أربعين عامًا من السقف المتساقط: مفتاحٌ نحاسي، دافئ. منقوشٌ على مقبضه: الغرفة 000. — الآن اذهبي إلى «الماضي» واتركيه في الدرج.');
+ say('تحت أربعين عامًا من السقف المتساقط: مفتاحٌ نحاسي، غير متآكل، دافئ. منقوشٌ على مقبضه: الغرفة 000.');
  r808Time('future');
 }
 function placeKey808(){
  var f=S.f.r808;if(f.placed)return;
  f.placed=true;save();AU.page();ach('a_loop');addEvidence('ev_loop');
- say('تضعين المفتاح في درج المكتب، عام 1986. في مكانٍ ما، يعيد «حاضرٌ» ترتيب نفسه حول قرارك. — الآن اذهبي إلى «الحاضر» وافتحي الدرج.');
+ say('تضعين المفتاح في درج المكتب، عام 1986. تستقبله الغرفة كما يستقبل الماء حجرًا. في مكانٍ ما، يعيد «حاضرٌ» ترتيب نفسه حول قرارك.');
 }
 function openDrawer808(){
  showNote('وُجد في الدرج — 1986',
@@ -1839,7 +1868,7 @@ function r909(){
   '<button class="plate small '+(S.f.r808.key?'pulse':'dim')+'" onclick="door909(\'unknown\')">الباب المجهول ؟؟؟</button>'+
  '</div>');
  setTimeout(function(){
-  say('الطابق التاسع. شمعةٌ واحدة وثلاثة أبواب — وكل بابٍ نهاية مختلفة. اختاري من الأزرار بالأسفل.');
+  say('الطابق التاسع. عوارض سقف، وشمعةٌ واحدة، وثلاثة أبواب. اختاري من الأزرار بالأسفل.');
  },50);
  return html;
 }
@@ -1857,7 +1886,7 @@ function door909(w){
   ]).then(function(){ending('404')});
   return}
  if(w==='unknown'){
-  if(!S.f.r808.key){AU.denied();say('الباب المجهول بلا مقبض — فقط ثقبُ مفتاح. المفتاح النحاسي في المستقبل (الطابق 8).');return}
+  if(!S.f.r808.key){AU.denied();say('الباب المجهول بلا مقبض — فقط ثقبُ مفتاح، ينتظر شيئًا لم تجديه بعد.');return}
   narrate([
    {t:'ينقلب المفتاح النحاسي كأنما قُطع لهذا القفل — لأنه كذلك فعلًا.'},
    {t:'لا توجد غرفةٌ خلف الباب.',big:true},
@@ -1940,7 +1969,7 @@ function toggleMap(){
   var cells='';
   for(var i=0;i<rooms.length;i++){
    var n=rooms[i],rdone=doneRoom(n);
-   cells+='<span class="mdoor '+(open?'':'lock')+'" '+(open?('onclick="closeOv(\'ov-map\');go(\'elevator\','+fl+')"'):'')+'>'+
+   cells+='<span class="mdoor '+(open?'':'lock')+'" '+(open?('onclick="closeOv(\'ov-map\');go(\'elevator\','+fl+')"'):'')+'">'+
     ic(open?(rdone?'check':'key'):'lock')+n+'</span>';
   }
   rows+='<div class="mfloor"><span class="fn">ط'+fl+'</span><div class="md">'+cells+
@@ -2046,7 +2075,7 @@ function doReset(){
 function selfTest(){
  var r=[];
  function ck(n,ok){r.push('<div class="achrow '+(ok?'':'off')+'"><span>'+(ok?'✔ ':'✘ ')+' '+n+'</span></div>')}
- ck('إصدار الملف: v5',VER==='v5');
+ ck('إصدار الملف: v7',VER==='v7');
  ck('محرك الجافاسكريبت الحديث',typeof Promise!=='undefined');
  ck('التخزين المحلي (الحفظ التلقائي)',lsOK);
  ck('محرك الصوت',!!(window.AudioContext||window.webkitAudioContext));
@@ -2054,7 +2083,7 @@ function selfTest(){
  var ROOM_FN={'101':r101,'202':r202,'303':r303,'404':r404,'405':r405,'501':r501,'602':r602,'707':r707,'808':r808,'909':r909};
  for(var k in ROOM_FN){if(typeof ROOM_FN[k]!=='function')allRooms=false}
  ck('الغرف العشر محمّلة',allRooms);
- ck('التلميحات جاهزة (زر ؟)',!!HINTS['101']);
+ ck('مصباح الحلول جاهز',!!SOLS['r101']&&!!SOLS['hall4']);
  showNote('تشخيص الجهاز',
   r.join('')+'<br><br>إن ظهرت علامة ✘ في أي سطر، صوّري هذه الشاشة وابعتيها.')
 }
