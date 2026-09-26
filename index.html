@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ROOM 404 — The Halloway</title>
+<title>ROOM 404 — هالوواي</title>
 <meta name="theme-color" content="#0d0a08">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ROOM 404">
-<meta name="description" content="Some rooms should never be opened.">
+<meta name="description" content="بعض الغرف لا ينبغي أن تُفتح أبدًا.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=IM+Fell+English:ital@0;1&family=Special+Elite&family=Homemade+Apple&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@700;900&family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;height:100%;background:#0d0a08;color:#d8c9a3;font-family:'IM Fell English',serif;overflow:hidden}
+html,body{margin:0;height:100%;background:#0d0a08;color:#d8c9a3;font-family:'Amiri',serif;overflow:hidden}
 button{font:inherit}
 ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:#3a2d1a}::-webkit-scrollbar-track{background:#0d0a08}
 
@@ -30,7 +30,6 @@ button{font:inherit}
  background:radial-gradient(560px circle at var(--mx,50%) var(--my,38%),rgba(255,212,148,.05),rgba(0,0,0,0) 45%,rgba(0,0,0,.42) 100%)}
 @media (pointer:coarse){#lantern{display:none}}
 
-/* flicker & shake */
 @keyframes flick{0%,100%{filter:brightness(1)}8%{filter:brightness(.35)}12%{filter:brightness(1.06)}30%{filter:brightness(.55)}35%{filter:brightness(1)}68%{filter:brightness(.72)}73%{filter:brightness(1)}}
 #app.flick{animation:flick .9s}
 @keyframes shk{0%,100%{transform:translate(0)}15%{transform:translate(-7px,3px)}30%{transform:translate(6px,-4px)}45%{transform:translate(-5px,-2px)}60%{transform:translate(5px,4px)}80%{transform:translate(-3px,1px)}}
@@ -38,7 +37,7 @@ button{font:inherit}
 
 /* ===== HUD ===== */
 .hud{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #241c12;background:#100c08;position:sticky;top:0;z-index:20}
-.hud .loc{font-family:Cinzel;letter-spacing:.3em;font-size:11px;color:#8a7248;margin-right:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hud .loc{font-family:'Reem Kufi';font-size:12px;color:#8a7248;margin-inline-end:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hbtn{width:42px;height:42px;flex:none;display:grid;place-items:center;background:#171310;border:1px solid #3a2d1a;color:#a98c58;cursor:pointer;border-radius:4px;transition:.18s}
 .hbtn:hover{color:#e2c687;border-color:#6e5732}
 .ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
@@ -46,26 +45,26 @@ button{font:inherit}
 /* ===== views ===== */
 .view{width:100%;max-width:1020px;margin:0 auto;padding:14px 14px 48px;display:flex;flex-direction:column;gap:12px}
 .vhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.vhead h2{font-family:Cinzel;font-weight:700;font-size:clamp(17px,3.4vw,24px);letter-spacing:.22em;color:#c9a35c;margin:0}
-.vhead .fl{font-family:'Special Elite';font-size:11px;color:#77664a;letter-spacing:.2em}
+.vhead h2{font-family:'Reem Kufi';font-weight:700;font-size:clamp(16px,3.2vw,22px);color:#c9a35c;margin:0}
+.vhead .fl{font-family:'Almarai';font-size:11px;color:#77664a}
 .spacer{flex:1}
 .scene-wrap{position:relative;border:1px solid #2e2418;box-shadow:0 18px 60px #000c, inset 0 0 90px #0009;background:#080605;border-radius:4px;overflow:hidden}
 .scene{width:100%;height:auto;aspect-ratio:1200/640;max-height:62vh;display:block}
 .scene text{user-select:none}
 .hot{cursor:pointer;transition:filter .25s}
 .hot:hover{filter:brightness(1.35)}
-.sayline{font-family:'Special Elite';font-size:14px;color:#cbb17e;min-height:52px;padding:12px 16px;background:#12100c;border:1px solid #2a2216;border-left:3px solid #6e5732;display:flex;align-items:center;line-height:1.7}
+.sayline{font-family:'Amiri';font-size:15.5px;color:#cbb17e;min-height:56px;padding:12px 16px;background:#12100c;border:1px solid #2a2216;border-inline-start:3px solid #6e5732;display:flex;align-items:center;line-height:1.9}
 .sayline.bump{animation:bmp .35s}
 @keyframes bmp{0%{opacity:.2;transform:translateY(3px)}100%{opacity:1}}
 
 /* ===== brass plates / buttons ===== */
-.plate{font-family:Cinzel;font-weight:700;letter-spacing:.2em;font-size:12px;color:#b08d4f;background:#171310;border:1px solid #4a3a24;border-top-color:#5d4a2c;padding:13px 24px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 5px 16px #000a;transition:.18s;user-select:none;text-transform:uppercase;border-radius:2px}
+.plate{font-family:'Reem Kufi';font-weight:600;font-size:13px;color:#b08d4f;background:#171310;border:1px solid #4a3a24;border-top-color:#5d4a2c;padding:12px 22px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 5px 16px #000a;transition:.18s;user-select:none;border-radius:2px}
 .plate:hover{color:#ecd094;border-color:#6e5732;background:#1d1712}
 .plate:active{transform:translateY(1px)}
 .plate.dim{opacity:.4;pointer-events:none}
-.plate.small{padding:9px 14px;font-size:10px}
+.plate.small{padding:9px 14px;font-size:11.5px}
 .ctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;padding:12px;background:#100d09;border:1px solid #241c12;border-radius:4px}
-.tag{font-family:'Special Elite';font-size:11px;color:#77664a;letter-spacing:.18em}
+.tag{font-family:'Almarai';font-size:11px;color:#77664a}
 
 /* ===== title ===== */
 #app.v-title{overflow:hidden;align-items:center;justify-content:center}
@@ -77,37 +76,37 @@ button{font:inherit}
 .t-room{font-family:Cinzel;letter-spacing:.7em;font-size:clamp(15px,4vw,22px);color:#b08d4f;text-indent:.7em;margin-top:10px}
 .t-404{font-family:Cinzel;font-weight:900;font-size:clamp(86px,26vw,160px);line-height:.95;color:#c9a35c;text-shadow:0 3px 0 #241a0e,0 14px 40px #000;animation:tflk 7s infinite}
 @keyframes tflk{0%,100%{opacity:1}92%{opacity:1}93%{opacity:.75}94%{opacity:1}96.5%{opacity:.85}97%{opacity:1}}
-.t-sub{font-style:italic;font-size:clamp(15px,3.6vw,19px);color:#9a8a68;margin:6px 0 26px}
+.t-sub{font-size:clamp(16px,3.8vw,20px);color:#9a8a68;margin:6px 0 26px}
 .t-btns{display:flex;flex-direction:column;gap:12px;width:min(300px,80%)}
 .t-door{width:min(64vw,300px);margin-bottom:4px}
-.t-foot{font-family:'Special Elite';font-size:10px;color:#55483a;letter-spacing:.25em;margin-top:26px}
-.t-endings{font-family:'Special Elite';font-size:11px;color:#7a6a4d;letter-spacing:.2em;margin-top:8px}
+.t-foot{font-family:'Almarai';font-size:10px;color:#55483a;margin-top:26px}
+.t-endings{font-family:'Almarai';font-size:11px;color:#7a6a4d;margin-top:8px}
 
 /* ===== overlays ===== */
 .ov{position:fixed;inset:0;z-index:90;display:none;background:rgba(6,4,3,.8);backdrop-filter:blur(3px)}
 .ov.open{display:flex;align-items:center;justify-content:center;padding:16px}
 .panel{width:100%;max-width:600px;max-height:88vh;overflow:auto;background:#151009;border:1px solid #4a3a24;box-shadow:0 30px 90px #000d;padding:18px;border-radius:4px}
-.panel h3{font-family:Cinzel;letter-spacing:.3em;font-size:14px;color:#c9a35c;margin:0 0 4px;text-align:center}
-.panel .ph-sub{text-align:center;font-family:'Special Elite';font-size:10px;color:#6d5d44;letter-spacing:.25em;margin-bottom:14px}
-.xbtn{position:sticky;top:0;float:right;margin:-6px -6px 0 0}
+.panel h3{font-family:'Reem Kufi';font-size:15px;color:#c9a35c;margin:0 0 4px;text-align:center}
+.panel .ph-sub{text-align:center;font-family:'Almarai';font-size:10px;color:#6d5d44;margin-bottom:14px}
+.xbtn{position:sticky;top:0;float:left;margin:-6px 0 0 -6px}
 
 /* keypad */
-.vfd{font-family:'Special Elite';color:#9fce8f;background:#0a1308;border:1px solid #24401c;padding:12px;letter-spacing:.2em;min-height:52px;font-size:15px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:2px;transition:.2s}
+.vfd{font-family:'Almarai';color:#9fce8f;background:#0a1308;border:1px solid #24401c;padding:12px;min-height:52px;font-size:15px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:2px;transition:.2s}
 .vfd.bad{color:#d24b3a;background:#160807;border-color:#4a1c14;animation:shk .4s}
-.kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
-.kgrid .plate{padding:16px 0;font-size:16px;letter-spacing:.1em}
-.khint{font-family:'Special Elite';font-size:10px;color:#77664a;text-align:center;margin-top:10px;line-height:1.8;letter-spacing:.12em}
+.kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;direction:ltr}
+.kgrid .plate{padding:15px 0;font-size:16px}
+.khint{font-family:'Almarai';font-size:10.5px;color:#77664a;text-align:center;margin-top:10px;line-height:2}
 
 /* evidence board */
 .board{background:#26180f url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23c)' opacity='0.16'/%3E%3C/svg%3E");border:1px solid #3a2818;padding:16px;position:relative;border-radius:3px}
 #threads{position:absolute;inset:0;pointer-events:none}
 .ev-cards{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;position:relative}
-.ev{background:#cfc09b;color:#2b2117;width:150px;padding:22px 12px 12px;border-radius:2px;box-shadow:0 6px 14px #000a;position:relative;transform:rotate(var(--r,0deg));font-family:'Special Elite'}
+.ev{background:#cfc09b;color:#2b2117;width:160px;padding:22px 12px 12px;border-radius:2px;box-shadow:0 6px 14px #000a;position:relative;transform:rotate(var(--r,0deg));font-family:'Almarai'}
 .ev:before{content:"";position:absolute;top:8px;left:50%;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:#7e1f1f;box-shadow:0 1px 2px #000}
-.ev b{display:block;font-family:Cinzel;font-size:10px;letter-spacing:.14em;margin-bottom:6px;border-bottom:1px solid #8a7a58;padding-bottom:4px}
-.ev span{font-size:10.5px;line-height:1.5;display:block}
+.ev b{display:block;font-family:'Reem Kufi';font-size:11px;margin-bottom:6px;border-bottom:1px solid #8a7a58;padding-bottom:4px}
+.ev span{font-size:10.5px;line-height:1.7;display:block}
 .ev.empty{background:transparent;border:1px dashed #5a4630;box-shadow:none;color:#6d5d44;display:grid;place-items:center;min-height:86px}
-.achrow{display:flex;gap:10px;align-items:center;padding:7px 4px;border-bottom:1px dashed #4a3a24;font-family:'Special Elite';font-size:11px;letter-spacing:.1em;color:#c9a35c}
+.achrow{display:flex;gap:10px;align-items:center;padding:7px 4px;border-bottom:1px dashed #4a3a24;font-family:'Almarai';font-size:11px;color:#c9a35c}
 .achrow.off{color:#5a4a35}
 .achrow .ic{width:15px;height:15px;flex:none}
 
@@ -115,9 +114,9 @@ button{font:inherit}
 .mwrap{background:#12100a;border:1px solid #3a2d1a;padding:10px;border-radius:3px}
 .mfloor{display:flex;align-items:center;gap:10px;padding:7px 8px;border-bottom:1px dashed #2e2418}
 .mfloor:last-child{border:none}
-.mfloor .fn{font-family:Cinzel;font-weight:700;font-size:13px;color:#8a7248;width:34px}
-.mfloor .md{display:flex;gap:8px;flex:1}
-.mdoor{font-family:Cinzel;font-size:11px;letter-spacing:.12em;color:#c9a35c;border:1px solid #6e5732;padding:8px 12px;cursor:pointer;background:#1a1510;border-radius:2px;display:flex;gap:7px;align-items:center;transition:.18s}
+.mfloor .fn{font-family:'Reem Kufi';font-weight:700;font-size:13px;color:#8a7248;width:36px}
+.mfloor .md{display:flex;gap:8px;flex:1;flex-wrap:wrap}
+.mdoor{font-family:'Reem Kufi';font-size:12px;color:#c9a35c;border:1px solid #6e5732;padding:8px 12px;cursor:pointer;background:#1a1510;border-radius:2px;display:flex;gap:7px;align-items:center;transition:.18s}
 .mdoor:hover{background:#241c12;color:#ecd094}
 .mdoor.lock{color:#55483a;border-color:#33281a;cursor:not-allowed;background:transparent}
 .mdoor.cur{box-shadow:0 0 0 1px #b08d4f}
@@ -127,63 +126,66 @@ button{font:inherit}
 #ov-narr{background:rgba(3,2,2,.94)}
 .narr{width:100%;max-width:780px;margin:auto;text-align:center;padding:26px}
 .narr .nk{font-family:Cinzel;letter-spacing:.4em;font-size:11px;color:#6d5d44;margin-bottom:22px}
-.narr-in p{font-family:'IM Fell English';font-size:clamp(17px,2.7vw,23px);color:#cdb888;line-height:1.95;text-shadow:0 2px 14px #000;min-height:1.2em;margin:.35em 0;letter-spacing:.02em}
-.narr-in p.big{font-family:Cinzel;letter-spacing:.3em;color:#c9a35c;font-size:clamp(19px,3.4vw,30px)}
+.narr-in p{font-size:clamp(17px,2.9vw,23px);color:#cdb888;line-height:2;text-shadow:0 2px 14px #000;min-height:1.2em;margin:.35em 0}
+.narr-in p.big{font-family:'Reem Kufi';font-weight:700;color:#c9a35c;font-size:clamp(18px,3.4vw,28px)}
 #nbtn{margin-top:28px;opacity:0;pointer-events:none;transition:opacity .5s}
 #nbtn.on{opacity:1;pointer-events:auto}
 .nchoice{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap}
 
 /* note viewer */
-.note{background:#d5c69f;color:#2b2117;padding:26px 22px;max-width:460px;margin:0 auto;font-family:'Special Elite';box-shadow:0 20px 50px #000c;border-radius:2px;transform:rotate(-.7deg)}
-.note.hand{font-family:'Homemade Apple';font-size:15px;line-height:2.1}
-.note h4{font-family:Cinzel;letter-spacing:.2em;font-size:12px;margin:0 0 12px;border-bottom:1px solid #8a7a58;padding-bottom:8px;text-align:center}
+.note{background:#d5c69f;color:#2b2117;padding:26px 22px;max-width:460px;margin:0 auto;font-family:'Almarai';line-height:1.9;font-size:12.5px;box-shadow:0 20px 50px #000c;border-radius:2px;transform:rotate(-.7deg)}
+.note.hand{font-family:'Aref Ruqaa';font-size:15px;line-height:2.1}
+.note h4{font-family:'Reem Kufi';font-size:13px;margin:0 0 12px;border-bottom:1px solid #8a7a58;padding-bottom:8px;text-align:center}
 
 /* photos */
 .photo{background:#171310;border:10px solid #2a2016;outline:1px solid #4a3a24;outline-offset:-6px;max-width:560px;margin:0 auto;box-shadow:0 24px 70px #000d;position:relative}
-.photo .cap{font-family:'Special Elite';font-size:11px;color:#9a8a68;text-align:center;padding:12px;letter-spacing:.15em;line-height:1.8}
-.photo [data-uv]{opacity:0;transition:opacity .8s;font-family:'Homemade Apple';fill:#8fe08a}
+.photo .cap{font-family:'Almarai';font-size:11px;color:#9a8a68;text-align:center;padding:12px;line-height:1.9}
+.photo [data-uv]{opacity:0;transition:opacity .8s;font-family:'Aref Ruqaa';fill:#8fe08a}
 #app.uv .scene-wrap{filter:saturate(.35) brightness(.62)}
 #app.uv [data-uv]{opacity:.92}
 .uvtint{opacity:0;transition:opacity .8s}
 #app.uv .uvtint{opacity:.5}
+.uvlamp{fill:#2a2a28;transition:fill .8s}
+#app.uv .uvlamp{fill:#3a2a55}
+.uvcone{opacity:0;transition:opacity .8s}
+#app.uv .uvcone{opacity:1}
 
-/* room 202 clocks / controls */
+/* room 202 */
 .clockbtns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
 .cbgroup{display:flex;flex-direction:column;gap:6px;align-items:center}
 .cbgroup .tag{text-align:center}
 .cb{display:flex;gap:6px}
-.cb .plate{padding:10px 16px;font-size:11px}
 
-/* room 303 radio */
-.r-slider{width:min(560px,92%);accent-color:#b08d4f;height:30px}
-.r-disp{font-family:'Special Elite';text-align:center;color:#9fce8f;letter-spacing:.2em;font-size:13px;min-height:60px;line-height:1.9;padding:8px;background:#0a1308;border:1px solid #1e361a;border-radius:2px}
-.r-disp .fr{color:#c9a35c;font-family:Cinzel;font-size:20px;letter-spacing:.3em}
+/* room 303 */
+.r-slider{width:min(560px,92%);accent-color:#b08d4f;height:30px;direction:ltr}
+.r-disp{font-family:'Almarai';text-align:center;color:#9fce8f;font-size:13px;min-height:70px;line-height:1.9;padding:8px;background:#0a1308;border:1px solid #1e361a;border-radius:2px}
+.r-disp .fr{color:#c9a35c;font-family:'Reem Kufi';font-size:20px;letter-spacing:.3em}
 .mbars{display:flex;gap:4px;align-items:flex-end;height:44px;justify-content:center;margin-top:6px}
 .mbars i{width:9px;background:#9fce8f;height:6px;border-radius:1px;transition:height .18s}
 .mbars i.hi{background:#c9a35c}
 
-/* room 501 diary */
+/* room 501 */
 .pgfield{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;min-height:150px;padding:16px 8px}
-.pg{background:#d5c69f;color:#2b2117;width:180px;padding:14px 12px;font-family:'Homemade Apple';font-size:12.5px;line-height:1.9;border-radius:2px;box-shadow:0 8px 18px #000a;cursor:pointer;transform:rotate(var(--r));transition:.3s;position:relative}
+.pg{background:#d5c69f;color:#2b2117;width:195px;padding:16px 14px;font-family:'Aref Ruqaa';font-size:14px;line-height:2.1;border-radius:2px;box-shadow:0 8px 18px #000a;cursor:pointer;transform:rotate(var(--r));transition:.3s;position:relative}
 .pg:hover{filter:brightness(1.06)}
 .pg.no{animation:pgno .4s}
 @keyframes pgno{0%,100%{transform:rotate(var(--r)) translateX(0)}30%{transform:rotate(var(--r)) translateX(-7px)}60%{transform:rotate(var(--r)) translateX(6px)}}
 .pg.used{opacity:0;pointer-events:none;transform:scale(.6) rotate(var(--r))}
-.book{display:flex;gap:6px;flex-direction:column;margin-top:4px}
-.bslot{font-family:'Homemade Apple';font-size:12px;color:#8a7a58;border-bottom:1px dashed #4a3a24;padding:4px 8px;min-height:34px;transition:.4s}
+.book{display:flex;gap:6px;flex-direction:column;margin-top:4px;min-width:260px}
+.bslot{font-family:'Aref Ruqaa';font-size:13px;color:#8a7a58;border-bottom:1px dashed #4a3a24;padding:4px 8px;min-height:36px;transition:.4s}
 .bslot.full{color:#d5c69f}
 
 /* room 602 */
-.brbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:8px}
-.brbtn{width:54px;height:54px;border-radius:50%;background:#8a6d3f;border:3px solid #5a452a;box-shadow:inset 0 3px 4px #e0b87766,inset 0 -6px 10px #00000088,0 6px 14px #000a;color:#241a0e;font-family:Cinzel;font-weight:900;font-size:18px;cursor:pointer;transition:.12s}
+.brbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:8px;direction:ltr}
+.brbtn{width:54px;height:54px;border-radius:50%;background:#8a6d3f;border:3px solid #5a452a;box-shadow:inset 0 3px 4px #e0b87766,inset 0 -6px 10px #00000088,0 6px 14px #000a;color:#241a0e;font-family:'Reem Kufi';font-weight:700;font-size:18px;cursor:pointer;transition:.12s}
 .brbtn:active{transform:translateY(2px);box-shadow:inset 0 3px 8px #000}
-.brbtn .nt{display:block;font-size:8px;font-weight:400;letter-spacing:.1em}
-.mel-rec{display:flex;gap:5px;align-items:center;justify-content:center;min-height:20px;font-family:'Special Elite';font-size:12px;color:#9a8a68;letter-spacing:.3em}
+.brbtn .nt{display:block;font-size:8px;font-weight:400}
+.mel-rec{display:flex;gap:5px;align-items:center;justify-content:center;min-height:20px;font-family:'Almarai';font-size:12px;color:#9a8a68}
 
-/* room 707 dials */
+/* room 707 */
 .dials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .dial{display:flex;flex-direction:column;gap:6px;align-items:center}
-.dwin{width:96px;text-align:center;font-family:Cinzel;font-weight:700;font-size:19px;color:#c9a35c;background:#0a0805;border:1px solid #4a3a24;padding:12px 4px;letter-spacing:.08em;border-radius:2px;box-shadow:inset 0 4px 12px #000}
+.dwin{width:96px;text-align:center;font-family:'Reem Kufi';font-weight:700;font-size:19px;color:#c9a35c;background:#0a0805;border:1px solid #4a3a24;padding:12px 4px;border-radius:2px;box-shadow:inset 0 4px 12px #000}
 .dial .cb .plate{padding:8px 20px}
 
 /* room 808 */
@@ -193,7 +195,7 @@ button{font:inherit}
 
 /* toasts */
 #toasts{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:130;display:flex;flex-direction:column;gap:8px;pointer-events:none;width:min(430px,92vw)}
-.toast{display:flex;gap:12px;align-items:center;background:rgba(21,17,11,.94);border:1px solid #6e5732;padding:11px 16px;font-family:Cinzel;font-size:11px;letter-spacing:.16em;color:#e2c687;box-shadow:0 14px 40px #000c;animation:tin .45s,tout .6s 3.6s forwards;border-radius:2px}
+.toast{display:flex;gap:12px;align-items:center;background:rgba(21,17,11,.94);border:1px solid #6e5732;padding:11px 16px;font-family:'Reem Kufi';font-size:12px;color:#e2c687;box-shadow:0 14px 40px #000c;animation:tin .45s,tout .6s 3.6s forwards;border-radius:2px}
 .toast .ic{width:17px;height:17px;flex:none;color:#b08d4f}
 @keyframes tin{from{opacity:0;transform:translateY(-14px)}}
 @keyframes tout{to{opacity:0;transform:translateY(-10px)}}
@@ -206,11 +208,10 @@ button{font:inherit}
 .ebtn.lock{opacity:.28;cursor:not-allowed}
 .ebtn circle{transition:.2s}
 
-/* swing lamp in halls */
 .sway{transform-box:fill-box;transform-origin:top center;animation:sway 5.2s ease-in-out infinite alternate}
 @keyframes sway{from{transform:rotate(-2.2deg)}to{transform:rotate(2.2deg)}}
 
-/* misc scenes */
+/* misc */
 .fadein{animation:fin .8s}
 @keyframes fin{from{opacity:0}}
 .mist{opacity:0;transition:opacity 1.6s}
@@ -225,15 +226,15 @@ button{font:inherit}
 @keyframes vu{from{transform:rotate(-16deg)}to{transform:rotate(14deg)}}
 
 @media (max-width:560px){
- .plate{padding:11px 16px;font-size:11px}
- .ev{width:130px}
+ .plate{padding:11px 16px;font-size:12px}
+ .ev{width:140px}
  .view{padding:10px 10px 40px}
+ .pg{width:170px}
 }
 </style>
 </head>
 <body>
 
-<!-- shared SVG defs: icons + materials -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <defs>
  <radialGradient id="g-lamp" cx="50%" cy="18%" r="80%"><stop offset="0%" stop-color="#ffdca0" stop-opacity=".5"/><stop offset="45%" stop-color="#c9973f" stop-opacity=".16"/><stop offset="100%" stop-color="#000" stop-opacity="0"/></radialGradient>
@@ -271,11 +272,10 @@ button{font:inherit}
 
 <script>
 /* ============================================================
-   ROOM 404 — THE HALLOWAY
-   فندق واحد، سر واحد، عشر غرف. كل شيء مولّد محليًا.
+   ROOM 404 — THE HALLOWAY (النسخة العربية)
+   فندقٌ واحد، سرٌّ واحد، عشر غرف — كل شيء يعمل محليًا.
 ============================================================ */
 
-/* ---------- ثوابت اللعبة ---------- */
 const RF={'101':1,'202':2,'303':3,'404':4,'405':4,'501':5,'602':6,'707':7,'808':8,'909':9};
 const FLOORS={
  1:{wall:'#232a1f',wallD:'#181f15'}, 2:{wall:'#212830',wallD:'#151b22'},
@@ -287,39 +287,39 @@ const FLOORS={
 const NOTE={A3:220,B3:246.94,C4:261.63,D4:293.66,E4:329.63,F4:349.23,G4:392};
 const BTN_N=[NOTE.A3,NOTE.B3,NOTE.C4,NOTE.D4,NOTE.E4,NOTE.F4,NOTE.G4];
 const BTN_L=['A3','B3','C4','D4','E4','F4','G4'];
-const MELODY=[2,4,3,2,6,5,4];            /* C4 E4 D4 C4 G4 F4 E4 */
+const MELODY=[2,4,3,2,6,5,4];            /* C E D C G F E */
 const STATIONS=[
- {f:90.1,kind:'voice',txt:'“…room…”',tts:'room'},
+ {f:90.1,kind:'voice',txt:'«…الغرفة…»',tts:'الغرفة'},
  {f:92.4,kind:'you'},
- {f:94.7,kind:'voice',txt:'“…don’t…”',tts:'don\u2019t'},
- {f:99.3,kind:'voice',txt:'“…open…”',tts:'open'},
+ {f:94.7,kind:'voice',txt:'«…لا…»',tts:'لا'},
+ {f:99.3,kind:'voice',txt:'«…تفتحي…»',tts:'تفتحي'},
  {f:104.1,kind:'music'}
 ];
 
 const EVD={
- ev_mirror:['MIRROR — THE DIGIT','A numeral etched in the corner of the glass: 7. The reflection lied about everything else.'],
- ev_clock:['TIME — 03:17','Every clock in Room 202 stopped at the same minute. The maid\u2019s log confirms it.'],
- ev_radio:['RADIO — 92.4 MHz','A voice on the frequency knows your name. Then — seven notes, like someone remembering a song.'],
- ev_404:['ROOM 404','It is the lobby. Your lobby. With a photograph of you on the wall, and no front door.'],
- ev_photo:['PHOTO — JUNE 4, 1986','The last photograph shows the lobby — dated decades ago — and someone standing exactly where you stand.'],
- ev_diary:['DIARY — YOUR HAND','Five pages in handwriting that is, impossibly, yours. "So I created Room 404."'],
- ev_piano:['PIANO — THE MELODY','The seven brass buttons replay the broadcast from 92.4. The song is a key.'],
- ev_seq:['SEQUENCE','7 \u00b7 0317 \u00b7 92.4 \u00b7 1986 — in the order the proofs were found. The box accepted it.'],
- ev_key:['BRASS KEY','Recovered from under the rubble of a future that hasn\u2019t happened yet.'],
- ev_loop:['CAUSALITY','You left the key in a drawer in 1986. In the present, someone left a note for you. You did.']
+ ev_mirror:['المرآة — الرقم','رقمٌ محفورٌ في زاوية الزجاج: 7. الانعكاس كذب في كل شيءٍ آخر.'],
+ ev_clock:['الزمن — 03:17','كل ساعةٍ في الغرفة 202 توقفت عند الدقيقة نفسها. سجلّ الخادمة يؤكد ذلك.'],
+ ev_radio:['الراديو — 92.4','صوتٌ على هذا التردد يعرف اسمك. ثم — سبع نغمات، كأنّ أحدًا يتذكّر أغنية.'],
+ ev_404:['الغرفة 404','إنها اللوبي. لوبيك أنتِ — نفس السجادة والمكتب والساعة. لكن مع صورتك على الحائط… وبلا بابٍ أمامي.'],
+ ev_photo:['الصورة — 4 يونيو 1986','آخر صورة تُظهر اللوبي — بتاريخٍ يعود عقودًا — وأحدهم يقف في موضعك بالضبط.'],
+ ev_diary:['اليوميات — خطّك','خمس صفحات بخطٍّ هو، بشكلٍ مستحيل، خطّك. «لذلك أنشأتُ الغرفة 404.»'],
+ ev_piano:['البيانو — اللحن','الأزرار النحاسية السبعة تعيد بثّ 92.4. الأغنية مفتاح.'],
+ ev_seq:['التسلسل','7 · 0317 · 92.4 · 1986 — بالترتيب الذي وُجدت به الأدلة. الصندوق قبِلها.'],
+ ev_key:['مفتاحٌ نحاسي','انتُشل من تحت أنقاض مستقبلٍ لم يقع بعد.'],
+ ev_loop:['السببية','تركتِ المفتاح في درجٍ عام 1986. وفي الحاضر ترك أحدهم لكِ ورقة. أنتِ هي من فعل.']
 };
 const ACH={
- a_night:['NIGHT ONE','you entered the Halloway'],
- a_eyes:['SHARP EYES','every reflection was wrong'],
- a_time:['TIMEKEEPER','you made the clocks agree'],
- a_listen:['THE LISTENER','you heard your own voice'],
- a_frame:['GHOST IN THE FRAME','you found yourself in a photograph'],
- a_uv:['UNDER THE LIGHT','hidden words revealed'],
- a_pitch:['PERFECT PITCH','the melody, first attempt'],
- a_loop:['CAUSAL LOOP','a key delivered to the past'],
- a_end1:['THE GUEST','one of three doors'],
- a_end2:['THE LOOP','you chose to forget'],
- a_end3:['CHECK-OUT','you let the lamp go']
+ a_night:['الليلة الأولى','دخلتِ هالوواي'],
+ a_eyes:['عيونٌ ثاقبة','كل الانعكاسات كانت خاطئة'],
+ a_time:['حافظة الوقت','جعلتِ الساعات تتفق'],
+ a_listen:['المستمعة','سمعتِ صوتك أنتِ'],
+ a_frame:['شبحٌ في الإطار','وجدتِ نفسك داخل صورة'],
+ a_uv:['تحت الضوء','كلماتٌ خفية انكشفت'],
+ a_pitch:['أذنٌ موسيقية','اللحن من المحاولة الأولى'],
+ a_loop:['حلقة السببية','مفتاحٌ سُلِّم إلى الماضي'],
+ a_end1:['الضيفة','أحد الأبواب الثلاثة'],
+ a_end2:['الحلقة','اخترتِ أن تنسي'],
+ a_end3:['تسجيل المغادرة','تركتِ المصباح يرحل']
 };
 
 /* ---------- الحالة + الحفظ ---------- */
@@ -334,16 +334,16 @@ const DEF={
   r501:{n:0,done:false},
   r602:{seq:[],tries:0,done:false},
   r707:{d:[0,2,1,3],wrong:0,perm:0,done:false},
-  r808:{vis:[],key:false,placed:false,done:false},
+  r808:{vis:[],key:false,placed:false,done:false,mode:'hub'},
   r909:{}
  },
  sndOn:true,vol:.8
 };
 let S=loadS();
-function loadS(){try{const j=localStorage.getItem('room404_v1');return j?Object.assign(JSON.parse(JSON.stringify(DEF)),JSON.parse(j)):JSON.parse(JSON.stringify(DEF))}catch(e){return JSON.parse(JSON.stringify(DEF))}}
-function save(){try{localStorage.setItem('room404_v1',JSON.stringify(S))}catch(e){}}
+function loadS(){try{const j=localStorage.getItem('room404_ar_v1');return j?Object.assign(JSON.parse(JSON.stringify(DEF)),JSON.parse(j)):JSON.parse(JSON.stringify(DEF))}catch(e){return JSON.parse(JSON.stringify(DEF))}}
+function save(){try{localStorage.setItem('room404_ar_v1',JSON.stringify(S))}catch(e){}}
 
-/* ---------- محرك الصوت (كل الأصوات توليدية) ---------- */
+/* ---------- محرك الصوت ---------- */
 const AU={
  ctx:null,master:null,nb:null,staticN:null,humN:null,droneN:null,
  init(){if(this.ctx)return;const C=window.AudioContext||window.webkitAudioContext;if(!C)return;
@@ -379,9 +379,9 @@ const AU={
  knockFar(){this.knock(3,.34,.18)},
  heart(){this.tone(52,{dur:.16,g:.5});this.tone(52,{t:.32,dur:.14,g:.35})},
  whisper(txt){try{if(!window.speechSynthesis)return;const u=new SpeechSynthesisUtterance(txt);
-  u.rate=.5;u.pitch=.15;u.volume=S.sndOn?.5:0;u.lang='en-US';speechSynthesis.speak(u)}catch(e){}},
+  u.rate=.5;u.pitch=.15;u.volume=S.sndOn?.5:0;u.lang='ar-SA';speechSynthesis.speak(u)}catch(e){}},
  playMelody(t0=0,vel=.4){MELODY.forEach((i,k)=>this.piano(BTN_N[i],t0+k*.45,1.3,vel))},
- startStatic(f){if(!this.ctx||this.staticN)return;const s=this.ctx.createBufferSource();s.buffer=this.nb;s.loop=true;
+ startStatic(){if(!this.ctx||this.staticN)return;const s=this.ctx.createBufferSource();s.buffer=this.nb;s.loop=true;
   const fl=this.ctx.createBiquadFilter();fl.type='bandpass';fl.Q.value=.8;const g=this.ctx.createGain();
   s.connect(fl);fl.connect(g);g.connect(this.master);g.gain.value=.06;s.start();
   this.staticN={s,fl,g}},setStatic(f){if(!this.staticN)return;this.staticN.fl.frequency.value=250+(f-88)*260;
@@ -408,16 +408,17 @@ function toast(msg,icon='eye'){const t=document.createElement('div');t.className
 function say(t){const s=$('sayline');if(!s)return;s.textContent=t;s.classList.remove('bump');void s.offsetWidth;s.classList.add('bump');AU.tick()}
 function flick(){app.classList.remove('flick');void app.offsetWidth;app.classList.add('flick');AU.buzz()}
 function shake(){app.classList.remove('shake');void app.offsetWidth;app.classList.add('shake')}
-function unlockFloor(n){if(!S.floors.includes(n)){S.floors.push(n);save();toast(`FLOOR ${n} IS NOW ACCESSIBLE`,'key');AU.ding()}}
-function addEvidence(id){if(S.evd.includes(id))return;S.evd.push(id);save();toast('NEW EVIDENCE — '+EVD[id][0],'note')}
-function ach(id){if(S.ach.includes(id))return;S.ach.push(id);save();toast('ACHIEVEMENT — '+ACH[id][0],'flame')}
+function unlockFloor(n){if(!S.floors.includes(n)){S.floors.push(n);save();toast(`الطابق ${n} متاح الآن`,'key');AU.ding()}}
+function addEvidence(id){if(S.evd.includes(id))return;S.evd.push(id);save();toast('دليل جديد — '+EVD[id][0],'note')}
+function ach(id){if(S.ach.includes(id))return;S.ach.push(id);save();toast('إنجاز — '+ACH[id][0],'flame')}
 let roomTimers=[];
 function later(fn,ms){const id=setTimeout(fn,ms);roomTimers.push(id);return id}
 function clearLater(){roomTimers.forEach(clearTimeout);roomTimers=[]}
+let stabIv=null;
+function clearStab(){if(stabIv){clearInterval(stabIv);stabIv=null}}
 
 /* ---------- سرد سينمائي ---------- */
-let narrSkip=null;
-function narrate(lines,{final='CONTINUE',choice=null}={}){
+function narrate(lines,{final='متابعة',choice=null}={}){
  return new Promise(res=>{
   const ov=$('ov-narr');
   ov.innerHTML=`<div class="narr"><div class="nk">THE HALLOWAY</div><div class="narr-in"></div>
@@ -429,7 +430,7 @@ function narrate(lines,{final='CONTINUE',choice=null}={}){
   function type(){const L=lines[i];const p=document.createElement('p');if(L.big)p.className='big';box.appendChild(p);
    typing=true;done=false;let k=0;const txt=L.t;
    iv=setInterval(()=>{p.textContent=txt.slice(0,++k);if(k%3===0)AU.tick();
-    if(k>=txt.length){clearInterval(iv);iv=null;typing=false;done=true;next()}},24)}
+    if(k>=txt.length){clearInterval(iv);iv=null;typing=false;done=true;next()}},26)}
   function showChoice(){const c=ov.querySelector('.nchoice');
    choice.forEach(([lab,fn])=>{const b=document.createElement('button');b.className='plate';b.textContent=lab;
     b.onclick=()=>{ov.classList.remove('open');ov.innerHTML='';res(fn)};c.appendChild(b)})}
@@ -439,7 +440,7 @@ function narrate(lines,{final='CONTINUE',choice=null}={}){
   type();
  });
 }
-function showNote(title,body,{hand=false,btn='CLOSE'}={}){
+function showNote(title,body,{hand=false,btn='إغلاق'}={}){
  const ov=$('ov-note');
  ov.innerHTML=`<div class="panel"><button class="plate small xbtn" onclick="closeOv('ov-note')">×</button>
   <div class="note ${hand?'hand':''}"><h4>${title}</h4><div>${body}</div></div>
@@ -451,16 +452,17 @@ function closeOv(id){$(id).classList.remove('open');$(id).innerHTML='';AU.tick()
 /* ---------- HUD ---------- */
 function hud(loc){
  return `<div class="hud"><span class="loc">${loc}</span>
-  <button class="hbtn" data-tip="Hotel map" onclick="toggleMap()" aria-label="Map">${ic('map')}</button>
-  <button class="hbtn" data-tip="Evidence board" onclick="toggleEvd()" aria-label="Evidence">${ic('board')}</button>
-  <button class="hbtn" onclick="toggleSet()" aria-label="Settings">${ic(S.sndOn?'snd':'mute')}</button></div>`;
+  <button class="hbtn" data-tip="خريطة الفندق" onclick="toggleMap()" aria-label="الخريطة">${ic('map')}</button>
+  <button class="hbtn" data-tip="لوحة الأدلة" onclick="toggleEvd()" aria-label="الأدلة">${ic('board')}</button>
+  <button class="hbtn" data-tip="الإعدادات" onclick="toggleSet()" aria-label="الإعدادات">${ic(S.sndOn?'snd':'mute')}</button></div>`;
 }
 document.addEventListener('mouseover',e=>{const t=e.target.closest('[data-tip]');if(t)say(t.dataset.tip)});
 
 /* ---------- التنقل ---------- */
 let VIEW='title',ARG=null;
 function go(view,arg){
- clearLater();AU.stopAll();VIEW=view;ARG=arg;
+ clearLater();clearStab();AU.stopAll();VIEW=view;ARG=arg;
+ S.f.r808.mode='hub';
  app.style.opacity=0;
  setTimeout(()=>{render();app.style.transition='opacity .7s';app.style.opacity=1;AU.step();
   window.scrollTo(0,0)},260);
@@ -469,17 +471,17 @@ function render(){
  app.className='v-'+VIEW;clearLater();
  if(VIEW==='title')viewTitle();
  else if(VIEW==='lobby')viewLobby();
- else if(VIEW==='elevator')viewElevator(ARG);
+ else if(VIEW==='elevator')viewElevator();
  else if(VIEW==='hall')viewHall(ARG);
  else if(VIEW==='room')viewRoom(ARG);
  if(VIEW!=='title'&&!$('app-hud')){app.insertAdjacentHTML('afterbegin',hud(locName()))}
 }
 function locName(){
- if(VIEW==='lobby')return 'THE HALLOWAY — LOBBY';
- if(VIEW==='elevator')return 'ELEVATOR';
- if(VIEW==='hall')return `FLOOR ${ARG} — CORRIDOR`;
- if(VIEW==='room')return `ROOM ${ARG} — ${ROOMS[ARG].t}`;
- return 'THE HALLOWAY';
+ if(VIEW==='lobby')return 'هالوواي — اللوبي';
+ if(VIEW==='elevator')return 'المصعد';
+ if(VIEW==='hall')return `الطابق ${ARG} — الممر`;
+ if(VIEW==='room')return `الغرفة ${ARG} — ${ROOMS[ARG].t}`;
+ return 'هالوواي';
 }
 function refreshHud(){const h=app.querySelector('.hud');if(h)h.remove();app.insertAdjacentHTML('afterbegin',hud(locName()))}
 
@@ -499,29 +501,28 @@ function viewTitle(){
    <path d="M40 30h10M40 60h8M40 90h10M40 120h8" stroke="#5a452a" stroke-width="2"/>
    <path d="M260 30h-10M260 60h-8M260 90h-10M260 120h-8" stroke="#5a452a" stroke-width="2"/>
    <ellipse cx="45" cy="20" rx="26" ry="34" fill="url(#g-glow)"/><ellipse cx="255" cy="20" rx="26" ry="34" fill="url(#g-glow)"/>
-   <ellipse cx="110" cy="470" rx="150" ry="60" fill="url(#g-glow)"/>
    <rect x="70" y="6" width="160" height="14" fill="#241a10" stroke="#4a3a24"/>
   </svg>
-  <div class="t-hotel">THE HALLOWAY HOTEL</div>
+  <div class="t-hotel">THE HALLOWAY</div>
   <div class="t-room">ROOM</div>
   <div class="t-404">404</div>
-  <div class="t-sub">“Some rooms should never be opened.”</div>
+  <div class="t-sub">«بعض الغرف لا ينبغي أن تُفتح أبدًا.»</div>
   <div class="t-btns">
-   ${S.started?`<button class="plate" onclick="continueGame()">CONTINUE</button>
-   <button class="plate" onclick="startNew()">NEW GAME</button>`:
-   `<button class="plate" onclick="startGame()">ENTER HOTEL</button>`}
+   ${S.started?`<button class="plate" onclick="continueGame()">متابعة</button>
+   <button class="plate" onclick="startNew()">لعبة جديدة</button>`:
+   `<button class="plate" onclick="startGame()">ادخُلي الفندق</button>`}
   </div>
-  ${S.endings.length?`<div class="t-endings">3 DOORS \u00b7 ${S.endings.length} OPENED</div>`:''}
-  <div class="t-foot">EST. 1927 \u00b7 CLOSED 1986 \u00b7 NO VACANCY</div>
+  ${S.endings.length?`<div class="t-endings">3 أبواب · فتحتِ ${S.endings.length} منها</div>`:''}
+  <div class="t-foot">تأسّس 1927 · أُغلق 1986 · لا غرف شاغرة</div>
  </div>`;
 }
 async function startGame(){
  AU.init();S.started=true;save();ach('a_night');
  await narrate([
-  {t:'THE HALLOWAY HOTEL — EST. 1927 — CLOSED 1986',big:true},
-  {t:'You don\u2019t remember arriving.'},
-  {t:'You don\u2019t remember the road, the rain, or the reason.'},
-  {t:'Only the doors — all of them — locking at once behind you.'}
+  {t:'فندق هالوواي — تأسّس 1927 — أُغلق 1986',big:true},
+  {t:'أنتِ لا تتذكّرين وصولك.'},
+  {t:'لا تتذكّرين الطريق، ولا المطر، ولا السبب.'},
+  {t:'فقط صوت الأبواب — كلّها — تُقفل دفعةً واحدة خلفك.'}
  ]);
  go('lobby');
 }
@@ -529,10 +530,9 @@ function startNew(){if(S.started){S=JSON.parse(JSON.stringify(DEF));save()}start
 function continueGame(){AU.init();go('lobby')}
 
 /* ============================================================
-   اللوبي (يُعاد استخدامه داخل غرفة 404)
+   اللوبي
 ============================================================ */
 function lobbySVG(o={}){
- const clock=S.f.c202.done;
  return `<svg class="scene" viewBox="0 0 1200 640" style="--wall:#2b241c">
   <rect width="1200" height="430" fill="#241d16"/><rect width="1200" height="430" fill="url(#p-dam)"/>
   <rect y="424" width="1200" height="12" fill="#160f09"/>
@@ -540,44 +540,39 @@ function lobbySVG(o={}){
   <polygon points="520,436 860,436 800,640 560,640" fill="#4a1f1c" stroke="#2a100e" stroke-width="3"/>
   <ellipse cx="600" cy="200" rx="420" ry="200" fill="url(#g-lamp)" opacity=".5"/>
   <text x="600" y="70" text-anchor="middle" font-family="Cinzel" font-size="26" letter-spacing="12" fill="#8a7248">THE HALLOWAY</text>
-  <text x="600" y="96" text-anchor="middle" font-family="Cinzel" font-size="11" letter-spacing="8" fill="#5f4f38">EST. 1927</text>
-  <!-- reception counter -->
-  <g ${o.still?'':`class="hot" data-tip="The front desk" onclick="lookLobby('desk')"`}>
+  <text x="600" y="98" text-anchor="middle" font-family="Reem Kufi" font-size="13" fill="#5f4f38">تأسّس 1927</text>
+  <g ${o.still?'':`class="hot" data-tip="مكتب الاستقبال" onclick="lookLobby('desk')"`}>
    <rect x="120" y="300" width="380" height="24" fill="url(#g-brass)"/>
    <rect x="132" y="324" width="356" height="146" fill="#1c130d" stroke="#0f0a06" stroke-width="3"/>
    <rect x="150" y="344" width="140" height="50" fill="#241610" stroke="#120b07"/>
    <rect x="330" y="344" width="140" height="50" fill="#241610" stroke="#120b07"/>
    <rect x="150" y="412" width="140" height="44" fill="#241610" stroke="#120b07"/>
    <rect x="330" y="412" width="140" height="44" fill="#241610" stroke="#120b07"/>
-   <text x="310" y="288" text-anchor="middle" font-family="Cinzel" font-size="10" letter-spacing="3" fill="#6d5d44">PLEASE RING FOR SERVICE</text>
+   <text x="310" y="288" text-anchor="middle" font-family="Almarai" font-size="11" fill="#6d5d44">اضغطي الجرس لأي خدمة</text>
   </g>
-  <!-- bell -->
-  <g ${o.still?'':`class="hot" data-tip="A brass service bell" onclick="ringBell()"`}>
+  <g ${o.still?'':`class="hot" data-tip="جرسٌ نحاسي" onclick="ringBell()"`}>
    <ellipse cx="245" cy="292" rx="26" ry="5" fill="#5f4a2a"/>
    <path d="M225 292a20 20 0 0 1 40 0z" fill="url(#g-brass)" stroke="#4a3520"/>
    <circle cx="245" cy="270" r="4" fill="#4a3520"/>
   </g>
-  <!-- key rack -->
-  <g ${o.still?'':`class="hot" data-tip="The key rack" onclick="lookLobby('rack')"`}>
+  <g ${o.still?'':`class="hot" data-tip="رفّ المفاتيح" onclick="lookLobby('rack')"`}>
    <rect x="600" y="150" width="330" height="180" fill="#1c130d" stroke="#0f0a06" stroke-width="3"/>
    ${[0,1,2,3].map(r=>[0,1,2,3].map(c=>{const n=String(101+r*100+c*2+((r*4+c)%2));const x=618+c*76,y=168+r*40;
      const empty=n==='404';return `<line x1="${x}" y1="${y}" x2="${x+30}" y2="${y}" stroke="#5f4a2a" stroke-width="2"/>
      ${empty?`<rect x="${x+8}" y="${y+2}" width="20" height="26" fill="#0a0705" stroke="#3a2818"/>`:
      `<g stroke="#8a6d3f" stroke-width="2" fill="none"><circle cx="${x+10}" cy="${y+8}" r="4"/><path d="M${x+14} ${y+8}h16M${x+24} ${y+8}v6M${x+30} ${y+8}v5"/></g>`}
-     <text x="${x+15}" y="${y+40}" font-family="Cinzel" font-size="8" fill="${empty?'#a83232':'#55483a'}">${n}</text>`}).join('')).join('')}
+     <text x="${x+15}" y="${y+40}" font-family="Reem Kufi" font-size="9" fill="${empty?'#a83232':'#55483a'}">${n}</text>`}).join('')).join('')}
   </g>
-  <!-- wall clock 3:17 -->
-  <g ${o.still?'':`class="hot" data-tip="The lobby clock" onclick="lookLobby('clock')"`}>
+  <g ${o.still?'':`class="hot" data-tip="ساعة اللوبي" onclick="lookLobby('clock')"`}>
    <circle cx="1040" cy="170" r="58" fill="#d5c69f" stroke="#3a2a18" stroke-width="8"/>
    ${[0,1,2,3,4,5,6,7,8,9,10,11].map(h=>{const a=h*30*Math.PI/180;return `<line x1="${1040+Math.sin(a)*46}" y1="${170-Math.cos(a)*46}" x2="${1040+Math.sin(a)*50}" y2="${170-Math.cos(a)*50}" stroke="#2b2117" stroke-width="2"/>`}).join('')}
    <line x1="1040" y1="170" x2="${1040+Math.sin((3%12)*30*Math.PI/180+17*0.5*Math.PI/180)*28}" y2="${170-Math.cos((3%12)*30*Math.PI/180+17*0.5*Math.PI/180)*28}" stroke="#2b2117" stroke-width="5" stroke-linecap="round"/>
    <line x1="1040" y1="170" x2="${1040+Math.sin(17*6*Math.PI/180)*44}" y2="${170-Math.cos(17*6*Math.PI/180)*44}" stroke="#7e1f1f" stroke-width="3" stroke-linecap="round"/>
    <circle cx="1040" cy="170" r="4" fill="#2b2117"/>
   </g>
-  <!-- front door -->
   ${o.noExit?`<g><rect x="640" y="150" width="200" height="286" fill="#0c0806" stroke="#241a10" stroke-width="4"/>
-    <rect x="664" y="180" width="152" height="200" fill="#050403"/><text x="740" y="360" text-anchor="middle" font-family="IM Fell English" font-style="italic" font-size="13" fill="#55483a">no exit on this side</text></g>`:
-  `<g class="hot" data-tip="The front door" onclick="lookLobby('exit')">
+    <rect x="664" y="180" width="152" height="200" fill="#050403"/><text x="740" y="360" text-anchor="middle" font-family="Amiri" font-size="15" fill="#55483a">لا مخرج من هذا الجانب</text></g>`:
+  `<g class="hot" data-tip="الباب الأمامي" onclick="lookLobby('exit')">
    <rect x="640" y="150" width="200" height="286" fill="#1a120c" stroke="#3a2a18" stroke-width="5"/>
    <rect x="660" y="170" width="74" height="160" fill="url(#g-glass)" stroke="#241a10"/>
    <rect x="746" y="170" width="74" height="160" fill="url(#g-glass)" stroke="#241a10"/>
@@ -585,15 +580,14 @@ function lobbySVG(o={}){
    <circle cx="733" cy="292" r="6" fill="#8a6d3f"/><circle cx="747" cy="292" r="6" fill="#8a6d3f"/>
    <rect x="716" y="424" width="48" height="12" fill="#5f4a2a"/>
   </g>`}
-  <!-- elevator -->
-  <g ${o.still?'':`class="hot" data-tip="The elevator" onclick="go('elevator')"`}>
+  <g ${o.still?'':`class="hot" data-tip="المصعد" onclick="go('elevator')"`}>
    <rect x="940" y="180" width="170" height="256" fill="#0f0a07" stroke="#3a2a18" stroke-width="5"/>
    <rect x="952" y="192" width="146" height="232" fill="#241610" stroke="#120b07"/>
    <line x1="1025" y1="192" x2="1025" y2="424" stroke="#0f0a07" stroke-width="5"/>
    <rect x="990" y="152" width="70" height="18" fill="#1c130d" stroke="#4a3a24"/>
    <circle cx="1025" cy="161" r="4" fill="#c9a35c"/>
   </g>
-  ${o.photo?`<g class="hot" data-tip="A photograph on the wall" onclick="photo404()">
+  ${o.photo?`<g class="hot" data-tip="صورةٌ على الحائط" onclick="photo404()">
    <rect x="300" y="120" width="160" height="110" fill="#2a2016" stroke="#4a3a24" stroke-width="4"/>
    <rect x="312" y="132" width="136" height="86" fill="#151210"/>
    <rect x="345" y="160" width="14" height="40" fill="#3a3230"/>
@@ -604,44 +598,40 @@ function lobbySVG(o={}){
  </svg>`;
 }
 function viewLobby(){
- app.innerHTML=hud('THE HALLOWAY — LOBBY')+`<div class="view fadein">
+ app.innerHTML=hud('هالوواي — اللوبي')+`<div class="view fadein">
   <div class="scene-wrap">${lobbySVG()}</div>
-  <div class="sayline" id="sayline">The lobby is warm. Nobody is at the desk. The clock says 3:17 — it has said so for a long time.</div>
+  <div class="sayline" id="sayline">اللوبي دافئ. لا أحد خلف المكتب. الساعة تشير إلى 3:17 — وقد كانت كذلك منذ زمنٍ بعيد.</div>
  </div>`;
  AU.startDrone();
 }
 let bellN=0;
 function ringBell(){
  AU.tone(1568,{dur:.7,g:.18});AU.tone(1976,{t:.05,dur:.5,g:.08});bellN++;
- if(bellN>=3){later(()=>{AU.knock(2,.3,.5);say('You stop ringing. Somewhere above you, a door closes.')},900);bellN=0}
- else say('The bell rings into a very large silence.');
+ if(bellN>=3){later(()=>{AU.knock(2,.3,.5);say('تتوقفين عن الرنين. في مكانٍ ما فوقك، يُغلق بابٌ ما.')},900);bellN=0}
+ else say('يرنّ الجرس في صمتٍ كبيرٍ جدًا.');
 }
 function lookLobby(w){
- if(w==='desk')say('A guest ledger, open to a page with one line, written over and over: “V. — Room 404.”');
- if(w==='rack')say('Hooks for every room. Every key hangs in its place — except 404. That hook is empty, and polished, as if used daily.');
- if(w==='clock')say(S.f.c202.done?'Still 3:17. It will always be 3:17 here.':'It reads 3:17. The second hand is not moving. It is not broken — it is holding its breath.');
- if(w==='exit')say('Locked, of course. Through the glass: fog, and the shape of a road that refuses to be useful.');
+ if(w==='desk')say('سجلّ نزلاء، مفتوح على صفحةٍ فيها سطرٌ واحد مكتوبٌ مرارًا وتكرارًا: «V — الغرفة 404».');
+ if(w==='rack')say('خطّافات لكل غرفة. كل مفتاحٍ معلّق في مكانه — إلا 404. ذلك الخطّاف فارغ، ومصقول، كأنه يُستخدم يوميًا.');
+ if(w==='clock')say(S.f.c202.done?'ما زالت 3:17. ستبقى 3:17 هنا إلى الأبد.':'تشير إلى 3:17. عقرب الثواني لا يتحرك. ليست معطّلة — إنها تُمسك أنفاسها.');
+ if(w==='exit')say('مقفل، بالطبع. عبر الزجاج: ضباب، وشكلُ طريقٍ يرفض أن يكون مفيدًا.');
 }
 
 /* ============================================================
    المصعد
 ============================================================ */
-function viewElevator(auto){
- const cur=VIEW==='elevator'&&app.dataset.fl?+app.dataset.fl:1;
- app.innerHTML=hud('ELEVATOR')+`<div class="view fadein">
+function viewElevator(){
+ app.innerHTML=hud('المصعد')+`<div class="view fadein">
   <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" id="elsvg">
    <rect width="1200" height="640" fill="#150e09"/>
    <rect x="0" width="330" height="640" fill="#241610"/><rect x="330" width="290" height="640" fill="#1c120b"/>
    <rect x="870" width="330" height="640" fill="#241610"/>
    <rect x="360" y="80" width="480" height="480" fill="#0f0a07" stroke="#3a2a18" stroke-width="6"/>
-   <!-- mirror -->
    <rect x="450" y="110" width="300" height="180" fill="url(#g-glass)" stroke="url(#g-brass)" stroke-width="8"/>
    <g opacity=".5"><circle cx="600" cy="180" r="22" fill="#3a352e"/><path d="M560 290a40 46 0 0 1 80 0z" fill="#3a352e"/></g>
-   <text x="600" y="316" text-anchor="middle" font-family="Cinzel" font-size="9" letter-spacing="6" fill="#5f4f38">OBSERVE YOURSELF COURTEOUSLY</text>
-   <!-- floor display -->
+   <text x="600" y="318" text-anchor="middle" font-family="Reem Kufi" font-size="11" fill="#5f4f38">راقبي نفسكِ بلطف</text>
    <rect x="520" y="30" width="160" height="44" fill="#050403" stroke="#4a3a24"/>
-   <text x="600" y="62" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="28" fill="#c9a35c" id="flnum">${cur||'G'}</text>
-   <!-- doors (clipped) -->
+   <text x="600" y="62" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="28" fill="#c9a35c" id="flnum">1</text>
    <clipPath id="edclip"><rect x="378" y="98" width="444" height="444"/></clipPath>
    <g clip-path="url(#edclip)">
     <rect x="378" y="98" width="444" height="444" fill="#0a0605"/>
@@ -652,54 +642,51 @@ function viewElevator(auto){
     <rect class="ed ed-r" x="632" y="140" width="158" height="360" fill="none" stroke="#3a2a18" stroke-width="3"/>
    </g>
    <line x1="600" y1="98" x2="600" y2="542" stroke="#0f0a07" stroke-width="6"/>
-   <!-- button panel -->
    <rect x="940" y="150" width="150" height="420" fill="#1c130d" stroke="#4a3a24" rx="6"/>
-   ${[['G',0],['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7],['8',8],['9',9]].map(([l,n],i)=>{
+   ${[['L',0],['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7],['8',8],['9',9]].map(([l,n],i)=>{
      const x=1015+(i%2?36:-36),y=190+Math.floor(i/2)*58;
      const locked=n>0&&!S.floors.includes(n);
-     return `<g class="ebtn ${locked?'lock':'hot'}" ${locked?'':`data-tip="${n===0?'Ground floor':'Floor '+n}" onclick="pressFloor(${n})"`}>
+     return `<g class="ebtn ${locked?'lock':'hot'}" ${locked?'':`data-tip="${n===0?'الطابق الأرضي':'الطابق '+n}" onclick="pressFloor(${n})"`}>
       <circle cx="${x}" cy="${y}" r="22" fill="#0d0906" stroke="#6e5732" stroke-width="2"/>
-      <circle cx="${x}" cy="${y}" r="17" fill="${locked?'#141009':(cur===n?'#c9a35c':'url(#g-brass)')}"/>
-      <text x="${x}" y="${y+5}" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="13" fill="${cur===n?'#241a0e':'#241a0e'}">${l}</text></g>`}).join('')}
+      <circle cx="${x}" cy="${y}" r="17" fill="${locked?'#141009':(n===1?'#c9a35c':'url(#g-brass)')}"/>
+      <text x="${x}" y="${y+5}" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="13" fill="#241a0e">${l}</text></g>`}).join('')}
    <rect x="960" y="590" width="110" height="8" fill="#3a2a18"/>
   </svg></div>
-  <div class="sayline" id="sayline">The elevator waited for you. It always does. ${S.floors.length>1?'Lit buttons mark where you\u2019ve earned the right to go.':''}</div>
-  <div class="ctl"><button class="plate small" onclick="go('lobby')">${ic('back')} BACK TO LOBBY</button></div>
+  <div class="sayline" id="sayline">كان المصعد في انتظارك. هو دائمًا كذلك. ${S.floors.length>1?'الأزرار المضيئة تدلّ على الأماكن التي سُمح لكِ بها.':''}</div>
+  <div class="ctl"><button class="plate small" onclick="go('lobby')">${ic('back')} عودة إلى اللوبي</button></div>
  </div>`;
- if(auto!==undefined&&auto!==null)setTimeout(()=>pressFloor(auto),600);
 }
 function pressFloor(n){
- if(n>0&&!S.floors.includes(n)){AU.denied();say('The button refuses. Some floors are not yours yet.');return}
+ if(n>0&&!S.floors.includes(n)){AU.denied();say('الزر يرفض. بعض الطوابق ليست لكِ بعد.');return}
  AU.ding();
  const svg=$('elsvg');if(svg)svg.classList.add('elev-closing');
  AU.startHum();
- setTimeout(()=>{const d=$('flnum');if(d)d.textContent=n===0?'G':n;AU.tick()},700);
+ setTimeout(()=>{const d=$('flnum');if(d)d.textContent=n===0?'L':n;AU.tick()},700);
  setTimeout(()=>{AU.stopHum();AU.ding();
   if(n===0)go('lobby');else go('hall',n)},1900);
 }
-function openElevator(){go('elevator')}
 
 /* ============================================================
    ممرات الطوابق
 ============================================================ */
 function doorSVG(x,y,w,h,num,attrs='',label=''){
  const locked405=num==='405'&&!S.f.r404.open;
- return `<g class="hot" data-tip="Room ${num}" onclick="enterRoom('${num}')" ${attrs}>
+ return `<g class="hot" data-tip="الغرفة ${num}" onclick="enterRoom('${num}')" ${attrs}>
   <rect x="${x-12}" y="${y-30}" width="${w+24}" height="24" rx="2" fill="url(#g-brass)" stroke="#241a10"/>
-  <text x="${x+w/2}" y="${y-12}" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="14" letter-spacing="3" fill="#2b1f10">${num}</text>
+  <text x="${x+w/2}" y="${y-12}" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="14" fill="#2b1f10">${num}</text>
   <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#2a1a11" stroke="#0f0a06" stroke-width="4"/>
   <rect x="${x+18}" y="${y+22}" width="${w-36}" height="${h/2-38}" fill="#241610" stroke="#1b110a" stroke-width="3"/>
   <rect x="${x+18}" y="${y+h/2+8}" width="${w-36}" height="${h/2-38}" fill="#241610" stroke="#1b110a" stroke-width="3"/>
   <circle cx="${x+w-26}" cy="${y+h/2}" r="6" fill="url(#g-brass)" stroke="#4a3520"/>
   ${locked405?`<line x1="${x+6}" y1="${y+40}" x2="${x+w-6}" y2="${y+h-40}" stroke="#7a6a4d" stroke-width="7"/>
-   <rect x="${x+w/2-70}" y="${y-70}" width="140" height="30" fill="#9a8a68" opacity=".8" transform="rotate(-4 ${x+w/2} ${y-55})"/>
-   <text x="${x+w/2}" y="${y-49}" text-anchor="middle" font-family="Special Elite" font-size="13" fill="#2b2117" transform="rotate(-4 ${x+w/2} ${y-55})">OUT OF ORDER</text>`:''}
+   <rect x="${x+w/2-75}" y="${y-70}" width="150" height="32" fill="#9a8a68" opacity=".85" transform="rotate(-4 ${x+w/2} ${y-54})"/>
+   <text x="${x+w/2}" y="${y-49}" text-anchor="middle" font-family="Almarai" font-weight="700" font-size="13" fill="#2b2117" transform="rotate(-4 ${x+w/2} ${y-54})">خارج الخدمة</text>`:''}
   ${label}
  </g>`;
 }
 function viewHall(fl){
  const F=FLOORS[fl];const rooms=fl===4?['404','405']:[Object.keys(RF).find(r=>RF[r]===fl)];
- app.innerHTML=hud(`FLOOR ${fl} — CORRIDOR`)+`<div class="view fadein">
+ app.innerHTML=hud(`الطابق ${fl} — الممر`)+`<div class="view fadein">
   <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:${F.wall};--wallD:${F.wallD}">
    <rect width="1200" height="640" fill="#0b0806"/>
    <polygon points="0,0 1200,0 940,120 260,120" fill="#161009"/>
@@ -711,59 +698,103 @@ function viewHall(fl){
    <polygon points="0,640 1200,640 940,520 260,520" fill="url(#p-plank)"/>
    <polygon points="540,540 660,540 720,640 480,640" fill="#4a1f1c" opacity=".8"/>
    <text x="120" y="420" font-family="Cinzel" font-weight="900" font-size="120" fill="#00000055" opacity=".35" transform="rotate(-6 120 420)">${fl}</text>
-   <text x="1085" y="200" font-family="Cinzel" font-size="13" letter-spacing="4" fill="#8a7248" transform="rotate(-6 1085 200)">ELEVATOR</text>
+   <text x="1085" y="200" font-family="Reem Kufi" font-size="14" fill="#8a7248" transform="rotate(-6 1085 200)">المصعد</text>
    <path d="M1122 208l10 14h-7v12h-6v-12h-7z" fill="#8a7248" transform="rotate(-6 1122 208)"/>
-   <!-- swinging ceiling lamp -->
    <g class="sway"><line x1="600" y1="120" x2="600" y2="180" stroke="#0f0a06" stroke-width="3"/>
     <path d="M560 180h80l14 22h-108z" fill="#241a10" stroke="#0f0a06"/>
     <ellipse cx="600" cy="240" rx="130" ry="90" fill="url(#g-glow)"/></g>
-   <!-- sconce above door -->
    <ellipse cx="${fl===4?500:600}" cy="170" rx="60" ry="50" fill="url(#g-glow)"/>
    ${fl===4?
      doorSVG(360,210,190,300,'404',`id="d404"`,
-      `<rect x="380" y="420" width="150" height="34" fill="#1c130d" stroke="#4a3a24"/>
-       <text x="455" y="434" text-anchor="middle" font-family="Special Elite" font-size="7.5" fill="#a98c58">THREE PROOFS REQUIRED</text>
-       <text x="455" y="446" text-anchor="middle" font-family="Special Elite" font-size="7.5" fill="#a98c58">MIRROR \u00b7 HOUR \u00b7 FREQUENCY</text>
+      `<rect x="380" y="420" width="150" height="38" fill="#1c130d" stroke="#4a3a24"/>
+       <text x="455" y="436" text-anchor="middle" font-family="Almarai" font-size="9" fill="#a98c58">ثلاثة أدلة مطلوبة</text>
+       <text x="455" y="450" text-anchor="middle" font-family="Almarai" font-size="9" fill="#a98c58">المرآة · التوقيت · التردد</text>
        <rect x="560" y="330" width="30" height="46" rx="3" fill="#1c130d" stroke="#4a3a24"/>
        <circle cx="575" cy="342" r="4" fill="#9fce8f"/>`)+
      doorSVG(660,210,190,300,'405'):
      doorSVG(505,210,190,300,rooms[0])}
   </svg></div>
-  <div class="sayline" id="sayline">Floor ${fl}. The carpet remembers footsteps that were never yours.</div>
+  <div class="sayline" id="sayline">الطابق ${fl}. السجّادة تتذكّر خطواتٍ لم تكن لكِ قط.</div>
   <div class="ctl">
-   <button class="plate small" onclick="go('elevator')">${ic('back')} ELEVATOR</button>
-   ${S.floors.length>1?`<button class="plate small" onclick="toggleMap()">${ic('map')} HOTEL MAP</button>`:''}
+   <button class="plate small" onclick="go('elevator')">${ic('back')} المصعد</button>
+   ${S.floors.length>1?`<button class="plate small" onclick="toggleMap()">${ic('map')} خريطة الفندق</button>`:''}
   </div>
  </div>`;
 }
 function enterRoom(n){
- if(n==='405'&&!S.f.r404.open){AU.denied();say('Chained shut. “Out of order.” Whatever waits inside can wait a little longer.');return}
+ if(n==='405'&&!S.f.r404.open){AU.denied();say('مقفولة بسلاسل. «خارج الخدمة». مهما كان ما ينتظر في الداخل، فسيضطر للانتظار قليلًا أكثر.');return}
  if(n==='404'&&!S.f.r404.open){keypadOpen();return}
  AU.creak();go('room',n);
+}
+
+/* ============================================================
+   لوحة شفرة الغرفة 404
+============================================================ */
+let kpBuf='';
+function keypadOpen(){
+ kpBuf='';
+ const ov=$('ov-key');
+ const missing=[];
+ if(!S.evd.includes('ev_mirror'))missing.push('رقم المرآة (الطابق 1)');
+ if(!S.evd.includes('ev_clock'))missing.push('توقيت الزمن (الطابق 2)');
+ if(!S.evd.includes('ev_radio'))missing.push('تردد الراديو (الطابق 3)');
+ const hint=missing.length?
+  `ما زلتِ تحتاجين إلى:<br>${missing.join(' · ')}`:
+  `اللوحة النحاسية على الباب تقول: المرآة · التوقيت · التردد.<br>رقمٌ، ثم التوقيت كاملًا، ثم التردد — بلا فواصل.`;
+ ov.innerHTML=`<div class="panel" style="max-width:400px">
+  <button class="plate small xbtn" onclick="closeOv('ov-key')">×</button>
+  <h3>الغرفة 404</h3><div class="ph-sub">قفلٌ إلكتروني قديم… ينتظر</div>
+  <div class="vfd" id="kpvfd">— أدخلي الشفرة —</div>
+  <div class="kgrid">
+   ${[1,2,3,4,5,6,7,8,9].map(n=>`<button class="plate" onclick="kp('${n}')">${n}</button>`).join('')}
+   <button class="plate" onclick="kp('.')">.</button>
+   <button class="plate" onclick="kp('0')">0</button>
+   <button class="plate" onclick="kp('⌫')">⌫</button>
+  </div>
+  <div style="display:flex;gap:10px;justify-content:center;margin-top:12px">
+   <button class="plate" onclick="kpTry()">افتحي</button>
+   <button class="plate small" onclick="kpClr()">مسح</button>
+  </div>
+  <div class="khint">${hint}</div>
+ </div>`;
+ ov.classList.add('open');AU.buzz();
+}
+function kp(c){if(c==='⌫')kpBuf=kpBuf.slice(0,-1);else if(kpBuf.length<12)kpBuf+=c;
+ const v=$('kpvfd');if(v){v.textContent=kpBuf||'— أدخلي الشفرة —';v.classList.remove('bad')}AU.tick()}
+function kpClr(){kpBuf='';const v=$('kpvfd');if(v){v.textContent='— أدخلي الشفرة —';v.classList.remove('bad')}}
+function kpTry(){
+ const v=$('kpvfd');
+ if(kpBuf==='7031792.4'){
+  if(v)v.textContent='ACCESS GRANTED';AU.chime();
+  setTimeout(()=>{closeOv('ov-key');S.f.r404.open=true;save();
+   toast('الغرفة 404 — مفتوحة','key');enterRoom('404')},1000);return}
+ if(v){v.textContent='ACCESS DENIED';v.classList.add('bad')}
+ flick();AU.denied();
+ setTimeout(()=>{const w=$('kpvfd');if(w){w.textContent=kpBuf||'— أدخلي الشفرة —';w.classList.remove('bad')}},1400);
 }
 
 /* ============================================================
    الغرف
 ============================================================ */
 const ROOMS={
- '101':{t:'THE MIRROR',k:'Observation'},
- '202':{t:'STOPPED TIME',k:'Puzzle'},
- '303':{t:'THE RADIO',k:'Audio'},
- '404':{t:'NOT FOUND',k:'Investigation'},
- '405':{t:'THE PHOTOGRAPHS',k:'Image Analysis'},
- '501':{t:'THE DIARY',k:'Story'},
- '602':{t:'THE MUSIC ROOM',k:'Music'},
- '707':{t:'THE PUZZLE ROOM',k:'Code Breaking'},
- '808':{t:'THE TIME ROOM',k:'Time'},
- '909':{t:'THE LAST FLOOR',k:'Ending'}
+ '101':{t:'المرآة',k:'ملاحظة'},
+ '202':{t:'الزمن المتوقف',k:'لغز'},
+ '303':{t:'الراديو',k:'صوتي'},
+ '404':{t:'غير موجودة',k:'تحقيق'},
+ '405':{t:'الصور',k:'تحليل صور'},
+ '501':{t:'اليوميات',k:'قصة'},
+ '602':{t:'غرفة الموسيقى',k:'موسيقى'},
+ '707':{t:'غرفة الألغاز',k:'فكّ شيفرات'},
+ '808':{t:'غرفة الزمن',k:'زمن'},
+ '909':{t:'الطابق الأخير',k:'نهاية'}
 };
 function roomShell(n,inner,extra=''){
  const done=doneRoom(n);
- return hud(`ROOM ${n} — ${ROOMS[n].t}`)+`<div class="view fadein">
-  <div class="vhead"><h2>ROOM ${n}</h2><span class="fl">${ROOMS[n].t} \u00b7 ${ROOMS[n].k}</span><span class="spacer"></span>
-  <button class="plate small" onclick="go('hall',${RF[n]})">${ic('back')} CORRIDOR</button></div>
+ return hud(`الغرفة ${n} — ${ROOMS[n].t}`)+`<div class="view fadein">
+  <div class="vhead"><h2>الغرفة ${n}</h2><span class="fl">${ROOMS[n].t} · ${ROOMS[n].k}</span><span class="spacer"></span>
+  <button class="plate small" onclick="go('hall',${RF[n]})">${ic('back')} الممر</button></div>
   ${inner}
-  <div class="sayline" id="sayline">${done?'The room is quiet now. It remembers you.':'The room is waiting.'}</div>
+  <div class="sayline" id="sayline">${done?'الغرفة هادئة الآن. إنها تتذكرك.':'الغرفة تنتظر.'}</div>
   ${extra}
  </div>`;
 }
@@ -773,7 +804,7 @@ function viewRoom(n){
  if(VIEW==='room')refreshHud();
 }
 
-/* ---------- ROOM 101 · THE MIRROR ---------- */
+/* ---------- الغرفة 101 · المرآة ---------- */
 function r101(){
  const f=S.f.m101;
  app.innerHTML=roomShell('101',`
@@ -782,19 +813,16 @@ function r101(){
   <rect y="460" width="1200" height="12" fill="#120c07"/>
   <rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
   <ellipse cx="600" cy="180" rx="380" ry="170" fill="url(#g-lamp)" opacity=".45"/>
-  <!-- real door (left) -->
-  <g class="hot" data-tip="The door" onclick="act101('door')">
+  <g class="hot" data-tip="الباب" onclick="act101('door')">
    <rect x="120" y="170" width="150" height="300" fill="#2a1a11" stroke="#0f0a06" stroke-width="4"/>
    <rect x="138" y="190" width="114" height="120" fill="#241610" stroke="#1b110a" stroke-width="3"/>
    <rect x="138" y="330" width="114" height="120" fill="#241610" stroke="#1b110a" stroke-width="3"/>
    <circle cx="252" cy="320" r="6" fill="url(#g-brass)"/>
    ${f.door?`<rect x="126" y="176" width="138" height="288" fill="#050302"/>`:''}
   </g>
-  <!-- mirror -->
-  <g class="hot" data-tip="The mirror" onclick="clickMirror101()">
+  <g class="hot" data-tip="المرآة" onclick="clickMirror101()">
    <rect x="420" y="90" width="360" height="380" fill="#1a120c" stroke="#0f0a06" stroke-width="10" rx="4"/>
    <rect x="440" y="110" width="320" height="340" fill="url(#g-glass)" stroke="#3a2a18" stroke-width="4"/>
-   <!-- reflection (frozen forever) -->
    <g clip-path="none">
     <rect x="440" y="110" width="320" height="340" fill="#181a17" opacity=".9"/>
     <rect x="452" y="440" width="296" height="10" fill="#0d0a07"/>
@@ -805,182 +833,171 @@ function r101(){
     <rect x="580" y="296" width="30" height="36" fill="#2a1a11" stroke="#120b07"/>
     <g id="mfig" style="opacity:0;transition:opacity 1.4s"><circle cx="500" cy="330" r="16" fill="#0a0806"/><path d="M474 440a26 30 0 0 1 52 0z" fill="#0a0806"/></g>
     <g class="mist" id="mmist"><rect x="440" y="110" width="320" height="340" fill="#b8b0a0" opacity=".18"/></g>
-    <g class="mword" id="mword1"><text x="600" y="200" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="24" letter-spacing="4" fill="#dfe6df">YOU HAVE</text></g>
-    <g class="mword" id="mword2"><text x="600" y="236" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="24" letter-spacing="4" fill="#dfe6df">BEEN HERE</text></g>
-    <g class="mword" id="mword3"><text x="600" y="272" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="24" letter-spacing="4" fill="#dfe6df">BEFORE</text></g>
+    <g class="mword" id="mword1"><text x="600" y="200" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="27" fill="#dfe6df">لقد كُنتِ</text></g>
+    <g class="mword" id="mword2"><text x="600" y="240" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="27" fill="#dfe6df">هنا</text></g>
+    <g class="mword" id="mword3"><text x="600" y="280" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="27" fill="#dfe6df">من قبل</text></g>
     <g class="seven ${f.seven?'on':''}" id="mseven"><text x="726" y="424" text-anchor="end" font-family="Cinzel" font-weight="900" font-size="30" fill="#cfe0d2">7</text></g>
    </g>
    <rect x="440" y="110" width="320" height="340" fill="url(#g-glass)" opacity=".22"/>
   </g>
-  <!-- real chair -->
-  <g class="hot" data-tip="A chair" onclick="act101('chair')" style="transition:transform .8s;transform:${f.chair?'translate(120px,-30px)':'none'}">
+  <g class="hot" data-tip="كرسي" onclick="act101('chair')" style="transition:transform .8s;transform:${f.chair?'translate(120px,-30px)':'none'}">
    <rect x="830" y="300" width="90" height="16" fill="#3a2317"/><rect x="830" y="200" width="90" height="100" fill="#2a1a11" stroke="#1b110a" stroke-width="3"/>
    <rect x="836" y="316" width="10" height="90" fill="#241610"/><rect x="904" y="316" width="10" height="90" fill="#241610"/>
    <rect x="830" y="330" width="90" height="10" fill="#3a2317"/>
   </g>
-  <!-- real side table + lamp -->
-  <g class="hot" data-tip="A table lamp" onclick="act101('lamp')">
+  <g class="hot" data-tip="مصباح طاولة" onclick="act101('lamp')">
    <rect x="960" y="330" width="120" height="16" fill="#3a2317"/><rect x="1000" y="346" width="12" height="94" fill="#241610"/>
    <rect x="980" y="240" width="24" height="90" fill="#2a1a11"/>
    <path d="M958 240h68l-10-46h-48z" fill="#c9a35c" opacity="${f.lamp?'.25':'.9'}"/>
    ${f.lamp?'':'<ellipse cx="992" cy="260" rx="120" ry="100" fill="url(#g-glow)"/>'}
   </g>
  </svg></div>`);
- say('A nearly empty room. A mirror that is paying very close attention.');
- if(f.d===2&&!f.sil){f.sil=1;later(()=>{const g=$('mfig');if(g){g.style.opacity=.8;AU.tone(38,{dur:1.6,g:.4});AU.heart();say('For one heartbeat — someone stood behind you. Only in the glass.')}later(()=>{if($('mfig'))$('mfig').style.opacity=0},2200)},1600)}
+ say('غرفة فارغة تقريبًا. ومرآةٌ تنتبه إليكِ بانتباهٍ شديد.');
+ if(f.d===2&&!f.sil){f.sil=1;later(()=>{const g=$('mfig');if(g){g.style.opacity=.8;AU.tone(38,{dur:1.6,g:.4});AU.heart();say('لنبضة قلبٍ واحدة — وقف أحدهم خلفك. في الزجاج فقط.')}later(()=>{if($('mfig'))$('mfig').style.opacity=0},2200)},1600)}
  if(f.d>=3&&!f.done)later(mirrorMessage,900);
 }
 function act101(w){
- const f=S.f.m101;if(f.done&&w!=='none'){say('The room has said all it intends to.');return}
- if(w==='chair'){f.chair=!f.chair;if(!f.c1){f.c1=1;f.d++;say('You drag the chair aside. In the mirror — it hasn\u2019t moved.')}
-  else say(f.chair?'The chair scrapes across the floor. The glass ignores it.':'The chair scrapes back. The glass still ignores it.')}
- if(w==='door'){f.door=!f.door;if(!f.c2){f.c2=1;f.d++;AU.creak();say('The door creaks open. Its reflection stays shut.')}else AU.creak()}
- if(w==='lamp'){f.lamp=!f.lamp;if(!f.c3){f.c3=1;f.d++;say('The lamp goes dark — the room in the mirror still glows.')}
-  else say('Click. Click. The mirror disagrees about the light.')}
+ const f=S.f.m101;if(f.done){say('الغرفة قالت كل ما كان لديها لتقوله.');return}
+ if(w==='chair'){f.chair=!f.chair;if(!f.c1){f.c1=1;f.d++;say('تسحبين الكرسي جانبًا. في المرآة — لم يتحرك.')}
+  else say(f.chair?'يخشخش الكرسي على الأرض. الزجاج يتجاهله.':'يعود الكرسي مكانه. الزجاج ما زال يتجاهله.')}
+ if(w==='door'){f.door=!f.door;if(!f.c2){f.c2=1;f.d++;AU.creak();say('يصرخ الباب وهو يُفتح. انعكاسه يظلّ مغلقًا.')}else AU.creak()}
+ if(w==='lamp'){f.lamp=!f.lamp;if(!f.c3){f.c3=1;f.d++;say('يخبو المصباح — والغرفة داخل المرآة ما زالت مضيئة.')}
+  else say('طقطقة. طقطقة. المرآة مختلفة معكِ حول الضوء.')}
  save();viewRoom('101');
 }
 function mirrorMessage(){
  const f=S.f.m101;if(f.done)return;
- say('The mirror fogs — from the inside.');
+ say('تتغشّى المرآة بالضباب — من الداخل.');
  const m=$('mmist');if(m)m.classList.add('on');
- later(()=>{AU.whisper('you have been here before');AU.heart();
+ later(()=>{AU.whisper('لقد كنت هنا من قبل');AU.heart();
   ['mword1','mword2','mword3'].forEach((id,i)=>later(()=>{const e=$(id);if(e)e.classList.add('on')},i*1300));
  },1200);
- later(()=>{say('Something is etched in the corner of the glass. Tap it.');const s=$('mseven');if(s)s.classList.add('on')},5600);
+ later(()=>{say('شيءٌ محفور في زاوية الزجاج. المسيه.');const s=$('mseven');if(s)s.classList.add('on')},5600);
 }
 function clickMirror101(){
  const f=S.f.m101;
  if(f.seven&&!f.done){f.done=true;save();
   addEvidence('ev_mirror');ach('a_eyes');
-  say('The digit 7, cut deep, by a steady hand. Your hand\u2019s shape. The mirror finally looks like the truth.');
+  say('الرقم 7، محفورٌ بعمق، بيدٍ ثابتة. بيدٍ بشكل يدك. المرآة أخيرًا تشبه الحقيقة.');
   unlockFloor(2);return}
- if(f.done){say('Your reflection waits for no one now. It simply isn\u2019t there.');return}
- if(f.d<3){say('Everything looks normal. That is exactly what\u2019s wrong with it. Try the furniture.');return}
+ if(f.done){say('انعكاسك لم يعد ينتظر أحدًا. إنه ببساطة ليس موجودًا.');return}
+ if(f.d<3){say('كل شيء يبدو طبيعيًا. وهذا بالضبط ما هو خطأ فيه. جرّبي الأثاث.');return}
  mirrorMessage();
 }
 
-/* ---------- ROOM 202 · STOPPED TIME ---------- */
+/* ---------- الغرفة 202 · الزمن المتوقف ---------- */
 function r202(){
  const f=S.f.c202;
  const hand=(c)=>`transform="rotate(${(c.h%12)*30+c.m*.5} 0 0)"`;
+ const tt=k=>`${String(f[k].h).padStart(2,'0')}:${String(f[k].m).padStart(2,'0')}`;
  app.innerHTML=roomShell('202',`
  <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:#212830">
   <rect width="1200" height="470" fill="#212830"/><rect width="1200" height="470" fill="url(#p-dam)"/>
   <rect y="460" width="1200" height="12" fill="#120c07"/>
   <rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
   <ellipse cx="600" cy="160" rx="420" ry="160" fill="url(#g-lamp)" opacity=".4"/>
-  <!-- wall clock -->
-  <g class="hot" data-tip="The wall clock" onclick="say('It shows ${String(f.a.h).padStart(2,'0')}:${String(f.a.m).padStart(2,'0')}. The second hand does not move.')">
+  <g class="hot" data-tip="ساعة الحائط" onclick="say('تشير إلى ${tt('a')}. عقرب الثواني لا يتحرك.')">
    <circle cx="600" cy="170" r="86" fill="#d5c69f" stroke="#3a2a18" stroke-width="10"/>
    ${[0,1,2,3,4,5,6,7,8,9,10,11].map(h=>{const a=h*30*Math.PI/180;return `<line x1="${600+Math.sin(a)*68}" y1="${170-Math.cos(a)*68}" x2="${600+Math.sin(a)*76}" y2="${170-Math.cos(a)*76}" stroke="#2b2117" stroke-width="3"/>`}).join('')}
    <g ${hand(f.a)}><line x1="600" y1="170" x2="600" y2="118" stroke="#2b2117" stroke-width="7" stroke-linecap="round"/></g>
    <g transform="rotate(${f.a.m*6} 600 170)"><line x1="600" y1="170" x2="600" y2="102" stroke="#7e1f1f" stroke-width="4" stroke-linecap="round"/></g>
    <circle cx="600" cy="170" r="6" fill="#2b2117"/>
   </g>
-  <!-- desk -->
   <rect x="320" y="330" width="560" height="20" fill="#3a2317"/><rect x="340" y="350" width="520" height="120" fill="#241610" stroke="#120b07" stroke-width="3"/>
   <rect x="380" y="380" width="200" height="60" fill="#1c130d" stroke="#120b07"/>
   <rect x="620" y="380" width="200" height="60" fill="#1c130d" stroke="#120b07"/>
-  <!-- desk clock -->
-  <g class="hot" data-tip="The desk clock" onclick="say('A travelling clock. ${String(f.b.h).padStart(2,'0')}:${String(f.b.m).padStart(2,'0')}. It argues with the wall.')">
+  <g class="hot" data-tip="ساعة السفر" onclick="say('ساعة سفرٍ صغيرة. ${tt('b')}. إنها تجادل ساعة الحائط.')">
    <rect x="840" y="278" width="96" height="52" rx="8" fill="#b9a26b" stroke="#4a3520" stroke-width="3"/>
    <circle cx="888" cy="304" r="20" fill="#efe6c8" stroke="#4a3520"/>
    <g ${hand(f.b)}><line x1="888" y1="304" x2="888" y2="290" stroke="#2b2117" stroke-width="3" stroke-linecap="round"/></g>
    <g transform="rotate(${f.b.m*6} 888 304)"><line x1="888" y1="304" x2="888" y2="287" stroke="#7e1f1f" stroke-width="2" stroke-linecap="round"/></g>
    <rect x="852" y="322" width="14" height="8" rx="2" fill="#4a3520"/><rect x="910" y="322" width="14" height="8" rx="2" fill="#4a3520"/>
   </g>
-  <!-- recorder -->
-  <g class="hot" data-tip="A tape recorder" onclick="say('The counter blinks: ${String(f.c.h).padStart(2,'0')}:${String(f.c.m).padStart(2,'0')}. Even the recorder stopped mid-sentence.')">
+  <g class="hot" data-tip="مسجّل شريط" onclick="say('العدّاد يومض: ${tt('c')}. حتى المسجّل توقّف في منتصف جملة.')">
    <rect x="180" y="272" width="120" height="58" rx="4" fill="#2a2a28" stroke="#101010" stroke-width="3"/>
    <rect x="192" y="284" width="60" height="22" fill="#0a1308" stroke="#1e361a"/>
-   <text id="recc" x="222" y="300" text-anchor="middle" font-family="Special Elite" font-size="13" fill="#9fce8f">${String(f.c.h).padStart(2,'0')}:${String(f.c.m).padStart(2,'0')}</text>
+   <text id="recc" x="222" y="300" text-anchor="middle" font-family="Almarai" font-size="13" fill="#9fce8f">${tt('c')}</text>
    <circle cx="278" cy="292" r="9" fill="none" stroke="#55483a" stroke-width="2"/><circle cx="278" cy="312" r="9" fill="none" stroke="#55483a" stroke-width="2"/>
   </g>
-  <!-- card -->
-  <g class="hot" data-tip="A maid's report card" onclick="readCard202()">
+  <g class="hot" data-tip="بطاقة سجلّ الخادمة" onclick="readCard202()">
    <rect x="420" y="316" width="130" height="8" fill="#d5c69f" transform="rotate(-2 485 320)"/>
    <rect x="452" y="306" width="66" height="22" fill="#cfc09b" transform="rotate(-2 485 318)"/>
-   <text x="485" y="321" text-anchor="middle" font-family="Special Elite" font-size="7" fill="#2b2117" transform="rotate(-2 485 318)">MAID LOG</text>
+   <text x="485" y="321" text-anchor="middle" font-family="Almarai" font-size="8" fill="#2b2117" transform="rotate(-2 485 318)">سجلّ الخادمة</text>
   </g>
-  <text x="600" y="450" text-anchor="middle" font-family="IM Fell English" font-style="italic" font-size="15" fill="#77664a">three clocks, three lies, one truth</text>
+  <text x="600" y="452" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">ثلاث ساعات، ثلاث أكاذيب، وحقيقة واحدة</text>
  </svg></div>`,
- `<div class="ctl clockbtns">${['a','b','c'].map(k=>{const nm=k==='a'?'WALL':k==='b'?'DESK':'TAPE';
-   return `<div class="cbgroup"><span class="tag">${nm}</span><div class="cb">
-   <button class="plate small" onclick="setClock('${k}','h',1)">H +1</button>
-   <button class="plate small" onclick="setClock('${k}','m',1)">M +1</button></div></div>`}).join('')}</div>`);
- say(f.done?'03:17. All of them. Forever now.':'Every clock in this room stopped — but not at the same lie. Read the card on the desk.');
+ `<div class="ctl clockbtns">${[['a','ساعة الحائط'],['b','ساعة المكتب'],['c','الشريط']].map(([k,nm])=>`
+  <div class="cbgroup"><span class="tag">${nm}</span><div class="cb">
+  <button class="plate small" onclick="setClock('${k}','h',1)">ساعة +1</button>
+  <button class="plate small" onclick="setClock('${k}','m',1)">دقيقة +1</button></div></div>`).join('')}</div>`);
+ say(f.done?'3:17. الثلاثة كلها. إلى الأبد الآن.':'كل ساعةٍ في هذه الغرفة توقفت — لكن ليس عند الكذبة نفسها. اقرئي البطاقة على المكتب.');
 }
-function readCard202(){showNote('MAIDEN LOG — 4 JUNE 1986',
- `Guest in 202 called the desk at 3:17 AM.<br>Said someone was knocking.<br>Nobody there. Knocked again at 3:17.<br>Nobody there. It is still 3:17.<br><br>— Housekeeping`)}
+function readCard202(){showNote('سجلّ الخدمة — 4 يونيو 1986',
+ `نزيلة الغرفة 202 اتصلت بالمكتب عند 3:17 صباحًا.<br>قالت إنّ أحدهم يطرق الباب.<br>لا أحد هناك. ثم طرق الباب مجددًا عند 3:17.<br>لا أحد هناك. ما زالت الساعة 3:17.<br><br>— قسم الخدمة`)}
 function setClock(k,u,d){
  const f=S.f.c202;if(f.done)return;
  const c=f[k];if(u==='h')c.h=(c.h%12)+1;else c.m=(c.m+1)%60;
  AU.tick();save();viewRoom('202');
  if(f.a.h===3&&f.a.m===17&&f.b.h===3&&f.b.m===17&&f.c.h===3&&f.c.m===17)solve202();
- else if(f.a.m===17||f.b.m===17||f.c.m===17)say('Closer. The clocks are arguing less.');
+ else if(f.a.m===17||f.b.m===17||f.c.m===17)say('أقرب. الساعات تجادل أقلّ.');
 }
 function solve202(){
  const f=S.f.c202;f.done=true;save();ach('a_time');
- say('3:17. All three. For the first time in forty years — the second hand moves.');
+ say('3:17. الثلاثة كلها. لأول مرة منذ أربعين عامًا — عقرب الثواني يتحرك.');
  let n=0;const iv=setInterval(()=>{AU.tick();if(++n>7)clearInterval(iv)},500);
  later(()=>{const r=$('recc');if(r)r.textContent='03:18';
-  say('03:18. Time, taking a single careful step.');AU.tone(660,{dur:.4,g:.08})},2600);
+  say('03:18. الزمن يخطو خطوةً واحدة حذرة.');AU.tone(660,{dur:.4,g:.08})},2600);
  later(()=>{AU.knock(2,.34,.85);shake();flick();
-  say('Knock\u2026 knock\u2026 But nobody is at the door. Nobody was ever at the door.')},4200);
+  say('طرقٌ… طرقٌ… لكن لا أحد عند الباب. لم يكن هناك أحدٌ عند الباب قطّ.')},4200);
  later(()=>{addEvidence('ev_clock');unlockFloor(3)},6400);
 }
 
-/* ---------- ROOM 303 · THE RADIO ---------- */
+/* ---------- الغرفة 303 · الراديو ---------- */
 let r303Deb=null,r303Playing=false;
 function r303(){
  const f=S.f.r303;
  app.innerHTML=roomShell('303',`
- <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" id="rsvg" style="--wall:#33291a;${f.on?'':''}">
+ <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" id="rsvg" style="--wall:#33291a">
   <rect width="1200" height="470" fill="#33291a"/><rect width="1200" height="470" fill="url(#p-dam)"/>
   <rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
-  <!-- side table -->
   <rect x="280" y="360" width="640" height="22" fill="#3a2317"/><rect x="320" y="382" width="560" height="90" fill="#241610" stroke="#120b07" stroke-width="3"/>
-  <!-- the radio -->
-  <g class="hot ${f.on?'on':''}" id="radiog" data-tip="An old valve radio" onclick="radioOnOff()">
+  <g class="hot ${f.on?'on':''}" id="radiog" data-tip="راديو صماماتٍ قديم" onclick="radioOnOff()">
    <rect x="360" y="200" width="480" height="170" rx="10" fill="#241610" stroke="#0f0a06" stroke-width="5"/>
    <rect x="384" y="222" width="200" height="126" rx="6" fill="#5a452a" stroke="#3a2818" stroke-width="3"/>
    ${[0,1,2,3,4].map(r=>[0,1,2,3,4,5].map(c=>`<circle cx="${404+c*32}" cy="${242+r*24}" r="5" fill="#3a2818"/>`).join('')).join('')}
-   <!-- dial window -->
    <rect x="612" y="222" width="200" height="70" rx="4" fill="#0d0f0a" stroke="#241a10" stroke-width="3"/>
    <text x="712" y="252" text-anchor="middle" font-family="Cinzel" font-size="10" fill="#55483a">88</text>
    <text x="762" y="252" text-anchor="middle" font-family="Cinzel" font-size="10" fill="#55483a">98</text>
    <text x="806" y="252" text-anchor="middle" font-family="Cinzel" font-size="10" fill="#55483a">108</text>
    ${[0,1,2,3,4,5,6,7,8,9].map(i=>`<line x1="${624+i*18}" y1="258" x2="${624+i*18}" y2="${i%5===0?272:266}" stroke="#55483a" stroke-width="${i%5===0?2:1}"/>`).join('')}
    <g id="needle" style="transition:transform .2s"><line x1="712" y1="256" x2="712" y2="278" stroke="#c9432f" stroke-width="3"/></g>
-   <!-- VU -->
    <rect x="612" y="300" width="60" height="48" rx="3" fill="#d5c69f" stroke="#3a2818" stroke-width="2"/>
    <path d="M620 340l22-28 10 12 8-9" fill="none" stroke="#2b2117" stroke-width="1.5"/>
    <g class="vu" style="transform-origin:642px 342px"><line x1="642" y1="342" x2="642" y2="312" stroke="#7e1f1f" stroke-width="2"/></g>
-   <!-- knobs -->
    <circle cx="716" cy="324" r="24" fill="url(#g-brass)" stroke="#4a3520" stroke-width="3"/>
    <line x1="716" y1="304" x2="716" y2="312" stroke="#241a0e" stroke-width="3"/>
    <rect x="756" y="304" width="56" height="44" rx="4" fill="#1c130d" stroke="#4a3a24"/>
-   <text x="784" y="332" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="12" fill="${f.on?'#c9a35c':'#55483a'}" id="ronlbl">${f.on?'ON':'OFF'}</text>
+   <text x="784" y="332" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="12" fill="${f.on?'#c9a35c':'#55483a'}" id="ronlbl">${f.on?'يعمل':'مطفأ'}</text>
    <ellipse cx="600" cy="380" rx="260" ry="60" fill="url(#g-glow)" opacity="${f.on?'.7':'.1'}"/>
   </g>
-  <text x="600" y="460" text-anchor="middle" font-family="IM Fell English" font-style="italic" font-size="15" fill="#77664a">every frequency is a door someone left ajar</text>
+  <text x="600" y="458" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">كل ترددٍ بابٌ تركه أحدهم مواربًا</text>
  </svg></div>`,
  `<div class="ctl" style="flex-direction:column;gap:8px">
   <input class="r-slider" type="range" min="88" max="108" step="0.1" value="${f.f}" id="freq" oninput="tuneRadio(this.value)">
-  <div class="r-disp"><span class="fr" id="fdisp">${f.f.toFixed(1)}</span> MHz<br><span id="fmsg">${f.on?'Static. Somewhere in the band — voices.':'The radio is switched off.'}</span>
+  <div class="r-disp"><span class="fr" id="fdisp">${f.f.toFixed(1)}</span> MHz<br><span id="fmsg">${f.on?'تشويش. في مكانٍ ما في النطاق — أصوات.':'الراديو مطفأ.'}</span>
    <div class="mbars" id="mbars">${'<i></i>'.repeat(7)}</div></div>
   <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-   <button class="plate small" onclick="radioOnOff()">${f.on?'POWER — OFF':'POWER — ON'}</button>
-   <button class="plate small ${f.heard?'':'dim'}" onclick="replay924()">REPLAY 92.4</button>
+   <button class="plate small" onclick="radioOnOff()">${f.on?'إطفاء الراديو':'تشغيل الراديو'}</button>
+   <button class="plate small ${f.heard?'':'dim'}" onclick="replay924()">إعادة تشغيل 92.4</button>
   </div>
  </div>`);
- say(f.done?'The dial hums politely now. It has said what it had to say.':'A dark room and a radio. Housekeeping notes say the dial was always found at 92.4.');
- if(f.on){AU.startStatic(f.f)}
+ say(f.done?'يزمجر القرص بأدبٍ الآن. لقد قال ما كان لديه.':'غرفةٌ مظلمة وراديو. ملاحظات الخدمة تقول إنّ المؤشر كان يُوجد دائمًا عند 92.4.');
+ if(f.on){AU.startStatic()}
 }
 function radioOnOff(){
  const f=S.f.r303;f.on=!f.on;save();
- if(f.on){AU.startStatic(f.f);AU.tone(120,{dur:.3,type:'triangle',g:.1});say('Valves warm up. Static pours out like weather.')}
- else{AU.stopStatic();say('The radio sighs and goes cold.')}
+ if(f.on){AU.startStatic();AU.tone(120,{dur:.3,type:'triangle',g:.1});say('تسخن الصمامات. يتدفق التشويش كالطقس.')}
+ else{AU.stopStatic();say('يتنهد الراديو ويبرد.')}
  viewRoom('303');
 }
 function tuneRadio(v){
@@ -995,65 +1012,65 @@ function stationCheck(fr){
  const f=S.f.r303;if(!f.on||r303Playing)return;
  const st=STATIONS.find(s=>Math.abs(s.f-fr)<.35);
  const m=$('fmsg');
- if(!st){if(m)m.textContent='Static. The band is mostly weather and ghosts.';return}
- if(st.kind==='music'){if(m)m.textContent='104.1 — a dance orchestra, forty years dead, still mid-song.';AU.playMelody(0,.12);return}
- if(st.kind==='voice'){if(m)m.innerHTML=st.txt+' <span style="color:#6d8a68">(signal holds)</span>';AU.whisper(st.tts);return}
+ if(!st){if(m)m.textContent='تشويش. النطاق كله طقسٌ وأشباح في معظمه.';return}
+ if(st.kind==='music'){if(m)m.textContent='104.1 — أوركسترا راقصة، رحلت قبل أربعين عامًا، وما زالت في منتصف المقطوعة.';AU.playMelody(0,.12);return}
+ if(st.kind==='voice'){if(m)m.innerHTML=st.txt+' <span style="color:#6d8a68">(الإشارة ثابتة)</span>';AU.whisper(st.tts);return}
  if(st.kind==='you'&&!f.heard)broadcast924();
- else if(st.kind==='you'&&f.heard){if(m)m.textContent='92.4 — your frequency. It waits for the replay button.'}
+ else if(st.kind==='you'&&f.heard){if(m)m.textContent='92.4 — ترددك أنتِ. ينتظر زرّ الإعادة.'}
 }
 function barsAt(arr){const b=$('mbars');if(!b)return;[...b.children].forEach((el,i)=>{el.style.height=(arr[i]?10+arr[i]*30:6)+'px';el.classList.toggle('hi',arr[i]>=4)})}
 function broadcast924(){
  const f=S.f.r303;r303Playing=true;
  const m=$('fmsg');const L=(t)=>{if(m)m.innerHTML=t};
  AU.stopStatic();
- L('<span style="color:#c9a35c">92.4 — RECORDING</span>');
+ L('<span style="color:#c9a35c">92.4 — تسجيل</span>');
  const lines=[
-  ['\u201c\u2026if you are hearing this, then I found the way back in.\u201d',0],
-  ['\u201cListen to me \u2014 do not open the\u2014\u201d',2000],
-  ['[ a burst of static ]',4000],
-  ['[ then \u2014 seven notes, played slowly,',6000],
-  ['like someone remembering a song ]',7500]
+  ['«…إن كنتِ تسمعين هذا، فقد وجدتُ الطريق عائدًا.»',0],
+  ['«اسمعيني — لا تفتحي ال—»',2000],
+  ['[ موجة تشويش ]',4000],
+  ['[ ثم — سبع نغمات، تُعزف على مهل،',6000],
+  ['كأنّ أحدًا يتذكّر أغنية ]',7500]
  ];
- lines.forEach(([t,d])=>later(()=>{L(t);AU.whisper(t.replace(/[\[\]—\u2026]/g,' ').slice(0,60))},d));
- const seq=[2,2,2,4,3,2,6,5,4];
+ lines.forEach(([t,d])=>later(()=>{L(t);
+  AU.whisper(t.replace(/[\[\]—…«»]/g,' ').trim().slice(0,60))},d));
  later(()=>{AU.playMelody(0,.45);
-  seq.forEach((v,i)=>later(()=>barsAt([v]),i*450));
+  MELODY.forEach((v,i)=>later(()=>barsAt([v]),i*450));
   later(()=>barsAt([]),4500)},6000);
  later(()=>{r303Playing=false;
   if(!f.heard){f.heard=true;f.done=true;save();ach('a_listen');
    addEvidence('ev_radio');
-   say('That voice was yours. It knew your name because it was your name. And the melody \u2014 seven notes \u2014 the room above the music room will want them.');
+   say('كان هذا الصوت صوتكِ أنتِ. عرف اسمك لأنه كان اسمك. واللحن — سبع نغمات — الغرفة فوق غرفة الموسيقى ستريدها.');
    unlockFloor(4)}
-  else{if(m)m.textContent='The recording ends the way all of them do: with you, listening.'}
+  else{if(m)m.textContent='ينتهي التسجيل كما تنتهي كل التسجيلات: بكِ، وأنتِ تسمعين.'}
  },11500);
 }
 function replay924(){if(!S.f.r303.heard)return;r303Playing=false;const f=S.f.r303;if(!f.on){radioOnOff()}broadcast924()}
 
-/* ---------- ROOM 404 · NOT FOUND ---------- */
+/* ---------- الغرفة 404 · غير موجودة ---------- */
 function r404(){
  app.innerHTML=roomShell('404',`<div class="scene-wrap">${lobbySVG({noExit:true,photo:true,still:true})}</div>`,
- `<div class="ctl"><button class="plate small" onclick="photo404()">EXAMINE THE PHOTOGRAPH</button></div>`);
+ `<div class="ctl"><button class="plate small" onclick="photo404()">افحصي الصورة</button></div>`);
  if(!S.f.r404.seen){S.f.r404.seen=true;save();
-  say('This is the lobby. Your lobby \u2014 same carpet, same desk, same clock. Except there is a photograph on the wall\u2026 and no front door.')}
- else say('The lobby-that-is-not. The photograph waits on the wall.');
+  say('هذا هو اللوبي. لوبيكِ — السجادة نفسها، والمكتب نفسه، والساعة نفسها. إلا أن هناك صورةً على الحائط… ولا بابٍ أمامي.')}
+ else say('اللوبي-الذي-ليس-لوبي. الصورة تنتظر على الحائط.');
 }
 function photo404(){
- showNote('THE PHOTOGRAPH — ROOM 404',
-  `It is the lobby, from exactly where you stand.<br>Someone is in it \u2014 standing where you are standing.<br>The frame is warm, like a hand recently held it.<br><br><span style="font-family:'Homemade Apple';font-size:14px">“keeping the lamps lit. — V”</span>`,{hand:true,btn:'STEP BACK'});
+ showNote('الصورة — الغرفة 404',
+  `إنه اللوبي، من الموضع نفسه الذي تقفين فيه.<br>أحدهم في الصورة — واقفٌ حيث تقفين تمامًا.<br>الإطار دافئ، كأنّ يدًا أمسكته للتو.<br><br><span style="font-family:'Aref Ruqaa';font-size:15px">«أُبقي المصابيح مضاءة. — V»</span>`,{hand:true,btn:'تراجعي'});
  if(!S.f.r404.photo){S.f.r404.photo=true;save();addEvidence('ev_404');
-  later(()=>{unlockFloor(5);say('On your way out you notice: the doors here open onto corridors you\u2019ve never walked. Floor 5 is yours now. So is 405.')},800)}
+  later(()=>{unlockFloor(5);say('في طريقك إلى الخارج تلاحين: الأبواب هنا تفتح على ممراتٍ لم تسيري فيها قط. الطابق الخامس لكِ الآن — وكذلك الغرفة 405.')},800)}
 }
 
-/* ---------- ROOM 405 · THE PHOTOGRAPHS ---------- */
+/* ---------- الغرفة 405 · الصور ---------- */
 function r405(){
  const f=S.f.r405;f.v++;save();
  const idx=Math.min(f.v-1,4);
  const pics=[
-  {t:'VISIT 1 — THE LOBBY',d:'Empty. The clock reads 3:17. Nothing is wrong yet.',uv:'IT REMEMBERS'},
-  {t:'VISIT 2 — ROOM 101',d:S.f.m101.done?'The chair sits away from the mirror. You moved it. The photograph already knew.':'The chair is centered. The mirror is waiting.',uv:'DON\u2019T LOOK LONG'},
-  {t:'VISIT 3 — ROOM 202',d:S.f.c202.done?'Every clock agrees: 3:17. The photographer stood very still.':'The clocks argue. The room was not finished being solved.',uv:'SHE LOOPED'},
-  {t:'VISIT 4 — ROOM 404',d:'The door stands open. Someone is inside, facing the wall. The room you were in \u2014 photographed from within.',uv:'NOT A ROOM'},
-  {t:'VISIT 5 — THE LOBBY · JUNE 4, 1986',d:'Someone stands exactly where you stand. The handwriting on the back: \u201ckeeping the lamps lit. \u2014 V\u201d',uv:'STILL HERE'}
+  {t:'الزيارة 1 — اللوبي',d:'فارغ. الساعة تشير إلى 3:17. لا شيء خطأ بعد.',uv:'إنها تتذكّر'},
+  {t:'الزيارة 2 — الغرفة 101',d:S.f.m101.done?'الكرسي مُزاح عن المرآة. أنتِ حرّكتِه. الصورة عرفت مسبقًا.':'الكرسي في المنتصف. المرآة تنتظر.',uv:'لا تنظري طويلًا'},
+  {t:'الزيارة 3 — الغرفة 202',d:S.f.c202.done?'كل الساعات متفقة: 3:17. وقف المصوّر ساكنًا تمامًا.':'الساعات تتجادل. الغرفة لم تكن قد حُلّت بعد.',uv:'إنها دارت في حلقة'},
+  {t:'الزيارة 4 — الغرفة 404',d:'الباب مفتوح. أحدهم في الداخل، مواجهٌ للحائط. الغرفة التي كنتِ فيها — مصوّرة من الداخل.',uv:'ليست غرفة'},
+  {t:'الزيارة 5 — اللوبي · 4 يونيو 1986',d:'أحدهم يقف في موضعك بالضبط. الخطّ على ظهر الصورة: «أُبقي المصابيح مضاءة. — V»',uv:'ما زالت هنا'}
  ];
  const p=pics[idx];
  app.innerHTML=roomShell('405',`
@@ -1063,50 +1080,48 @@ function r405(){
   <ellipse cx="600" cy="170" rx="380" ry="150" fill="url(#g-lamp)" opacity=".4"/>
   ${[120,900,170,850].map((x,i)=>{const y=i<2?100:190;return `<rect x="${x}" y="${y}" width="${i<2?90:70}" height="${i<2?70:54}" fill="#2a2016" stroke="#4a3a24" stroke-width="3"/>
    <rect x="${x+7}" y="${y+7}" width="${(i<2?90:70)-14}" height="${(i<2?70:54)-14}" fill="#171310"/>`}).join('')}
-  <!-- examination table -->
   <rect x="330" y="360" width="540" height="20" fill="#3a2317"/><rect x="360" y="380" width="480" height="92" fill="#241610" stroke="#120b07" stroke-width="3"/>
   <rect x="380" y="330" width="16" height="34" fill="#2a1a11"/><rect x="660" y="330" width="16" height="34" fill="#2a1a11"/>
-  <!-- the developing photograph -->
-  <g class="hot" data-tip="The developing photograph" onclick="say('${p.d.replace(/'/g,'&#39;')}')">
+  <g class="hot" data-tip="الصورة قيد التظهّر" onclick="say('${p.d}')">
    <rect x="420" y="230" width="360" height="130" fill="#171310" stroke="#4a3a24" stroke-width="6"/>
    <rect x="436" y="246" width="328" height="98" fill="#211d18" id="photoInner"/>
    <rect x="470" y="270" width="120" height="74" fill="#2a251f" opacity=".8"/>
-   ${idx>=3?`<rect cx="620" cy="290" width="60" height="54" x="620" y="272" fill="#332e26" opacity=".9"/><circle cx="650" cy="282" r="9" fill="#332e26"/>`:''}
+   ${idx>=3?`<rect x="620" y="272" width="60" height="54" fill="#332e26" opacity=".9"/><circle cx="650" cy="282" r="9" fill="#332e26"/>`:''}
    ${idx===4?`<g><circle cx="650" cy="282" r="9" fill="#3a352e"/><path d="M626 344a24 28 0 0 1 48 0z" fill="#3a352e"/></g>
-    <text x="560" y="332" text-anchor="end" font-family="Homemade Apple" font-size="13" fill="#9a8a68">June 4, 1986</text>`:''}
-   <text x="600" y="376" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#77664a">${p.t}</text>
-   <text x="600" y="${idx===4?264:300}" text-anchor="middle" font-family="Homemade Apple" font-size="15" fill="#8fe08a" data-uv="1" opacity="0">${p.uv}</text>
+    <text x="560" y="330" text-anchor="end" font-family="Aref Ruqaa" font-size="14" fill="#9a8a68">4 يونيو 1986</text>`:''}
+   <text x="600" y="378" text-anchor="middle" font-family="Almarai" font-size="10" fill="#77664a">${p.t}</text>
+   <text x="600" y="${idx===4?264:300}" text-anchor="middle" font-family="Aref Ruqaa" font-size="17" fill="#8fe08a" data-uv="1" opacity="0">${p.uv}</text>
   </g>
-  <!-- UV lamp -->
-  <g class="hot" data-tip="A blacklight lamp" onclick="uvToggle()">
-   <rect x="940" y="300" width="90" height="20" rx="4" fill="${f.uv?'#3a2a55':'#2a2a28'}" stroke="#101010" stroke-width="3"/>
+  <g class="hot" data-tip="مصباح ضوءٍ أسود" onclick="uvToggle()">
+   <rect class="uvlamp" x="940" y="300" width="90" height="20" rx="4" stroke="#101010" stroke-width="3"/>
    <rect x="950" y="320" width="14" height="46" fill="#241610"/><rect x="966" y="320" width="14" height="46" fill="#241610"/>
-   ${f.uv?'<ellipse cx="985" cy="310" rx="160" ry="130" fill="#4a3a8a" opacity=".14"/>':''}
+   <ellipse class="uvcone" cx="985" cy="310" rx="160" ry="130" fill="#4a3a8a" opacity=".14"/>
   </g>
-  <rect class="uvtint" width="1200" height="640" fill="#241440" opacity="${f.uv?'.4':'0'}" style="pointer-events:none"/>
+  <rect class="uvtint" width="1200" height="640" fill="#241440" opacity="0" style="pointer-events:none"/>
  </svg></div>`,
- `<div class="ctl"><button class="plate small" onclick="uvToggle()">${f.uv?'UV LAMP — ON':'UV LAMP — OFF'}</button>
- <span class="tag">photograph ${Math.min(f.v,5)} of 5</span></div>`);
+ `<div class="ctl"><button class="plate small uvbtn" onclick="uvToggle()">${f.uv?'المصباح البنفسجي — يعمل':'المصباح البنفسجي — متوقف'}</button>
+ <span class="tag">الصورة ${Math.min(f.v,5)} من 5</span></div>`);
  app.classList.toggle('uv',f.uv);
- say(f.v>=5?'The last photograph has finished developing. It has been developing for forty years.':
-  'The room develops its photographs slowly. Leave, and come back \u2014 each visit shows you the next one.');
+ say(f.v>=5?'انتهت آخر صورة من التظهّر. كانت تتظهّر منذ أربعين عامًا.':
+  'تُظهّر الغرفة صورها ببطء شديد. اخرجي ثم عودي — كل زيارة تريكِ التي تليها.');
  if(f.v>=5&&!f.done){f.done=true;save();ach('a_frame');addEvidence('ev_photo');
-  later(()=>say('June 4, 1986. You are in the photograph. That date is decades old \u2014 and the shoes in it are yours.'),1500)}
+  later(()=>say('4 يونيو 1986. أنتِ في الصورة. هذا التاريخ يسبقكِ بعقود — والحذاء في الصورة حذاؤك.')},1500)}
 }
 function uvToggle(){
  const f=S.f.r405;f.uv=!f.uv;save();
  AU.tone(f.uv?300:220,{dur:.25,type:'triangle',g:.08});
  if(f.uv&&!S.ach.includes('a_uv'))ach('a_uv');
- viewRoom('405');
+ app.classList.toggle('uv',f.uv);
+ const b=app.querySelector('.uvbtn');if(b)b.textContent=f.uv?'المصباح البنفسجي — يعمل':'المصباح البنفسجي — متوقف';
 }
 
-/* ---------- ROOM 501 · THE DIARY ---------- */
+/* ---------- الغرفة 501 · اليوميات ---------- */
 const PAGES=[
- 'The guests stopped coming years ago. I kept the lamps lit anyway.',
- 'I tried to leave. The doors led back to the lobby. Always the lobby.',
- 'The hotel wouldn\u2019t let me. Or maybe \u2014 I wouldn\u2019t let it.',
- 'So I created Room 404. A room for the one memory too heavy to carry.',
- 'If you are reading this, you already know. Look at the handwriting. It\u2019s yours.'
+ 'توقّف النزلاء عن المجيء منذ سنوات. أبقيتُ المصابيح مضاءة على أي حال.',
+ 'حاولتُ الرحيل. كانت الأبواب تُعيدني إلى اللوبي. دائمًا اللوبي.',
+ 'الفندق لم يسمح لي. أو ربما — أنا لم أسمح له.',
+ 'لذلك أنشأتُ الغرفة 404. غرفةٌ لذكرى واحدة، أثقل من أن تُحمَل.',
+ 'إن كنتِ تقرئين هذا، فأنتِ تعرفين بالفعل. انظري إلى الخطّ. إنه خطّك.'
 ];
 function r501(){
  const f=S.f.r501;
@@ -1120,29 +1135,29 @@ function r501(){
   <rect x="470" y="290" width="130" height="44" fill="#cfc09b" stroke="#8a7a58" transform="rotate(-3 535 312)"/>
   <rect x="470" y="272" width="16" height="22" fill="#2a1a11"/><ellipse cx="760" cy="272" rx="60" ry="50" fill="url(#g-glow)"/>
   <rect x="744" y="240" width="30" height="40" fill="#2a1a11" stroke="#120b07"/>
-  <text x="600" y="452" text-anchor="middle" font-family="IM Fell English" font-style="italic" font-size="15" fill="#77664a">the pages are patient — they have waited this long</text>
+  <text x="600" y="454" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">الصفحات صبورة — انتظرت كل هذا الوقت</text>
  </svg></div>`,
  `<div class="pgfield">${PAGES.map((t,i)=>`
-   <div class="pg ${f.n>i?'used':''}" style="--r:${[-3,2,-1.5,3,-2][i]}deg" data-tip="A torn page" onclick="pickPage(${i})">${t}</div>`).join('')}
+   <div class="pg ${f.n>i?'used':''}" style="--r:${[-3,2,-1.5,3,-2][i]}deg" data-tip="صفحةٌ ممزقة" onclick="pickPage(${i})">${t}</div>`).join('')}
  </div>
  <div class="ctl"><div class="book">${PAGES.map((t,i)=>`
-   <div class="bslot ${f.n>i?'full':''}" id="bs${i}">${f.n>i?t:'\u2014 page '+(i+1)+' \u2014'}</div>`).join('')}</div></div>`);
- say(f.done?'The diary is whole again. It always was. You just hadn\u2019t read it in this order before.':
-  'Torn pages, scattered like they fell \u2014 or were placed. Assemble the story in the order it happened.');
+   <div class="bslot ${f.n>i?'full':''}" id="bs${i}">${f.n>i?t:'— الصفحة '+(i+1)+' —'}</div>`).join('')}</div></div>`);
+ say(f.done?'عادت اليوميات كاملةً. لقد كانت كذلك دائمًا — أنتِ فقط لم تقرئيها بهذا الترتيب من قبل.':
+  'صفحاتٌ ممزقة، متناثرة كأنها سقطت — أو وُضعت. رتّبي القصة بالترتيب الذي حدثت به.');
 }
 function pickPage(i){
- const f=S.f.r501;if(f.done){say('The pages are at rest.');return}
+ const f=S.f.r501;if(f.done){say('الصفحات في حالة سكون.');return}
  if(i===f.n){f.n++;AU.page();save();
   if(f.n>=5){f.done=true;save();addEvidence('ev_diary');
-   say('"So I created Room 404." Written in a hand you recognize from signing your own name. The radio still plays the melody \u2014 Room 602 remembers it.');
+   say('«لذلك أنشأتُ الغرفة 404» — بخطٍّ تعرفينه من توقيعكِ على اسمك. الراديو ما زال يعزف اللحن، والغرفة 602 تتذكّره.');
    checkFloor6()}
   viewRoom('501')}
  else{const el=app.querySelectorAll('.pg')[i];if(el){el.classList.add('no');setTimeout(()=>el.classList.remove('no'),450)}
-  AU.denied();say('The page resists. That isn\u2019t where the story bends.')}
+  AU.denied();say('تقاوم الصفحة. هذا ليس الموضع الذي تنحني إليه القصة.')}
 }
 function checkFloor6(){if(S.f.r405.done&&S.f.r501.done)unlockFloor(6)}
 
-/* ---------- ROOM 602 · THE MUSIC ROOM ---------- */
+/* ---------- الغرفة 602 · الموسيقى ---------- */
 function r602(){
  const f=S.f.r602;
  app.innerHTML=roomShell('602',`
@@ -1150,7 +1165,6 @@ function r602(){
   <rect width="1200" height="470" fill="#301d22"/><rect width="1200" height="470" fill="url(#p-dam)"/>
   <rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
   <ellipse cx="600" cy="200" rx="360" ry="150" fill="url(#g-lamp)" opacity=".35"/>
-  <!-- upright piano -->
   <g>
    <rect x="360" y="180" width="480" height="220" rx="6" fill="#14100c" stroke="#000" stroke-width="6"/>
    <rect x="386" y="206" width="428" height="110" fill="#0d0a08" stroke="#241a10" stroke-width="3"/>
@@ -1158,55 +1172,54 @@ function r602(){
    ${[1,2,4,5,6,8,9,11,12].map(i=>`<rect x="${420+i*30}" y="236" width="14" height="44" fill="#14100c"/>`).join('')}
    <rect x="360" y="400" width="480" height="14" fill="#3a2317"/>
    <rect x="380" y="414" width="26" height="14" fill="#241610"/><rect x="744" y="414" width="26" height="14" fill="#241610"/>
-   <text x="600" y="330" text-anchor="middle" font-family="Cinzel" font-size="10" letter-spacing="6" fill="#55483a">HALLOWAY HOUSE \u00b7 1931</text>
+   <text x="600" y="332" text-anchor="middle" font-family="Cinzel" font-size="10" letter-spacing="6" fill="#55483a">HALLOWAY HOUSE \u00b7 1931</text>
   </g>
-  <!-- wall panel with 7 brass buttons -->
   <rect x="330" y="120" width="540" height="46" rx="6" fill="#241610" stroke="#120b07" stroke-width="4"/>
   ${[0,1,2,3,4,5,6].map(i=>`<circle cx="${366+i*72}" cy="143" r="15" fill="url(#g-brass)" stroke="#4a3520" stroke-width="2"/>
-   <text x="${366+i*72}" y="${i===6?152:148}" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="10" fill="#241a0e" id="wb${i}">${i+1}</text>`).join('')}
-  <text x="600" y="462" text-anchor="middle" font-family="IM Fell English" font-style="italic" font-size="15" fill="#77664a">the wall remembers the song — so the room can forget it</text>
+   <text x="${366+i*72}" y="148" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="10" fill="#241a0e">${i+1}</text>`).join('')}
+  <text x="600" y="462" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">الحائط يتذكّر الأغنية — لتستطيع الغرفة نسيانها</text>
  </svg></div>`,
  `<div class="ctl" style="flex-direction:column">
-  <span class="tag">WALL PANEL — SEVEN BRASS BUTTONS</span>
+  <span class="tag">لوحة الحائط — سبعة أزرارٍ نحاسية</span>
   <div class="brbtns">${[0,1,2,3,4,5,6].map(i=>`
    <button class="brbtn" onclick="pressBtn602(${i})">${i+1}<span class="nt">${BTN_L[i]}</span></button>`).join('')}</div>
-  <div class="mel-rec" id="melrec">${f.seq.length?f.seq.map(n=>n+1).join(' \u00b7 '):'\u2014 play seven notes \u2014'}</div>
+  <div class="mel-rec" id="melrec">${f.seq.length?f.seq.map(n=>n+1).join(' · '):'— اعزفي سبع نغمات —'}</div>
   <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-   <button class="plate small" onclick="reset602()">RESET</button>
-   <button class="plate small ${S.f.r303.heard?'':'dim'}" onclick="playTape602()">PLAY THE 92.4 TAPE</button>
+   <button class="plate small" onclick="reset602()">من جديد</button>
+   <button class="plate small ${S.f.r303.heard?'':'dim'}" onclick="playTape602()">تشغيل شريط 92.4</button>
   </div>
  </div>`);
- say(f.done?'The buttons are quiet now. The song has been delivered.':
-  S.f.r303.heard?'Seven buttons, seven notes. Somewhere on the third floor, a frequency taught you this song.':
-  'Seven brass buttons. They are waiting for a melody you haven\u2019t heard yet \u2014 the radio on floor 3 keeps it at 92.4.');
+ say(f.done?'الأزرار هادئة الآن. سُلِّمت الأغنية إلى حيث ت belonged.':
+  S.f.r303.heard?'سبعة أزرار، سبع نغمات. في مكانٍ ما في الطابق الثالث، علّمك ترددٌ هذه الأغنية.':
+  'سبعة أزرارٍ نحاسية. إنها تنتظر لحنًا لم تسمعيه بعد — الراديو في الطابق الثالث يحفظه عند 92.4.');
 }
 function pressBtn602(i){
  const f=S.f.r602;if(f.done){AU.piano(BTN_N[i],0,.9,.3);return}
  AU.piano(BTN_N[i],0,1,.45);
  barsAt([i]);
  f.seq.push(i);save();
- const r=$('melrec');if(r)r.textContent=f.seq.map(n=>n+1).join(' \u00b7 ');
+ const r=$('melrec');if(r)r.textContent=f.seq.map(n=>n+1).join(' · ');
  if(f.seq.length===7){
   if(f.seq.join()===MELODY.join()){
    f.done=true;f.tries++;save();
    if(f.tries===1)ach('a_pitch');
    later(()=>{AU.playMelody(.3,.5);shake();
-    say('The piano answers \u2014 playing the whole melody back to you, warmly, like an old friend finishing your sentence.')},300);
+    say('يجيبك البيانو — يعزف اللحن كاملًا بدفء، كصديقٍ قديمٍ يكمل جملتك.')},300);
    later(()=>{addEvidence('ev_piano');unlockFloor(7);
-    say('A drawer under the panel slides open: a folded page of sheet music. The title is one word: \u201cREMEMBER.\u201d Floor 7 is yours.')},4200);
+    say('ينزلق درجٌ تحت اللوحة: صفحةٌ مطوية من نوتةٍ موسيقية. عنوانها كلمة واحدة: «تذكّري». الطابق السابع لكِ الآن.')},4200);
   }else{
    f.tries++;f.seq=[];save();
    later(()=>{AU.tone(46,{dur:.5,type:'sawtooth',g:.2});AU.denied();
-    say('A sour chord. The piano slams its own lid. Start the seven notes again.')},200);
+    say('نغمة نشاز. يُغلق البيانو غطاءه بنفسه. ابدئي النغمات السبع من جديد.')},200);
   }
  }
 }
 function reset602(){S.f.r602.seq=[];save();viewRoom('602')}
 function playTape602(){if(!S.f.r303.heard)return;AU.playMelody(.4,.5);
- const seq=[2,4,3,2,6,5,4];seq.forEach((v,i)=>later(()=>barsAt([v]),400+i*450));later(()=>barsAt([]),4600);
- say('The tape hisses, then the seven notes arrive \u2014 slowly, patiently, teaching.')}
+ MELODY.forEach((v,i)=>later(()=>barsAt([v]),400+i*450));later(()=>barsAt([]),4600);
+ say('يزمجر الشريط، ثم تصل النغمات السبع — على مهل، بصبر، تعلّمك.')}
 
-/* ---------- ROOM 707 · THE PUZZLE ROOM ---------- */
+/* ---------- الغرفة 707 · الألغاز ---------- */
 const DVALS=['7','0317','92.4','1986'];
 function r707(){
  const f=S.f.r707;
@@ -1219,18 +1232,16 @@ function r707(){
   ${[0,1,2,3,4,5].map(i=>`<rect x="${i*200}" y="${i%2?0:30}" width="6" height="470" fill="#1c1e20"/>`).join('')}
   ${[0,1,2].map(i=>`<rect y="${i*160}" width="1200" height="6" fill="#1c1e20"/>`).join('')}
   <rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
-  <!-- engraving -->
-  <g class="hot" data-tip="An engraving on the stone" onclick="showNote('ENGRAVED INTO THE STONE','ORDER OF PROOF:<br>WHAT THE MIRROR SAW \u00b7 WHEN TIME FROZE \u00b7<br>WHERE THE VOICE LIVES \u00b7 WHEN IT ALL BEGAN<br><br>Below it, small: \u201cthe order in which you found them.\u201d')">
-   <rect x="240" y="90" width="720" height="90" fill="none" stroke="#4a3a24" stroke-width="2"/>
-   <text x="600" y="126" text-anchor="middle" font-family="Cinzel" font-size="15" letter-spacing="3" fill="#8a7248">ORDER OF PROOF</text>
-   <text x="600" y="154" text-anchor="middle" font-family="Cinzel" font-size="11" letter-spacing="2" fill="#6d5d44">MIRROR \u00b7 FROZEN HOUR \u00b7 VOICE \u00b7 BEGINNING</text>
+  <g class="hot" data-tip="نقشٌ في الحجر" onclick="showNote('منقوشٌ في الحجر','ترتيب الأدلة:<br>ما رأته المرآة · حين تجمّد الزمن ·<br>حيث يسكن الصوت · حين بدأ كل شيء<br><br>وأسفلها بخطٍّ صغير: «بالترتيب الذي وجدتِها فيه.»')">
+   <rect x="200" y="90" width="800" height="96" fill="none" stroke="#4a3a24" stroke-width="2"/>
+   <text x="600" y="128" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="17" fill="#8a7248">ترتيب الأدلة</text>
+   <text x="600" y="158" text-anchor="middle" font-family="Almarai" font-size="11" fill="#6d5d44">المرآة · الساعة المتجمدة · الصوت · البداية</text>
   </g>
-  <!-- the box on a pedestal -->
   <rect x="420" y="380" width="360" height="20" fill="#3a2317"/><rect x="450" y="400" width="300" height="72" fill="#241610" stroke="#120b07"/>
-  <g class="hot" data-tip="A steel box with four dials" onclick="say('Four dials. Four proofs. The wall remembers the order.')">
+  <g class="hot" data-tip="صندوقٌ فولاذي بأربعة أقراص" onclick="say('أربعة أقراص. أربعة أدلة. الحائط يتذكّر الترتيب.')">
    <rect x="440" y="290" width="320" height="100" rx="8" fill="#2a2a28" stroke="#101010" stroke-width="5"/>
    ${[0,1,2,3].map(i=>`<rect x="${462+i*74}" y="316" width="60" height="48" rx="3" fill="#0d0906" stroke="#4a3a24" stroke-width="2"/>
-    <text x="${492+i*74}" y="350" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="17" fill="#c9a35c">${DVALS[f.d[i]]}</text>`).join('')}
+    <text x="${492+i*74}" y="350" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="17" fill="#c9a35c">${DVALS[f.d[i]]}</text>`).join('')}
    <circle cx="465" cy="306" r="4" fill="#7e1f1f"/><circle cx="735" cy="306" r="4" fill="#7e1f1f"/>
   </g>
   <ellipse cx="${lampX}" cy="240" rx="200" ry="120" fill="url(#g-glow)" opacity=".5"/>
@@ -1241,15 +1252,15 @@ function r707(){
    <rect x="836" y="316" width="10" height="90" fill="#241610"/><rect x="904" y="316" width="10" height="90" fill="#241610"/></g>
  </svg></div>`,
  `<div class="ctl" style="flex-direction:column">
-  <span class="tag">DIALS — CHOOSE THE PROOF FOR EACH POSITION</span>
+  <span class="tag">الأقراص — اختاري الدليل لكل موضع</span>
   <div class="dials">${[0,1,2,3].map(i=>`
-   <div class="dial"><span class="tag">${['FIRST','SECOND','THIRD','FOURTH'][i]}</span>
+   <div class="dial"><span class="tag">${['الأول','الثاني','الثالث','الرابع'][i]}</span>
     <div class="dwin" id="dw${i}">${DVALS[f.d[i]]}</div>
     <div class="cb"><button class="plate small" onclick="dial707(${i},1)">▲</button>
     <button class="plate small" onclick="dial707(${i},-1)">▼</button></div></div>`).join('')}</div>
-  <button class="plate" onclick="try707()">ENGAGE THE MECHANISM</button>
+  <button class="plate" onclick="try707()">شغّلي الآلية</button>
  </div>`);
- say(f.done?'The box is open. Its work is finished.':"The room rearranged itself ${f.wrong?f.wrong+' time'+(f.wrong>1?'s':'')+' already. It disapproves of guessing.':'. Read the stone. Trust the order of your own investigation.'}");
+ say(f.done?'الصندوق مفتوح. اكتمل عمله.':f.wrong?`أعادت الغرفة ترتيب نفسها ${f.wrong} ${f.wrong===1?'مرة':'مرات'} بالفعل. إنها لا توافق على التخمين — اقرئي الحجر.`:'اقرئي الحجر. ثقي بترتيب تحقيقك أنتِ.');
 }
 function dial707(i,d){
  const f=S.f.r707;if(f.done)return;
@@ -1260,21 +1271,21 @@ function try707(){
  const f=S.f.r707;if(f.done)return;
  if(f.d.join()==='0,1,2,3'){
   f.done=true;save();AU.chime();
-  say('The dials sink as one. The box exhales open \u2014 and every wall in the room becomes a single line of light.');
+  say('تغور الأقراص الأربعة معًا. يزفر الصندوق منفتحًا — وتصبح كل جدران الغرفة خطًّا واحدًا من الضوء.');
   later(()=>narrate([
-   {t:'7 \u00b7 0317 \u00b7 92.4 \u00b7 1986',big:true},
-   {t:'The proofs, in the order they found you.'},
-   {t:'ONE ROOM REMAINS.',big:true}
-  ]).then(()=>{addEvidence('ev_seq');unlockFloor(8);say('Floor 8 breathes open. The room does not congratulate you. It simply stops hiding the stairs.')}),700);
+   {t:'7 · 0317 · 92.4 · 1986',big:true},
+   {t:'الأدلة — بالترتيب الذي وجدتْكِ به.'},
+   {t:'بقيت غرفةٌ واحدة.',big:true}
+  ]).then(()=>{addEvidence('ev_seq');unlockFloor(8);say('يتنفّس الطابق الثامن منفتحًا. الغرفة لا تهنّئك — إنها ببساطة تتوقف عن إخفاء السلالم.')}),700);
  }else{
   f.wrong++;f.perm=(f.perm+1)%3;save();
   flick();shake();AU.tone(40,{dur:.7,type:'sawtooth',g:.25});
-  say('Wrong. The lights stutter \u2014 and when they recover, the furniture has moved. The room has changed. It is daring you to notice.');
+  say('خطأ. تترنح الأضواء — وحين تتعافى، يكون الأثاث قد تحرّك. الغرفة تغيّرت. إنها تتحدّاكِ أن تلاحظي.');
   later(()=>viewRoom('707'),900);
  }
 }
 
-/* ---------- ROOM 808 · THE TIME ROOM ---------- */
+/* ---------- الغرفة 808 · الزمن ---------- */
 function r808(){
  const f=S.f.r808;
  if(f.mode&&f.mode!=='hub')return r808Time(f.mode);
@@ -1285,35 +1296,35 @@ function r808(){
   <rect width="1200" height="470" fill="#2c2418"/><rect width="1200" height="470" fill="url(#p-dam)"/>
   <rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
   <ellipse cx="600" cy="180" rx="420" ry="150" fill="url(#g-lamp)" opacity=".35"/>
-  ${[['PAST',190,'#8a6d3f','#3a2a14'],['PRESENT',600,'#7a746a','#232022'],['FUTURE',1010,'#5f4a3a','#1f1410']].map(([lab,x,c,dark],i)=>`
-  <g class="hot" data-tip="The ${lab.toLowerCase()} door" onclick="t808('${lab.toLowerCase()}')">
+  ${[['الماضي',190,'#8a6d3f','#3a2a14'],['الحاضر',600,'#7a746a','#232022'],['المستقبل',1010,'#5f4a3a','#1f1410']].map(([lab,x,c,dark],i)=>`
+  <g class="hot" data-tip="باب ${lab}" onclick="t808('${['past','present','future'][i]}')">
    <rect x="${x-85}" y="180" width="170" height="290" fill="${dark}" stroke="#0f0a06" stroke-width="5"/>
    <rect x="${x-65}" y="202" width="130" height="110" fill="${i===2?'#101010':'url(#g-glass)'}" opacity="${i===0?'.9':'.75'}" stroke="#241a10"/>
    <rect x="${x-65}" y="330" width="130" height="120" fill="#160f09" stroke="#241a10"/>
    <circle cx="${x+42}" cy="290" r="6" fill="url(#g-brass)"/>
-   <rect x="${x-60}" y="152" width="120" height="24" fill="#1c130d" stroke="#4a3a24"/>
-   <text x="${x}" y="169" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="12" letter-spacing="3" fill="${c}">${lab}</text>
-   ${f.vis.includes(lab.toLowerCase())?`<path d="M${x-8} 452l6 6 10-12" stroke="#8fae8a" stroke-width="3" fill="none"/>`:''}
+   <rect x="${x-70}" y="152" width="140" height="26" fill="#1c130d" stroke="#4a3a24"/>
+   <text x="${x}" y="171" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="13" fill="${c}">${lab}</text>
+   ${f.vis.includes(['past','present','future'][i])?`<path d="M${x-8} 452l6 6 10-12" stroke="#8fae8a" stroke-width="3" fill="none"/>`:''}
   </g>`).join('')}
-  <text x="600" y="452" text-anchor="middle" font-family="IM Fell English" font-style="italic" font-size="15" fill="#77664a">the same room, remembering itself three ways</text>
+  <text x="600" y="454" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">الغرفة نفسها، تتذكّر نفسها بثلاث طرق</text>
  </svg></div>`,
  `<div class="ctl">
-  ${f.key?`<span class="tag" style="color:#c9a35c">${ic('key')} BRASS KEY IN POCKET</span>`:''}
-  ${all&&!f.done?`<span class="tag" style="color:#8fae8a">the room settles \u00b7 floor 9 is yours</span>`:''}
+  ${f.key?`<span class="tag" style="color:#c9a35c">${ic('key')} المفتاح النحاسي في جيبك</span>`:''}
+  ${all&&!f.done?`<span class="tag" style="color:#8fae8a">تستقرّ الغرفة · الطابق التاسع لكِ</span>`:''}
  </div>`);
- say(all?'You have walked all three whens. The ninth floor is yours.':
-  'Three doors. The same room behind each \u2014 but not the same year. Events leak between them like water under doors.');
+ say(all?'سرتِ في الأزمنة الثلاثة. الطابق التاسع لكِ الآن.':
+  'ثلاثة أبواب. الغرفة نفسها خلف كلٍّ منها — لكن ليس العام نفسه. الأحداث تتسرّب بينها كالماء تحت الأبواب.');
  if(all&&!f.done){f.done=true;save();unlockFloor(9)}
 }
 function t808(m){const f=S.f.r808;if(!f.vis.includes(m))f.vis.push(m);save();AU.creak();r808Time(m)}
-function back808(){const f=S.f.r808;f.mode='hub';save();viewRoom('808')}
-let stabIv=null;
+function back808(){clearStab();const f=S.f.r808;f.mode='hub';save();viewRoom('808')}
 function r808Time(m){
+ clearStab();
  const f=S.f.r808;f.mode=m;
  const skin={
-  past:{wall:'#3a2a14',floor:'#4a3010',warm:'#c9a35c',txt:'The Halloway, new. Fresh wallpaper, cut flowers, a newspaper folded on the desk. June, 1986. The radio downstairs is playing a seven-note melody.'},
-  present:{wall:'#232022',floor:'#241610',warm:'#7a746a',txt:'The room you know. Dust, patience, and a desk drawer rusted shut.'},
-  future:{wall:'#1f1410',floor:'#181008',warm:'#5f4a3a',txt:'The wall is open to a grey-green sky. Rubble everywhere. The building is remembering how to be a ruin. Something glints under the plaster.'}
+  past:{wall:'#3a2a14',floor:'#4a3010',warm:'#c9a35c',txt:'هالوواي، جديد. ورق حائطٍ طازج، زهورٌ مقطوفة، وصحيفةٌ مطوية على المكتب. يونيو 1986. الراديو في الأسفل يعزف لحنًا من سبع نغمات.'},
+  present:{wall:'#232022',floor:'#241610',warm:'#7a746a',txt:'الغرفة التي تعرفينها. غبارٌ، وصبرٌ، ودرجُ مكتبٍ صدئٌ مغلق.'},
+  future:{wall:'#1f1410',floor:'#181008',warm:'#5f4a3a',txt:'الحائط مفتوح على سماءٍ رمادية خضراء. أنقاضٌ في كل مكان. المبنى يتذكّر كيف يكون ركامًا.'}
  }[m];
  app.innerHTML=roomShell('808',`
  <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:${skin.wall}">
@@ -1323,53 +1334,53 @@ function r808Time(m){
   <rect y="460" width="1200" height="12" fill="#120c07"/><rect y="472" width="1200" height="168" fill="${skin.floor}"/>
   <ellipse cx="600" cy="200" rx="420" ry="160" fill="url(#g-lamp)" opacity="${m==='past'?'.6':'.3'}"/>
   ${m!=='future'?'<rect x="560" y="120" width="80" height="120" fill="url(#g-glass)" stroke="#241a10" stroke-width="4"/>':'<rect x="560" y="120" width="80" height="120" fill="none" stroke="#0f0a06" stroke-width="4" stroke-dasharray="8 6"/>'}
-  <!-- desk + drawer -->
   <rect x="380" y="330" width="440" height="20" fill="#3a2317"/><rect x="410" y="350" width="380" height="110" fill="#241610" stroke="#120b07" stroke-width="3"/>
   <rect x="440" y="370" width="150" height="34" fill="#1c130d" stroke="#120b07" stroke-width="2"/>
   <circle cx="515" cy="387" r="4" fill="${skin.warm}"/>
-  ${m==='past'?'<rect x="470" y="290" width="30" height="40" fill="#2a1a11" stroke="#120b07"/><ellipse cx="485" cy="280" rx="70" ry="60" fill="url(#g-glow)"/><g class="hot" data-tip="Cut flowers" onclick="say(\'Fresh peonies. Someone expected a long stay.\')"><path d="M700 320v-30M700 300c-10-4-14-14-8-22 8 2 12 10 8 22zM700 304c10-4 14-14 8-22-8 2-12 10-8 22z" stroke="#5f7a4a" stroke-width="2" fill="none"/></g>':''}
-  ${m==='future'?'<g class="hot" data-tip="Something under the rubble" onclick="takeKey808()"><path d="M640 400l30-16 26 20 34-24" stroke="#14100a" stroke-width="20" fill="none"/><circle cx="668" cy="392" r="7" fill="#c9a35c" id="keyglint"/></g>':''}
+  ${m==='past'?'<rect x="470" y="290" width="30" height="40" fill="#2a1a11" stroke="#120b07"/><ellipse cx="485" cy="280" rx="70" ry="60" fill="url(#g-glow)"/><g class="hot" data-tip="زهورٌ مقطوفة" onclick="say(\'زهورٌ طازجة. أحدهم كان يتوقّع إقامةً طويلة.\')"><path d="M700 320v-30M700 300c-10-4-14-14-8-22 8 2 12 10 8 22zM700 304c10-4 14-14 8-22-8 2-12 10-8 22z" stroke="#5f7a4a" stroke-width="2" fill="none"/></g>':''}
+  ${m==='future'&&!f.key?`<g class="hot" data-tip="شيءٌ تحت الأنقاض" onclick="takeKey808()"><path d="M640 400l30-16 26 20 34-24" stroke="#14100a" stroke-width="20" fill="none"/><circle cx="668" cy="392" r="7" fill="#c9a35c"/></g>`:''}
   ${m==='past'&&f.key?`<circle cx="700" cy="316" r="7" fill="none" stroke="#c9a35c" stroke-width="2" stroke-dasharray="3 3"/>`:''}
-  <text x="600" y="${m==='future'?440:452}" text-anchor="middle" font-family="IM Fell English" font-style="italic" font-size="15" fill="${skin.warm}" opacity=".7">${{past:'1986 — everything still possible',present:'now — everything still here',future:'???? — everything already gone'}[m]}</text>
+  <text x="600" y="446" text-anchor="middle" font-family="Amiri" font-size="16" fill="${skin.warm}" opacity=".7">${{past:'1986 — كل شيء ما زال ممكنًا',present:'الآن — كل شيء ما زال هنا',future:'؟؟؟؟ — كل شيء رحل بالفعل'}[m]}</text>
  </svg></div>`,
  `<div class="ctl" style="flex-direction:column">
-  <button class="plate small" onclick="back808()">${ic('back')} BACK TO THE THREE DOORS</button>
-  ${m==='past'?`<button class="plate small" onclick="readNews()">READ THE NEWSPAPER</button>`:''}
-  ${m==='past'&&f.key&&!f.placed?`<button class="plate small" onclick="placeKey808()">${ic('key')} LEAVE THE KEY IN THE DRAWER</button>`:''}
-  ${m==='present'&&f.placed?`<button class="plate small" onclick="openDrawer808()">OPEN THE DRAWER</button>`:''}
-  ${m==='future'&&!f.key?`<button class="plate small" onclick="takeKey804()">SEARCH THE RUBBLE</button>`:''}
+  <button class="plate small" onclick="back808()">${ic('back')} عودة إلى الأبواب الثلاثة</button>
+  ${m==='past'?`<button class="plate small" onclick="readNews()">اقرئي الصحيفة</button>`:''}
+  ${m==='past'&&f.key&&!f.placed?`<button class="plate small" onclick="placeKey808()">${ic('key')} اتركي المفتاح في الدرج</button>`:''}
+  ${m==='present'&&f.placed?`<button class="plate small" onclick="openDrawer808()">افتحي الدرج</button>`:''}
+  ${m==='future'&&!f.key?`<button class="plate small" onclick="takeKey808()">فتّشي الأنقاض</button>`:''}
  </div>`);
- if(m==='present'&&!f.placed)say('The drawer is rusted shut. Has been for decades. Nothing you do now will change what\u2019s inside it\u2026 will it?');
+ if(m==='present'&&!f.placed)say('الدرج صدئٌ مغلق. كذلك منذ عقود. لا شيء تفعليه الآن سيغيّر ما بداخله… أليس كذلك؟');
  else say(skin.txt);
- if(m==='future'){
-  let t=45;const bar=app.querySelector('.stab .bar i');
-  stabIv=setInterval(()=>{t--;if(bar)bar.style.width=(t/45*100)+'%';
-   if(t<=12&&!bar?.classList.contains('warn')){flick()}
-   if(t<=0){clearInterval(stabIv);AU.tone(38,{dur:1.2,g:.4});say('The future rejects you. You are pulled back to the present.');back808()}},1000);
-  const stab=document.createElement('div');stab.className='stab';stab.innerHTML='<span class="tag" style="color:#a83232">STRUCTURAL STABILITY</span><div class="bar"><i></i></div>';
+ if(m==='future'&&!f.key){
+  let t=45;
+  stabIv=setInterval(()=>{t--;
+   const bar=app.querySelector('.stab .bar i');if(bar)bar.style.width=(t/45*100)+'%';
+   if(t<=12)flick();
+   if(t<=0){clearStab();AU.tone(38,{dur:1.2,g:.4});say('يرفضكِ المستقبل. تُسحبين عائدةً إلى الحاضر.');back808()}},1000);
+  const stab=document.createElement('div');stab.className='stab';
+  stab.innerHTML='<span class="tag" style="color:#a83232">الاستقرار الإنشائي</span><div class="bar"><i></i></div>';
   app.querySelector('.ctl').appendChild(stab);
  }
 }
-function readNews(){showNote('THE HALLOWAY GAZETTE — JUNE 3, 1986',
- 'THE HALLOWAY HOTEL TO CLOSE.<br>After fifty-nine years of service, the landmark will shut its doors this month.<br>The owner, known to guests only as \u201cV.\u201d, could not be reached.<br>Staff report the closure is \u201cnot entirely voluntary.\u201d')}
-function takeKey804(){takeKey808()}
+function readNews(){showNote('جريدة هالوواي — 3 يونيو 1986',
+ 'فندق هالوواي يغلق أبوابه.<br>بعد تسعةٍ وخمسين عامًا من الخدمة، سيُغلق المعلم التاريخي أبوابه هذا الشهر.<br>المالكة، المعروفة بين النزلاء بـ«V» فقط، تعذّر الوصول إليها.<br>يذكر الموظفون أنّ الإغلاق «ليس طوعيًا تمامًا».')}
 function takeKey808(){
  const f=S.f.r808;if(f.key)return;
  f.key=true;save();AU.chime();addEvidence('ev_key');
- say('Under forty years of fallen ceiling: a brass key, uncorroded, warm. Stamped on the bow: ROOM 000.');
- viewRoom('808');r808Time('future');
+ say('تحت أربعين عامًا من السقف المتساقط: مفتاحٌ نحاسي، غير متآكل، دافئ. منقوشٌ على مقبضه: الغرفة 000.');
+ r808Time('future');
 }
 function placeKey808(){
  const f=S.f.r808;if(f.placed)return;
  f.placed=true;save();AU.page();ach('a_loop');addEvidence('ev_loop');
- say('You slide the key into the desk drawer, 1986. The room accepts it the way water accepts a stone. Somewhere, a present rearranges itself around your decision.');
+ say('تضعين المفتاح في درج المكتب، عام 1986. تستقبله الغرفة كما يستقبل الماء حجرًا. في مكانٍ ما، يعيد «حاضرٌ» ترتيب نفسه حول قرارك.');
 }
 function openDrawer808(){
- showNote('FOUND IN THE DRAWER — 1986',
-  'A brass key was left in this drawer, forty years ago,<br>wrapped in this note:<br><br><span style="font-family:\'Homemade Apple\';font-size:14px">\u201cFor you. You left it for yourself.<br>You already did this.<br>\u2014 V.\u201d</span><br><br>The handwriting is yours.',{hand:true});
+ showNote('وُجد في الدرج — 1986',
+  'مفتاحٌ نحاسيّ تُرك في هذا الدرج قبل أربعين عامًا،<br>ملفوفًا بهذه الورقة:<br><br><span style="font-family:\'Aref Ruqaa\';font-size:15px">«لكِ. لقد تركتِه لنفسك.<br>أنتِ فعلتِ هذا بالفعل.<br>— V»</span><br><br>الخطّ… خطّك.',{hand:true});
 }
 
-/* ---------- ROOM 909 · THE LAST FLOOR ---------- */
+/* ---------- الغرفة 909 · الطابق الأخير ---------- */
 function r909(){
  app.innerHTML=roomShell('909',`
  <div class="scene-wrap"><svg class="scene" viewBox="0 0 1200 640" style="--wall:#1f1a16">
@@ -1377,96 +1388,95 @@ function r909(){
   ${[0,1,2,3].map(i=>`<polygon points="${i*300},0 ${i*300+150},0 ${i*300+90},90 ${i*300+30},90" fill="#151110"/>`).join('')}
   <rect y="460" width="1200" height="12" fill="#0c0806"/><rect y="472" width="1200" height="168" fill="url(#p-plank)"/>
   <ellipse cx="600" cy="330" rx="180" ry="160" fill="url(#g-glow)" opacity=".5"/>
-  <!-- candle -->
   <g class="sway" style="animation-duration:7s">
    <rect x="588" y="380" width="24" height="56" fill="#cfc09b"/><ellipse cx="600" cy="376" rx="14" ry="5" fill="#cfc09b"/>
-   <path d="M600 350c5 8 8 12 0 22-8-10-5-14 0-22z" fill="#e8b25a" id="candleflame"/>
+   <path d="M600 350c5 8 8 12 0 22-8-10-5-14 0-22z" fill="#e8b25a"/>
    <ellipse cx="600" cy="362" rx="60" ry="80" fill="url(#g-glow)"/>
   </g>
-  ${[['EXIT',300,'#8fae8a','door909(\'exit\')'],['404',600,'#c9a35c','door909(\'404\')'],['???',900,'#7a746a','door909(\'unknown\')']].map(([lab,x,c,fn],i)=>{
+  ${[['خروج',300,'#8fae8a','door909(\'exit\')'],['404',600,'#c9a35c','door909(\'404\')'],['؟؟؟',900,'#7a746a','door909(\'unknown\')']].map(([lab,x,c,fn],i)=>{
    const metal=i===2;
-   return `<g class="hot" data-tip="${i===2?'A door with no number. A keyhole.':'The '+lab+' door'}" onclick="${fn}">
+   return `<g class="hot" data-tip="${i===2?'بابٌ بلا رقم، وثقبُ مفتاح':(i===0?'باب الخروج':'باب 404')}" onclick="${fn}">
     <rect x="${x-80}" y="180" width="160" height="280" fill="${metal?'#26282a':'#2a1a11'}" stroke="#0f0a06" stroke-width="5"/>
     <rect x="${x-62}" y="200" width="124" height="100" fill="${metal?'#1c1e20':'#241610'}" stroke="#1b110a" stroke-width="3"/>
     <rect x="${x-62}" y="320" width="124" height="120" fill="${metal?'#1c1e20':'#241610'}" stroke="#1b110a" stroke-width="3"/>
-    ${i===0?`<rect x="${x-50}" y="188" width="100" height="34" fill="#12331a" stroke="#2a5a38" stroke-width="2"/><text x="${x}" y="211" text-anchor="middle" font-family="Cinzel" font-weight="900" font-size="17" letter-spacing="4" fill="#8fae8a">EXIT</text>`:''}
+    ${i===0?`<rect x="${x-56}" y="186" width="112" height="36" fill="#12331a" stroke="#2a5a38" stroke-width="2"/><text x="${x}" y="212" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="17" fill="#8fae8a">خروج</text>`:''}
     ${i===1?`<text x="${x}" y="182" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="15" fill="${c}">404</text>`:''}
-    ${i===2?`<text x="${x}" y="182" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="15" fill="${c}">? ? ?</text>
+    ${i===2?`<text x="${x}" y="182" text-anchor="middle" font-family="Reem Kufi" font-weight="700" font-size="15" fill="${c}">؟ ؟ ؟</text>
       <circle cx="${x}" cy="312" r="9" fill="#0d0906" stroke="#55483a" stroke-width="2"/><rect x="${x-3}" y="312" width="6" height="12" fill="#55483a"/>`:''}
     <circle cx="${x+44}" cy="290" r="6" fill="url(#g-brass)"/>
    </g>`}).join('')}
-  <text x="600" y="452" text-anchor="middle" font-family="IM Fell English" font-style="italic" font-size="15" fill="#77664a">the last door you will ever need to choose</text>
+  <text x="600" y="454" text-anchor="middle" font-family="Amiri" font-size="16" fill="#77664a">آخر بابٍ ستحتاجين إلى اختياره</text>
  </svg></div>`,
- `<div class="ctl"><span class="tag">${S.f.r808.key?'THE BRASS KEY IS HEAVY IN YOUR POCKET':'the iron door has a keyhole \u00b7 it is not on any map'}</span></div>`);
- say('The ninth floor. Roof beams, a single candle, three doors. One of them is marked EXIT. One of them is marked 404. One of them is marked nothing at all.');
+ `<div class="ctl"><span class="tag">${S.f.r808.key?'المفتاح النحاسي ثقيلٌ في جيبك':'الباب الحديدي فيه ثقبُ مفتاح · وليس على أي خريطة'}</span></div>`);
+ say('الطابق التاسع. عوارض سقف، وشمعةٌ واحدة، وثلاثة أبواب. أحدها يحمل «خروج». وأحدها يحمل 404. وأحدها لا يحمل شيئًا على الإطلاق.');
 }
 function door909(w){
  if(w==='exit')return narrate([
-  {t:'You push the EXIT door. It opens onto fog and the smell of a road.'},
-  {t:'You walk out. You don\u2019t look back. You never do.',big:false}
+  {t:'تدفعين باب الخروج. يفتح على الضباب ورائحة طريق.'},
+  {t:'تخرجين. لا تنظرين خلفك. أنتِ لا تفعلين ذلك أبدًا.'}
  ]).then(()=>ending('exit'));
  if(w==='404')return narrate([
-  {t:'Four floors down. The door of Room 404 is open.'},
-  {t:'The bed is made. The lamp is warm. Somebody left it warm for you.'}
+  {t:'أربعة طوابق نزولًا. باب الغرفة 404 مفتوح.'},
+  {t:'السرير مرتّب. المصباح دافئ. أحدهم تركه دافئًا لأجلك.'}
  ]).then(()=>ending('404'));
  if(w==='unknown'){
-  if(!S.f.r808.key){AU.denied();say('The iron door has no handle \u2014 only a keyhole, waiting for a brass key you haven\u2019t found. The future is holding it for you.');return}
+  if(!S.f.r808.key){AU.denied();say('الباب الحديدي بلا مقبض — فقط ثقبُ مفتاح ينتظر مفتاحًا نحاسيًا لم تجديه بعد. المستقبل يحتفظ به لكِ.');return}
   return narrate([
-   {t:'The brass key turns like it was cut for this lock \u2014 because it was.'},
-   {t:'There is no room behind the door.',big:true},
-   {t:'There never was.'}
+   {t:'ينقلب المفتاح النحاسي كأنما قُطع لهذا القفل — لأنه كذلك فعلًا.'},
+   {t:'لا توجد غرفةٌ خلف الباب.',big:true},
+   {t:'ولم تكن موجودةً قط.'}
   ]).then(()=>ending('unknown'));
  }
 }
 async function ending(w){
  if(w==='exit'){
   await narrate([
-   {t:'Outside, the fog swallows the Halloway behind you.'},
-   {t:'Years pass. You pass the hotel again one evening — the windows are warm.'},
-   {t:'In one of them, someone waves. It waves the way you wave.'},
-   {t:'ENDING — “THE GUEST”',big:true}
-  ],{final:'RETURN TO THE LOBBY'});
+   {t:'خارجًا، يبتلع الضباب هالوواي خلفك.'},
+   {t:'تمرّ السنوات. تمرّين بالفندق مساءً — فتجدين النوافذ دافئة.'},
+   {t:'في واحدةٍ منها، يلوّح أحدهم. يلوّح بالطريقة التي تلوّحين بها.'},
+   {t:'نهاية — «الضيفة»',big:true}
+  ],{final:'عودة إلى اللوبي'});
   if(!S.endings.includes('exit')){S.endings.push('exit');save();ach('a_end1')}
   go('lobby');
  }
  if(w==='404'){
   if(!S.endings.includes('404')){S.endings.push('404');save();ach('a_end2')}
   await narrate([
-   {t:'You climb into the bed in Room 404. The lamp keeps watch.'},
-   {t:'You choose to forget. Again.',big:true},
-   {t:'ENDING — “THE LOOP”'},
-   {t:'(The hotel, gently, resets its carpets for you.)'}
-  ],{final:'BEGIN AGAIN'});
-  go('lobby');later(()=>say('The lobby is warm. Nobody is at the desk. The clock says 3:17\u2026 it has said so for a long time.'),1200);
+   {t:'تستلقين في سرير الغرفة 404. المصباح يحرس.'},
+   {t:'تختارين أن تنسي. مجددًا.',big:true},
+   {t:'نهاية — «الحلقة»'},
+   {t:'(الفندق، برفقٍ شديد، يعيد ترتيب سجادته لأجلك.)'}
+  ],{final:'ابدئي من جديد'});
+  go('lobby');later(()=>say('اللوبي دافئ. لا أحد خلف المكتب. الساعة تشير إلى 3:17… وقد كانت كذلك منذ زمنٍ بعيد.'),1200);
  }
  if(w==='unknown'){
   const c=await narrate([
-   {t:'The Halloway was built around a single memory too heavy to carry: yours.'},
-   {t:'Room 404 doesn\u2019t hold the memory.'},
-   {t:'You are the memory.',big:true},
-   {t:'The guest. The maid. The voice on the radio. The hand in the diary.'},
-   {t:'Every clock stopped at the moment you refused to let go.'},
-   {t:'Check-out was forty years ago. The lamp stayed on because you are the lamp.'},
-   {t:'So — for the last time. Your choice.'}
-  ],{choice:[['STAY','stay'],['LEAVE','leave']]});
+   {t:'بُني هالوواي حول ذكرىً واحدة أثقل من أن تُحمَل: ذكراك.'},
+   {t:'الغرفة 404 لا تحمل الذكرى.'},
+   {t:'أنتِ هي الذكرى.',big:true},
+   {t:'النزيلة. الخادمة. الصوت على الراديو. اليد التي كتبت اليوميات.'},
+   {t:'كل ساعةٍ توقفت عند اللحظة التي رفضتِ فيها أن تتركي.'},
+   {t:'تسجيل المغادرة كان قبل أربعين عامًا. والمصباح بقي مضيئًا… لأنك أنتِ المصباح.'},
+   {t:'إذن — للمرة الأخيرة. قرارك.'}
+  ],{choice:[['أبقي','stay'],['ارحلي','leave']]});
   if(c==='stay'){
    await narrate([
-    {t:'You turn the lamp down to a whisper.'},
-    {t:'The Halloway exhales — floor by floor — and settles around you like an old coat.'},
-    {t:'Somebody should keep the light on for the ones who loop. It might as well be you.'},
-    {t:'It always was.',big:true},
-    {t:'ENDING — “THE KEEPER”'}
-   ],{final:'RETURN TO THE TITLE'});
+    {t:'تخفضين المصباح إلى همسة.'},
+    {t:'يزفر هالوواي — طابقًا تلو طابق — ويستقرّ حولك كمعطفٍ قديم.'},
+    {t:'على أحدهم إبقاء النور مضيئًا لمن يدورون في الحلقة. ولا بأس أن تكوني أنتِ.'},
+    {t:'لقد كنتِ كذلك دائمًا.',big:true},
+    {t:'نهاية — «الحارسة»'}
+   ],{final:'عودة إلى البداية'});
    if(!S.endings.includes('keeper')){S.endings.push('keeper');save()}go('title');
   }else{
    await narrate([
-    {t:'You set the lamp on the desk. You let go.'},
-    {t:'The Halloway goes dark from the ninth floor down — not collapsing. Remembering. And then, resting.'},
-    {t:'Outside, the fog thins for the first time in forty years.'},
-    {t:'You walk out of Room 404 — and for once, the door doesn\u2019t lock behind you.',big:true},
-    {t:'ENDING — “CHECK-OUT”'},
-    {t:'ROOM 404 — played by you. Written by you.'}
-   ],{final:'RETURN TO THE TITLE'});
+    {t:'تضعين المصباح على المكتب. تتركنه.'},
+    {t:'يخبو هالوواي من الطابق التاسع نزولًا — لا ينهار. يتذكّر. ثم يستريح.'},
+    {t:'خارجًا، يرقّ الضباب لأول مرةٍ منذ أربعين عامًا.'},
+    {t:'تخرجين من الغرفة 404 — وللمرة الأولى، لا يُقفل الباب خلفك.',big:true},
+    {t:'نهاية — «تسجيل المغادرة»'},
+    {t:'الغرفة 404 — أنتِ من لعبتها. وأنتِ من كتبها.'}
+   ],{final:'عودة إلى البداية'});
    if(!S.endings.includes('checkout')){S.endings.push('checkout');save();ach('a_end3')}go('title');
   }
  }
@@ -1483,16 +1493,16 @@ function toggleMap(){
  for(let fl=9;fl>=1;fl--){
   const rooms=fl===4?['404','405']:Object.keys(RF).filter(r=>RF[r]===fl);
   const open=S.floors.includes(fl);
-  rows+=`<div class="mfloor"><span class="fn">F${fl}</span><div class="md">${rooms.map(n=>{
+  rows+=`<div class="mfloor"><span class="fn">ط${fl}</span><div class="md">${rooms.map(n=>{
    const rdone=doneRoom(n);
    return `<span class="mdoor ${open?'':'lock'} ${cur===fl?'cur':''}" ${open?`onclick="closeOv('ov-map');go('elevator',${fl})"`:''}>
     ${ic(open?(rdone?'check':'key'):'lock')}${n}</span>`}).join('')}
-   ${!open?`<span class="tag" style="align-self:center">sealed</span>`:''}</div></div>`;
+   ${!open?`<span class="tag" style="align-self:center">مُقفل</span>`:''}</div></div>`;
  }
  ov.innerHTML=`<div class="panel"><button class="plate small xbtn" onclick="closeOv('ov-map')">×</button>
-  <h3>THE HALLOWAY</h3><div class="ph-sub">NINE FLOORS \u00b7 TEN ROOMS \u00b7 ONE NOT ON ANY MAP</div>
+  <h3>هالوواي</h3><div class="ph-sub">تسعة طوابق · عشر غرف · واحدة ليست على أي خريطة</div>
   <div class="mwrap">${rows}</div>
-  <div class="ph-sub" style="margin-top:12px">tap an open floor to call the elevator</div></div>`;
+  <div class="ph-sub" style="margin-top:12px">اضغطي طابقًا مفتوحًا لاستدعاء المصعد</div></div>`;
  ov.classList.add('open');
 }
 
@@ -1505,11 +1515,11 @@ function toggleEvd(){
  const cards=S.evd.map((id,i)=>`<div class="ev" style="--r:${(i%3-1)*2.2}deg"><b>${EVD[id][0]}</b><span>${EVD[id][1]}</span></div>`).join('');
  const empty=Math.max(0,3-S.evd.length);
  const achList=Object.entries(ACH).map(([id,[t,d]])=>
-  `<div class="achrow ${S.ach.includes(id)?'':'off'}">${ic(S.ach.includes(id)?'flame':'lock')}<span><b>${t}</b> — ${S.ach.includes(id)?d:'\u2014\u2014\u2014\u2014'}</span></div>`).join('');
+  `<div class="achrow ${S.ach.includes(id)?'':'off'}">${ic(S.ach.includes(id)?'flame':'lock')}<span><b>${t}</b> — ${S.ach.includes(id)?d:'——————'}</span></div>`).join('');
  ov.innerHTML=`<div class="panel"><button class="plate small xbtn" onclick="closeOv('ov-evd')">×</button>
-  <h3>EVIDENCE BOARD</h3><div class="ph-sub">WHAT WE KNOW \u00b7 SO FAR</div>
-  <div class="board"><svg id="threads"></svg><div class="ev-cards" id="evcards">${cards}${'<div class="ev empty"><span>space for<br>more truth</span></div>'.repeat(Math.max(empty,1))}</div></div>
-  <h3 style="margin-top:16px">SECRET ACHIEVEMENTS \u00b7 ${S.ach.length}/${Object.keys(ACH).length}</h3>
+  <h3>لوحة الأدلة</h3><div class="ph-sub">ما نعرفه · حتى الآن</div>
+  <div class="board"><svg id="threads"></svg><div class="ev-cards" id="evcards">${cards}${'<div class="ev empty"><span>مساحةٌ<br>لمزيدٍ من الحقيقة</span></div>'.repeat(Math.max(empty,1))}</div></div>
+  <h3 style="margin-top:16px">إنجازات سرية · ${S.ach.length}/${Object.keys(ACH).length}</h3>
   ${achList}</div>`;
  ov.classList.add('open');
  requestAnimationFrame(()=>{
@@ -1531,26 +1541,26 @@ function toggleSet(){
  const ov=$('ov-set');
  if(ov.classList.contains('open'))return closeOv('ov-set');
  ov.innerHTML=`<div class="panel" style="max-width:420px"><button class="plate small xbtn" onclick="closeOv('ov-set')">×</button>
-  <h3>FRONT DESK</h3><div class="ph-sub">SETTINGS</div>
+  <h3>مكتب الاستقبال</h3><div class="ph-sub">الإعدادات</div>
   <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px">
-   <div style="display:flex;align-items:center;gap:12px"><span class="tag" style="width:80px">SOUND</span>
-    <button class="plate small" onclick="toggleSndBtn()" id="sndbtn">${S.sndOn?'ON':'OFF'}</button></div>
-   <div style="display:flex;align-items:center;gap:12px"><span class="tag" style="width:80px">VOLUME</span>
+   <div style="display:flex;align-items:center;gap:12px"><span class="tag" style="width:90px">الصوت</span>
+    <button class="plate small" onclick="toggleSndBtn()" id="sndbtn">${S.sndOn?'تشغيل':'إيقاف'}</button></div>
+   <div style="display:flex;align-items:center;gap:12px"><span class="tag" style="width:90px">مستوى الصوت</span>
     <input type="range" min="0" max="1" step=".05" value="${S.vol}" style="flex:1;accent-color:#b08d4f" oninput="AU.vol(+this.value)"></div>
    <div style="border-top:1px dashed #4a3a24;padding-top:12px">
-    <span class="tag">BURN THE LEDGER?</span>
+    <span class="tag">أتحرقين السجلّ؟</span>
     <div style="display:flex;gap:10px;margin-top:10px">
-     <button class="plate small" onclick="doReset()">BURN (ERASE ALL)</button>
-     <button class="plate small" onclick="closeOv('ov-set')">KEEP PLAYING</button></div></div>
-   <div class="ph-sub" style="margin-top:6px">ROOM 404 \u00b7 THE HALLOWAY<br>progress saves itself, quietly, like the hotel.</div>
+     <button class="plate small" onclick="doReset()">احرقيه (امسحي كل شيء)</button>
+     <button class="plate small" onclick="closeOv('ov-set')">أكملي اللعب</button></div></div>
+   <div class="ph-sub" style="margin-top:6px">ROOM 404 · هالوواي<br>تقدمكِ يُحفظ تلقائيًا — بهدوء، كالفندق نفسه.</div>
   </div></div>`;
  ov.classList.add('open');
 }
-function toggleSndBtn(){AU.setSnd(!S.sndOn);const b=$('sndbtn');if(b)b.textContent=S.sndOn?'ON':'OFF'}
-function doReset(){localStorage.removeItem('room404_v1');S=JSON.parse(JSON.stringify(DEF));closeOv('ov-set');go('title')}
+function toggleSndBtn(){AU.setSnd(!S.sndOn);const b=$('sndbtn');if(b)b.textContent=S.sndOn?'تشغيل':'إيقاف'}
+function doReset(){localStorage.removeItem('room404_ar_v1');S=JSON.parse(JSON.stringify(DEF));closeOv('ov-set');go('title')}
 
 /* ============================================================
-   أحداث عشوائية + جسيمات الغبار + المصباح
+   أحداث عشوائية + الغبار + المصباح
 ============================================================ */
 let lastAct=Date.now();
 ['pointerdown','keydown','pointermove'].forEach(e=>document.addEventListener(e,()=>lastAct=Date.now(),{passive:true}));
@@ -1559,7 +1569,7 @@ setInterval(()=>{
  const r=Math.random();
  if(r<.35)flick();
  else if(r<.5)AU.knockFar();
- else if(r<.56)AU.whisper(Math.random()<.5?'behind you':'you already know');
+ else if(r<.56)AU.whisper(Math.random()<.5?'خلفك':'أنتِ تعرفين بالفعل');
 },52000);
 
 (function dust(){
@@ -1578,7 +1588,7 @@ setInterval(()=>{
 })();
 
 /* ============================================================
-   أيقونة التطبيق + manifest (للحفظ على الشاشة الرئيسية)
+   أيقونة التطبيق + manifest (الاسم واللوجو بالإنجليزي كما طلبتِ)
 ============================================================ */
 (function pwa(){
  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180"><rect width="180" height="180" fill="#0d0a08"/><rect x="34" y="16" width="112" height="148" fill="none" stroke="#b08d4f" stroke-width="7"/><rect x="50" y="32" width="80" height="116" fill="#171210" stroke="#6e5732" stroke-width="3"/><text x="90" y="100" font-family="Georgia,serif" font-size="40" font-weight="700" fill="#c9a35c" text-anchor="middle">404</text><circle cx="90" cy="122" r="6" fill="#b08d4f"/></svg>`;
